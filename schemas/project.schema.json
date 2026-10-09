@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.gen-video/schemas/project.schema.json",
+  "title": "Gen Video Project",
+  "type": "object",
+  "required": ["schemaVersion", "jobId", "stage", "workspace", "style", "imageMode", "insuranceLayer", "blockers"],
+  "properties": {
+    "schemaVersion": {"const": "2.0"},
+    "jobId": {"type": "string", "minLength": 1},
+    "stage": {"enum": ["proposal", "approved", "scripting", "image_handoff", "assets_ready", "motion", "voice_timing", "build", "qc", "rendered"]},
+    "workspace": {"type": "string", "minLength": 1},
+    "style": {"type": ["string", "null"]},
+    "imageMode": {"enum": ["A", "B", "C", null]},
+    "approval": {"type": ["object", "null"]},
+    "voice": {"type": "object"},
+    "assets": {"type": "object"},
+    "renderers": {"type": "object"},
+    "insuranceLayer": {"type": "boolean"},
+    "qc": {"type": "object"},
+    "blockers": {"type": "array"},
+    "outputs": {"type": "object"}
+  },
+  "additionalProperties": true
+}

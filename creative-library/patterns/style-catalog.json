@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "selection_rules": [
+    "Choose style from content tension and viewer task, not from a fixed template.",
+    "Do not use the same scene layout more than twice consecutively.",
+    "A multi-panel scene must not repeat one source image across panels unless repetition is the explicit visual metaphor.",
+    "For TTS-led stories, direct voice at clause level with planned pauses, pace and pitch; a single global rate is insufficient for emotional narration.",
+    "Every 30-60 second video should combine two or three compatible styles, with one dominant style and one supporting style."
+  ],
+  "styles": [
+    {"id": "documentary-collage", "best_for": ["human stories", "insurance education", "social issues"], "grammar": ["candid photos", "paper crops", "marker annotation", "parallax"], "avoid": ["repeated stock pose", "equal card grid"]},
+    {"id": "object-led-explainer", "best_for": ["money habits", "household costs", "product mechanisms"], "grammar": ["one physical object per idea", "macro crop", "match cut", "object transformation"], "avoid": ["generic icon lists"]},
+    {"id": "data-story", "best_for": ["comparison", "trend", "financial gap"], "grammar": ["animated chart", "number reveal", "annotation", "silent payoff"], "avoid": ["decorative charts without a claim"]},
+    {"id": "split-world", "best_for": ["before-after", "choice", "risk contrast"], "grammar": ["split frame", "parallel timeline", "matched camera", "contrast reveal"], "avoid": ["false binary"]},
+    {"id": "kinetic-type", "best_for": ["strong opinion", "short hook", "myth-versus-fact"], "grammar": ["few large words", "rhythmic layout", "mask reveal", "type-as-object"], "avoid": ["paragraph animation"]},
+    {"id": "newsroom-documents", "best_for": ["research", "policy", "fact check"], "grammar": ["document fragments", "highlighter", "source label", "timeline"], "avoid": ["unreadable fake documents"]},
+    {"id": "ui-simulation", "best_for": ["digital behavior", "calculator", "step-by-step"], "grammar": ["device frame", "tap sequence", "state change", "cursor focus"], "avoid": ["fake app claims"]},
+    {"id": "map-journey", "best_for": ["location", "infrastructure", "history"], "grammar": ["route", "zoom", "layer reveal", "place annotation"], "avoid": ["map decoration without geography"]},
+    {"id": "cutout-parallax", "best_for": ["biography", "family narrative", "historical image"], "grammar": ["foreground cutout", "depth planes", "camera drift", "shadow separation"], "avoid": ["rubber-like character motion"]},
+    {"id": "diagram-machine", "best_for": ["systems", "insurance mechanism", "cash flow"], "grammar": ["nodes", "flow", "cause-effect", "mechanical reveal"], "avoid": ["complexity that exceeds the spoken explanation"]}
+  ]
+}

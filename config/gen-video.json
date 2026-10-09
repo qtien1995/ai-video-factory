@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "mode": "AUTO",
+  "workspace_root": "D:\\VIDEO AI",
+  "defaults": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "language": "vi-VN",
+    "target_duration_seconds": 60
+  },
+  "approval": {
+    "blueprint_required": true,
+    "final_render_required": true
+  },
+  "creative_quality": {
+    "creative_idea_min": 8,
+    "generic_ai_risk_max": 4,
+    "anti_repetition": true,
+    "wow_moments_target": "1-3 when meaningful"
+  },
+  "insurance_detection": {
+    "enabled": true,
+    "brand_profile": "manulife",
+    "creator_profile": "tien-duong"
+  },
+  "paths": {
+    "schemas": "D:\\VIDEO AI\\schemas",
+    "brand": "D:\\VIDEO AI\\brand",
+    "creative_library": "D:\\VIDEO AI\\creative-library",
+    "component_library": "D:\\VIDEO AI\\component-library",
+    "jobs": "D:\\VIDEO AI\\jobs"
+  }
+}

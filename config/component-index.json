@@ -1,0 +1,5 @@
+{
+  "version": "1.0",
+  "components": [],
+  "note": "Reusable Remotion primitives will be registered here as the library grows. Gen Video should query this index before scanning the full codebase."
+}

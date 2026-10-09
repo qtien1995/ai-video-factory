@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.gen-video/schemas/beats.schema.json",
+  "title": "Gen Video Beats",
+  "type": "object",
+  "required": ["schemaVersion", "timingStatus", "beats"],
+  "properties": {
+    "schemaVersion": {"const": "2.0"},
+    "timingStatus": {"enum": ["provisional", "measured"]},
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "narration", "purpose", "visual", "imagePrompt", "startSec", "endSec", "motion", "caption"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^B[0-9]{3}$"},
+          "narration": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "visual": {"type": "string", "minLength": 1},
+          "imagePrompt": {"type": "string"},
+          "startSec": {"type": "number", "minimum": 0},
+          "endSec": {"type": "number", "exclusiveMinimum": 0},
+          "motion": {"type": ["object", "array"]},
+          "caption": {"type": ["string", "array", "object"]},
+          "asset": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,12 @@
+{
+  "id": "tien-duong",
+  "display_name": "Tiến Dương",
+  "required_for_insurance": true,
+  "placement": "creative_auto",
+  "preferred_treatments": [
+    "editorial_credit",
+    "creator_signature",
+    "lower_third",
+    "outro"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "workspace": "D:\\VIDEO AI",
+  "primary_engine": "remotion",
+  "fallback_engine": "hyperframes",
+  "default_video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_target_seconds": [30, 60],
+    "format": "9:16"
+  },
+  "primary_domains": ["insurance", "real-estate"],
+  "approval_gates": ["script_and_beats", "creative_direction", "final_render"],
+  "render_output": "projects/<id>/output"
+}

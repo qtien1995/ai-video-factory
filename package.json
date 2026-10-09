@@ -1,0 +1,22 @@
+{
+  "name": "ai-video-factory",
+  "version": "2.0.0",
+  "description": "AI Video Factory V2 — Social Video Production Workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "powershell -ExecutionPolicy Bypass -File .\\scripts\\start-studio.ps1",
+    "factory": "node core/scripts/factory/index.js",
+    "test": "npm test --prefix core",
+    "lint": "npm run lint --prefix engines/remotion",
+    "typecheck": "npm --prefix engines/remotion run typecheck"
+  },
+  "keywords": [
+    "remotion",
+    "video-generation",
+    "social-video",
+    "codex"
+  ],
+  "author": "",
+  "license": "ISC"
+}

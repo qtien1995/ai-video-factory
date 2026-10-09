@@ -1,0 +1,20 @@
+{
+  "id": "manulife",
+  "name": "Manulife",
+  "enabled_for_domains": ["insurance"],
+  "logo": {
+    "required": true,
+    "preferred_path": "D:\\VIDEO AI\\brand\\manulife\\logo.png",
+    "fallback_paths": [
+      "D:\\VIDEO AI\\brand\\manulife\\logo.svg"
+    ],
+    "placement": "creative_auto",
+    "qc_block_if_missing": true
+  },
+  "visual_guidance": {
+    "brand_presence_required": true,
+    "do_not_force_corporate_layout": true,
+    "allow_integrated_branding": true,
+    "notes": "Branding is mandatory for insurance videos, but creative direction remains free. Use official brand assets supplied or verified for the workspace."
+  }
+}

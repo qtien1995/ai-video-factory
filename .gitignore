@@ -1,0 +1,128 @@
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+*.egg-info/
+dist/
+**/dist/
+build/
+**/build/
+.pytest_cache/
+**/.pytest_cache/
+
+# ==========================================
+# Databases & Local State
+# ==========================================
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# External Tools & Heavy Binaries (.tools)
+# ==========================================
+.tools/
+**/.tools/
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ==========================================
+# Generated Media (Audio, Video, Large Images)
+# ==========================================
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+*.raw.mp4
+*.candidate.mp4
+*.wav
+*.mp3
+*.flac
+*.aac
+*.ogg
+*.m4a
+
+# Audio caches and Voice Studio dumps
+tts-cache/
+**/tts-cache/
+**/audio/voice/
+engines/remotion/public/audio/
+engines/remotion/public/assets/jobs/
+engines/remotion/public/assets/manulife/family-future.jpg
+
+# ==========================================
+# Factory Renders, Jobs & Outputs
+# ==========================================
+output/
+**/output/
+renders/
+**/renders/
+!renders/.gitkeep
+exports/
+**/exports/
+!exports/.gitkeep
+jobs/
+**/jobs/
+!jobs/.gitkeep
+snapshots/
+**/snapshots/
+preview/
+**/preview/
+.thumbnails/
+**/assets/clips/
+assets/whiteboard/
+templates/whiteboard-video/assets/whiteboard/
+
+# ==========================================
+# User Video Projects (Generated Runs)
+# Preserve directory structure with .gitkeep
+# ==========================================
+/projects/*
+!/projects/.gitkeep
+!/projects/*/.gitkeep
+
+# ==========================================
+# System & IDE Cache
+# ==========================================
+.runtime/
+.archive/
+.cache/
+**/cache/
+**/temp/
+temp/
+cache/
+browser/
+*.bak
+.DS_Store
+Thumbs.db
+.agents/teamwork/
+

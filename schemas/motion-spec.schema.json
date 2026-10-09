@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.gen-video/schemas/motion-spec.schema.json",
+  "title": "Gen Video Motion Spec",
+  "type": "object",
+  "required": ["schemaVersion", "fps", "beats"],
+  "properties": {
+    "schemaVersion": {"const": "2.0"},
+    "fps": {"type": "number", "minimum": 1},
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "renderer", "events"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^B[0-9]{3}$"},
+          "renderer": {"enum": ["remotion", "hyperframes", "hybrid"]},
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["at", "action"],
+              "properties": {
+                "at": {"type": "number", "minimum": 0, "maximum": 1},
+                "until": {"type": "number", "minimum": 0, "maximum": 1},
+                "action": {"type": "string", "minLength": 1},
+                "target": {"type": "string"},
+                "easing": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

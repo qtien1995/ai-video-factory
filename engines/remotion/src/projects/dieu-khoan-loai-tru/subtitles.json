@@ -1,0 +1,1344 @@
+[
+  {
+    "startMs": 100,
+    "endMs": 1077,
+    "text": "Nhiều người bỏ cả chục",
+    "words": [
+      {
+        "word": "Nhiều",
+        "startMs": 100,
+        "durationMs": 250
+      },
+      {
+        "word": "người",
+        "startMs": 350,
+        "durationMs": 216
+      },
+      {
+        "word": "bỏ",
+        "startMs": 566,
+        "durationMs": 205
+      },
+      {
+        "word": "cả",
+        "startMs": 770,
+        "durationMs": 136
+      },
+      {
+        "word": "chục",
+        "startMs": 907,
+        "durationMs": 170
+      }
+    ]
+  },
+  {
+    "startMs": 1077,
+    "endMs": 2145,
+    "text": "triệu mua thẻ sức khỏe",
+    "words": [
+      {
+        "word": "triệu",
+        "startMs": 1077,
+        "durationMs": 193
+      },
+      {
+        "word": "mua",
+        "startMs": 1270,
+        "durationMs": 182
+      },
+      {
+        "word": "thẻ",
+        "startMs": 1452,
+        "durationMs": 148
+      },
+      {
+        "word": "sức",
+        "startMs": 1600,
+        "durationMs": 159
+      },
+      {
+        "word": "khỏe",
+        "startMs": 1759,
+        "durationMs": 386
+      }
+    ]
+  },
+  {
+    "startMs": 2293,
+    "endMs": 3214,
+    "text": "đến khi nằm viện bị",
+    "words": [
+      {
+        "word": "đến",
+        "startMs": 2293,
+        "durationMs": 216
+      },
+      {
+        "word": "khi",
+        "startMs": 2509,
+        "durationMs": 193
+      },
+      {
+        "word": "nằm",
+        "startMs": 2702,
+        "durationMs": 182
+      },
+      {
+        "word": "viện",
+        "startMs": 2884,
+        "durationMs": 205
+      },
+      {
+        "word": "bị",
+        "startMs": 3089,
+        "durationMs": 125
+      }
+    ]
+  },
+  {
+    "startMs": 3214,
+    "endMs": 4191,
+    "text": "từ chối bồi thường thì",
+    "words": [
+      {
+        "word": "từ",
+        "startMs": 3214,
+        "durationMs": 170
+      },
+      {
+        "word": "chối",
+        "startMs": 3384,
+        "durationMs": 216
+      },
+      {
+        "word": "bồi",
+        "startMs": 3600,
+        "durationMs": 182
+      },
+      {
+        "word": "thường",
+        "startMs": 3782,
+        "durationMs": 273
+      },
+      {
+        "word": "thì",
+        "startMs": 4055,
+        "durationMs": 136
+      }
+    ]
+  },
+  {
+    "startMs": 4191,
+    "endMs": 5487,
+    "text": "bức xúc bảo Bảo hiểm",
+    "words": [
+      {
+        "word": "bức",
+        "startMs": 4191,
+        "durationMs": 148
+      },
+      {
+        "word": "xúc",
+        "startMs": 4339,
+        "durationMs": 170
+      },
+      {
+        "word": "bảo",
+        "startMs": 4509,
+        "durationMs": 386
+      },
+      {
+        "word": "Bảo",
+        "startMs": 5043,
+        "durationMs": 239
+      },
+      {
+        "word": "hiểm",
+        "startMs": 5282,
+        "durationMs": 205
+      }
+    ]
+  },
+  {
+    "startMs": 5486,
+    "endMs": 5964,
+    "text": "lừa đảo",
+    "words": [
+      {
+        "word": "lừa",
+        "startMs": 5486,
+        "durationMs": 136
+      },
+      {
+        "word": "đảo",
+        "startMs": 5623,
+        "durationMs": 341
+      }
+    ]
+  },
+  {
+    "startMs": 6845,
+    "endMs": 8085,
+    "text": "Nhưng sự thật là Họ",
+    "words": [
+      {
+        "word": "Nhưng",
+        "startMs": 6845,
+        "durationMs": 261
+      },
+      {
+        "word": "sự",
+        "startMs": 7107,
+        "durationMs": 170
+      },
+      {
+        "word": "thật",
+        "startMs": 7277,
+        "durationMs": 159
+      },
+      {
+        "word": "là",
+        "startMs": 7436,
+        "durationMs": 284
+      },
+      {
+        "word": "Họ",
+        "startMs": 7880,
+        "durationMs": 205
+      }
+    ]
+  },
+  {
+    "startMs": 8084,
+    "endMs": 8993,
+    "text": "chưa từng đọc trang quan",
+    "words": [
+      {
+        "word": "chưa",
+        "startMs": 8084,
+        "durationMs": 159
+      },
+      {
+        "word": "từng",
+        "startMs": 8243,
+        "durationMs": 193
+      },
+      {
+        "word": "đọc",
+        "startMs": 8436,
+        "durationMs": 148
+      },
+      {
+        "word": "trang",
+        "startMs": 8584,
+        "durationMs": 216
+      },
+      {
+        "word": "quan",
+        "startMs": 8800,
+        "durationMs": 193
+      }
+    ]
+  },
+  {
+    "startMs": 8993,
+    "endMs": 10186,
+    "text": "trọng nhất hợp đồng Điều",
+    "words": [
+      {
+        "word": "trọng",
+        "startMs": 8993,
+        "durationMs": 193
+      },
+      {
+        "word": "nhất",
+        "startMs": 9186,
+        "durationMs": 170
+      },
+      {
+        "word": "hợp",
+        "startMs": 9357,
+        "durationMs": 193
+      },
+      {
+        "word": "đồng",
+        "startMs": 9550,
+        "durationMs": 273
+      },
+      {
+        "word": "Điều",
+        "startMs": 9959,
+        "durationMs": 227
+      }
+    ]
+  },
+  {
+    "startMs": 10186,
+    "endMs": 10925,
+    "text": "khoản loại trừ",
+    "words": [
+      {
+        "word": "khoản",
+        "startMs": 10186,
+        "durationMs": 284
+      },
+      {
+        "word": "loại",
+        "startMs": 10470,
+        "durationMs": 170
+      },
+      {
+        "word": "trừ",
+        "startMs": 10641,
+        "durationMs": 284
+      }
+    ]
+  },
+  {
+    "startMs": 11686,
+    "endMs": 12857,
+    "text": "Bảo hiểm không chi trả",
+    "words": [
+      {
+        "word": "Bảo",
+        "startMs": 11686,
+        "durationMs": 273
+      },
+      {
+        "word": "hiểm",
+        "startMs": 11959,
+        "durationMs": 261
+      },
+      {
+        "word": "không",
+        "startMs": 12220,
+        "durationMs": 205
+      },
+      {
+        "word": "chi",
+        "startMs": 12425,
+        "durationMs": 159
+      },
+      {
+        "word": "trả",
+        "startMs": 12584,
+        "durationMs": 273
+      }
+    ]
+  },
+  {
+    "startMs": 12857,
+    "endMs": 13880,
+    "text": "cho tất cả mọi thứ",
+    "words": [
+      {
+        "word": "cho",
+        "startMs": 12857,
+        "durationMs": 136
+      },
+      {
+        "word": "tất",
+        "startMs": 12993,
+        "durationMs": 182
+      },
+      {
+        "word": "cả",
+        "startMs": 13175,
+        "durationMs": 159
+      },
+      {
+        "word": "mọi",
+        "startMs": 13334,
+        "durationMs": 205
+      },
+      {
+        "word": "thứ",
+        "startMs": 13539,
+        "durationMs": 341
+      }
+    ]
+  },
+  {
+    "startMs": 14641,
+    "endMs": 15630,
+    "text": "Điều khoản này sinh ra",
+    "words": [
+      {
+        "word": "Điều",
+        "startMs": 14641,
+        "durationMs": 205
+      },
+      {
+        "word": "khoản",
+        "startMs": 14845,
+        "durationMs": 227
+      },
+      {
+        "word": "này",
+        "startMs": 15073,
+        "durationMs": 170
+      },
+      {
+        "word": "sinh",
+        "startMs": 15243,
+        "durationMs": 239
+      },
+      {
+        "word": "ra",
+        "startMs": 15482,
+        "durationMs": 148
+      }
+    ]
+  },
+  {
+    "startMs": 15630,
+    "endMs": 16595,
+    "text": "không phải để quịt tiền",
+    "words": [
+      {
+        "word": "không",
+        "startMs": 15630,
+        "durationMs": 205
+      },
+      {
+        "word": "phải",
+        "startMs": 15834,
+        "durationMs": 170
+      },
+      {
+        "word": "để",
+        "startMs": 16005,
+        "durationMs": 102
+      },
+      {
+        "word": "quịt",
+        "startMs": 16107,
+        "durationMs": 205
+      },
+      {
+        "word": "tiền",
+        "startMs": 16311,
+        "durationMs": 284
+      }
+    ]
+  },
+  {
+    "startMs": 16755,
+    "endMs": 17675,
+    "text": "mà để ngăn chặn trục",
+    "words": [
+      {
+        "word": "mà",
+        "startMs": 16755,
+        "durationMs": 250
+      },
+      {
+        "word": "để",
+        "startMs": 17005,
+        "durationMs": 102
+      },
+      {
+        "word": "ngăn",
+        "startMs": 17107,
+        "durationMs": 216
+      },
+      {
+        "word": "chặn",
+        "startMs": 17323,
+        "durationMs": 205
+      },
+      {
+        "word": "trục",
+        "startMs": 17527,
+        "durationMs": 148
+      }
+    ]
+  },
+  {
+    "startMs": 17675,
+    "endMs": 18937,
+    "text": "lợi giữ mức phí rẻ",
+    "words": [
+      {
+        "word": "lợi",
+        "startMs": 17675,
+        "durationMs": 318
+      },
+      {
+        "word": "giữ",
+        "startMs": 18152,
+        "durationMs": 182
+      },
+      {
+        "word": "mức",
+        "startMs": 18334,
+        "durationMs": 159
+      },
+      {
+        "word": "phí",
+        "startMs": 18493,
+        "durationMs": 205
+      },
+      {
+        "word": "rẻ",
+        "startMs": 18698,
+        "durationMs": 239
+      }
+    ]
+  },
+  {
+    "startMs": 18936,
+    "endMs": 19755,
+    "text": "cho người khỏe mạnh",
+    "words": [
+      {
+        "word": "cho",
+        "startMs": 18936,
+        "durationMs": 136
+      },
+      {
+        "word": "người",
+        "startMs": 19073,
+        "durationMs": 182
+      },
+      {
+        "word": "khỏe",
+        "startMs": 19255,
+        "durationMs": 193
+      },
+      {
+        "word": "mạnh",
+        "startMs": 19448,
+        "durationMs": 307
+      }
+    ]
+  },
+  {
+    "startMs": 20516,
+    "endMs": 21493,
+    "text": "Có 3 nhóm bị từ",
+    "words": [
+      {
+        "word": "Có",
+        "startMs": 20516,
+        "durationMs": 170
+      },
+      {
+        "word": "3",
+        "startMs": 20686,
+        "durationMs": 182
+      },
+      {
+        "word": "nhóm",
+        "startMs": 20868,
+        "durationMs": 318
+      },
+      {
+        "word": "bị",
+        "startMs": 21186,
+        "durationMs": 125
+      },
+      {
+        "word": "từ",
+        "startMs": 21311,
+        "durationMs": 182
+      }
+    ]
+  },
+  {
+    "startMs": 21493,
+    "endMs": 22606,
+    "text": "chối nhiều nhất anh em",
+    "words": [
+      {
+        "word": "chối",
+        "startMs": 21493,
+        "durationMs": 239
+      },
+      {
+        "word": "nhiều",
+        "startMs": 21732,
+        "durationMs": 239
+      },
+      {
+        "word": "nhất",
+        "startMs": 21970,
+        "durationMs": 284
+      },
+      {
+        "word": "anh",
+        "startMs": 22255,
+        "durationMs": 182
+      },
+      {
+        "word": "em",
+        "startMs": 22436,
+        "durationMs": 170
+      }
+    ]
+  },
+  {
+    "startMs": 22607,
+    "endMs": 23413,
+    "text": "bắt buộc phải nhớ",
+    "words": [
+      {
+        "word": "bắt",
+        "startMs": 22607,
+        "durationMs": 148
+      },
+      {
+        "word": "buộc",
+        "startMs": 22755,
+        "durationMs": 136
+      },
+      {
+        "word": "phải",
+        "startMs": 22891,
+        "durationMs": 170
+      },
+      {
+        "word": "nhớ",
+        "startMs": 23061,
+        "durationMs": 352
+      }
+    ]
+  },
+  {
+    "startMs": 24175,
+    "endMs": 25664,
+    "text": "Nhóm 1 Bệnh có sẵn",
+    "words": [
+      {
+        "word": "Nhóm",
+        "startMs": 24175,
+        "durationMs": 318
+      },
+      {
+        "word": "1",
+        "startMs": 24493,
+        "durationMs": 261
+      },
+      {
+        "word": "Bệnh",
+        "startMs": 24925,
+        "durationMs": 273
+      },
+      {
+        "word": "có",
+        "startMs": 25198,
+        "durationMs": 136
+      },
+      {
+        "word": "sẵn",
+        "startMs": 25334,
+        "durationMs": 330
+      }
+    ]
+  },
+  {
+    "startMs": 25664,
+    "endMs": 26459,
+    "text": "và Thời gian chờ",
+    "words": [
+      {
+        "word": "và",
+        "startMs": 25664,
+        "durationMs": 102
+      },
+      {
+        "word": "Thời",
+        "startMs": 25766,
+        "durationMs": 182
+      },
+      {
+        "word": "gian",
+        "startMs": 25948,
+        "durationMs": 216
+      },
+      {
+        "word": "chờ",
+        "startMs": 26164,
+        "durationMs": 295
+      }
+    ]
+  },
+  {
+    "startMs": 27220,
+    "endMs": 28505,
+    "text": "Bệnh cũ giấu không khai",
+    "words": [
+      {
+        "word": "Bệnh",
+        "startMs": 27220,
+        "durationMs": 318
+      },
+      {
+        "word": "cũ",
+        "startMs": 27539,
+        "durationMs": 216
+      },
+      {
+        "word": "giấu",
+        "startMs": 27755,
+        "durationMs": 216
+      },
+      {
+        "word": "không",
+        "startMs": 27970,
+        "durationMs": 205
+      },
+      {
+        "word": "khai",
+        "startMs": 28175,
+        "durationMs": 330
+      }
+    ]
+  },
+  {
+    "startMs": 29266,
+    "endMs": 30039,
+    "text": "Từ chối ngay",
+    "words": [
+      {
+        "word": "Từ",
+        "startMs": 29266,
+        "durationMs": 239
+      },
+      {
+        "word": "chối",
+        "startMs": 29505,
+        "durationMs": 227
+      },
+      {
+        "word": "ngay",
+        "startMs": 29732,
+        "durationMs": 307
+      }
+    ]
+  },
+  {
+    "startMs": 30800,
+    "endMs": 31731,
+    "text": "Bệnh thông thường phải sau",
+    "words": [
+      {
+        "word": "Bệnh",
+        "startMs": 30800,
+        "durationMs": 250
+      },
+      {
+        "word": "thông",
+        "startMs": 31050,
+        "durationMs": 182
+      },
+      {
+        "word": "thường",
+        "startMs": 31232,
+        "durationMs": 216
+      },
+      {
+        "word": "phải",
+        "startMs": 31448,
+        "durationMs": 114
+      },
+      {
+        "word": "sau",
+        "startMs": 31561,
+        "durationMs": 170
+      }
+    ]
+  },
+  {
+    "startMs": 31732,
+    "endMs": 33016,
+    "text": "30 ngày bệnh đặc biệt",
+    "words": [
+      {
+        "word": "30",
+        "startMs": 31732,
+        "durationMs": 295
+      },
+      {
+        "word": "ngày",
+        "startMs": 32027,
+        "durationMs": 284
+      },
+      {
+        "word": "bệnh",
+        "startMs": 32459,
+        "durationMs": 216
+      },
+      {
+        "word": "đặc",
+        "startMs": 32675,
+        "durationMs": 125
+      },
+      {
+        "word": "biệt",
+        "startMs": 32800,
+        "durationMs": 216
+      }
+    ]
+  },
+  {
+    "startMs": 33016,
+    "endMs": 33925,
+    "text": "như sỏi hay u phải",
+    "words": [
+      {
+        "word": "như",
+        "startMs": 33016,
+        "durationMs": 136
+      },
+      {
+        "word": "sỏi",
+        "startMs": 33152,
+        "durationMs": 250
+      },
+      {
+        "word": "hay",
+        "startMs": 33402,
+        "durationMs": 182
+      },
+      {
+        "word": "u",
+        "startMs": 33584,
+        "durationMs": 182
+      },
+      {
+        "word": "phải",
+        "startMs": 33766,
+        "durationMs": 159
+      }
+    ]
+  },
+  {
+    "startMs": 33925,
+    "endMs": 35516,
+    "text": "sau 365 ngày mới được",
+    "words": [
+      {
+        "word": "sau",
+        "startMs": 33925,
+        "durationMs": 170
+      },
+      {
+        "word": "365",
+        "startMs": 34095,
+        "durationMs": 864
+      },
+      {
+        "word": "ngày",
+        "startMs": 34959,
+        "durationMs": 216
+      },
+      {
+        "word": "mới",
+        "startMs": 35175,
+        "durationMs": 205
+      },
+      {
+        "word": "được",
+        "startMs": 35380,
+        "durationMs": 136
+      }
+    ]
+  },
+  {
+    "startMs": 35516,
+    "endMs": 36016,
+    "text": "thanh toán",
+    "words": [
+      {
+        "word": "thanh",
+        "startMs": 35516,
+        "durationMs": 182
+      },
+      {
+        "word": "toán",
+        "startMs": 35698,
+        "durationMs": 318
+      }
+    ]
+  },
+  {
+    "startMs": 36777,
+    "endMs": 38277,
+    "text": "Nhóm 2 Khám định kỳ",
+    "words": [
+      {
+        "word": "Nhóm",
+        "startMs": 36777,
+        "durationMs": 307
+      },
+      {
+        "word": "2",
+        "startMs": 37084,
+        "durationMs": 341
+      },
+      {
+        "word": "Khám",
+        "startMs": 37561,
+        "durationMs": 273
+      },
+      {
+        "word": "định",
+        "startMs": 37834,
+        "durationMs": 182
+      },
+      {
+        "word": "kỳ",
+        "startMs": 38016,
+        "durationMs": 261
+      }
+    ]
+  },
+  {
+    "startMs": 38277,
+    "endMs": 38959,
+    "text": "và Thẩm mỹ",
+    "words": [
+      {
+        "word": "và",
+        "startMs": 38277,
+        "durationMs": 125
+      },
+      {
+        "word": "Thẩm",
+        "startMs": 38402,
+        "durationMs": 205
+      },
+      {
+        "word": "mỹ",
+        "startMs": 38607,
+        "durationMs": 352
+      }
+    ]
+  },
+  {
+    "startMs": 39720,
+    "endMs": 40686,
+    "text": "Tự đi kiểm tra tổng",
+    "words": [
+      {
+        "word": "Tự",
+        "startMs": 39720,
+        "durationMs": 250
+      },
+      {
+        "word": "đi",
+        "startMs": 39970,
+        "durationMs": 114
+      },
+      {
+        "word": "kiểm",
+        "startMs": 40084,
+        "durationMs": 216
+      },
+      {
+        "word": "tra",
+        "startMs": 40300,
+        "durationMs": 170
+      },
+      {
+        "word": "tổng",
+        "startMs": 40470,
+        "durationMs": 216
+      }
+    ]
+  },
+  {
+    "startMs": 40686,
+    "endMs": 41936,
+    "text": "quát khi không ốm mổ",
+    "words": [
+      {
+        "word": "quát",
+        "startMs": 40686,
+        "durationMs": 182
+      },
+      {
+        "word": "khi",
+        "startMs": 40868,
+        "durationMs": 159
+      },
+      {
+        "word": "không",
+        "startMs": 41027,
+        "durationMs": 250
+      },
+      {
+        "word": "ốm",
+        "startMs": 41277,
+        "durationMs": 261
+      },
+      {
+        "word": "mổ",
+        "startMs": 41720,
+        "durationMs": 216
+      }
+    ]
+  },
+  {
+    "startMs": 41936,
+    "endMs": 43255,
+    "text": "cận bọc răng sứ đều",
+    "words": [
+      {
+        "word": "cận",
+        "startMs": 41936,
+        "durationMs": 352
+      },
+      {
+        "word": "bọc",
+        "startMs": 42425,
+        "durationMs": 216
+      },
+      {
+        "word": "răng",
+        "startMs": 42641,
+        "durationMs": 170
+      },
+      {
+        "word": "sứ",
+        "startMs": 42811,
+        "durationMs": 295
+      },
+      {
+        "word": "đều",
+        "startMs": 43107,
+        "durationMs": 148
+      }
+    ]
+  },
+  {
+    "startMs": 43255,
+    "endMs": 44175,
+    "text": "không thuộc phạm vi cứu",
+    "words": [
+      {
+        "word": "không",
+        "startMs": 43255,
+        "durationMs": 193
+      },
+      {
+        "word": "thuộc",
+        "startMs": 43448,
+        "durationMs": 136
+      },
+      {
+        "word": "phạm",
+        "startMs": 43584,
+        "durationMs": 239
+      },
+      {
+        "word": "vi",
+        "startMs": 43823,
+        "durationMs": 148
+      },
+      {
+        "word": "cứu",
+        "startMs": 43970,
+        "durationMs": 205
+      }
+    ]
+  },
+  {
+    "startMs": 44175,
+    "endMs": 44482,
+    "text": "sinh",
+    "words": [
+      {
+        "word": "sinh",
+        "startMs": 44175,
+        "durationMs": 307
+      }
+    ]
+  },
+  {
+    "startMs": 45243,
+    "endMs": 46743,
+    "text": "Nhóm 3 Bệnh bẩm sinh",
+    "words": [
+      {
+        "word": "Nhóm",
+        "startMs": 45243,
+        "durationMs": 318
+      },
+      {
+        "word": "3",
+        "startMs": 45561,
+        "durationMs": 318
+      },
+      {
+        "word": "Bệnh",
+        "startMs": 46005,
+        "durationMs": 250
+      },
+      {
+        "word": "bẩm",
+        "startMs": 46255,
+        "durationMs": 216
+      },
+      {
+        "word": "sinh",
+        "startMs": 46470,
+        "durationMs": 273
+      }
+    ]
+  },
+  {
+    "startMs": 46743,
+    "endMs": 47619,
+    "text": "và chấn thương do bia",
+    "words": [
+      {
+        "word": "và",
+        "startMs": 46743,
+        "durationMs": 102
+      },
+      {
+        "word": "chấn",
+        "startMs": 46845,
+        "durationMs": 216
+      },
+      {
+        "word": "thương",
+        "startMs": 47061,
+        "durationMs": 216
+      },
+      {
+        "word": "do",
+        "startMs": 47277,
+        "durationMs": 136
+      },
+      {
+        "word": "bia",
+        "startMs": 47414,
+        "durationMs": 205
+      }
+    ]
+  },
+  {
+    "startMs": 47618,
+    "endMs": 47902,
+    "text": "rượu",
+    "words": [
+      {
+        "word": "rượu",
+        "startMs": 47618,
+        "durationMs": 284
+      }
+    ]
+  },
+  {
+    "startMs": 48664,
+    "endMs": 49959,
+    "text": "Muốn bồi thường 100 trơn",
+    "words": [
+      {
+        "word": "Muốn",
+        "startMs": 48664,
+        "durationMs": 364
+      },
+      {
+        "word": "bồi",
+        "startMs": 49027,
+        "durationMs": 136
+      },
+      {
+        "word": "thường",
+        "startMs": 49164,
+        "durationMs": 250
+      },
+      {
+        "word": "100",
+        "startMs": 49414,
+        "durationMs": 364
+      },
+      {
+        "word": "trơn",
+        "startMs": 49777,
+        "durationMs": 182
+      }
+    ]
+  },
+  {
+    "startMs": 49959,
+    "endMs": 51675,
+    "text": "tru nhớ 3 chữ Kê",
+    "words": [
+      {
+        "word": "tru",
+        "startMs": 49959,
+        "durationMs": 341
+      },
+      {
+        "word": "nhớ",
+        "startMs": 50470,
+        "durationMs": 250
+      },
+      {
+        "word": "3",
+        "startMs": 50720,
+        "durationMs": 193
+      },
+      {
+        "word": "chữ",
+        "startMs": 50914,
+        "durationMs": 432
+      },
+      {
+        "word": "Kê",
+        "startMs": 51527,
+        "durationMs": 148
+      }
+    ]
+  },
+  {
+    "startMs": 51675,
+    "endMs": 52880,
+    "text": "khai thật Canh thời gian",
+    "words": [
+      {
+        "word": "khai",
+        "startMs": 51675,
+        "durationMs": 216
+      },
+      {
+        "word": "thật",
+        "startMs": 51891,
+        "durationMs": 273
+      },
+      {
+        "word": "Canh",
+        "startMs": 52368,
+        "durationMs": 170
+      },
+      {
+        "word": "thời",
+        "startMs": 52539,
+        "durationMs": 125
+      },
+      {
+        "word": "gian",
+        "startMs": 52664,
+        "durationMs": 216
+      }
+    ]
+  },
+  {
+    "startMs": 52880,
+    "endMs": 54118,
+    "text": "chờ và Hỏi kỹ trước",
+    "words": [
+      {
+        "word": "chờ",
+        "startMs": 52880,
+        "durationMs": 318
+      },
+      {
+        "word": "và",
+        "startMs": 53357,
+        "durationMs": 205
+      },
+      {
+        "word": "Hỏi",
+        "startMs": 53561,
+        "durationMs": 170
+      },
+      {
+        "word": "kỹ",
+        "startMs": 53732,
+        "durationMs": 227
+      },
+      {
+        "word": "trước",
+        "startMs": 53959,
+        "durationMs": 159
+      }
+    ]
+  },
+  {
+    "startMs": 54118,
+    "endMs": 54641,
+    "text": "khi mổ",
+    "words": [
+      {
+        "word": "khi",
+        "startMs": 54118,
+        "durationMs": 136
+      },
+      {
+        "word": "mổ",
+        "startMs": 54255,
+        "durationMs": 386
+      }
+    ]
+  },
+  {
+    "startMs": 55402,
+    "endMs": 56390,
+    "text": "Cần rà soát lại hợp",
+    "words": [
+      {
+        "word": "Cần",
+        "startMs": 55402,
+        "durationMs": 284
+      },
+      {
+        "word": "rà",
+        "startMs": 55686,
+        "durationMs": 136
+      },
+      {
+        "word": "soát",
+        "startMs": 55823,
+        "durationMs": 227
+      },
+      {
+        "word": "lại",
+        "startMs": 56050,
+        "durationMs": 170
+      },
+      {
+        "word": "hợp",
+        "startMs": 56220,
+        "durationMs": 170
+      }
+    ]
+  },
+  {
+    "startMs": 56391,
+    "endMs": 57755,
+    "text": "đồng của bạn nhắn mình",
+    "words": [
+      {
+        "word": "đồng",
+        "startMs": 56391,
+        "durationMs": 216
+      },
+      {
+        "word": "của",
+        "startMs": 56607,
+        "durationMs": 125
+      },
+      {
+        "word": "bạn",
+        "startMs": 56732,
+        "durationMs": 318
+      },
+      {
+        "word": "nhắn",
+        "startMs": 57220,
+        "durationMs": 284
+      },
+      {
+        "word": "mình",
+        "startMs": 57505,
+        "durationMs": 250
+      }
+    ]
+  }
+]

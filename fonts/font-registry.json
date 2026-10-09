@@ -1,0 +1,9 @@
+﻿{
+  "version": 1,
+  "approved": [],
+  "fallback_policy": {
+    "require_vietnamese": true,
+    "test_string": "ă â ê ô ơ ư đ Ă Â Ê Ô Ơ Ư Đ á à ả ã ạ",
+    "fallback_roles": []
+  }
+}
