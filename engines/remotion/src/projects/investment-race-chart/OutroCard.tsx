@@ -1,6 +1,23 @@
 import React from "react";
+import userBrand from "../../../../../brand/user-brand.json";
 
-export const OutroCard: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
+interface OutroProps {
+  opacity?: number;
+  brandName?: string;
+  creatorName?: string;
+  tagline?: string;
+  cta?: string;
+  disclaimer?: string;
+}
+
+export const OutroCard: React.FC<OutroProps> = ({
+  opacity = 1,
+  brandName = userBrand.brandName || "TÀI CHÍNH THỰC CHIẾN",
+  creatorName = userBrand.creatorName || "Tiến Dương",
+  tagline = userBrand.tagline || "HOẠCH ĐỊNH TÀI CHÍNH · ĐẦU TƯ BỀN VỮNG",
+  cta = userBrand.cta || "Bình luận danh mục của bạn bên dưới 👇",
+  disclaimer = userBrand.disclaimer || "Số liệu mang tính chất tham khảo · Không phải khuyến nghị đầu tư"
+}) => {
   return (
     <div
       style={{
@@ -12,69 +29,114 @@ export const OutroCard: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: 60,
-        zIndex: 60
+        padding: "80px 60px",
+        zIndex: 60,
+        fontFamily: "'Inter', sans-serif"
       }}
     >
-      {/* Infinity Icon Graphic */}
-      <div style={{ marginBottom: 40, position: "relative" }}>
-        <svg width="220" height="110" viewBox="0 0 200 100" fill="none">
-          <path
-            d="M 50,50 C 20,10 0,30 0,50 C 0,70 20,90 50,50 C 80,10 120,10 150,50 C 180,90 200,70 200,50 C 200,30 180,10 150,50 C 120,90 80,90 50,50 Z"
-            stroke="url(#infinityGradient)"
-            strokeWidth="18"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <defs>
-            <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f97316" />
-              <stop offset="50%" stopColor="#eab308" />
-              <stop offset="100%" stopColor="#ec4899" />
-            </linearGradient>
-          </defs>
-        </svg>
+      {/* Creator Avatar / Brand Emblem */}
+      <div
+        style={{
+          width: 140,
+          height: 140,
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, #d4af37, #f59e0b, #38bdf8)",
+          padding: 4,
+          boxShadow: "0 0 40px rgba(212, 175, 55, 0.4)",
+          marginBottom: 32
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            backgroundColor: "#0b0e14",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 56,
+            fontWeight: 900,
+            color: "#d4af37"
+          }}
+        >
+          {creatorName ? creatorName.charAt(0) : "T"}
+        </div>
       </div>
 
-      {/* Brand Title */}
+      {/* Brand / Channel Name */}
       <h1
         style={{
           color: "#ffffff",
-          fontSize: 72,
+          fontSize: 64,
           fontWeight: 900,
           margin: 0,
-          letterSpacing: "0.05em",
-          textTransform: "uppercase"
+          letterSpacing: "0.02em",
+          textAlign: "center",
+          lineHeight: 1.2
         }}
       >
-        HODL.VN
+        {brandName}
       </h1>
 
-      {/* Slogan */}
+      {/* Creator Byline */}
+      <div
+        style={{
+          color: "#94a3b8",
+          fontSize: 32,
+          fontWeight: 600,
+          marginTop: 12
+        }}
+      >
+        {creatorName}
+      </div>
+
+      {/* Tagline */}
       <div
         style={{
           color: "#d4af37",
-          fontSize: 32,
+          fontSize: 26,
           fontWeight: 700,
-          letterSpacing: "0.2em",
+          letterSpacing: "0.15em",
           textTransform: "uppercase",
-          marginTop: 14
+          marginTop: 20,
+          textAlign: "center"
         }}
       >
-        MUA ĐÚNG · GIỮ CHẶT
+        {tagline}
+      </div>
+
+      {/* CTA Box */}
+      <div
+        style={{
+          marginTop: 50,
+          backgroundColor: "rgba(212, 175, 55, 0.12)",
+          border: "1.5px solid rgba(212, 175, 55, 0.4)",
+          borderRadius: 40,
+          padding: "18px 36px",
+          color: "#ffffff",
+          fontSize: 28,
+          fontWeight: 700,
+          textAlign: "center",
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5)"
+        }}
+      >
+        {cta}
       </div>
 
       {/* Bottom Legal Disclaimer */}
       <div
         style={{
           position: "absolute",
-          bottom: 200,
+          bottom: 160,
           color: "rgba(255, 255, 255, 0.4)",
-          fontSize: 24,
-          textAlign: "center"
+          fontSize: 22,
+          textAlign: "center",
+          maxWidth: 900,
+          lineHeight: 1.4
         }}
       >
-        Số liệu quá khứ, không phải khuyến nghị đầu tư
+        {disclaimer}
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export const InvestmentRaceVideo: React.FC = () => {
       {frame < 930 && (
         <div style={{ opacity: chartOpacity }}>
           <FixedHeader
-            eyebrow="HODL.VN · 100 TRIỆU VN30"
+            eyebrow="TÀI CHÍNH THỰC CHIẾN · 100 TRIỆU VN30"
             title="Mua ngày 02/01/2019, giữ tới nay"
             subtitle="Giữ nguyên, cổ tức mua thêm cổ phiếu"
           />

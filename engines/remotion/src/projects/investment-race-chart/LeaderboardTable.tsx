@@ -17,7 +17,7 @@ export const LeaderboardTable: React.FC<{ opacity?: number }> = ({ opacity = 1 }
     >
       {/* Header */}
       <div style={{ color: "#d4af37", fontSize: 26, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
-        HODL.VN · 100 TRIỆU VN30
+        TÀI CHÍNH THỰC CHIẾN · 100 TRIỆU VN30
       </div>
       <h1 style={{ color: "#ffffff", fontSize: 52, fontWeight: 800, margin: 0, lineHeight: 1.2 }}>
         100 triệu sau 2019–2026
