@@ -1,32 +1,90 @@
-# AI VIDEO FACTORY V2
+# AI VIDEO FACTORY V3 🚀
 
-Workspace tạo video social theo luồng **nội dung đúng trước, hình thức đúng sau**.
+> **Workspace sản xuất video ngắn (9:16) chuyên nghiệp cho TikTok, Reels, YouTube Shorts với Remotion & AI Voice Studio.**
+
+---
+
+## ⚡ Bắt đầu nhanh trong 3 bước
+
+### 1. Kiểm tra môi trường
+```bash
+npm run doctor
+```
+Kiểm tra xem CIT Voice Studio (VieNeu-TTS :8001), FFmpeg và Remotion đã sẵn sàng chưa.
+
+### 2. Khởi động dịch vụ hỗ trợ
+```bash
+npm run services
+```
+Tự động kích hoạt CIT Voice Studio (giọng chuẩn Studio Hải Đăng 48kHz) và các công cụ cần thiết.
+
+### 3. Mở Remotion Studio xem trước
+```bash
+npm run studio
+```
+Mở giao diện Remotion Studio trực tiếp trên trình duyệt để chỉnh sửa timeline, components và typography thời gian thực.
+
+---
+
+## 🎬 2 Workflows sản xuất chính
+
+| Workflow | Đầu vào | Quy trình | Lưu trữ |
+| :--- | :--- | :--- | :--- |
+| **Remotion Explainer** | Ý tưởng / Kịch bản giải thích | Khung 6 cảnh chuẩn Cường IT + 6 Card Archetypes + CIT Voice + Subtitle highlight từ | `projects/social-shorts/` |
+| **Auto Footage** | Video quay sẵn (talking-head, review) | Cắt lọc khoảng lặng (jump-cut) + Phụ đề động + Motion Overlays | `projects/auto-cuts/` |
+
+---
+
+## 📁 Cấu trúc thư mục tinh gọn
 
 ```text
-Input → Story Pass → duyệt Script + Beats → Creative Pass → chọn hướng
-→ Voice + timing thật → Remotion → Preview/QA → duyệt render → Final
+D:\AI\VIDEO AI\
+├── .agents/skills/      # 6 kỹ năng AI cốt lõi (remotion-explainer, cit-voice-studio, auto-footage, prompts-chat...)
+├── .tools/              # FFmpeg tĩnh & FlowKit engine
+├── assets/              # Kho âm thanh BGM, SFX, fonts, hình ảnh
+├── brand/               # Nhận diện thương hiệu & cấu hình cá nhân
+├── config/              # Cấu hình chuẩn factory-config.json
+├── core/                # Bộ não điều phối Factory CLI, validation, loudness EBU R128
+├── engines/
+│   └── remotion/        # Engine dựng video Remotion React/TypeScript duy nhất
+├── projects/            # Thư mục chứa các video thực tế (không xóa khi dọn dẹp)
+├── prompts/             # Kho 1.100+ prompts.chat, hook-crafter, personas
+├── renders/             # Nơi lưu trữ các video MP4 thành phẩm
+├── rules/               # Luật thiết kế visual-storytelling & 6 card-archetypes
+├── templates/
+│   └── cuongit-explainer/ # Template mẫu 6 cảnh chuẩn Remotion
+├── tests/               # Bộ test tự động E2E 4-tier kiểm tra chất lượng video
+├── AGENTS.md            # Quy chuẩn bắt buộc cho AI Agent
+└── package.json         # Danh mục lệnh npm điều khiển toàn bộ workspace
 ```
 
-Remotion là engine chính. HyperFrames được dùng làm phương án thay thế nhẹ tải hoặc tối ưu GSAP.
+---
 
-## Nơi quan trọng
+## 🛠️ Lệnh điều khiển hữu ích
 
-- `AGENTS.md`: luật vận hành chính.
-- `prompts/story-director.md`: tạo script + beats.
-- `prompts/creative-director.md`: chọn visual story sau khi script duyệt.
-- `prompts/reference-analyzer.md`: rút Motion DNA từ video mẫu.
-- `prompts/production-agent.md`: production theo voice timing.
-- `creative-library/`: pattern, primitives, visual skin và reference grammar.
-- `rules/`: các rule đã được promote.
-- `learning/`: lỗi, candidate rule, changelog.
-- `projects/`: video thực tế; không xóa project cũ.
+```bash
+# Kiểm tra sức khỏe toàn hệ thống
+npm run doctor
 
-## Điều phối một project
+# Mở Remotion Studio trực quan
+npm run studio
 
-Từ thư mục workspace, chạy `node core/scripts/factory/index.js status --project <id>` để xem bước hiện tại; dùng `next` để lấy bước cần làm tiếp. Sau khi tạo Script và Beats, ghi từng bước bằng `record`, rồi chỉ ghi Gate 1 qua `approve` khi người dùng đã duyệt cả hai. Tương tự, Gate 2 khóa creative direction và Gate 3 cho phép render final sau preview/QA.
+# Chạy test kiểm thử logic Factory
+npm test
 
-Lệnh `tts` đo audio thật; `render --kind preview` tạo `output/preview.mp4`, báo cáo QA và contact sheet. Chạy `render --kind final` sau Gate 3 để tạo `output/final.mp4`. `check` báo state hoặc file đã lỗi thời. Xem [START_HERE.md](START_HERE.md) để có ví dụ lệnh.
+# Kiểm tra cú pháp TypeScript & Linting
+npm run typecheck
+npm run lint
 
-## Quy tắc cốt lõi
+# Kiểm định chất lượng video MP4 đã xuất (Loudness, Resolution, Codec, Freeze frame)
+npm run verify -- --target projects/<id>/output/final.mp4
+```
 
-Mỗi beat cần một visual action có ý nghĩa. Text hỗ trợ visual, không thay visual. Voice là master timeline.
+---
+
+## 📋 Tiêu chuẩn xuất xưởng bắt buộc
+
+1. **Khung hình**: Portrait 9:16 (1080×1920), 30fps, codec H.264 / AAC.
+2. **Âm thanh chuẩn phát thanh**: Integrated Loudness **-12.5 LUFS**, LRA **< 8 LU**, True Peak **< -1.0 dBFS**.
+3. **Phụ đề**: Đồng bộ theo giọng đọc thật, đổi màu highlight từng từ đang đọc, im lặng thì ẩn hoàn toàn (`Zero Speech = Zero Sub`).
+4. **An toàn hiển thị**: Thiết kế tối ưu cho màn hình điện thoại 360×640, không cắt chữ, không tràn lề.

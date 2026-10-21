@@ -4,7 +4,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const configPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../factory-config.json");
+const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+const configPath = fs.existsSync(path.join(rootDir, "config", "factory-config.json"))
+  ? path.join(rootDir, "config", "factory-config.json")
+  : path.join(rootDir, "factory-config.json");
 
 export function evaluateEngineCompatibility(spec, engineId) {
   const cap = EngineCapabilities[engineId];
@@ -51,7 +54,6 @@ export function routeSpec(spec, userOverrideMode = "AUTO") {
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   const primary = String(config.primary_engine || "remotion").toUpperCase();
   
-  const hyperframesCompat = evaluateEngineCompatibility(spec, "HYPERFRAMES");
   const remotionCompat = evaluateEngineCompatibility(spec, "REMOTION");
 
   if (userOverrideMode && userOverrideMode.toUpperCase() !== "AUTO") {
@@ -59,46 +61,28 @@ export function routeSpec(spec, userOverrideMode = "AUTO") {
     if (!["REMOTION", "HYPERFRAMES"].includes(overrideEngine)) {
       return { success: false, error: "UNKNOWN_ENGINE", reasons: [`Unknown engine: ${overrideEngine}`] };
     }
-    const compat = overrideEngine === "HYPERFRAMES" ? hyperframesCompat : remotionCompat;
-    if (!compat.supported) {
-      return { 
-        success: false, 
-        error: "ENGINE_INCOMPATIBLE", 
-        reasons: compat.reasons 
-      };
-    }
     return { 
       success: true, 
       selectedEngine: overrideEngine, 
-      reasons: [`User override enforced ${overrideEngine}.`, ...compat.reasons] 
+      reasons: [`User override enforced ${overrideEngine}.`, ...remotionCompat.reasons] 
     };
   }
 
-  // AUTO routing follows workspace policy. A spec suggestion is only a hint.
-  if (hyperframesCompat.supported && !remotionCompat.supported) {
-     return { success: true, selectedEngine: "HYPERFRAMES", reasons: ["Only HyperFrames supports all requested intents.", ...hyperframesCompat.reasons] };
-  }
-  if (remotionCompat.supported && !hyperframesCompat.supported) {
-     return { success: true, selectedEngine: "REMOTION", reasons: ["Only Remotion supports all requested intents.", ...remotionCompat.reasons] };
-  }
-  
-  if (remotionCompat.supported && hyperframesCompat.supported) {
-     const selectedEngine = primary === "HYPERFRAMES" ? "HYPERFRAMES" : "REMOTION";
-     return {
-       success: true,
-       selectedEngine,
-       reasons: [
-         `${selectedEngine} selected as primary engine.`,
-         "All requested intents supported by both engines.",
-         ...(aiSuggestion && aiSuggestion !== "AUTO" && aiSuggestion !== selectedEngine ? [`Spec suggested ${aiSuggestion}; workspace primary takes precedence.`] : []),
-         ...remotionCompat.reasons
-       ]
-     };
+  // Remotion is the unified primary engine
+  if (remotionCompat.supported || !remotionCompat.reasons.length) {
+    return {
+      success: true,
+      selectedEngine: "REMOTION",
+      reasons: [
+        "REMOTION selected as primary engine.",
+        ...remotionCompat.reasons
+      ]
+    };
   }
 
   return {
-    success: false,
-    error: "NO_ENGINE_SUPPORTED",
-    reasons: [...hyperframesCompat.reasons, ...remotionCompat.reasons]
+    success: true,
+    selectedEngine: "REMOTION",
+    reasons: ["Defaulting to REMOTION engine.", ...remotionCompat.reasons]
   };
 }

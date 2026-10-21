@@ -1,9 +1,8 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, useCurrentFrame } from "remotion";
 import React from "react";
 
 export const Scene1: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
   // Fast cuts between 3 states
   // State 1: 0 - 100

@@ -1,21 +1,25 @@
 {
   "name": "ai-video-factory",
-  "version": "2.0.0",
-  "description": "AI Video Factory V2 — Social Video Production Workspace",
+  "version": "3.0.0",
+  "description": "AI Video Factory V3 — Streamlined Social Video Production Workspace",
   "private": true,
   "type": "module",
   "scripts": {
+    "doctor": "node core/scripts/factory/index.js doctor",
     "studio": "powershell -ExecutionPolicy Bypass -File .\\scripts\\start-studio.ps1",
+    "services": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
     "factory": "node core/scripts/factory/index.js",
+    "prompts": "node core/scripts/prompts/index.js",
+    "verify": "node tests/e2e/test_final_video.cjs",
     "test": "npm test --prefix core",
     "lint": "npm run lint --prefix engines/remotion",
     "typecheck": "npm --prefix engines/remotion run typecheck"
   },
   "keywords": [
     "remotion",
-    "video-generation",
+    "video-factory",
     "social-video",
-    "codex"
+    "cit-voice-studio"
   ],
   "author": "",
   "license": "ISC"

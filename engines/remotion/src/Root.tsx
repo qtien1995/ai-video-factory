@@ -30,7 +30,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           spec: null
         }}
-        calculateMetadata={({ props }: { props: { spec?: any } }) => {
+        calculateMetadata={({ props }: { props: { spec?: { format?: { totalDurationFrames?: number; fps?: number; width?: number; height?: number } } | null } }) => {
           return {
             durationInFrames: props.spec?.format?.totalDurationFrames || 300,
             fps: props.spec?.format?.fps || 30,

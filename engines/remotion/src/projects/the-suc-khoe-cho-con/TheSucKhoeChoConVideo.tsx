@@ -1,6 +1,6 @@
 import React from "react";
-import { AbsoluteFill, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { MOBILE_LAYOUT, StandardHeader } from "../../shared/design-system";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { StandardHeader } from "../../shared/design-system";
 import {
   MedicalBackdrop,
   KidsHealthCard,

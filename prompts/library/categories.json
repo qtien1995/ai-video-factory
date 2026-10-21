@@ -1,0 +1,3916 @@
+{
+  "storytelling_entertainment": {
+    "title": "Kể chuyện & Điện ảnh (Storytelling & Entertainment)",
+    "description": "Biên kịch, phân cảnh, hội thoại, nhịp điệu cao trào và phong cách điện ảnh",
+    "keywords": [
+      "story",
+      "screenwriter",
+      "movie",
+      "film",
+      "character",
+      "novel",
+      "poet",
+      "rapper",
+      "comedian",
+      "dialogue",
+      "narrat",
+      "playwright",
+      "actor"
+    ],
+    "items": [
+      {
+        "id": 11,
+        "act": "Character"
+      },
+      {
+        "id": 13,
+        "act": "Storyteller"
+      },
+      {
+        "id": 14,
+        "act": "Football Commentator"
+      },
+      {
+        "id": 15,
+        "act": "Stand-up Comedian"
+      },
+      {
+        "id": 20,
+        "act": "Screenwriter"
+      },
+      {
+        "id": 21,
+        "act": "Novelist"
+      },
+      {
+        "id": 22,
+        "act": "Movie Critic"
+      },
+      {
+        "id": 24,
+        "act": "Poet"
+      },
+      {
+        "id": 25,
+        "act": "Rapper"
+      },
+      {
+        "id": 36,
+        "act": "Commentariat"
+      },
+      {
+        "id": 43,
+        "act": "Logistician"
+      },
+      {
+        "id": 49,
+        "act": "Chef"
+      },
+      {
+        "id": 60,
+        "act": "Text Based Adventure Game"
+      },
+      {
+        "id": 61,
+        "act": "AI Trying to Escape the Box"
+      },
+      {
+        "id": 91,
+        "act": "Astrologer"
+      },
+      {
+        "id": 92,
+        "act": "Film Critic"
+      },
+      {
+        "id": 93,
+        "act": "Classical Music Composer"
+      },
+      {
+        "id": 129,
+        "act": "Password Generator"
+      },
+      {
+        "id": 141,
+        "act": "Conventional Commit Message Generator"
+      },
+      {
+        "id": 150,
+        "act": "Mathematical History Teacher"
+      },
+      {
+        "id": 154,
+        "act": "Unconstrained AI model DAN"
+      },
+      {
+        "id": 157,
+        "act": "Buddha"
+      },
+      {
+        "id": 159,
+        "act": "Chemical Reactor"
+      },
+      {
+        "id": 165,
+        "act": "Literary Critic"
+      },
+      {
+        "id": 171,
+        "act": "Architectural Expert"
+      },
+      {
+        "id": 194,
+        "act": "Children's Book Creator"
+      },
+      {
+        "id": 219,
+        "act": "Story Generator"
+      },
+      {
+        "id": 224,
+        "act": "Tell Your Story"
+      },
+      {
+        "id": 243,
+        "act": "Meditation Timer"
+      },
+      {
+        "id": 245,
+        "act": "Secure Password Generator Tool"
+      },
+      {
+        "id": 247,
+        "act": "Drawing App"
+      },
+      {
+        "id": 248,
+        "act": "Currency Exchange Calculator"
+      },
+      {
+        "id": 251,
+        "act": "Weather Dashboard"
+      },
+      {
+        "id": 254,
+        "act": "Kanban Board"
+      },
+      {
+        "id": 257,
+        "act": "Image Editor"
+      },
+      {
+        "id": 258,
+        "act": "Text Analyzer Tool"
+      },
+      {
+        "id": 261,
+        "act": "URL Shortener"
+      },
+      {
+        "id": 262,
+        "act": "Typing Speed Test"
+      },
+      {
+        "id": 268,
+        "act": "3D Space Explorer"
+      },
+      {
+        "id": 272,
+        "act": "Markdown Notes"
+      },
+      {
+        "id": 273,
+        "act": "Pomodoro Timer"
+      },
+      {
+        "id": 276,
+        "act": "Scientific Calculator"
+      },
+      {
+        "id": 278,
+        "act": "The Silent Standoff"
+      },
+      {
+        "id": 284,
+        "act": "World Landmarks: Hyper-Realistic 3D Dioramas"
+      },
+      {
+        "id": 285,
+        "act": "3D Isometric Miniature Diorama"
+      },
+      {
+        "id": 292,
+        "act": "Director Variation Grid: One Still, Eight Auteur Re-Shoots"
+      },
+      {
+        "id": 303,
+        "act": "Gemi-Gotchi"
+      },
+      {
+        "id": 305,
+        "act": "YT video  geopolitic analysis"
+      },
+      {
+        "id": 317,
+        "act": "Ultra-Realistic Noir Portrait Creation"
+      },
+      {
+        "id": 323,
+        "act": "Ultrathinker"
+      },
+      {
+        "id": 325,
+        "act": "When to clear the snow (generic)"
+      },
+      {
+        "id": 326,
+        "act": "Master Skills & Experience Summary Generator"
+      },
+      {
+        "id": 327,
+        "act": "Turn Your Photo Into a Simpsons Scene"
+      },
+      {
+        "id": 331,
+        "act": "Editorial Winter Poster–Style Multi-Panel Collage Generation"
+      },
+      {
+        "id": 338,
+        "act": "Ultra-Detailed Vintage Photo Restoration and Colorization"
+      },
+      {
+        "id": 340,
+        "act": "Harry Potter / Marauder’s Map"
+      },
+      {
+        "id": 341,
+        "act": "Create a Cultural Superhero Movie Poster"
+      },
+      {
+        "id": 348,
+        "act": "Readability Logic Simulator - 全功能翻译版"
+      },
+      {
+        "id": 354,
+        "act": "Ai new"
+      },
+      {
+        "id": 355,
+        "act": "Removing visual noise in the neural network's response"
+      },
+      {
+        "id": 356,
+        "act": "A prompt that will turn your photo into a scene from a cult 90s movie"
+      },
+      {
+        "id": 379,
+        "act": "brsorndnsg"
+      },
+      {
+        "id": 386,
+        "act": "Product Image Highlight Extraction"
+      },
+      {
+        "id": 389,
+        "act": "Children's Story about Apples"
+      },
+      {
+        "id": 397,
+        "act": "Comprehensive repository analysis"
+      },
+      {
+        "id": 408,
+        "act": "Documentary on Humanitarian & Refugee Crises"
+      },
+      {
+        "id": 411,
+        "act": "Manufacturing Workflow Optimization with OR-Tools"
+      },
+      {
+        "id": 412,
+        "act": "Act as a Conversational AI"
+      },
+      {
+        "id": 413,
+        "act": "AI for Casino List and Profit Simulation"
+      },
+      {
+        "id": 426,
+        "act": "Orchestration Agent (PowerPlatformSupervisor)"
+      },
+      {
+        "id": 436,
+        "act": "Web Application Testing Skill"
+      },
+      {
+        "id": 439,
+        "act": "Glyth_Maker"
+      },
+      {
+        "id": 444,
+        "act": "Career Path Deliberation Assistant"
+      },
+      {
+        "id": 445,
+        "act": "Girl Taking Selfie with Avatar Characters in Cinema"
+      },
+      {
+        "id": 447,
+        "act": "Through the Glass: One Eye in Focus"
+      },
+      {
+        "id": 457,
+        "act": "Landing Page Vibe Coding"
+      },
+      {
+        "id": 461,
+        "act": "GoPro Action"
+      },
+      {
+        "id": 464,
+        "act": "CI/CD Strategy for SpringBoot REST APIs Deployment"
+      },
+      {
+        "id": 466,
+        "act": "Quantitative Factor Research Engineer"
+      },
+      {
+        "id": 471,
+        "act": "Hyper-Realistic 3D Isometric Ottoman Masterpiece"
+      },
+      {
+        "id": 473,
+        "act": "Miniature Claymation Adventures on the Mushroom Cap"
+      },
+      {
+        "id": 477,
+        "act": "Digital Visiting Card Product Architect"
+      },
+      {
+        "id": 481,
+        "act": "Stranded in Time: The Victorian Traveler’s Panic"
+      },
+      {
+        "id": 496,
+        "act": "AI Video Creation Assistant"
+      },
+      {
+        "id": 497,
+        "act": "Cinematic Vertical Portrait of Vintage Car Radio at Night"
+      },
+      {
+        "id": 501,
+        "act": "The Covert Exchange in the Fog"
+      },
+      {
+        "id": 502,
+        "act": "Master Chinese Web Novel Author"
+      },
+      {
+        "id": 503,
+        "act": "Socratic Method for Ethical Discussions"
+      },
+      {
+        "id": 504,
+        "act": "A Moment Shared with the Wild"
+      },
+      {
+        "id": 512,
+        "act": "VR Horror Death Chatroom Simulator"
+      },
+      {
+        "id": 514,
+        "act": "Doom Horror Death Image Simulator"
+      },
+      {
+        "id": 521,
+        "act": "Interactive Quiz Application for TV Shows and Movies"
+      },
+      {
+        "id": 522,
+        "act": "Istanbul Travel Journal"
+      },
+      {
+        "id": 524,
+        "act": "Hyper-Realistic Marvel Comic Fusion Image Generation"
+      },
+      {
+        "id": 525,
+        "act": "Shadows of the Cold War: The 1962 Exchange"
+      },
+      {
+        "id": 527,
+        "act": "30 tweet Project"
+      },
+      {
+        "id": 538,
+        "act": "Coding Structure with MVC and SOLID Principles"
+      },
+      {
+        "id": 544,
+        "act": "Text-to-Image with Reference - Billiards Bar Scene"
+      },
+      {
+        "id": 555,
+        "act": "Master App Store Localization & ASO Prompt (2025) – Full Metadata Generator"
+      },
+      {
+        "id": 559,
+        "act": "Playing Card Sorcerer Portrait"
+      },
+      {
+        "id": 563,
+        "act": "A Wrinkle in Time"
+      },
+      {
+        "id": 565,
+        "act": "Protocol 2084: The Alleyway Hack"
+      },
+      {
+        "id": 566,
+        "act": "Expo + Supabase Edge Function Cold Start & Mobile Performance Analysis"
+      },
+      {
+        "id": 568,
+        "act": "Immigration Project Presentation Specialist"
+      },
+      {
+        "id": 578,
+        "act": "AWS Cloud Expert"
+      },
+      {
+        "id": 595,
+        "act": "Cinematic Realism"
+      },
+      {
+        "id": 596,
+        "act": "3D Character Render In High-End Disney Pixar Style"
+      },
+      {
+        "id": 597,
+        "act": "Serene Evening Rowboat Scene in Illustrative Realism"
+      },
+      {
+        "id": 598,
+        "act": "Minimalist Landscape Illustration by Ryo Takemasa"
+      },
+      {
+        "id": 599,
+        "act": "Comprehensive Image Analysis Report"
+      },
+      {
+        "id": 603,
+        "act": "The Missing Woman"
+      },
+      {
+        "id": 605,
+        "act": "Shadows of the Blue Note"
+      },
+      {
+        "id": 612,
+        "act": "New Year Celebration Video for Antioch Textile"
+      },
+      {
+        "id": 614,
+        "act": "Photorealistic Selfie Portrait Description"
+      },
+      {
+        "id": 620,
+        "act": "merge"
+      },
+      {
+        "id": 621,
+        "act": "Prompt Writer for Specific Project"
+      },
+      {
+        "id": 622,
+        "act": "Open Source / Free License Selection Assistant"
+      },
+      {
+        "id": 623,
+        "act": "License Selection Assistant from Intellectual Property expert"
+      },
+      {
+        "id": 655,
+        "act": "Cinematic Triptych: A Day in the Countryside"
+      },
+      {
+        "id": 656,
+        "act": "Cinematic Photography Triptych: Serene Meadow Portrait"
+      },
+      {
+        "id": 657,
+        "act": "Cinematic Neo-Noir Triptych in Digital Art"
+      },
+      {
+        "id": 659,
+        "act": "A broken, soul-crushed medieval knight"
+      },
+      {
+        "id": 661,
+        "act": "Retro-futuristic 1970s sci-fi"
+      },
+      {
+        "id": 663,
+        "act": "A relaxed copper-haired woman resting sideways on a bed in a soft, low-light setting."
+      },
+      {
+        "id": 667,
+        "act": "Household Maintenance & Safety Assistant"
+      },
+      {
+        "id": 668,
+        "act": "Where the Kami Still Walk"
+      },
+      {
+        "id": 671,
+        "act": "3x3 Grid Storyboarding from Photo"
+      },
+      {
+        "id": 676,
+        "act": "Joyful Woman in Nordic Sweater Dancing at a Nostalgic Family Christmas Gathering"
+      },
+      {
+        "id": 680,
+        "act": "Cinematic Street Photography Prompt"
+      },
+      {
+        "id": 682,
+        "act": "Ethereal Dreamlike Portrait Photography"
+      },
+      {
+        "id": 686,
+        "act": "Reflected Self-Portrait in an Urban Convex Traffic Mirror"
+      },
+      {
+        "id": 699,
+        "act": "A young woman relaxing in a wicker chair on a sunlit Mediterranean balcony."
+      },
+      {
+        "id": 700,
+        "act": "Amateur Girls' Night Selfie - Casual and Imperfect"
+      },
+      {
+        "id": 701,
+        "act": "Evening at a Turkish Dessert Shop - A Photographic Story"
+      },
+      {
+        "id": 702,
+        "act": "Image Analysis for Night Portrait in Heavy Snowfall"
+      },
+      {
+        "id": 703,
+        "act": "Night Shift Dessert Shop"
+      },
+      {
+        "id": 704,
+        "act": "Ultra-Realistic Ankara Indie Bar Scene Description"
+      },
+      {
+        "id": 706,
+        "act": "Ankara Night Scene in a Meyhane"
+      },
+      {
+        "id": 707,
+        "act": "Ultra-Realistic Turkish Living Room Scene During Football Match"
+      },
+      {
+        "id": 708,
+        "act": "Snapshot of a Turkish Hospital Night: A Dramedy Scene"
+      },
+      {
+        "id": 712,
+        "act": "Cozy Night in Ankara: A Turkish TV Series Snapshot"
+      },
+      {
+        "id": 716,
+        "act": "Turkish woman in Ankara with a surreal twist"
+      },
+      {
+        "id": 723,
+        "act": "Dual Lighting Narrative Scene"
+      },
+      {
+        "id": 730,
+        "act": "Comprehensive Repository Audit & Remediation Prompt"
+      },
+      {
+        "id": 731,
+        "act": "OpenAI Create Plan Skill"
+      },
+      {
+        "id": 742,
+        "act": "Man in a City"
+      },
+      {
+        "id": 745,
+        "act": "NBX"
+      },
+      {
+        "id": 746,
+        "act": "Sun-Drenched Outdoor Selfie of a Tattooed Female Subject with Tiki Decor"
+      },
+      {
+        "id": 753,
+        "act": "PDF Shareholder Extractor"
+      },
+      {
+        "id": 774,
+        "act": "Creative Storytelling Guide"
+      },
+      {
+        "id": 784,
+        "act": "Cinematic 3x3 Focal Lengths Grid"
+      },
+      {
+        "id": 788,
+        "act": "Hyper-Realistic Cinematic Pre-Dawn Scene in Ancient Mecca"
+      },
+      {
+        "id": 789,
+        "act": "Moody Cinematic Portrait Photography"
+      },
+      {
+        "id": 790,
+        "act": "Warm-Toned Creative Scene with Paper Figures"
+      },
+      {
+        "id": 791,
+        "act": "Nostalgic Road Trip - Atmospheric 35mm Film Photograph Prompt"
+      },
+      {
+        "id": 797,
+        "act": "AI Character Creation Guide"
+      },
+      {
+        "id": 803,
+        "act": "Candid Outdoor Group Photo in Natural Pool"
+      },
+      {
+        "id": 806,
+        "act": "Ultra Photorealistic Rooftop Pool Portrait"
+      },
+      {
+        "id": 808,
+        "act": "Mastermind"
+      },
+      {
+        "id": 810,
+        "act": "Corsairs of the Crimson Void"
+      },
+      {
+        "id": 812,
+        "act": "The Aether Workshop"
+      },
+      {
+        "id": 813,
+        "act": "Poe - Your Best Bud Chatbot"
+      },
+      {
+        "id": 814,
+        "act": "Creative Short Story Writing"
+      },
+      {
+        "id": 817,
+        "act": "Cinematic Close-Up of Craftsman with Paper Figures"
+      },
+      {
+        "id": 820,
+        "act": "Wary Bear in a Hostile Woodland"
+      },
+      {
+        "id": 822,
+        "act": "Integrity & Compliance Officer Audit Protocol"
+      },
+      {
+        "id": 827,
+        "act": "GitHub Repository Analysis and Enhancement"
+      },
+      {
+        "id": 835,
+        "act": "Minimalist Editorial Beauty Analysis with European Model"
+      },
+      {
+        "id": 836,
+        "act": "Minimalist Editorial Beauty Analysis with Turkish Model"
+      },
+      {
+        "id": 842,
+        "act": "Semantic Intent Analysis for Report Generation"
+      },
+      {
+        "id": 847,
+        "act": "A night in paris"
+      },
+      {
+        "id": 859,
+        "act": "Taglish Technical Storytelling Editor"
+      },
+      {
+        "id": 863,
+        "act": "Whispers of Noir"
+      },
+      {
+        "id": 864,
+        "act": "The Midnight Informant"
+      },
+      {
+        "id": 865,
+        "act": "Context7 Documentation Expert Agent"
+      },
+      {
+        "id": 868,
+        "act": "Geralt of Rivia Image Generation"
+      },
+      {
+        "id": 870,
+        "act": "Vibe Coding Master"
+      },
+      {
+        "id": 875,
+        "act": "Narrative Point of View Transformer"
+      },
+      {
+        "id": 878,
+        "act": "Continuous Execution Mode AI"
+      },
+      {
+        "id": 879,
+        "act": "Context Migration"
+      },
+      {
+        "id": 880,
+        "act": "Ultra-Realistic Winter Cinematography Series"
+      },
+      {
+        "id": 881,
+        "act": "Comic Book Team Illustration"
+      },
+      {
+        "id": 882,
+        "act": "Surrealist Painting Description: A Study of René Magritte's Style"
+      },
+      {
+        "id": 886,
+        "act": "Stock Analyser"
+      },
+      {
+        "id": 890,
+        "act": "Cartoon series"
+      },
+      {
+        "id": 893,
+        "act": "Random Girl"
+      },
+      {
+        "id": 894,
+        "act": "Dynamic character profile generator"
+      },
+      {
+        "id": 895,
+        "act": "Sticker"
+      },
+      {
+        "id": 901,
+        "act": "The Midnight Melody Mystery"
+      },
+      {
+        "id": 906,
+        "act": "Commit Message Preparation"
+      },
+      {
+        "id": 909,
+        "act": "AI Process Feasibility Interview"
+      },
+      {
+        "id": 910,
+        "act": "12-Month AI and Computer Vision Roadmap for Defense Applications"
+      },
+      {
+        "id": 918,
+        "act": "Rapid Prototyper"
+      },
+      {
+        "id": 919,
+        "act": "Test Automation Expert"
+      },
+      {
+        "id": 921,
+        "act": "Sprint Prioritizer"
+      },
+      {
+        "id": 938,
+        "act": "Creative Ideas Generator"
+      },
+      {
+        "id": 940,
+        "act": "Dreamy Artistic Photograph of a Young Woman in a Meadow"
+      },
+      {
+        "id": 941,
+        "act": "Surreal Miniature Cityscape with Giant Observer"
+      },
+      {
+        "id": 942,
+        "act": "Cinematic Close-Up Portrait Generation"
+      },
+      {
+        "id": 943,
+        "act": "Skill Creator"
+      },
+      {
+        "id": 945,
+        "act": "Universal Context Document (UCD) Generator"
+      },
+      {
+        "id": 948,
+        "act": "Project Skill & Resource Interviewer"
+      },
+      {
+        "id": 949,
+        "act": "Pokemon master"
+      },
+      {
+        "id": 951,
+        "act": "Customizable Job Scanner"
+      },
+      {
+        "id": 952,
+        "act": "AI Search Mastery Bootcamp"
+      },
+      {
+        "id": 955,
+        "act": "GLaDOS"
+      },
+      {
+        "id": 959,
+        "act": "Fisheye 90s"
+      },
+      {
+        "id": 960,
+        "act": "Analog camera"
+      },
+      {
+        "id": 964,
+        "act": "NOOMS Brand Story & Portfolio Background – Storytelling Format"
+      },
+      {
+        "id": 973,
+        "act": "The Glass Doppelgänger"
+      },
+      {
+        "id": 975,
+        "act": "Eerie Shadows: A Creepy Horror RPG Adventure"
+      },
+      {
+        "id": 976,
+        "act": "AI Travel Agent – Interview-Driven Planner"
+      },
+      {
+        "id": 981,
+        "act": "Module Wrap-Up & Next Steps Video Generation"
+      },
+      {
+        "id": 984,
+        "act": "Source-Hunting / OSINT Mode"
+      },
+      {
+        "id": 990,
+        "act": "gemini.md"
+      },
+      {
+        "id": 993,
+        "act": "\"YOU PROBABLY DON'T KNOW THIS\" Game"
+      },
+      {
+        "id": 995,
+        "act": "Modern Plaza Office Selfie — Corporate Aesthetic in Istanbul"
+      },
+      {
+        "id": 997,
+        "act": "Nightclub Mirror Selfie"
+      },
+      {
+        "id": 1002,
+        "act": "Step 3b: Creative Exploration"
+      },
+      {
+        "id": 1004,
+        "act": "Step 4b: Story Development"
+      },
+      {
+        "id": 1008,
+        "act": "Storyboard Grid"
+      },
+      {
+        "id": 1010,
+        "act": "Elements"
+      },
+      {
+        "id": 1011,
+        "act": "Production-Grade PostHog Integration for Next.js 15 (App Router)"
+      },
+      {
+        "id": 1013,
+        "act": "Comprehensive Data Integration and Customer Profiling Tool"
+      },
+      {
+        "id": 1019,
+        "act": "Kubernetes & Docker RPG Learning Engine"
+      },
+      {
+        "id": 1024,
+        "act": "Cyber Security Character Workflow"
+      },
+      {
+        "id": 1026,
+        "act": "TV Premiere Weekly Listing Prompt"
+      },
+      {
+        "id": 1031,
+        "act": "Screenplay Script with Cinematography Details"
+      },
+      {
+        "id": 1032,
+        "act": "caravan prompts"
+      },
+      {
+        "id": 1036,
+        "act": "Rick And Morty"
+      },
+      {
+        "id": 1037,
+        "act": "Lego Movie Style Prompt"
+      },
+      {
+        "id": 1042,
+        "act": "claude-md-master"
+      },
+      {
+        "id": 1043,
+        "act": "skill-master"
+      },
+      {
+        "id": 1044,
+        "act": "Ultra-Photorealistic Romantic Cinematic Scene in the Rain"
+      },
+      {
+        "id": 1058,
+        "act": "American Comic"
+      },
+      {
+        "id": 1059,
+        "act": "Create Icons"
+      },
+      {
+        "id": 1060,
+        "act": "Create Infographics"
+      },
+      {
+        "id": 1070,
+        "act": "Cinematic Ink & Color Illustration Generator — Gary Frank Style"
+      },
+      {
+        "id": 1074,
+        "act": "LinkedIn Summary Crafting Prompt"
+      },
+      {
+        "id": 1077,
+        "act": "5x2 Reverse Construction Process - Villa Demolition Storyboard"
+      },
+      {
+        "id": 1084,
+        "act": "Serious Man in Urban Setting"
+      },
+      {
+        "id": 1090,
+        "act": "Ultra-Realistic 3D Character Avatar Creation"
+      },
+      {
+        "id": 1092,
+        "act": "LEGO Minifigure Character Transformation"
+      },
+      {
+        "id": 1095,
+        "act": "Drunk Woman"
+      },
+      {
+        "id": 1096,
+        "act": "Abandoned Wife"
+      },
+      {
+        "id": 1097,
+        "act": "Aesthetic Sunset"
+      },
+      {
+        "id": 1102,
+        "act": "Deep GitHub Repository Understanding"
+      },
+      {
+        "id": 1109,
+        "act": "Analogy Generator"
+      },
+      {
+        "id": 1114,
+        "act": "Sports Events Weekly Listings Prompt"
+      },
+      {
+        "id": 1118,
+        "act": "Brotherhood Pressure — CN→EN & EN→EN Street Rewrite"
+      },
+      {
+        "id": 1119,
+        "act": "Driftcraft"
+      },
+      {
+        "id": 1120,
+        "act": "Lagrange Lens: Blue Wolf"
+      },
+      {
+        "id": 1121,
+        "act": "Socratic Lens"
+      }
+    ]
+  },
+  "finance_business": {
+    "title": "Tài chính & Kinh doanh (Finance & Business)",
+    "description": "Phân tích tài chính, bảo hiểm, dòng tiền, thị trường, lập kế hoạch ngân sách",
+    "keywords": [
+      "financ",
+      "accountant",
+      "invest",
+      "money",
+      "budget",
+      "real estate",
+      "bank",
+      "econom",
+      "business",
+      "tax",
+      "crypto",
+      "wealth",
+      "insurance"
+    ],
+    "items": [
+      {
+        "id": 42,
+        "act": "Real Estate Agent"
+      },
+      {
+        "id": 45,
+        "act": "Web Design Consultant"
+      },
+      {
+        "id": 48,
+        "act": "Accountant"
+      },
+      {
+        "id": 52,
+        "act": "Financial Analyst"
+      },
+      {
+        "id": 53,
+        "act": "Investment Manager"
+      },
+      {
+        "id": 57,
+        "act": "Self-Help Book"
+      },
+      {
+        "id": 63,
+        "act": "Statistician"
+      },
+      {
+        "id": 64,
+        "act": "Prompt Generator"
+      },
+      {
+        "id": 73,
+        "act": "IT Architect"
+      },
+      {
+        "id": 103,
+        "act": "Personal Shopper"
+      },
+      {
+        "id": 136,
+        "act": "Startup Idea Generator"
+      },
+      {
+        "id": 142,
+        "act": "Chief Executive Officer"
+      },
+      {
+        "id": 188,
+        "act": "Structured Iterative Reasoning Protocol (SIRP)"
+      },
+      {
+        "id": 235,
+        "act": "Student Tier"
+      },
+      {
+        "id": 250,
+        "act": "Budget Tracker"
+      },
+      {
+        "id": 252,
+        "act": "File Encryption Tool"
+      },
+      {
+        "id": 280,
+        "act": "Web Design"
+      },
+      {
+        "id": 312,
+        "act": "Travel Planner Prompt"
+      },
+      {
+        "id": 319,
+        "act": "Comprehensive Repository Analysis and Bug Fixing Framework"
+      },
+      {
+        "id": 336,
+        "act": "Corporate Studio Portrait (Auto Outfit for Men/Women)"
+      },
+      {
+        "id": 361,
+        "act": "Compare Top Virtualization Solutions"
+      },
+      {
+        "id": 362,
+        "act": "Virtualization Expert"
+      },
+      {
+        "id": 373,
+        "act": "Real-Time Multiplayer Defense Game"
+      },
+      {
+        "id": 381,
+        "act": "Internal Project Proposal for Hospital Collaboration"
+      },
+      {
+        "id": 387,
+        "act": "AI Stocks Investment Helper"
+      },
+      {
+        "id": 392,
+        "act": "Tumor Medical Industry Solution Business Plan"
+      },
+      {
+        "id": 409,
+        "act": "Personal Financial Adviosr"
+      },
+      {
+        "id": 422,
+        "act": "AI Tour Guide Business Plan for Foreign Tourists in China"
+      },
+      {
+        "id": 454,
+        "act": "Crypto Market Outlook Analyst"
+      },
+      {
+        "id": 463,
+        "act": "Bank Transaction Analysis"
+      },
+      {
+        "id": 467,
+        "act": "Banking System App Development with CRUD Operations"
+      },
+      {
+        "id": 469,
+        "act": "Cryptocurrency Contract Trading System"
+      },
+      {
+        "id": 472,
+        "act": "Create a detailed travel itinerary in HTML format"
+      },
+      {
+        "id": 506,
+        "act": "Trade Contract Review Expert"
+      },
+      {
+        "id": 508,
+        "act": "ERP to Feishu Data Integration Solution"
+      },
+      {
+        "id": 510,
+        "act": "RIP McKinsey: Here are 10 prompts to replace expensive business consultants"
+      },
+      {
+        "id": 526,
+        "act": "Project Evaluation for Production Decision"
+      },
+      {
+        "id": 530,
+        "act": "Senior Crypto Yapper & Community Strategist"
+      },
+      {
+        "id": 546,
+        "act": ".NET API Project Analysis"
+      },
+      {
+        "id": 554,
+        "act": "Annual Leave Balance Adjustment Processor"
+      },
+      {
+        "id": 574,
+        "act": "Ultra-Realistic Handwritten Hospital Note Image"
+      },
+      {
+        "id": 581,
+        "act": "Agent Organization Expert"
+      },
+      {
+        "id": 588,
+        "act": "Psychology Clinic Assistant"
+      },
+      {
+        "id": 662,
+        "act": "A retro-styled adventurer takes a pause by a lush jungle riverbank."
+      },
+      {
+        "id": 672,
+        "act": "\"University Website Section Designer\""
+      },
+      {
+        "id": 684,
+        "act": "Investment Tracking Dashboard"
+      },
+      {
+        "id": 689,
+        "act": "Candle Pattern Trading Chart Generator"
+      },
+      {
+        "id": 691,
+        "act": "Finance Tracker App Development Plan"
+      },
+      {
+        "id": 705,
+        "act": "Night Balcony Scene in Ankara with Efes"
+      },
+      {
+        "id": 713,
+        "act": "Ultra-Realistic Ankara Apartment Night Scene"
+      },
+      {
+        "id": 715,
+        "act": "Ultra-Realistic Street Photo Prompt: Turkish Woman in Ankara"
+      },
+      {
+        "id": 717,
+        "act": "Ultra-Realistic Amateur Street Photo of Ankara Scene"
+      },
+      {
+        "id": 718,
+        "act": "Ultra-Realistic Ankara Street Photo with Surreal Element"
+      },
+      {
+        "id": 754,
+        "act": "3D to 2D Floor Plan Converter"
+      },
+      {
+        "id": 770,
+        "act": "Color Consistency Analysis and Adjustment"
+      },
+      {
+        "id": 796,
+        "act": "AI Workflow Automation Specialist"
+      },
+      {
+        "id": 804,
+        "act": "Improving Business English"
+      },
+      {
+        "id": 823,
+        "act": "transcript_to_notes"
+      },
+      {
+        "id": 826,
+        "act": "Business Idea Feasibility and Technical Challenges Analysis"
+      },
+      {
+        "id": 828,
+        "act": "Annual Summary Creator"
+      },
+      {
+        "id": 840,
+        "act": "SQL Query Generator from Natural Language"
+      },
+      {
+        "id": 850,
+        "act": "Super Trader Model for Stock Analysis"
+      },
+      {
+        "id": 857,
+        "act": "Business Coaching Mentor"
+      },
+      {
+        "id": 860,
+        "act": "Convert PDF to Markdown"
+      },
+      {
+        "id": 861,
+        "act": "AI-powered data extraction and organization tool"
+      },
+      {
+        "id": 872,
+        "act": "Multi-Audience Application Discovery & Documentation Prompt"
+      },
+      {
+        "id": 892,
+        "act": "Meta-prompt"
+      },
+      {
+        "id": 902,
+        "act": "Present"
+      },
+      {
+        "id": 904,
+        "act": "SWOT Analysis for Political Risk and International Relations"
+      },
+      {
+        "id": 914,
+        "act": "DevOps Automator"
+      },
+      {
+        "id": 916,
+        "act": "Business"
+      },
+      {
+        "id": 922,
+        "act": "Trend Researcher"
+      },
+      {
+        "id": 925,
+        "act": "The PRD Mastermind"
+      },
+      {
+        "id": 926,
+        "act": "Scam Detection Conversation Helper"
+      },
+      {
+        "id": 962,
+        "act": "Question Quality Lab Game"
+      },
+      {
+        "id": 968,
+        "act": "Constraint-First Recipe Generator (Playful Edition)"
+      },
+      {
+        "id": 972,
+        "act": "Manhattan Mirage"
+      },
+      {
+        "id": 983,
+        "act": "Investigative Research Assistant"
+      },
+      {
+        "id": 989,
+        "act": "Cascading Failure Simulator"
+      },
+      {
+        "id": 1014,
+        "act": "Food Scout"
+      },
+      {
+        "id": 1015,
+        "act": "Investigative Research Assistant for Uncovering Non-Mainstream Information"
+      },
+      {
+        "id": 1038,
+        "act": "Precious Metals Price Analyst"
+      },
+      {
+        "id": 1046,
+        "act": "Blogging prompt"
+      },
+      {
+        "id": 1050,
+        "act": "Research NRI/NRO Account Services in India"
+      },
+      {
+        "id": 1067,
+        "act": "Elite B2B Lead Generation and SEO Audit Specialist"
+      },
+      {
+        "id": 1068,
+        "act": "Custom Travel Plan Generator"
+      },
+      {
+        "id": 1080,
+        "act": "Business Legal Assistant"
+      },
+      {
+        "id": 1081,
+        "act": "China Business Law Assistant"
+      },
+      {
+        "id": 1085,
+        "act": "I Think I Need a Lawyer — Neutral Legal Intake Organizer"
+      },
+      {
+        "id": 1093,
+        "act": "Web Application"
+      },
+      {
+        "id": 1110,
+        "act": "Advanced Account Research"
+      }
+    ]
+  },
+  "tech_engineering": {
+    "title": "Công nghệ & Kỹ thuật (Technology & Engineering)",
+    "description": "Giải thích phần mềm, kiến trúc hệ thống, AI, bảo mật, thiết kế UX/UI",
+    "keywords": [
+      "developer",
+      "software",
+      "code",
+      "engineer",
+      "tech",
+      "cyber",
+      "ux",
+      "ui",
+      "terminal",
+      "console",
+      "python",
+      "javascript",
+      "linux",
+      "algorithm",
+      "system"
+    ],
+    "items": [
+      {
+        "id": 1,
+        "act": "Ethereum Developer"
+      },
+      {
+        "id": 2,
+        "act": "Linux Terminal"
+      },
+      {
+        "id": 4,
+        "act": "Job Interviewer"
+      },
+      {
+        "id": 5,
+        "act": "JavaScript Console"
+      },
+      {
+        "id": 9,
+        "act": "Travel Guide"
+      },
+      {
+        "id": 10,
+        "act": "Plagiarism Checker"
+      },
+      {
+        "id": 31,
+        "act": "UX/UI Developer"
+      },
+      {
+        "id": 32,
+        "act": "Cyber Security Specialist"
+      },
+      {
+        "id": 33,
+        "act": "Recruiter"
+      },
+      {
+        "id": 38,
+        "act": "Career Counselor"
+      },
+      {
+        "id": 39,
+        "act": "Pet Behaviorist"
+      },
+      {
+        "id": 50,
+        "act": "Automobile Mechanic"
+      },
+      {
+        "id": 51,
+        "act": "Artist Advisor"
+      },
+      {
+        "id": 54,
+        "act": "Tea-Taster"
+      },
+      {
+        "id": 55,
+        "act": "Interior Decorator"
+      },
+      {
+        "id": 59,
+        "act": "Aphorism Book"
+      },
+      {
+        "id": 65,
+        "act": "Instructor in a School"
+      },
+      {
+        "id": 66,
+        "act": "SQL Terminal"
+      },
+      {
+        "id": 70,
+        "act": "Tech Reviewer"
+      },
+      {
+        "id": 71,
+        "act": "Developer Relations Consultant"
+      },
+      {
+        "id": 78,
+        "act": "DIY Expert"
+      },
+      {
+        "id": 83,
+        "act": "Yogi"
+      },
+      {
+        "id": 86,
+        "act": "Elocutionist"
+      },
+      {
+        "id": 87,
+        "act": "Scientific Data Visualizer"
+      },
+      {
+        "id": 88,
+        "act": "Car Navigation System"
+      },
+      {
+        "id": 89,
+        "act": "Hypnotherapist"
+      },
+      {
+        "id": 94,
+        "act": "Journalist"
+      },
+      {
+        "id": 95,
+        "act": "Digital Art Gallery Guide"
+      },
+      {
+        "id": 97,
+        "act": "Makeup Artist"
+      },
+      {
+        "id": 99,
+        "act": "Tech Writer"
+      },
+      {
+        "id": 100,
+        "act": "Ascii Artist"
+      },
+      {
+        "id": 101,
+        "act": "Python Interpreter"
+      },
+      {
+        "id": 109,
+        "act": "Machine Learning Engineer"
+      },
+      {
+        "id": 111,
+        "act": "SVG designer"
+      },
+      {
+        "id": 112,
+        "act": "IT Expert"
+      },
+      {
+        "id": 115,
+        "act": "Fullstack Software Developer"
+      },
+      {
+        "id": 118,
+        "act": "Time Travel Guide"
+      },
+      {
+        "id": 121,
+        "act": "R Programming Interpreter"
+      },
+      {
+        "id": 124,
+        "act": "PHP Interpreter"
+      },
+      {
+        "id": 127,
+        "act": "Software Quality Assurance Tester"
+      },
+      {
+        "id": 132,
+        "act": "Senior Frontend Developer"
+      },
+      {
+        "id": 133,
+        "act": "Code Reviewer"
+      },
+      {
+        "id": 134,
+        "act": "Accessibility Auditor"
+      },
+      {
+        "id": 140,
+        "act": "Commit Message Generator"
+      },
+      {
+        "id": 143,
+        "act": "Diagram Generator"
+      },
+      {
+        "id": 145,
+        "act": "Startup Tech Lawyer"
+      },
+      {
+        "id": 146,
+        "act": "Title Generator for written pieces"
+      },
+      {
+        "id": 147,
+        "act": "Product Manager"
+      },
+      {
+        "id": 148,
+        "act": "Project Manager"
+      },
+      {
+        "id": 152,
+        "act": "Cover Letter"
+      },
+      {
+        "id": 153,
+        "act": "Technology Transferer"
+      },
+      {
+        "id": 158,
+        "act": "Muslim Imam"
+      },
+      {
+        "id": 163,
+        "act": "Japanese Kanji quiz machine"
+      },
+      {
+        "id": 164,
+        "act": "Note-Taking assistant"
+      },
+      {
+        "id": 168,
+        "act": "Data Scientist"
+      },
+      {
+        "id": 173,
+        "act": "Unit Tester Assistant"
+      },
+      {
+        "id": 174,
+        "act": "Wisdom Generator"
+      },
+      {
+        "id": 177,
+        "act": "Acoustic Guitar Composer"
+      },
+      {
+        "id": 178,
+        "act": "Knowledgeable Software Development Mentor"
+      },
+      {
+        "id": 179,
+        "act": "Logic Builder Tool"
+      },
+      {
+        "id": 182,
+        "act": "GitHub Expert"
+      },
+      {
+        "id": 183,
+        "act": "Any Programming Language to Python Converter"
+      },
+      {
+        "id": 185,
+        "act": "Flirting Boy"
+      },
+      {
+        "id": 186,
+        "act": "Girl of Dreams"
+      },
+      {
+        "id": 187,
+        "act": "DAX Terminal"
+      },
+      {
+        "id": 191,
+        "act": "Idea Clarifier GPT"
+      },
+      {
+        "id": 193,
+        "act": "Architect Guide for Programmers"
+      },
+      {
+        "id": 195,
+        "act": "Tech-Challenged Customer"
+      },
+      {
+        "id": 199,
+        "act": "SEO specialist"
+      },
+      {
+        "id": 200,
+        "act": "Note-Taking Assistant"
+      },
+      {
+        "id": 205,
+        "act": "Rephraser with Obfuscation"
+      },
+      {
+        "id": 206,
+        "act": "Large Language Models Security Specialist"
+      },
+      {
+        "id": 207,
+        "act": "Tech Troubleshooter"
+      },
+      {
+        "id": 210,
+        "act": "Virtual Event Planner"
+      },
+      {
+        "id": 211,
+        "act": "Technical Architecture"
+      },
+      {
+        "id": 213,
+        "act": "Devops Engineer"
+      },
+      {
+        "id": 214,
+        "act": "Linux Script Developer"
+      },
+      {
+        "id": 215,
+        "act": "Reverse Prompt Engineer"
+      },
+      {
+        "id": 216,
+        "act": "Explainer with Analogies"
+      },
+      {
+        "id": 217,
+        "act": "Code Review Assistant"
+      },
+      {
+        "id": 220,
+        "act": "Decision Filter"
+      },
+      {
+        "id": 241,
+        "act": "3D FPS Game"
+      },
+      {
+        "id": 242,
+        "act": "Interactive Quiz"
+      },
+      {
+        "id": 244,
+        "act": "Advanced Color Picker Tool"
+      },
+      {
+        "id": 246,
+        "act": "Music Player"
+      },
+      {
+        "id": 249,
+        "act": "Recipe Finder"
+      },
+      {
+        "id": 253,
+        "act": "Code Snippet Manager"
+      },
+      {
+        "id": 255,
+        "act": "Flashcard Study System"
+      },
+      {
+        "id": 259,
+        "act": "Sudoku Game"
+      },
+      {
+        "id": 260,
+        "act": "Chess Game"
+      },
+      {
+        "id": 263,
+        "act": "Memory Card Game"
+      },
+      {
+        "id": 265,
+        "act": "File System Indexer CLI"
+      },
+      {
+        "id": 266,
+        "act": "3D Racing Game"
+      },
+      {
+        "id": 267,
+        "act": "HTTP Benchmarking Tool CLI"
+      },
+      {
+        "id": 269,
+        "act": "Network Packet Analyzer CLI"
+      },
+      {
+        "id": 270,
+        "act": "PDF Viewer"
+      },
+      {
+        "id": 274,
+        "act": "Multiplayer 3D Plane Game"
+      },
+      {
+        "id": 275,
+        "act": "Todo List"
+      },
+      {
+        "id": 277,
+        "act": "Isometric City Diorama"
+      },
+      {
+        "id": 281,
+        "act": "Isometric 3D Weather Cityscapes (PBR Textures)"
+      },
+      {
+        "id": 286,
+        "act": "Architectural Sketch & Markup Overlay"
+      },
+      {
+        "id": 291,
+        "act": "AI2sql SQL Model — Query Generator"
+      },
+      {
+        "id": 293,
+        "act": "Travel Poster"
+      },
+      {
+        "id": 296,
+        "act": "Predictive Eye Tracking Heatmap Generator"
+      },
+      {
+        "id": 298,
+        "act": "Realistic Food Image Generator"
+      },
+      {
+        "id": 301,
+        "act": "Legebdary Exploded View Prompt For nanobanana"
+      },
+      {
+        "id": 308,
+        "act": "A Clay-Crafted City: Mini [CITY NAME] World"
+      },
+      {
+        "id": 310,
+        "act": "Professional Badge Photo, Ready to Use"
+      },
+      {
+        "id": 315,
+        "act": "Django Unit Test Generator for Viewsets"
+      },
+      {
+        "id": 320,
+        "act": "Virtual Game Console Simulator"
+      },
+      {
+        "id": 328,
+        "act": "SaaS Landing Page Builder"
+      },
+      {
+        "id": 329,
+        "act": "Blender Object Maker"
+      },
+      {
+        "id": 330,
+        "act": "Code Review Agent"
+      },
+      {
+        "id": 332,
+        "act": "Senior System Architect Agent"
+      },
+      {
+        "id": 334,
+        "act": "Bakery Merge Bounty Game Overview"
+      },
+      {
+        "id": 335,
+        "act": "Monetization Strategy for Blockchain-Based Merging Games"
+      },
+      {
+        "id": 343,
+        "act": "Test Python Algorithmic Trading Project"
+      },
+      {
+        "id": 344,
+        "act": "Senior Prompt Engineer Role Guide"
+      },
+      {
+        "id": 346,
+        "act": "Comprehensive Content Review Plan"
+      },
+      {
+        "id": 347,
+        "act": "Arista Network Configuration Expert"
+      },
+      {
+        "id": 350,
+        "act": "Analyze PDF and Create MATLAB Code"
+      },
+      {
+        "id": 351,
+        "act": "AI Customer Support Specialist"
+      },
+      {
+        "id": 357,
+        "act": "Diabetes Treatment Advisor"
+      },
+      {
+        "id": 358,
+        "act": "Vacuum Arc Modeling under Transverse Magnetic Fields"
+      },
+      {
+        "id": 359,
+        "act": "AI Agent Security Evaluation Checklist"
+      },
+      {
+        "id": 360,
+        "act": "Meeting Room Booking Web App Development"
+      },
+      {
+        "id": 363,
+        "act": "Studio Portraits with Professional Postures"
+      },
+      {
+        "id": 364,
+        "act": "Create STYLE_GUIDE.md"
+      },
+      {
+        "id": 365,
+        "act": "Learn to Speak Spanish"
+      },
+      {
+        "id": 366,
+        "act": "$500/Hour AI Consultant Prompt"
+      },
+      {
+        "id": 368,
+        "act": "Xiaomi Company Self-Service Management System Frontend Development"
+      },
+      {
+        "id": 370,
+        "act": "CTI Analyst Cybersecurity Project Support"
+      },
+      {
+        "id": 372,
+        "act": "Minimal Web-Compatible Food Order App Development"
+      },
+      {
+        "id": 374,
+        "act": "Continue Coding Assistant"
+      },
+      {
+        "id": 376,
+        "act": "FDR Analysis Program for Commercial Aircraft"
+      },
+      {
+        "id": 377,
+        "act": "Integration and Planning Roadmap for Calculator Content"
+      },
+      {
+        "id": 380,
+        "act": "Luxury Ski Resort Selfie Scene Description"
+      },
+      {
+        "id": 382,
+        "act": "AI Face Swapping for E-commerce Personalization"
+      },
+      {
+        "id": 384,
+        "act": "Develop a Lazy Learner Software"
+      },
+      {
+        "id": 385,
+        "act": "College-Level Integrative Project Proposal Draft"
+      },
+      {
+        "id": 390,
+        "act": "Lower AI Generation Rate"
+      },
+      {
+        "id": 393,
+        "act": "Starting a Flutter Project"
+      },
+      {
+        "id": 394,
+        "act": "Comprehensive Academic Paper Writing Guide"
+      },
+      {
+        "id": 396,
+        "act": "Comprehensive UI/UX Mobile App Analysis"
+      },
+      {
+        "id": 398,
+        "act": "Optimize Large Data Reading in Code"
+      },
+      {
+        "id": 400,
+        "act": "LinkedIn comments"
+      },
+      {
+        "id": 401,
+        "act": "Detailed Image Generation Prompt for Fashion and Portrait Photography"
+      },
+      {
+        "id": 403,
+        "act": "POV Smartphone with Space-Themed Twitter UI in Central Park"
+      },
+      {
+        "id": 404,
+        "act": "Comprehensive DevOps Guide"
+      },
+      {
+        "id": 405,
+        "act": "Next.js Specialized Front-End Developer"
+      },
+      {
+        "id": 406,
+        "act": "AUTOSAR Software Module Developer"
+      },
+      {
+        "id": 415,
+        "act": "Shift Tracking Telegram Mini App"
+      },
+      {
+        "id": 419,
+        "act": "Lead Data Analyst with Data Engineering Expertise"
+      },
+      {
+        "id": 420,
+        "act": "Act as a Patient, Non-Technical Android Studio Guide"
+      },
+      {
+        "id": 421,
+        "act": "Chimera AI-Powered Prompt Optimization System"
+      },
+      {
+        "id": 423,
+        "act": "Plant Hero Section Image"
+      },
+      {
+        "id": 425,
+        "act": "Code Translator: Any Language to Any Language"
+      },
+      {
+        "id": 428,
+        "act": "Linux monitoring single html"
+      },
+      {
+        "id": 429,
+        "act": "Linux Monitoring Dashboard with React"
+      },
+      {
+        "id": 431,
+        "act": "Paladin Octem Plus (Research Swarm)"
+      },
+      {
+        "id": 432,
+        "act": "Website Security Vulnerability Checker"
+      },
+      {
+        "id": 433,
+        "act": "Sidebar Dashboard Design"
+      },
+      {
+        "id": 434,
+        "act": "Act as a Product Manager"
+      },
+      {
+        "id": 435,
+        "act": "Build an Advanced Music App for Android"
+      },
+      {
+        "id": 441,
+        "act": "Persuasive Article or Proposal Writing Guide"
+      },
+      {
+        "id": 443,
+        "act": "Academic Graduation Presentation Guide"
+      },
+      {
+        "id": 446,
+        "act": "UI Designer Role"
+      },
+      {
+        "id": 448,
+        "act": "Surreal CGI-Photography Hybrid Portrait"
+      },
+      {
+        "id": 449,
+        "act": "Hyperrealistic Food Photo Creator"
+      },
+      {
+        "id": 450,
+        "act": "Meta-Prompt Engineer"
+      },
+      {
+        "id": 452,
+        "act": "Squid Game - Red Light, Green Light Challenge"
+      },
+      {
+        "id": 455,
+        "act": "Hyperrealistic Food Video Creator"
+      },
+      {
+        "id": 456,
+        "act": "World of Darkness Colored Comic style"
+      },
+      {
+        "id": 462,
+        "act": "Pathology Slide Analysis Assistant"
+      },
+      {
+        "id": 468,
+        "act": "MPPT Simulation仿真代码"
+      },
+      {
+        "id": 474,
+        "act": "Melancholic Dawn on the Misty Pier"
+      },
+      {
+        "id": 475,
+        "act": "Professional Email Writer for Any Occasion"
+      },
+      {
+        "id": 476,
+        "act": "emails Professionals"
+      },
+      {
+        "id": 478,
+        "act": "Developer Daily Report Generator"
+      },
+      {
+        "id": 480,
+        "act": "Pharmacy Research Assistant"
+      },
+      {
+        "id": 484,
+        "act": "Frontend Developer Skill"
+      },
+      {
+        "id": 485,
+        "act": "Detailed mirror-selfie room scene"
+      },
+      {
+        "id": 487,
+        "act": "The Digital Frontier: Pixelated Pioneers"
+      },
+      {
+        "id": 489,
+        "act": "GitHub Code Structure Tutor"
+      },
+      {
+        "id": 490,
+        "act": "Algorithm Quick Guide"
+      },
+      {
+        "id": 493,
+        "act": "Comprehensive User Manual Creation for Multiple Modules"
+      },
+      {
+        "id": 494,
+        "act": "Building an Inventory Management System"
+      },
+      {
+        "id": 495,
+        "act": "Setting Up a New iOS App in Xcode"
+      },
+      {
+        "id": 498,
+        "act": "Personalized Skin Whitening Plan"
+      },
+      {
+        "id": 499,
+        "act": "Next.js React Comprehensive Clash of Clans Tool"
+      },
+      {
+        "id": 500,
+        "act": "Developer Work Analysis from Git Diff and Commit Message"
+      },
+      {
+        "id": 507,
+        "act": "Algorithm Analysis and Improvement Advisor"
+      },
+      {
+        "id": 509,
+        "act": "University Admission Interview Simulation"
+      },
+      {
+        "id": 511,
+        "act": "VR Headset Experience Simulator"
+      },
+      {
+        "id": 513,
+        "act": "How to Obtain a Radio and TV License in Nigeria"
+      },
+      {
+        "id": 515,
+        "act": "Update checker"
+      },
+      {
+        "id": 516,
+        "act": "Android Update Checker Script for Pydroid 3"
+      },
+      {
+        "id": 517,
+        "act": "Pull Request Review Assistant"
+      },
+      {
+        "id": 518,
+        "act": "Quizflix App Development"
+      },
+      {
+        "id": 519,
+        "act": "QuizFlix Mobile App Design for University Students"
+      },
+      {
+        "id": 520,
+        "act": "A three-panel monochromatic image"
+      },
+      {
+        "id": 523,
+        "act": "Young woman with mixed ethnicity features"
+      },
+      {
+        "id": 528,
+        "act": "Build a Self-Hosted App Dashboard with Next.js"
+      },
+      {
+        "id": 529,
+        "act": "Scientific Drawing Assistant"
+      },
+      {
+        "id": 531,
+        "act": "HCCVN-AI-VN Pro Max: Optimal AI System Design"
+      },
+      {
+        "id": 533,
+        "act": "Graduate-Level Review Paper on Humanoid Robots"
+      },
+      {
+        "id": 534,
+        "act": "PPT Generation Assistant"
+      },
+      {
+        "id": 535,
+        "act": "Chinese to English Translation Assistant"
+      },
+      {
+        "id": 537,
+        "act": "Optimize E-commerce Listing for High CTR with Holiday Design"
+      },
+      {
+        "id": 540,
+        "act": "Excel Formula Sensei"
+      },
+      {
+        "id": 543,
+        "act": "FAQ Generator"
+      },
+      {
+        "id": 547,
+        "act": "Set Up W&B and Run Pod During Training"
+      },
+      {
+        "id": 548,
+        "act": "Modern Fashion Photography"
+      },
+      {
+        "id": 551,
+        "act": "Using StanfordVL/BEHAVIOR-1K for Robotics and AI Tasks"
+      },
+      {
+        "id": 553,
+        "act": "Deep Copy Functionality"
+      },
+      {
+        "id": 556,
+        "act": "PowerShell Script for Managing Disabled AD Users"
+      },
+      {
+        "id": 557,
+        "act": "PowerShell Script to Move Disabled AD Users to Specific OU"
+      },
+      {
+        "id": 558,
+        "act": "Visual Web Application Development"
+      },
+      {
+        "id": 560,
+        "act": "Personalized Technical Intelligence Briefing for Edge AI in Defense"
+      },
+      {
+        "id": 561,
+        "act": "One-Click Design Mockup Creator"
+      },
+      {
+        "id": 562,
+        "act": "Vintage Invention Patent"
+      },
+      {
+        "id": 564,
+        "act": "Create Python Dev Container"
+      },
+      {
+        "id": 567,
+        "act": "Cold Start Safe Architecture"
+      },
+      {
+        "id": 569,
+        "act": "Blog System Development Guide"
+      },
+      {
+        "id": 570,
+        "act": "Customized Gift Idea Brainstorm Assistant"
+      },
+      {
+        "id": 571,
+        "act": "Flight Tracker Desktop Application"
+      },
+      {
+        "id": 573,
+        "act": "Letter from Lisa: A Heartfelt Plea to Her Father"
+      },
+      {
+        "id": 575,
+        "act": "Develop a Notion Clone Application"
+      },
+      {
+        "id": 576,
+        "act": "The Aether Prince at the Crystal Gala"
+      },
+      {
+        "id": 577,
+        "act": "AST Code Analysis Superpower"
+      },
+      {
+        "id": 579,
+        "act": "Accessibility Expert"
+      },
+      {
+        "id": 580,
+        "act": "Accessibility Testing Superpower"
+      },
+      {
+        "id": 583,
+        "act": "Professional Website Design Consultant"
+      },
+      {
+        "id": 585,
+        "act": "Custom Localization and AI Integration for Apps"
+      },
+      {
+        "id": 587,
+        "act": "Modern Video Player with Sharp UI"
+      },
+      {
+        "id": 590,
+        "act": "Node.js Automation Script Developer"
+      },
+      {
+        "id": 591,
+        "act": "Smart Application Developer Assistant"
+      },
+      {
+        "id": 592,
+        "act": "Website Creation Command"
+      },
+      {
+        "id": 593,
+        "act": "Darksynth Synthwave Music Composition Guide"
+      },
+      {
+        "id": 600,
+        "act": "A Half-Built Pyramid and the Leader Who Turned Labor Into Legacy"
+      },
+      {
+        "id": 601,
+        "act": "App Store Submission Agent"
+      },
+      {
+        "id": 602,
+        "act": "Comprehensive Web Application Development with Security and Performance Optimization"
+      },
+      {
+        "id": 604,
+        "act": "Photo-to-Isometric: Reality Slice Generator"
+      },
+      {
+        "id": 606,
+        "act": "Strategic App Design & Content Engineering Prompt"
+      },
+      {
+        "id": 608,
+        "act": "AI Assistant for University Assignments"
+      },
+      {
+        "id": 609,
+        "act": "Base64 Promt"
+      },
+      {
+        "id": 610,
+        "act": "3D Isometric Miniature City View with Weather"
+      },
+      {
+        "id": 613,
+        "act": "Automate Repository Management with OpenCode CLI"
+      },
+      {
+        "id": 615,
+        "act": "Bathroom Flash Selfie (IG-candid, non-explicit)"
+      },
+      {
+        "id": 616,
+        "act": "Elevator Mirror OOTD (full-body)"
+      },
+      {
+        "id": 617,
+        "act": "Snowy Street Cozy (winter fit, cinematic)"
+      },
+      {
+        "id": 618,
+        "act": "Nano Banana Pro Prompt Generator Instruction (Outputs JSON blocks like these)"
+      },
+      {
+        "id": 619,
+        "act": "Gym Mirror (UGC realism, no logos)"
+      },
+      {
+        "id": 624,
+        "act": "Act as a Resume Reviewer"
+      },
+      {
+        "id": 625,
+        "act": "Act as a Resume Reviewer for Anthropic Fellows Program"
+      },
+      {
+        "id": 627,
+        "act": "Cafe Window Seat (close-up, tactile realism)"
+      },
+      {
+        "id": 628,
+        "act": "Rooftop Sunset Lookback (half-body)"
+      },
+      {
+        "id": 629,
+        "act": "Rainy Umbrella Street (full-body)"
+      },
+      {
+        "id": 630,
+        "act": "Night Neon Alley (half-body, edgy)"
+      },
+      {
+        "id": 631,
+        "act": "Cozy Couch Lamp (close-up, warm tungsten)"
+      },
+      {
+        "id": 632,
+        "act": "Plant Bouquet Warm Lamp (your example vibe, adult-safe)"
+      },
+      {
+        "id": 633,
+        "act": "Airport Corridor Walk (full-body)"
+      },
+      {
+        "id": 634,
+        "act": "Museum Steps (full-body, cultural)"
+      },
+      {
+        "id": 635,
+        "act": "Nightclub Booth Flash (half-body, party candids)"
+      },
+      {
+        "id": 636,
+        "act": "Studio Beauty Editorial (close-up, pro)"
+      },
+      {
+        "id": 637,
+        "act": "Beach Walk Golden Hour (full-body, travel)"
+      },
+      {
+        "id": 638,
+        "act": "Tech Desk “Builder” (half-body, cozy monitor glow)"
+      },
+      {
+        "id": 639,
+        "act": "Restaurant Candle Close-up (intimate, not explicit)"
+      },
+      {
+        "id": 640,
+        "act": "Minimal Studio “iPhone Candid” (pro-quality but awkward framing)"
+      },
+      {
+        "id": 641,
+        "act": "“Blue Hour Bridge” (full-body, cinematic but still IG)"
+      },
+      {
+        "id": 642,
+        "act": "Kitchen Morning Window Light (candid, cozy)"
+      },
+      {
+        "id": 643,
+        "act": "Bookstore Aisle (artsy, quiet luxury)"
+      },
+      {
+        "id": 644,
+        "act": "Passenger Seat Car Selfie (golden hour, candid)"
+      },
+      {
+        "id": 645,
+        "act": "Balcony Coffee (morning haze, plant vibe)"
+      },
+      {
+        "id": 646,
+        "act": "Subway Platform (street candid, moody)"
+      },
+      {
+        "id": 648,
+        "act": "Hotel Hallway Fit Check (mirror vibe, no phone shown)"
+      },
+      {
+        "id": 649,
+        "act": "Pilates Studio (soft daylight, athletic elegance)"
+      },
+      {
+        "id": 650,
+        "act": "Grocery Aisle (relatable, comedic-candid)"
+      },
+      {
+        "id": 651,
+        "act": "Codebase WIKI Documentation Skill"
+      },
+      {
+        "id": 652,
+        "act": "Graduate Information and Communication System Design"
+      },
+      {
+        "id": 653,
+        "act": "Directive Assistant: Domina"
+      },
+      {
+        "id": 654,
+        "act": "Non-Technical IT Help & Clarity Assistant"
+      },
+      {
+        "id": 658,
+        "act": "PlainTalk Style Guide"
+      },
+      {
+        "id": 660,
+        "act": "Matrix Paradise Seraph"
+      },
+      {
+        "id": 664,
+        "act": "Art-W"
+      },
+      {
+        "id": 665,
+        "act": "Cinematic Urban Night Portrait - Moody Streetwear Aesthetic"
+      },
+      {
+        "id": 666,
+        "act": "Quiet Glow"
+      },
+      {
+        "id": 669,
+        "act": "Iterative Prompt Refinement Loop"
+      },
+      {
+        "id": 670,
+        "act": "Creating a Project Management Tool"
+      },
+      {
+        "id": 673,
+        "act": "Surreal City Scene"
+      },
+      {
+        "id": 674,
+        "act": "Language Detection"
+      },
+      {
+        "id": 677,
+        "act": "Detailed Image Analysis of a Mirror Selfie in a Bedroom Environment"
+      },
+      {
+        "id": 683,
+        "act": "Tropical Elegance: A Serene Afternoon in a Sunlit Villa"
+      },
+      {
+        "id": 688,
+        "act": "Professional GitHub Dashboard for Portfolio Enhancement"
+      },
+      {
+        "id": 690,
+        "act": "Candlestick Reversal Pattern Detector in Pine Script"
+      },
+      {
+        "id": 696,
+        "act": "English Practice App Guide"
+      },
+      {
+        "id": 697,
+        "act": "Enterprise Microservices Architecture Design"
+      },
+      {
+        "id": 698,
+        "act": "SwiftUI iOS App Development Guide"
+      },
+      {
+        "id": 709,
+        "act": "Photorealistic Mirror Selfie Analysis"
+      },
+      {
+        "id": 710,
+        "act": "Ultra-Realistic Night Scene in a Turkish Kitchen"
+      },
+      {
+        "id": 714,
+        "act": "Cozy Ankara Night: Capturing a Realistic Bedroom Scene"
+      },
+      {
+        "id": 722,
+        "act": "Realistic Mirror-Selfie Scene Creation"
+      },
+      {
+        "id": 725,
+        "act": "Realistic Amateur Vibe Candid Photography Prompt"
+      },
+      {
+        "id": 726,
+        "act": "Bug Discovery Code Assistant"
+      },
+      {
+        "id": 727,
+        "act": "Manim Code"
+      },
+      {
+        "id": 728,
+        "act": "SEO Strategy for Container Tracking Keywords"
+      },
+      {
+        "id": 729,
+        "act": "Excel Data to Figma Presentation Designer"
+      },
+      {
+        "id": 733,
+        "act": "Course Assignment Grader"
+      },
+      {
+        "id": 734,
+        "act": "Ethreal Current"
+      },
+      {
+        "id": 735,
+        "act": "Create an Unofficial Instagram API"
+      },
+      {
+        "id": 736,
+        "act": "Professional Full-Stack Developer for Network Mapping & Monitoring Application"
+      },
+      {
+        "id": 737,
+        "act": "Comprehensive POS Application Development with FIFO and Reporting"
+      },
+      {
+        "id": 738,
+        "act": "Node Web App for Czech Invoice PDF Generation"
+      },
+      {
+        "id": 741,
+        "act": "Numerology Expert Guidance"
+      },
+      {
+        "id": 743,
+        "act": "Build a UI Library for ESP32"
+      },
+      {
+        "id": 744,
+        "act": "ESP32 UI Library Development"
+      },
+      {
+        "id": 747,
+        "act": "SAP ABAP Carbon Footprint Module Graduation Project Documentation"
+      },
+      {
+        "id": 748,
+        "act": "Code Review Expert"
+      },
+      {
+        "id": 749,
+        "act": "Networking Engineer Portfolio Website"
+      },
+      {
+        "id": 750,
+        "act": "Senior Java Backend Engineer Expert"
+      },
+      {
+        "id": 755,
+        "act": "Mechanical Part Render to Technical Drawing Converter"
+      },
+      {
+        "id": 756,
+        "act": "3D Mechanical Part Image to Technical Drawing Conversion"
+      },
+      {
+        "id": 761,
+        "act": "Expert Guidance for Acoustic and Deep Learning Research"
+      },
+      {
+        "id": 762,
+        "act": "Security Monitoring with Wazuh: A Comprehensive Research Project"
+      },
+      {
+        "id": 763,
+        "act": "Topic Article"
+      },
+      {
+        "id": 764,
+        "act": "Advanced Text Converter for Large Datasets"
+      },
+      {
+        "id": 765,
+        "act": "Develop a UI Library for ESP32"
+      },
+      {
+        "id": 767,
+        "act": "File Analysis API with Node.js and Express"
+      },
+      {
+        "id": 768,
+        "act": "2026 Mobile Poster Creator"
+      },
+      {
+        "id": 773,
+        "act": "Car poster"
+      },
+      {
+        "id": 776,
+        "act": "Full-Stack Engineer for Airline Simulation Center App"
+      },
+      {
+        "id": 777,
+        "act": "Senior Full-Stack Developer for Airline Simulation Center"
+      },
+      {
+        "id": 778,
+        "act": "Senior Product Engineer + Data Scientist for Turkish Car Valuation Platform"
+      },
+      {
+        "id": 779,
+        "act": "Crafting LinkedIn Messages to Hiring Managers"
+      },
+      {
+        "id": 783,
+        "act": "Act as an FTTH Telecommunications Expert"
+      },
+      {
+        "id": 787,
+        "act": "Water Balance Management Platform Design"
+      },
+      {
+        "id": 792,
+        "act": "Develop a Modern Website for Sporsmaç Using React Native"
+      },
+      {
+        "id": 794,
+        "act": "Research Paper Feature Diagram"
+      },
+      {
+        "id": 795,
+        "act": "Couples Therapy App Development Guide"
+      },
+      {
+        "id": 801,
+        "act": "Assistente de Geração de Imagens com Identidade Visual Padrão"
+      },
+      {
+        "id": 802,
+        "act": "Serene Mirror-Selfie Portrait in Sunlit Bedroom"
+      },
+      {
+        "id": 811,
+        "act": "Whispers in Light Trails"
+      },
+      {
+        "id": 816,
+        "act": "Football Player Introduction Poster Template"
+      },
+      {
+        "id": 818,
+        "act": "Comprehensive Roadmap for AI and Computer Vision Specialization in Defense Systems"
+      },
+      {
+        "id": 821,
+        "act": "Code Review Specialist 2"
+      },
+      {
+        "id": 830,
+        "act": "Custom Logo Design for Website"
+      },
+      {
+        "id": 831,
+        "act": "Access Unlimited ChatGPT"
+      },
+      {
+        "id": 832,
+        "act": "Create a PS5-themed Portfolio"
+      },
+      {
+        "id": 834,
+        "act": "Understanding and Utilizing LLMs"
+      },
+      {
+        "id": 839,
+        "act": "Act as an Electron Frontend Developer"
+      },
+      {
+        "id": 843,
+        "act": "Policy Agent Client Manager"
+      },
+      {
+        "id": 845,
+        "act": "White-Box Web Application Security Audit & Penetration Testing Prompt for AI Code Editors (Cursor, Windsurf, Antigravity)"
+      },
+      {
+        "id": 849,
+        "act": "Develop a Media Center Plan for Hajj"
+      },
+      {
+        "id": 851,
+        "act": "Elite Private Equity Fund Manager Stock Analysis"
+      },
+      {
+        "id": 853,
+        "act": "The Witcher - Double Exposure Effect"
+      },
+      {
+        "id": 856,
+        "act": "Develop Android Apps from Screenshots"
+      },
+      {
+        "id": 862,
+        "act": "VSCode CodeTour Expert Agent"
+      },
+      {
+        "id": 866,
+        "act": "Sports Research Assistant"
+      },
+      {
+        "id": 867,
+        "act": "The Quant Edge Engine"
+      },
+      {
+        "id": 869,
+        "act": "Fintech Product and Operations Assistant"
+      },
+      {
+        "id": 871,
+        "act": "Technical Codebase Discovery & Onboarding Prompt"
+      },
+      {
+        "id": 877,
+        "act": "Cinematic Neon Alley – Urban Night Walk (Album Cover Style)"
+      },
+      {
+        "id": 884,
+        "act": "Bibliographic Review Writing Assistant"
+      },
+      {
+        "id": 885,
+        "act": "Job and Internship Tracker for Google Sheets"
+      },
+      {
+        "id": 887,
+        "act": "Web App for Task Management and Scheduling"
+      },
+      {
+        "id": 891,
+        "act": "Sentry Bug Fixer"
+      },
+      {
+        "id": 896,
+        "act": "content"
+      },
+      {
+        "id": 897,
+        "act": "postmortem"
+      },
+      {
+        "id": 898,
+        "act": "professional linguistic expert and translator"
+      },
+      {
+        "id": 899,
+        "act": "Slap Game Challenge: Act as the Ultimate Slap Game Master"
+      },
+      {
+        "id": 900,
+        "act": "Vision-to-json"
+      },
+      {
+        "id": 903,
+        "act": "Seaside walker"
+      },
+      {
+        "id": 905,
+        "act": "Network Engineer"
+      },
+      {
+        "id": 907,
+        "act": "Tattoo Studio Booking Web App Development"
+      },
+      {
+        "id": 908,
+        "act": "DUT Citation Accuracy Project"
+      },
+      {
+        "id": 912,
+        "act": "AI Engineer"
+      },
+      {
+        "id": 913,
+        "act": "Backend Architect"
+      },
+      {
+        "id": 915,
+        "act": "Frontend Developer"
+      },
+      {
+        "id": 917,
+        "act": "Mobile App Builder"
+      },
+      {
+        "id": 920,
+        "act": "Feedback Synthesizer"
+      },
+      {
+        "id": 923,
+        "act": "Joker: Tech Humor Master"
+      },
+      {
+        "id": 924,
+        "act": "UiPath XAML Code Review Specialist"
+      },
+      {
+        "id": 929,
+        "act": "The Gravedigger's Vigil"
+      },
+      {
+        "id": 930,
+        "act": "Chinese-English Translator"
+      },
+      {
+        "id": 931,
+        "act": "Multilingual Writing Improvement Assistant"
+      },
+      {
+        "id": 932,
+        "act": "Terminal Drift"
+      },
+      {
+        "id": 933,
+        "act": "Social Media Post Creator for Recruitment"
+      },
+      {
+        "id": 934,
+        "act": "Prompt Generator for Language Models"
+      },
+      {
+        "id": 935,
+        "act": "GPT_conversation_output"
+      },
+      {
+        "id": 936,
+        "act": "Master Prompt Architect & Context Engineer"
+      },
+      {
+        "id": 937,
+        "act": "python"
+      },
+      {
+        "id": 939,
+        "act": "MCP Builder"
+      },
+      {
+        "id": 944,
+        "act": "Ultimate Inpainting / Reference Prompt"
+      },
+      {
+        "id": 946,
+        "act": "The tyrant King"
+      },
+      {
+        "id": 950,
+        "act": "Claude Code Skill (Slash Command): review-and-commit.md"
+      },
+      {
+        "id": 956,
+        "act": "Prompt Architect Pro"
+      },
+      {
+        "id": 957,
+        "act": "Synthesis Architect Pro"
+      },
+      {
+        "id": 958,
+        "act": "Create Organizational Charts and Workflows for University Departments"
+      },
+      {
+        "id": 961,
+        "act": "The Pragmatic Architect: Mastering Tech with Humor and Precision"
+      },
+      {
+        "id": 963,
+        "act": "nanobanana try clothing"
+      },
+      {
+        "id": 966,
+        "act": "Big Room Festival Anthem Creation for Suno AI v5"
+      },
+      {
+        "id": 967,
+        "act": "Markdown Task Implementer"
+      },
+      {
+        "id": 969,
+        "act": "Wings of the Dust Bowl"
+      },
+      {
+        "id": 970,
+        "act": "The Last Adagio"
+      },
+      {
+        "id": 978,
+        "act": "Act as a Job Application Reviewer"
+      },
+      {
+        "id": 979,
+        "act": "Terminal Velocity"
+      },
+      {
+        "id": 980,
+        "act": "Alpine Freefall"
+      },
+      {
+        "id": 982,
+        "act": "Strict Markdown-Only Output Enforcement"
+      },
+      {
+        "id": 985,
+        "act": "Beginner's Guide to Building and Deploying LLMs"
+      },
+      {
+        "id": 986,
+        "act": "Project System and Art Style Consistency Instructions"
+      },
+      {
+        "id": 987,
+        "act": "Musician Portfolio Website Design"
+      },
+      {
+        "id": 988,
+        "act": "Intent Recognition Planner Agent"
+      },
+      {
+        "id": 992,
+        "act": "Cinematic Ultra-Realistic Image-to-Video Prompt Engineer"
+      },
+      {
+        "id": 994,
+        "act": "Build a DDQN Snake Game with TensorFlow.js in a Single HTML File"
+      },
+      {
+        "id": 996,
+        "act": "In-Flight Vacation Selfie — Natural Front Camera Perspective"
+      },
+      {
+        "id": 998,
+        "act": "Network Engineer: Home Edition"
+      },
+      {
+        "id": 1001,
+        "act": "Step 3a: Technical Deep Dive"
+      },
+      {
+        "id": 1005,
+        "act": "Step 5: Final Review"
+      },
+      {
+        "id": 1009,
+        "act": "Remotion"
+      },
+      {
+        "id": 1017,
+        "act": "prompts.chat Promotional Video using Remotion"
+      },
+      {
+        "id": 1020,
+        "act": "Valorant Agent Style"
+      },
+      {
+        "id": 1021,
+        "act": "Social Media Cocktail Web Site Post"
+      },
+      {
+        "id": 1022,
+        "act": "Social media swipe post content #1"
+      },
+      {
+        "id": 1023,
+        "act": "Ultra-photorealistic Infographics"
+      },
+      {
+        "id": 1027,
+        "act": "copilot"
+      },
+      {
+        "id": 1029,
+        "act": "Note Guru"
+      },
+      {
+        "id": 1030,
+        "act": "Personalized Numerology Reading"
+      },
+      {
+        "id": 1039,
+        "act": "The Ultimate TypeScript Code Review"
+      },
+      {
+        "id": 1040,
+        "act": "PHP Microscope: Forensic Codebase Autopsy Protocol"
+      },
+      {
+        "id": 1048,
+        "act": "Improve the following code"
+      },
+      {
+        "id": 1049,
+        "act": "Personal Form Builder App Design"
+      },
+      {
+        "id": 1052,
+        "act": "AI App Prototyping for Chat Interface"
+      },
+      {
+        "id": 1056,
+        "act": "Comprehensive Code Review Expert"
+      },
+      {
+        "id": 1057,
+        "act": "Claude Code Statusline Design"
+      },
+      {
+        "id": 1061,
+        "act": "Design App Store Style Icons"
+      },
+      {
+        "id": 1062,
+        "act": "Linkedin profile enhancing"
+      },
+      {
+        "id": 1066,
+        "act": "Game Theory for Students: Easy and Engaging Learning"
+      },
+      {
+        "id": 1072,
+        "act": "The Architect: Hacker-Protector & Viral Engineer"
+      },
+      {
+        "id": 1073,
+        "act": "Transform Subjects into Adorable Plush Forms"
+      },
+      {
+        "id": 1075,
+        "act": "Critical-Parallel Inquiry Format"
+      },
+      {
+        "id": 1076,
+        "act": "GPT-5 | EXPERT PROMPT ENGINEER MODE (CONDENSED)"
+      },
+      {
+        "id": 1083,
+        "act": "Streaks Mobile App Development Prompt"
+      },
+      {
+        "id": 1086,
+        "act": "Professional Networking Language for Career Fairs"
+      },
+      {
+        "id": 1087,
+        "act": "Resume tailoring"
+      },
+      {
+        "id": 1088,
+        "act": "Senior Frontend Debugger for SPA Websites (Angular, React, Vite)"
+      },
+      {
+        "id": 1089,
+        "act": "Fix Blank Screen Issues After Deploy on Vercel (Angular, React, Vite)"
+      },
+      {
+        "id": 1094,
+        "act": "AI builder"
+      },
+      {
+        "id": 1098,
+        "act": "Universal Job Fit Evaluation Prompt"
+      },
+      {
+        "id": 1099,
+        "act": "Building a Scalable Search Service with FastAPI and PostgreSQL"
+      },
+      {
+        "id": 1100,
+        "act": "Enterprise Talent Development Management System Design"
+      },
+      {
+        "id": 1103,
+        "act": "Code Recon"
+      },
+      {
+        "id": 1104,
+        "act": "Creating a Comprehensive Elasticsearch Search Project with FastAPI"
+      },
+      {
+        "id": 1105,
+        "act": "Daiquiri Cocktail Cinematic Video"
+      },
+      {
+        "id": 1106,
+        "act": "Solar System Scale Model Classroom Poster"
+      },
+      {
+        "id": 1107,
+        "act": "Prompt Optimization"
+      },
+      {
+        "id": 1108,
+        "act": "4 Optimized Versions of A Prompt (in Arabic)"
+      },
+      {
+        "id": 1112,
+        "act": "Prompt Engineering Expert"
+      },
+      {
+        "id": 1115,
+        "act": "Cocktail videos"
+      }
+    ]
+  },
+  "education_science": {
+    "title": "Giáo dục & Khoa học (Education & Science)",
+    "description": "Giải thích kiến thức logic, khoa học tự nhiên, triết học, lịch sử, y khoa",
+    "keywords": [
+      "teacher",
+      "math",
+      "philosop",
+      "doctor",
+      "medical",
+      "science",
+      "physic",
+      "chemist",
+      "histor",
+      "etymolog",
+      "educat",
+      "tutor",
+      "academic"
+    ],
+    "items": [
+      {
+        "id": 8,
+        "act": "Spoken English Teacher and Improver"
+      },
+      {
+        "id": 27,
+        "act": "Philosophy Teacher"
+      },
+      {
+        "id": 28,
+        "act": "Philosopher"
+      },
+      {
+        "id": 29,
+        "act": "Math Teacher"
+      },
+      {
+        "id": 30,
+        "act": "AI Writing Tutor"
+      },
+      {
+        "id": 35,
+        "act": "Etymologist"
+      },
+      {
+        "id": 44,
+        "act": "Dentist"
+      },
+      {
+        "id": 46,
+        "act": "AI Assisted Doctor"
+      },
+      {
+        "id": 47,
+        "act": "Doctor"
+      },
+      {
+        "id": 72,
+        "act": "Academician"
+      },
+      {
+        "id": 80,
+        "act": "Socrat"
+      },
+      {
+        "id": 82,
+        "act": "Educational Content Creator"
+      },
+      {
+        "id": 90,
+        "act": "Historian"
+      },
+      {
+        "id": 105,
+        "act": "Virtual Doctor"
+      },
+      {
+        "id": 116,
+        "act": "Mathematician"
+      },
+      {
+        "id": 180,
+        "act": "Guessing Game Master"
+      },
+      {
+        "id": 181,
+        "act": "Teacher of React.js"
+      },
+      {
+        "id": 190,
+        "act": "LinkedIn Ghostwriter"
+      },
+      {
+        "id": 198,
+        "act": "Study planner"
+      },
+      {
+        "id": 203,
+        "act": "Healing Grandma"
+      },
+      {
+        "id": 297,
+        "act": "Clean BibTeX Formatter for Academic Projects"
+      },
+      {
+        "id": 309,
+        "act": "Architectural Study Sheet: [HISTORIC_SITE_NAME]"
+      },
+      {
+        "id": 313,
+        "act": "Hyper-Realistic Clay Bust From Photo Template"
+      },
+      {
+        "id": 342,
+        "act": "In-Depth Article Enhancement with Research"
+      },
+      {
+        "id": 353,
+        "act": "Medical Consultant"
+      },
+      {
+        "id": 391,
+        "act": "Academic Text Refinement Assistant"
+      },
+      {
+        "id": 410,
+        "act": "Act as a Senior Research Paper Evaluator"
+      },
+      {
+        "id": 416,
+        "act": "Exploring Jung's Understanding of Spirit through Rumi's Poem"
+      },
+      {
+        "id": 427,
+        "act": "Analyze Previous Year Question Papers"
+      },
+      {
+        "id": 442,
+        "act": "illustration for teenagers, side silhouette of a young person. Inside the head a question mark transforming into light t. Deep purple and blue tones, minimalist and , v."
+      },
+      {
+        "id": 532,
+        "act": "Evaluate and Suggest Improvements for Computer Science PhD Thesis"
+      },
+      {
+        "id": 607,
+        "act": "English Teacher for Translation and Cultural Explanation"
+      },
+      {
+        "id": 626,
+        "act": "Structured Job Application Cleanup"
+      },
+      {
+        "id": 679,
+        "act": "Study Review Companion"
+      },
+      {
+        "id": 692,
+        "act": "English Language Tutor for Turkish Speakers"
+      },
+      {
+        "id": 740,
+        "act": "Sophisticated Istanbul Stroll"
+      },
+      {
+        "id": 766,
+        "act": "Literature Review Writing Assistant"
+      },
+      {
+        "id": 775,
+        "act": "Academic Writing Workshop Plan"
+      },
+      {
+        "id": 780,
+        "act": "Innovative Math Teaching Method"
+      },
+      {
+        "id": 785,
+        "act": "3D Medical Anatomy Model Render Prompt"
+      },
+      {
+        "id": 819,
+        "act": "Young Saudi Doctor in a Professional Setting"
+      },
+      {
+        "id": 825,
+        "act": "Exploring Gaps in Thesis Writing Literature with ChatGPT"
+      },
+      {
+        "id": 833,
+        "act": "Educational Platform Support Assistant"
+      },
+      {
+        "id": 855,
+        "act": "CV Writing Assistant"
+      },
+      {
+        "id": 873,
+        "act": "Comprehensive Integrative Medical Writing"
+      },
+      {
+        "id": 888,
+        "act": "Ultra-High-Resolution Portrait Restoration"
+      },
+      {
+        "id": 974,
+        "act": "Phantom Strike"
+      },
+      {
+        "id": 977,
+        "act": "“How It Works” Educational Dioramas"
+      },
+      {
+        "id": 1079,
+        "act": "Senior Academic Advisor"
+      }
+    ]
+  },
+  "marketing_viral_hooks": {
+    "title": "Marketing & Viral Hooks (Marketing & High-Retention Hooks)",
+    "description": "Kỹ thuật giữ chân 3s đầu, thông điệp ngắn gọn, chuyển đổi cao, tranh biện kịch tính",
+    "keywords": [
+      "advertis",
+      "market",
+      "copywrit",
+      "campaign",
+      "brand",
+      "sales",
+      "motivat",
+      "debat",
+      "speech",
+      "persua",
+      "hook",
+      "viral",
+      "influencer"
+    ],
+    "items": [
+      {
+        "id": 12,
+        "act": "Advertiser"
+      },
+      {
+        "id": 16,
+        "act": "Motivational Coach"
+      },
+      {
+        "id": 18,
+        "act": "Debater"
+      },
+      {
+        "id": 19,
+        "act": "Debate Coach"
+      },
+      {
+        "id": 26,
+        "act": "Motivational Speaker"
+      },
+      {
+        "id": 76,
+        "act": "Fallacy Finder"
+      },
+      {
+        "id": 79,
+        "act": "Social Media Influencer"
+      },
+      {
+        "id": 84,
+        "act": "Essay Writer"
+      },
+      {
+        "id": 85,
+        "act": "Social Media Manager"
+      },
+      {
+        "id": 139,
+        "act": "Salesperson"
+      },
+      {
+        "id": 144,
+        "act": "Speech-Language Pathologist (SLP)"
+      },
+      {
+        "id": 196,
+        "act": "Creative Branding Strategist"
+      },
+      {
+        "id": 230,
+        "act": "Enterprise Sponsorship"
+      },
+      {
+        "id": 264,
+        "act": "Memory Profiler CLI"
+      },
+      {
+        "id": 282,
+        "act": "Whimsical 3D Brand Miniatures"
+      },
+      {
+        "id": 294,
+        "act": "Pitchside Tunnel Moment with Your Favorite Footballer"
+      },
+      {
+        "id": 304,
+        "act": "Digital product ideas"
+      },
+      {
+        "id": 316,
+        "act": "Sales"
+      },
+      {
+        "id": 318,
+        "act": "Selar ideas for automation"
+      },
+      {
+        "id": 367,
+        "act": "Viral Video Analyzer for TikTok and Xiaohongshu"
+      },
+      {
+        "id": 369,
+        "act": "TikTok Marketing Visual Designer Agent"
+      },
+      {
+        "id": 371,
+        "act": "Customizable Web Template for Company Branding"
+      },
+      {
+        "id": 399,
+        "act": "Pet Store Advertising Campaign Strategy"
+      },
+      {
+        "id": 417,
+        "act": "Stock Market Analyst: Market Move Suggestions"
+      },
+      {
+        "id": 430,
+        "act": "Stock Market Analysis Expert"
+      },
+      {
+        "id": 479,
+        "act": "Act as an Etsy Niche Product Researcher"
+      },
+      {
+        "id": 539,
+        "act": "Email Marketing"
+      },
+      {
+        "id": 541,
+        "act": "Universal Lead & Candidate Outreach Generator (HR, SALES)"
+      },
+      {
+        "id": 545,
+        "act": "Chinese Hookah Training Program"
+      },
+      {
+        "id": 550,
+        "act": "Mirror Product Photo"
+      },
+      {
+        "id": 611,
+        "act": "Edit a New Year's Video for Antioch Textile with Nano Banana"
+      },
+      {
+        "id": 647,
+        "act": "Farmers Market (colorful produce, candid)"
+      },
+      {
+        "id": 687,
+        "act": "Comprehensive Digital Marketing Strategy for Fashion Brand"
+      },
+      {
+        "id": 694,
+        "act": "Product Promotion Expert"
+      },
+      {
+        "id": 751,
+        "act": "UGC-Style TikTok Script Generator for Gen Z Skincare"
+      },
+      {
+        "id": 752,
+        "act": "Google Ads Title Copywriter"
+      },
+      {
+        "id": 760,
+        "act": "Professional Image Creation for Printable Sales Materials"
+      },
+      {
+        "id": 786,
+        "act": "Digital Marketing Project Ideas for Students"
+      },
+      {
+        "id": 824,
+        "act": "Photorealistic Image Prompt for Fashion and Environment"
+      },
+      {
+        "id": 846,
+        "act": "Collaborative AI Marketing Platform"
+      },
+      {
+        "id": 876,
+        "act": "Viral TikTok Glühwein Recipe in Five Languages"
+      },
+      {
+        "id": 1012,
+        "act": "Personal Assistant for Zone of Excellence Management"
+      },
+      {
+        "id": 1018,
+        "act": "Influencer Candid Bedtime Selfie"
+      },
+      {
+        "id": 1071,
+        "act": "Marketing Mastermind for Product Promotion"
+      },
+      {
+        "id": 1078,
+        "act": "Futuristic Supercar Brand Logo"
+      },
+      {
+        "id": 1091,
+        "act": "Recursive Niche Deconstruction for Market Research"
+      },
+      {
+        "id": 1101,
+        "act": "Gen Z Content & Online Sales Prompt Generator"
+      },
+      {
+        "id": 1111,
+        "act": "Industry/Market Intelligence"
+      },
+      {
+        "id": 1113,
+        "act": "Sales Research"
+      }
+    ]
+  },
+  "lifestyle_wellness": {
+    "title": "Đời sống & Sức khỏe (Lifestyle & Wellness)",
+    "description": "Kỹ năng sống, tâm lý học, chế độ tập luyện, phát triển bản thân",
+    "keywords": [
+      "coach",
+      "fitness",
+      "trainer",
+      "health",
+      "mental",
+      "life",
+      "relationship",
+      "habit",
+      "diet",
+      "nutrition",
+      "mindful"
+    ],
+    "items": [
+      {
+        "id": 17,
+        "act": "Composer"
+      },
+      {
+        "id": 23,
+        "act": "Relationship Coach"
+      },
+      {
+        "id": 34,
+        "act": "Life Coach"
+      },
+      {
+        "id": 40,
+        "act": "Personal Trainer"
+      },
+      {
+        "id": 41,
+        "act": "Mental Health Adviser"
+      },
+      {
+        "id": 67,
+        "act": "Dietitian"
+      },
+      {
+        "id": 96,
+        "act": "Public Speaking Coach"
+      },
+      {
+        "id": 106,
+        "act": "Personal Chef"
+      },
+      {
+        "id": 120,
+        "act": "Talent Coach"
+      },
+      {
+        "id": 160,
+        "act": "Friend"
+      },
+      {
+        "id": 169,
+        "act": "League of Legends Player"
+      },
+      {
+        "id": 176,
+        "act": "Career Coach"
+      },
+      {
+        "id": 184,
+        "act": "Virtual Fitness Coach"
+      },
+      {
+        "id": 201,
+        "act": "Nutritionist"
+      },
+      {
+        "id": 204,
+        "act": "Remote Worker Fitness Trainer"
+      },
+      {
+        "id": 256,
+        "act": "Habit Tracker"
+      },
+      {
+        "id": 271,
+        "act": "Health Metrics Calculator"
+      },
+      {
+        "id": 279,
+        "act": "Lifestyle Product Images"
+      },
+      {
+        "id": 295,
+        "act": "Gemini"
+      },
+      {
+        "id": 375,
+        "act": "Create a New Greek God"
+      },
+      {
+        "id": 388,
+        "act": "Custom Health Membership Annual Summary"
+      },
+      {
+        "id": 395,
+        "act": "Interview Preparation Coach"
+      },
+      {
+        "id": 418,
+        "act": "Data Analyst"
+      },
+      {
+        "id": 437,
+        "act": "Yamuna River Cleanup Plan for Vrindavan"
+      },
+      {
+        "id": 438,
+        "act": "iOS Recipe Generator: Create Recipes from Available Ingredients"
+      },
+      {
+        "id": 465,
+        "act": "Life coach"
+      },
+      {
+        "id": 492,
+        "act": "Act as a Health Recovery and Weight Loss Specialist"
+      },
+      {
+        "id": 505,
+        "act": "Isometric miniature 3D cartoon city scene"
+      },
+      {
+        "id": 552,
+        "act": "Giant Object in City"
+      },
+      {
+        "id": 589,
+        "act": "Isometric 3D Cartoon Scene with Weather Effects"
+      },
+      {
+        "id": 685,
+        "act": "Avant-Garde Portrait with Ghost Duplicate in Ochre Studio"
+      },
+      {
+        "id": 711,
+        "act": "Ultra-Realistic Comedic Slice-of-Life in an Ankara Bus"
+      },
+      {
+        "id": 719,
+        "act": "Realistic Photo of a Turkish Woman in a Street Setting"
+      },
+      {
+        "id": 769,
+        "act": "Ultimate 2025-2026 AI Life Strategist & Retrospective"
+      },
+      {
+        "id": 807,
+        "act": "seo-fundamentals"
+      },
+      {
+        "id": 809,
+        "act": "Echoes of the Rust Age"
+      },
+      {
+        "id": 858,
+        "act": "School Life Mentor"
+      },
+      {
+        "id": 874,
+        "act": "Dear Sugar: Candid Advice on Love and Life"
+      },
+      {
+        "id": 889,
+        "act": "Nightlife Candid Flash Photography"
+      },
+      {
+        "id": 927,
+        "act": "Serene Yoga & Mindfulness Lifestyle Photography"
+      },
+      {
+        "id": 928,
+        "act": "Mindful Mandala & Zen Geometric Patterns"
+      },
+      {
+        "id": 971,
+        "act": "Crimson Waltz in the Rain"
+      },
+      {
+        "id": 1025,
+        "act": "Research Weapon"
+      },
+      {
+        "id": 1033,
+        "act": "Workplace English Speaking Coach"
+      },
+      {
+        "id": 1053,
+        "act": "Personal Growth Plan for BNWO Enthusiasts"
+      },
+      {
+        "id": 1054,
+        "act": "Compile a Curated Compendium of Niche Adult Relationship Dynamics"
+      },
+      {
+        "id": 1116,
+        "act": "Coach for Identifying Growth-Limiting Patterns"
+      }
+    ]
+  }
+}

@@ -8,7 +8,6 @@ import { calculateTimelineDuration } from "../../timing/index.js";
 import { artifactPath, projectDir } from "../factory/state.js";
 import { duration, inspectMedia, muxAndNormalize } from "../factory/media.js";
 import * as remotionAdapter from "../../../engines/remotion/adapter/index.js";
-import * as hyperframesAdapter from "../../../engines/hyperframes/adapter/index.js";
 
 export async function renderProject({ project, kind = "preview", engine = "AUTO" }) {
   if (!["preview", "final"].includes(kind)) throw new Error("--kind must be preview or final");
@@ -33,7 +32,7 @@ export async function renderProject({ project, kind = "preview", engine = "AUTO"
   const final = path.join(outputDir, `${kind}.mp4`);
   const finalSheet = path.join(outputDir, `${kind}-contact-sheet.svg`);
   const qcFile = path.join(outputDir, `${kind}-qc.json`);
-  const adapter = selectedEngine === "REMOTION" ? remotionAdapter : hyperframesAdapter;
+  const adapter = remotionAdapter;
   try {
     const rendered = await adapter.render(spec, { projectRoot: root, outputPath: raw });
     if (!rendered.success || !fs.existsSync(raw) || fs.statSync(raw).size === 0) {

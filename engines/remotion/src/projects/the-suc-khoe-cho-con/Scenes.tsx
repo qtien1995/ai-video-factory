@@ -1,6 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, spring } from "remotion";
-import { MOBILE_LAYOUT, MOBILE_TYPOGRAPHY, MOBILE_COLORS } from "../../shared/design-system";
+import { AbsoluteFill, useCurrentFrame } from "remotion";
 
 // ============================================================================
 // 1. GLOBAL MEDICAL AMBIENT BACKDROP (High-End Mesh & Blueprint)

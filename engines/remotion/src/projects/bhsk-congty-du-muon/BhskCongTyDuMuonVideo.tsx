@@ -12,7 +12,6 @@ import {
   SyncedCaptions,
 } from "./Scenes";
 
-import timingData from "../../../public/audio/bhsk-congty-du-muon/timing.json";
 
 export const BhskCongTyDuMuonVideo: React.FC = () => {
   const frame = useCurrentFrame();
