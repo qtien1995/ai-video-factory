@@ -1,0 +1,55 @@
+{
+  "id": "HODL-VN-INVESTMENT-RACE",
+  "sourceVideo": "video_2026-10-21_09-36-22.mp4",
+  "archetype": "Financial Investment Race Chart / Data Visualization",
+  "metadata": {
+    "targetDurationSec": 60,
+    "sourceDurationSec": 154.62,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920
+  },
+  "palette": {
+    "background": "#0b0e14",
+    "surface": "#161b22",
+    "gridLine": "rgba(255, 255, 255, 0.08)",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#94a3b8",
+    "goldAccent": "#d4af37",
+    "goldPill": "#fef08a",
+    "redAlert": "#ef4444",
+    "lineColors": {
+      "item1": "#38bdf8",
+      "item2": "#22c55e",
+      "item3": "#c084fc",
+      "item4": "#f97316",
+      "item5": "#ef4444",
+      "benchmark": "#e2e8f0"
+    }
+  },
+  "typography": {
+    "fontFamily": "Inter, Montserrat, sans-serif",
+    "eyebrow": { "size": 32, "color": "#d4af37", "weight": "600", "tracking": "wider" },
+    "headline": { "size": 60, "color": "#ffffff", "weight": "800" },
+    "subheadline": { "size": 34, "color": "#94a3b8", "weight": "400" },
+    "giantYear": { "size": 130, "color": "#d4af37", "weight": "900" },
+    "giantMonth": { "size": 48, "color": "#cbd5e1", "weight": "500" },
+    "subtitles": {
+      "size": 44,
+      "color": "#ffffff",
+      "highlightWordColor": "#d4af37",
+      "highlightUnderline": true
+    }
+  },
+  "visualComponents": [
+    "FixedHeader (Eyebrow + Title + Subtitle)",
+    "DynamicSvgLineChart (Multi-node progressive curve rendering)",
+    "TrackingBadges (Logo + Value pill that tracks curve heads)",
+    "Top1LeaderStar (Golden glow + star icon on current 1st place)",
+    "EventMarkers (Vertical dashed lines for Covid, Crash, Flip events)",
+    "BottomAnchor (Giant Year + Month ticker + speech-synced subtitle)",
+    "SummaryPodiumTable (Rank 1-5 leaderboard table with ROI multipliers)",
+    "OutroBrandingCard (Infinity logo + Slogan + Legal disclaimer)"
+  ]
+}

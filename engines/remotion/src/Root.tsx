@@ -16,10 +16,19 @@ import { HangChoThuocNgoaiVideo } from "./projects/hang-cho-thuoc-ngoai/HangChoT
 import { ChoiHuiBaoHiemVideo } from "./projects/choi-hui-bao-hiem/ChoiHuiBaoHiemVideo";
 import { BhytChiPhiChimVideo } from "./projects/bhyt-chi-phi-chim/BhytChiPhiChimVideo";
 import { DieuKhoanLoaiTruVideo } from "./projects/dieu-khoan-loai-tru/DieuKhoanLoaiTruVideo";
+import { InvestmentRaceVideo } from "./projects/investment-race-chart/InvestmentRaceVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="InvestmentRaceChart"
+        component={InvestmentRaceVideo}
+        durationInFrames={1350}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
       <Composition
         id="CanonicalVideo"
         component={CanonicalVideo}
