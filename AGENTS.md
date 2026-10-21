@@ -6,7 +6,35 @@
 
 - **Engine chính duy nhất**: **Remotion** (React, TypeScript, Tailwind/CSS).
 - **Voiceover**: Bắt buộc tạo giọng đọc qua **CIT Voice Studio** (VieNeu-TTS local AI `:8001`, mặc định: "Hải Đăng" 48kHz studio, trích xuất timing word thật).
+- **Chiến lược phát triển tối thượng**: **Copy & Clone DNA từ Video Mẫu Chuyên Nghiệp 100%**. Bóc tách từng mili-giây, từng chuyển động, layout và nhịp điệu của các video viral để tái hiện hoàn hảo bằng code.
 - **An toàn dữ liệu**: Không xóa, di chuyển hoặc làm hỏng các project video cũ trong `projects/` hoặc bản xuất trong `renders/`.
+
+---
+
+## QUY TRÌNH BÓC TÁCH & CLONE DNA VIDEO MẪU 100%
+
+Khi người dùng cung cấp một video mẫu (file `.mp4`, đường dẫn, hoặc link video):
+
+```text
+VIDEO MẪU (MP4 / LINK)
+➔ BƯỚC 1: BÓC TÁCH VẬT LÝ TỰ ĐỘNG (`npm run dna -- analyze <path> [--id <name>]`)
+  ├─ Trích xuất Technical Specs (Resolution, FPS, Codec, Duration)
+  ├─ Tách Audio Track độc lập (`narration.wav` / `audio.mp3`)
+  ├─ Bắt Scene Cuts tự động (Điểm chuyển cảnh)
+  ├─ Trích xuất 1fps Frames để phân tích chuyển động liên tục
+  └─ Tạo ảnh Contact Sheet lưới (Tổng quan thị giác toàn bộ video)
+➔ BƯỚC 2: GIẢI PHẪU 5 TẦNG DNA (5-Layer Deep Breakdown)
+  ├─ 1. Hook 3s đầu: Visual Hook (vật thể, hiệu ứng) + Verbal Hook + Text Hook (font, màu)
+  ├─ 2. Layout & Colors: Palette nền/thẻ/accent, bo góc (radius), đổ bóng, safe zone
+  ├─ 3. Typography & Subtitles: Font family, casing, vị trí Y, kiểu highlight từng từ
+  ├─ 4. Motion & Spring Physics: Nhịp chuyển cảnh (s/cut), spring damping/stiffness, idle animation
+  └─ 5. Sound Design & Audio: Tốc độ đọc WPM, nhịp ngắt nghỉ, năng lượng BGM, danh sách cues SFX
+➔ BƯỚC 3: TÁI HIỆN CODE REMOTION 100% (Remotion Replication)
+  ├─ Viết Component Remotion tái hiện đúng 100% cấu trúc thị giác và chuyển động
+  └─ Lưu profile vào `dna-vault/<id>/dna.json` + `components/`
+➔ BƯỚC 4: SẢN XUẤT VIDEO MỚI
+  └─ Giữ nguyên 100% DNA chuyển động & layout, thay thế kịch bản và nội dung mới
+```
 
 ---
 
@@ -14,7 +42,7 @@
 
 1. **Remotion Explainer (`remotion-template`) [Chính]**:
    - **Mục đích**: Giải thích kiến thức, tài chính, công nghệ, bảo hiểm 45–60 giây.
-   - **Cấu trúc**: Áp dụng khung 6 cảnh chuẩn Cường IT (`templates/cuongit-explainer/`: Hook, Problem, Solution, Workflow, Benefits, Outro) kết hợp 6 Card Archetypes (`rules/card-archetypes.md`).
+   - **Cấu trúc**: Áp dụng khung 6 cảnh chuẩn Cường IT (`templates/cuongit-explainer/`: Hook, Problem, Solution, Workflow, Benefits, Outro) kết hợp 6 Card Archetypes (`rules/card-archetypes.md`) hoặc các DNA Profile đã clone.
    - **Quy trình**: Kịch bản + Beats ➔ Ghép giọng CIT Voice Studio Hải Đăng (lấy timing thật) ➔ Render qua engine `engines/remotion` ➔ Preview & QA ➔ Final MP4.
    - **Lưu trữ**: `projects/social-shorts/CNT-[YYYYMMDD]-[TEN-DU-AN]` hoặc `projects/financial-insurance/`.
 
@@ -33,15 +61,15 @@
 ## Pipeline chuẩn & Chốt chặn kiểm duyệt (Gates)
 
 ```text
-INPUT (Ý tưởng / URL / Tài liệu)
-→ XÁC ĐỊNH ĐỊNH DẠNG VIDEO (BẮT BUỘC hỏi người dùng chọn: Remotion Explainer hay Auto Footage)
+INPUT (Ý tưởng / URL / Tài liệu / Video Mẫu)
+→ XÁC ĐỊNH ĐỊNH DẠNG VIDEO & NGUỒN DNA (Chọn template chuẩn hoặc Clone từ Video Mẫu)
 → STORY & CREATIVE PASS
   ├─ Kích hoạt Persona từ kho prompts.chat (prompts/video-personas.md)
   └─ Tạo 2 phương án Hook 3s đầu theo prompts/hook-crafter.md
 → GATE 1: Duyệt Kịch bản (Script) & Beats (DỪNG LẠI CHỜ DUYỆT)
 → CHUẨN BỊ VOICE & TIMING THẬT (CIT Voice Studio :8001 - Hải Đăng 48kHz)
 → GATE 2: Asset Handoff (Duyệt hướng hình ảnh / asset trước khi code)
-→ CODE REMOTION / HẬU KỲ (Áp dụng 6 Card Archetypes & Motion Rules)
+→ CODE REMOTION / HẬU KỲ (Áp dụng 100% DNA đã bóc tách & Motion Rules)
 → QA, PACKAGE (Sinh 3 Thumbnails, SEO metadata, Caption đăng tải)
 → GATE 3: Báo cáo QA & Duyệt Render Final (DỪNG LẠI CHỜ DUYỆT)
 → Final video MP4 hoàn chỉnh (1080x1920, EBU R128 -12.5 LUFS)
@@ -77,6 +105,8 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
 
 ## Factory CLI & Lệnh tắt Nhanh
 
+- `npm run dna -- analyze <video-file> [--id <name>]`: **Bóc tách và Clone DNA từ Video Mẫu**.
+- `npm run dna -- list`: Xem danh mục các DNA Profile đã bóc tách trong `dna-vault/`.
 - `npm run doctor`: Kiểm tra sức khỏe hệ thống (CIT Voice Studio, FFmpeg, Remotion).
 - `npm run studio`: Khởi động Remotion Studio trực quan để xem trước cảnh quay.
 - `npm run services`: Khởi động các background services (CIT Voice Studio, FlowKit).

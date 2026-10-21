@@ -1,6 +1,7 @@
 # AI VIDEO FACTORY V3 🚀
 
-> **Workspace sản xuất video ngắn (9:16) chuyên nghiệp cho TikTok, Reels, YouTube Shorts với Remotion & AI Voice Studio.**
+> **Workspace sản xuất video ngắn (9:16) chuyên nghiệp cho TikTok, Reels, YouTube Shorts với Remotion & AI Voice Studio.**  
+> **Tích hợp bộ công cụ Reverse-Engineering: Bóc tách và Nhân bản DNA Video Mẫu Chuyên Nghiệp 100%.**
 
 ---
 
@@ -26,11 +27,34 @@ Mở giao diện Remotion Studio trực tiếp trên trình duyệt để chỉn
 
 ---
 
+## 🧬 Chiến lược "Copy to Win": Bóc tách DNA Video Mẫu 100%
+
+Cách nhanh nhất để làm ra video đẳng cấp là học hỏi từ các pro creators. Chỉ cần gửi file video mẫu (`.mp4`):
+
+```bash
+# Bóc tách toàn diện video mẫu
+npm run dna -- analyze "duong/dan/video-mau.mp4" --id <TEN-PHONG-CACH>
+
+# Xem danh sách các phong cách DNA đã bóc tách
+npm run dna -- list
+```
+
+**Hệ thống sẽ tự động bóc tách 5 tầng DNA:**
+1. **Bức tranh thị giác tổng quan (Contact Sheet)**: Tạo 1 ảnh lưới chụp toàn bộ nhịp video.
+2. **Audio Track độc lập**: Tách riêng giọng đọc, đo tốc độ WPM, nhạc nền và thời điểm chèn SFX.
+3. **Cắt cảnh tự động (Scene Cuts)**: Xác định chính xác từng điểm chuyển cảnh (cut frequency).
+4. **Bảng màu & Typography**: Bóc tách mã màu nền, màu thẻ, màu accent, font size và vị trí phụ đề an toàn.
+5. **Physics chuyển động (Spring Motion)**: Giải mã thông số lò xo (`damping`, `stiffness`), hiệu ứng xuất hiện và continuous idle animation.
+
+Tất cả được lưu trữ tại `dna-vault/<id>/` và sẵn sàng tái hiện 1:1 bằng Remotion!
+
+---
+
 ## 🎬 2 Workflows sản xuất chính
 
 | Workflow | Đầu vào | Quy trình | Lưu trữ |
 | :--- | :--- | :--- | :--- |
-| **Remotion Explainer** | Ý tưởng / Kịch bản giải thích | Khung 6 cảnh chuẩn Cường IT + 6 Card Archetypes + CIT Voice + Subtitle highlight từ | `projects/social-shorts/` |
+| **Remotion Explainer** | Ý tưởng / Kịch bản giải thích | Khung 6 cảnh chuẩn hoặc 100% DNA đã bóc tách + CIT Voice + Subtitle highlight từ | `projects/social-shorts/` |
 | **Auto Footage** | Video quay sẵn (talking-head, review) | Cắt lọc khoảng lặng (jump-cut) + Phụ đề động + Motion Overlays | `projects/auto-cuts/` |
 
 ---
@@ -44,7 +68,8 @@ D:\AI\VIDEO AI\
 ├── assets/              # Kho âm thanh BGM, SFX, fonts, hình ảnh
 ├── brand/               # Nhận diện thương hiệu & cấu hình cá nhân
 ├── config/              # Cấu hình chuẩn factory-config.json
-├── core/                # Bộ não điều phối Factory CLI, validation, loudness EBU R128
+├── core/                # Bộ não điều phối: Factory CLI, DNA Reverse-Engineering, loudness EBU R128
+├── dna-vault/           # Kho lưu trữ các Bộ Gen Video (DNA Profiles) đã bóc tách
 ├── engines/
 │   └── remotion/        # Engine dựng video Remotion React/TypeScript duy nhất
 ├── projects/            # Thư mục chứa các video thực tế (không xóa khi dọn dẹp)
@@ -60,9 +85,13 @@ D:\AI\VIDEO AI\
 
 ---
 
-## 🛠️ Lệnh điều khiển hữu ích
+## 🛠️ Danh mục lệnh điều khiển
 
 ```bash
+# Bóc tách video mẫu
+npm run dna -- analyze "path/to/video.mp4" --id <NAME>
+npm run dna -- list
+
 # Kiểm tra sức khỏe toàn hệ thống
 npm run doctor
 
@@ -79,12 +108,3 @@ npm run lint
 # Kiểm định chất lượng video MP4 đã xuất (Loudness, Resolution, Codec, Freeze frame)
 npm run verify -- --target projects/<id>/output/final.mp4
 ```
-
----
-
-## 📋 Tiêu chuẩn xuất xưởng bắt buộc
-
-1. **Khung hình**: Portrait 9:16 (1080×1920), 30fps, codec H.264 / AAC.
-2. **Âm thanh chuẩn phát thanh**: Integrated Loudness **-12.5 LUFS**, LRA **< 8 LU**, True Peak **< -1.0 dBFS**.
-3. **Phụ đề**: Đồng bộ theo giọng đọc thật, đổi màu highlight từng từ đang đọc, im lặng thì ẩn hoàn toàn (`Zero Speech = Zero Sub`).
-4. **An toàn hiển thị**: Thiết kế tối ưu cho màn hình điện thoại 360×640, không cắt chữ, không tràn lề.
