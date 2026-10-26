@@ -1,0 +1,159 @@
+{
+  "id": "HUD-DEV-TIMELINE-20REPO",
+  "sourceVideo": "https://www.tiktok.com/@hieu.modoro/video/7698585488512519431",
+  "archetype": "Developer HUD NLE Multi-Track Timeline Explainer",
+  "metadata": {
+    "targetDurationSec": 60,
+    "sourceDurationSec": 60.07,
+    "fps": 30,
+    "totalFrames": 1802,
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920
+  },
+  "palette": {
+    "background": "#080c10",
+    "surfaceGrid": "rgba(255, 255, 255, 0.04)",
+    "gridCross": "rgba(255, 255, 255, 0.12)",
+    "cardSurface": "rgba(15, 23, 42, 0.65)",
+    "cardBorder": "rgba(56, 189, 248, 0.20)",
+    "cardBorderGlow": "rgba(56, 189, 248, 0.40)",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#94a3b8",
+    "textMuted": "#64748b",
+    "accentOrange": "#f97316",
+    "accentCoral": "#fb923c",
+    "accentSky": "#38bdf8",
+    "accentBlueGlow": "#0ea5e9",
+    "trackEmpty": "rgba(30, 41, 59, 0.4)",
+    "trackBorder": "rgba(51, 65, 85, 0.6)",
+    "trackActive": "#38bdf8"
+  },
+  "typography": {
+    "fontFamily": "Inter, 'SF Pro Display', -apple-system, sans-serif",
+    "fontMono": "'JetBrains Mono', 'Fira Code', monospace",
+    "eyebrow": { "size": 28, "color": "#94a3b8", "weight": "600", "tracking": "widest", "casing": "uppercase" },
+    "counterBadge": { "size": 36, "color": "#f97316", "weight": "800", "font": "mono" },
+    "headline": { "size": 72, "color": "#ffffff", "weight": "900", "tracking": "tight" },
+    "subheadline": { "size": 32, "color": "#94a3b8", "weight": "500" },
+    "cardTitle": { "size": 36, "color": "#ffffff", "weight": "700" },
+    "cardDesc": { "size": 24, "color": "#7dd3fc", "weight": "400" },
+    "cardBadge": { "size": 24, "color": "#64748b", "weight": "600", "font": "mono" },
+    "outroHeadline": { "size": 96, "color": "#ffffff", "weight": "900" }
+  },
+  "motionSpring": {
+    "cardSlideIn": { "damping": 16, "stiffness": 140, "mass": 0.8 },
+    "scrubberMovement": { "damping": 20, "stiffness": 100 },
+    "badgeCounter": { "damping": 12, "stiffness": 180 }
+  },
+  "layers": [
+    {
+      "index": 0,
+      "id": "SKILLS",
+      "eyebrow": "01 · SKILLS",
+      "title": "Nạp skill",
+      "subtitle": "Để Opus 5.5 biết cách dựng video",
+      "counter": "03/20",
+      "timeRange": [5, 13],
+      "items": [
+        { "id": "01", "name": "Remotion Skills", "desc": "Dạy Claude viết video Remotion chuẩn" },
+        { "id": "02", "name": "Motion AI Kit", "desc": "Giúp AI dùng thư viện Motion đúng" },
+        { "id": "03", "name": "GSAP Skills", "desc": "Skill để AI viết animation GSAP" }
+      ]
+    },
+    {
+      "index": 1,
+      "id": "DESIGN",
+      "eyebrow": "02 · DESIGN",
+      "title": "Thiết kế",
+      "subtitle": "SVG sạch, tiêu đề từ JSX",
+      "counter": "05/20",
+      "timeRange": [14, 20],
+      "items": [
+        { "id": "04", "name": "SVGO", "desc": "Nén, tối ưu file SVG" },
+        { "id": "05", "name": "Satori", "desc": "Biến HTML và JSX thành SVG" }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "ANIMATE",
+      "eyebrow": "03 · ANIMATE",
+      "title": "Hoạt ảnh",
+      "subtitle": "Năm thư viện, mỗi thứ một việc",
+      "counter": "10/20",
+      "timeRange": [21, 31],
+      "items": [
+        { "id": "06", "name": "GSAP", "desc": "Timeline animation mạnh, mượt" },
+        { "id": "07", "name": "Anime.js", "desc": "Animation JavaScript nhẹ, linh hoạt" },
+        { "id": "08", "name": "Motion", "desc": "Animation cho React và JavaScript" },
+        { "id": "09", "name": "Rive", "desc": "Animation tương tác có state machine" },
+        { "id": "10", "name": "Lottie", "desc": "Phát animation xuất từ After Effects" }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "BUILD_2D",
+      "eyebrow": "04 · BUILD 2D",
+      "title": "Dựng 2D",
+      "subtitle": "Code React thành từng khung hình",
+      "counter": "12/20",
+      "timeRange": [32, 40],
+      "items": [
+        { "id": "11", "name": "Remotion", "desc": "Dựng video bằng React, xuất MP4" },
+        { "id": "12", "name": "Motion Canvas", "desc": "Animation bằng TypeScript, hợp video giải thích" }
+      ],
+      "extra": {
+        "type": "codeSnippet",
+        "file": "src/Root.tsx",
+        "code": "<Composition fps={60} width={1080} height={1920} />"
+      }
+    },
+    {
+      "index": 4,
+      "id": "BUILD_3D",
+      "eyebrow": "05 · BUILD 3D",
+      "title": "Dựng 3D",
+      "subtitle": "Khối, ánh sáng, vật lý, hiệu ứng",
+      "counter": "17/20",
+      "timeRange": [41, 49],
+      "items": [
+        { "id": "13", "name": "three.js", "desc": "Đồ họa 3D ngay trên web" },
+        { "id": "14", "name": "React Three Fiber", "desc": "Viết three.js bằng React" },
+        { "id": "15", "name": "Drei", "desc": "Bộ helper dựng sẵn cho R3F" },
+        { "id": "16", "name": "Rapier", "desc": "Vật lý: rơi, va chạm" },
+        { "id": "17", "name": "Postprocessing", "desc": "Bloom, depth of field, hiệu ứng ảnh" }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "SOUND_RENDER",
+      "eyebrow": "06 · SOUND · RENDER",
+      "title": "Âm thanh",
+      "subtitle": "Nhạc nền, encode, xuất MP4",
+      "counter": "20/20",
+      "timeRange": [50, 54],
+      "items": [
+        { "id": "18", "name": "Howler.js", "desc": "Phát nhạc nền và hiệu ứng âm thanh" },
+        { "id": "19", "name": "Mediabunny", "desc": "Encode video ngay trong trình duyệt" },
+        { "id": "20", "name": "FFmpeg", "desc": "Ghép, chuyển đổi, xuất video" }
+      ],
+      "extra": {
+        "type": "renderProgressBar",
+        "title": "Xuất video",
+        "percentage": 100,
+        "status": "✓ 1080×1920 · sẵn sàng đăng"
+      }
+    }
+  ],
+  "visualComponents": [
+    "HudBackground (Dark cyber grid with cross markers)",
+    "HudHeader (Eyebrow + Live Counter + Giant Headline + Section Subtitle)",
+    "TimelineScrubber (Ruler 00:00 - 00:20 with moving vertical playhead pin)",
+    "HudCardList (Staggered glassmorphic cards with glowing border)",
+    "HudCodeTerminal (Monospace code snippet editor box)",
+    "HudProgressBox (Export status with animated progress bar)",
+    "HudDawTracks (Multi-track DAW NLE timeline blocks that light up progressively)",
+    "HudFullTimelineSummary (Bento grid overview of all 20 modules)",
+    "HudOutroCta (Giant punchy call to action + animated audio wave)"
+  ]
+}

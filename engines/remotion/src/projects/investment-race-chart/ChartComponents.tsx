@@ -106,7 +106,7 @@ export const RaceLineChart: React.FC<ChartProps> = ({ progress, timeline }) => {
                 fill="rgba(255, 255, 255, 0.45)"
                 fontSize="24"
                 fontWeight="500"
-                fontFamily="Inter, sans-serif"
+                fontFamily="'Be Vietnam Pro', sans-serif"
               >
                 {lvl >= 1000 ? `${(lvl / 1000).toFixed(2)} tỷ` : `${lvl} tr`}
               </text>
@@ -145,7 +145,7 @@ export const RaceLineChart: React.FC<ChartProps> = ({ progress, timeline }) => {
                 fontSize="20"
                 fontWeight="800"
                 textAnchor="middle"
-                fontFamily="Inter, sans-serif"
+                fontFamily="'Be Vietnam Pro', sans-serif"
               >
                 {pt.event}
               </text>

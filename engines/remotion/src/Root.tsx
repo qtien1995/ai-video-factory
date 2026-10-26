@@ -17,10 +17,109 @@ import { ChoiHuiBaoHiemVideo } from "./projects/choi-hui-bao-hiem/ChoiHuiBaoHiem
 import { BhytChiPhiChimVideo } from "./projects/bhyt-chi-phi-chim/BhytChiPhiChimVideo";
 import { DieuKhoanLoaiTruVideo } from "./projects/dieu-khoan-loai-tru/DieuKhoanLoaiTruVideo";
 import { InvestmentRaceVideo } from "./projects/investment-race-chart/InvestmentRaceVideo";
+import { XanhPhuQuyRaceVideo } from "./projects/xanh-phu-quy-vs-tiet-kiem/XanhPhuQuyRaceVideo";
+import { DuBaoCkCuoiNam2026Video } from "./projects/du-bao-ck-cuoi-nam-2026/DuBaoCkCuoiNam2026Video";
+import { VnIndexBullTrapVideo } from "./projects/vnindex-bull-trap/VnIndexBullTrapVideo";
+import { TradingViewDarkProVideo } from "./projects/tradingview-dark-pro/TradingViewDarkProVideo";
+import { VinFastKineticVideo } from "./projects/vinfast-kinetic/VinFastKineticVideo";
+import { VinFastAuthenticVideo } from "./projects/vinfast-kinetic/VinFastAuthenticVideo";
+import { HudTimelineVideo } from "./projects/hud-timeline/HudTimelineVideo";
+import { BaoHiemGiuGonVideo } from "./projects/bao-hiem-giu-gon/BaoHiemGiuGonVideo";
+import { DuBaoUngThuNuVideo } from "./projects/du-bao-ung-thu-nu-2050/DuBaoUngThuNuVideo";
+import { GoiBaoHiem20TrVideo } from "./projects/goi-bao-hiem-20tr/GoiBaoHiem20TrVideo";
+import { UngThuDaiTrucTrangVideo } from "./projects/ung-thu-dai-truc-trang-top-3/UngThuDaiTrucTrangVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="UngThuDaiTrucTrangVideo"
+        component={UngThuDaiTrucTrangVideo}
+        durationInFrames={1776}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="GoiBaoHiem20TrVideo"
+        component={GoiBaoHiem20TrVideo}
+        durationInFrames={1662}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="DuBaoUngThuNuVideo"
+        component={DuBaoUngThuNuVideo}
+        durationInFrames={1944}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BaoHiemGiuGonVideo"
+        component={BaoHiemGiuGonVideo}
+        durationInFrames={2100}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="HudTimelineVideo"
+        component={HudTimelineVideo}
+        durationInFrames={1802}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="VinFastAuthenticVideo"
+        component={VinFastAuthenticVideo}
+        durationInFrames={1152}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="VinFastKineticVideo"
+        component={VinFastKineticVideo}
+        durationInFrames={990}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="TradingViewDarkProVideo"
+        component={TradingViewDarkProVideo}
+        durationInFrames={1874}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="VnIndexBullTrapVideo"
+        component={VnIndexBullTrapVideo}
+        durationInFrames={1874}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="XanhPhuQuyRaceVideo"
+        component={XanhPhuQuyRaceVideo}
+        durationInFrames={1711}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="DuBaoCkCuoiNam2026Video"
+        component={DuBaoCkCuoiNam2026Video}
+        durationInFrames={1862}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
       <Composition
         id="InvestmentRaceChart"
         component={InvestmentRaceVideo}

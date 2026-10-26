@@ -1,5 +1,5 @@
-import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import React, { useEffect, useState } from "react";
+import { AbsoluteFill, continueRender, delayRender, interpolate, useCurrentFrame } from "remotion";
 import { TIMELINE_DATA } from "./data";
 import { FixedHeader, RaceLineChart } from "./ChartComponents";
 import { LeaderboardTable } from "./LeaderboardTable";
@@ -7,6 +7,18 @@ import { OutroCard } from "./OutroCard";
 
 export const InvestmentRaceVideo: React.FC = () => {
   const frame = useCurrentFrame();
+
+  // Ensure Chromium waits until all fonts are 100% loaded before rendering frames
+  const [fontHandle] = useState(() => delayRender("Wait for Vietnamese fonts to load"));
+  useEffect(() => {
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready
+        .then(() => continueRender(fontHandle))
+        .catch(() => continueRender(fontHandle));
+    } else {
+      continueRender(fontHandle);
+    }
+  }, [fontHandle]);
 
   // TIMELINE SEGMENTS (Total 1350 frames = 45s at 30fps)
   // 1. Race Chart Stage: 0 to 900 frames (0.0s - 30.0s)
@@ -41,7 +53,7 @@ export const InvestmentRaceVideo: React.FC = () => {
     <AbsoluteFill
       style={{
         backgroundColor: "#0b0e14",
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: "'Be Vietnam Pro', sans-serif",
         overflow: "hidden"
       }}
     >

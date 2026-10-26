@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "geopolitical-map-pro",
+  "version": "2.0.0",
+  "name": "Geopolitical Map Pro",
+  "purpose": "Phong cách bản đồ địa chính trị, chiến lược quân sự, tuyến thương mại hàng hải và diễn biến lịch sử toàn cầu",
+  "bestFor": [
+    "Bản đồ địa lý - chính trị thế giới & khu vực (Geopolitical & Fullscreen Map)",
+    "Xung đột quân sự, chiến lược phòng thủ, tuyến vận tải hàng hải & eo biển",
+    "Tranh chấp tài nguyên, liên minh quốc tế (NATO, BRICS, ASEAN) & biến động biên giới",
+    "Phim tài liệu lịch sử, diễn biến chiến dịch và phân tích quan hệ quốc tế"
+  ],
+  "notIdealFor": ["Bán hàng mỹ phẩm", "Vlog ẩm thực đời sống"],
+  "beatSeconds": {
+    "min": 2.5,
+    "max": 5.0,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Một điểm nóng quân sự bất ngờ bùng nổ hoặc câu hỏi địa chiến lược then chốt",
+    "tone": "Trầm tĩnh, uy quyền, khách quan, phân tích đanh thép của chuyên gia chiến lược",
+    "structure": "Điểm nóng bản đồ -> Phân tích vị trí chiến lược -> Diễn biến lực lượng/tuyến đường -> Tác động địa chính trị -> Outro nhận định"
+  },
+  "visual": {
+    "palette": {
+      "background": "#080C14",
+      "surface": "#101826",
+      "accentPrimary": "#00F0FF",
+      "accentSecondary": "#FF334B",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Tactical HUD command card with glowing geo-coordinates, crosshair reticles, and territory fill overlays",
+    "cornerRadius": 14
+  },
+  "imagePrompt": {
+    "stylePrefix": "tactical military geopolitical map overlay, illuminated country borders, glowing cyan trade routes, satellite terrain texture, high-tech command center HUD",
+    "negativePrompt": "low quality, cartoonish, messy hand-drawn, blurry satellite, flat boring 2d chart"
+  },
+  "motion": {
+    "spring": { "damping": 16, "stiffness": 135, "mass": 0.8 },
+    "entrance": "camera-zoom-coordinate + territory-glow-fill + animated-path-arrow",
+    "targetWpm": 150
+  },
+  "typography": {
+    "headlineFont": "Space Grotesk Bold",
+    "bodyFont": "Be Vietnam Pro SemiBold",
+    "monoFont": "JetBrains Mono Bold",
+    "safeZoneY": [250, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, giọng đọc chính luận đĩnh đạc, trầm hùng, nhấn mạnh các mốc sự kiện",
+    "bgm": "Cinematic tension drone / strategic documentary pulse / radar ping & tactical SFX",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Glowing 3D globe coordinate zoom with bright red conflict border and bold white geopolitical question"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "GeopoliticalVideo"
+  },
+  "prohibited": [
+    "Bản đồ mờ không nhận diện rõ quốc gia",
+    "Mũi tên chiến dịch giật lắc mất phương hướng",
+    "Che khuất vùng tâm điểm chiến sự bằng phụ đề"
+  ]
+}

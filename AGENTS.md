@@ -17,7 +17,7 @@ Khi người dùng cung cấp một video mẫu (file `.mp4`, đường dẫn, h
 
 ```text
 VIDEO MẪU (MP4 / LINK)
-➔ BƯỚC 1: BÓC TÁCH VẬT LÝ TỰ ĐỘNG (`npm run dna -- analyze <path> [--id <name>]`)
+➔ BƯỚC 1: BÓC TÁCH VẬT LÝ TỰ ĐỘNG (`npm run dna -- analyze <path> [--name <style-name>]`)
   ├─ Trích xuất Technical Specs (Resolution, FPS, Codec, Duration)
   ├─ Tách Audio Track độc lập (`narration.wav` / `audio.mp3`)
   ├─ Bắt Scene Cuts tự động (Điểm chuyển cảnh)
@@ -29,11 +29,12 @@ VIDEO MẪU (MP4 / LINK)
   ├─ 3. Typography & Subtitles: Font family, casing, vị trí Y, kiểu highlight từng từ
   ├─ 4. Motion & Spring Physics: Nhịp chuyển cảnh (s/cut), spring damping/stiffness, idle animation
   └─ 5. Sound Design & Audio: Tốc độ đọc WPM, nhịp ngắt nghỉ, năng lượng BGM, danh sách cues SFX
-➔ BƯỚC 3: TÁI HIỆN CODE REMOTION 100% (Remotion Replication)
-  ├─ Viết Component Remotion tái hiện đúng 100% cấu trúc thị giác và chuyển động
-  └─ Lưu profile vào `dna-vault/<id>/dna.json` + `components/`
+➔ BƯỚC 3: TỰ ĐỘNG ĐÓNG GÓI VÀO THƯ VIỆN STYLE (`styles/<style-name>/`)
+  ├─ Tự động sinh `style.json` (chuẩn schema) + `theme.ts` (TypeScript dùng ngay cho Remotion)
+  ├─ Lưu ảnh Contact Sheet vào `styles/<style-name>/contact_sheet.jpg`
+  └─ Tự động đăng ký vào `styles/registry.json` và export qua alias `@styles`
 ➔ BƯỚC 4: SẢN XUẤT VIDEO MỚI
-  └─ Giữ nguyên 100% DNA chuyển động & layout, thay thế kịch bản và nội dung mới
+  └─ Chọn Style từ `styles/`, giữ nguyên 100% DNA chuyển động & layout, thay thế kịch bản và nội dung mới
 ```
 
 > [!CAUTION]
@@ -45,47 +46,56 @@ VIDEO MẪU (MP4 / LINK)
 
 ---
 
-## 2 Workflows sản xuất chính (+ 1 Luồng Mở rộng)
+## 2 Workflows sản xuất chính
 
 1. **Remotion Explainer (`remotion-template`) [Chính]**:
    - **Mục đích**: Giải thích kiến thức, tài chính, công nghệ, bảo hiểm 45–60 giây.
-   - **Cấu trúc**: Áp dụng khung 6 cảnh chuẩn Cường IT (`templates/cuongit-explainer/`: Hook, Problem, Solution, Workflow, Benefits, Outro) kết hợp 6 Card Archetypes (`rules/card-archetypes.md`) hoặc các DNA Profile đã clone.
-   - **Quy trình**: Kịch bản + Beats ➔ Ghép giọng CIT Voice Studio Hải Đăng (lấy timing thật) ➔ Render qua engine `engines/remotion` ➔ Preview & QA ➔ Final MP4.
+   - **3 Style Cốt Lõi Tinh Gọn (`styles/`)**:
+     * `finance-data-pro`: Tài chính & Dữ liệu chuyên sâu (Tích hợp 100% DNA HODL.VN Bar Chart Race + TradingView + Báo cáo vĩ mô).
+     * `clean-explainer`: Giải thích thẻ 2D chuẩn Cường IT (6 cảnh Hook->Problem->Solution->Workflow->Benefits->Outro, 2 preset: Tech/Bảo hiểm).
+     * `kinetic-minimalist`: Chữ động siêu lớn tương phản mạnh mẽ cho hook viral 15–30s.
+   - **Quy trình**: Kịch bản + Beats ➔ Ghép giọng CIT Voice Studio Hải Đăng (lấy timing thật) ➔ Render qua engine `engines/remotion` ➔ Xuất Final MP4 trực tiếp (điều chỉnh trực tiếp trên video).
    - **Lưu trữ**: `projects/social-shorts/CNT-[YYYYMMDD]-[TEN-DU-AN]` hoặc `projects/financial-insurance/`.
 
 2. **Auto Footage (`auto-footage`) [Chính]**:
    - **Mục đích**: Video quay sẵn (talking-head, review clip, podcast).
-   - **Quy trình**: Cắt bỏ khoảng lặng (jump-cut tự động) ➔ Phụ đề động speech-synced ➔ Chèn motion graphic overlays ➔ Xuất MP4 hoàn chỉnh.
+   - **Quy trình**: Cắt bỏ khoảng lặng (jump-cut tự động) ➔ Phụ đề động speech-synced ➔ Chèn motion graphic overlays ➔ Xuất Final MP4 hoàn chỉnh.
    - **Lưu trữ**: `projects/auto-cuts/CNT-[YYYYMMDD]-[TEN-DU-AN]`.
-
-3. **Vox Style / Google Flow (`vox-director`) [Mở rộng]**:
-   - **Mục đích**: Video phóng sự, phân tích chuyên sâu với footage AI sinh từ Google Flow (Omni 1.1 Flash / Veo).
-   - **Quy trình**: Script & Beats ➔ Xuất `production_prompts.md` ➔ User tạo clip hoặc chạy qua FlowKit ➔ Ghép giọng CIT Voice + Phụ đề ASS glassmorphism ➔ Xuất Final MP4.
-   - **Lưu trữ**: `projects/vox-style/CNT-[YYYYMMDD]-[TEN-DU-AN]`.
 
 ---
 
-## Pipeline chuẩn & Chốt chặn kiểm duyệt (Gates)
-
-```text
-INPUT (Ý tưởng / URL / Tài liệu / Video Mẫu)
-→ XÁC ĐỊNH ĐỊNH DẠNG VIDEO & NGUỒN DNA (Chọn template chuẩn hoặc Clone từ Video Mẫu)
-→ STORY & CREATIVE PASS
-  ├─ Kích hoạt Persona từ kho prompts.chat (prompts/video-personas.md)
-  └─ Tạo 2 phương án Hook 3s đầu theo prompts/hook-crafter.md
-→ GATE 1: Duyệt Kịch bản (Script) & Beats (DỪNG LẠI CHỜ DUYỆT)
-→ CHUẨN BỊ VOICE & TIMING THẬT (CIT Voice Studio :8001 - Hải Đăng 48kHz)
-→ GATE 2: Asset Handoff (Duyệt hướng hình ảnh / asset trước khi code)
-→ CODE REMOTION / HẬU KỲ (Áp dụng 100% DNA đã bóc tách & Motion Rules)
-→ QA, PACKAGE (Sinh 3 Thumbnails, SEO metadata, Caption đăng tải)
-→ GATE 3: Báo cáo QA & Duyệt Render Final (DỪNG LẠI CHỜ DUYỆT)
-→ Final video MP4 hoàn chỉnh (1080x1920, EBU R128 -12.5 LUFS)
-```
+## Pipeline Chuẩn 3 Bước Bắt Buộc & 2 Chế Độ Thực Hiện
 
 > [!IMPORTANT]
-> **CHẾ ĐỘ SẢN XUẤT (DUAL-MODE)**:
-> - **Strict Mode (Mặc định)**: Dừng lại ở từng chốt chặn (**Gate 1 ➔ Gate 2 ➔ Gate 3**) để người dùng trực tiếp kiểm duyệt và phản hồi.
-> - **Fast-Track Mode (`fast-track`)**: Dành cho video ngắn theo template chuẩn. Tự động duyệt qua Gate 1 & 2 theo template và chỉ dừng lại duy nhất ở **Gate 3 (Báo cáo QA & Duyệt Render Final)**.
+> **2 CHẾ ĐỘ THỰC HIỆN (BẮT BUỘC ĐỀ XUẤT CHO USER CHỌN KHI BẮT ĐẦU)**:
+> 1. **Chế độ Rảnh tay**: Người dùng đưa nội dung/chủ đề, hệ thống tự động chạy toàn bộ quy trình từ A-Z và trả về video Final MP4 hoàn chỉnh.
+> 2. **Chế độ Duyệt từng bước**: Bắt buộc đi tuần tự từng bước, trả kết quả trên chat để người dùng tương tác duyệt, **TUYỆT ĐỐI CẤM NHẢY CÓC**.
+
+```text
+QUY TRÌNH 3 BƯỚC BẮT BUỘC (KHI DUYỆT TỪNG BƯỚC)
+────────────────────────────────────────────────────────────────────────
+➔ BƯỚC 1: KỊCH BẢN TỪNG PHẦN (SCRIPT BREAKDOWN)
+  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh (Hook, Problem, Solution, Workflow, Benefits, Outro)
+  ├─ Nêu rõ nội dung lời thoại (voiceover) và thời lượng dự kiến từng đoạn
+  └─ Dừng lại chờ User phản hồi / góp ý kịch bản
+
+➔ BƯỚC 2: DỰNG RENDER HÌNH ĐỂ HÌNH DUNG VIDEO (STORYBOARD / VISUAL FRAMES)
+  ├─ Dựng layout / render các khung hình trực quan (still frames / mockup thẻ)
+  ├─ Thể hiện màu sắc, typography, safe zone, vị trí text, icon/graphics
+  └─ Trả kết quả trực quan trên chat để User dễ dàng hình dung toàn bộ video
+
+➔ BƯỚC 3: USER CHỐT MỚI BẮT ĐẦU LÀM VIDEO LUÔN (FINAL MP4 DIRECT)
+  ├─ Chỉ khi User xác nhận chốt kịch bản & hình ảnh ở Bước 1 và 2 mới tiến hành code & render
+  ├─ Bỏ qua khâu preview phân giải thấp, xuất thẳng video FINAL MP4 hoàn chỉnh (1080x1920, EBU R128 -12.5 LUFS)
+  └─ Nếu có yêu cầu điều chỉnh sau khi xem, tiến hành điều chỉnh trực tiếp trên video final
+```
+
+> [!CAUTION]
+> **LUẬT DUY NHẤT 1 FILE FINAL MP4 — CẤM HOÀN TOÀN FILE PREVIEW (SINGLE FINAL MP4 MANDATE)**:
+> 1. **Bỏ hẳn 100% khâu preview**: Áp dụng bắt buộc cho mọi video tạo mới. Tuyệt đối KHÔNG render video preview, KHÔNG chạy ngầm tạo hoặc sao chép bất kỳ file preview nào (`preview.mp4`, `preview-contact-sheet.svg`, `preview-qc.json`).
+> 2. **Chỉ xuất trực tiếp 1 file Final duy nhất**: Sau khi duyệt storyboard/still frames (Bước 2), xuất thẳng trực tiếp `projects/<id>/output/final.mp4` (chuẩn 1080×1920, EBU R128 -12.5 LUFS).
+> 3. **Thư mục `output/` sạch sẽ chuẩn mực**: Chỉ được phép chứa `final.mp4`, `final-contact-sheet.svg`, `final-qc.json`, thư mục `dist/` và `storyboard/`. Tuyệt đối cấm để lọt bất kỳ file `preview.*` nào vào thư mục bàn giao.
+
 
 ---
 
@@ -112,7 +122,9 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
 
 ## Factory CLI & Lệnh tắt Nhanh
 
-- `npm run dna -- analyze <video-file> [--id <name>]`: **Bóc tách và Clone DNA từ Video Mẫu**.
+- `npm run style -- list`: **Xem danh mục toàn bộ các Style có sẵn trong xưởng (`styles/`)**.
+- `npm run style -- show <id>`: **Xem chi tiết bảng màu, typography, spring physics của style**.
+- `npm run dna -- analyze <video-file> [--name <style-name>]`: **Bóc tách video mẫu và tự động lưu thành Style mới trong `styles/<style-name>/`**.
 - `npm run dna -- list`: Xem danh mục các DNA Profile đã bóc tách trong `dna-vault/`.
 - `npm run doctor`: Kiểm tra sức khỏe hệ thống (CIT Voice Studio, FFmpeg, Remotion).
 - `npm run studio`: Khởi động Remotion Studio trực quan để xem trước cảnh quay.
@@ -120,7 +132,7 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
 - `npm run factory -- status --project <id>`: Kiểm tra trạng thái dự án.
 - `npm run factory -- approve --gate GATE1|GATE2|GATE3 --project <id> --evidence "lời duyệt"`: Phê duyệt chốt chặn.
 - `npm run factory -- tts --project <id>`: Tạo voice và đo timing thật bằng FFprobe.
-- `npm run factory -- render --kind preview|final --project <id>`: Render Remotion + chuẩn hóa EBU R128 + contact sheet QA.
+- `npm run factory -- render --kind final --project <id>`: Render Remotion trực tiếp Final MP4 + chuẩn hóa EBU R128 + contact sheet QA.
 - `npm run factory -- package --project <id>`: Tự động trích xuất 3 thumbnails, sinh metadata SEO và caption mạng xã hội.
 - `npm run verify -- --project <dir>`: Chạy bộ kiểm thử E2E 4-Tier kiểm tra file MP4 xuất xưởng.
 - `npm test`: Chạy toàn bộ unit test của Factory Core.

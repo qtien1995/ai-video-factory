@@ -81,26 +81,35 @@ export async function packageProject(projectId) {
     try { beatsData = JSON.parse(fs.readFileSync(beatsFile, "utf8")); } catch {}
   }
 
+  let userBrand = {};
+  const brandFile = path.join(ROOT, "brand", "user-brand.json");
+  if (fs.existsSync(brandFile)) {
+    try { userBrand = JSON.parse(fs.readFileSync(brandFile, "utf8")); } catch {}
+  }
+
   const cleanTitle = projectId.replace(/^CNT-\d+-/, "").replace(/[-_]/g, " ").toUpperCase();
 
   const metadata = {
     projectId,
     generatedAt: new Date().toISOString(),
+    creator: userBrand.creatorName || undefined,
+    brand: userBrand.brandName || undefined,
     titles: [
       `Sự Thật Về ${cleanTitle}: Điều Bạn Chưa Từng Được Kể`,
       `Tại Sao ${cleanTitle} Lại Quan Trọng Hơn Bạn Nghĩ?`,
       `Giải Mã ${cleanTitle} Trong 60 Giây (Bí Mật Chuyên Gia)`
     ],
-    description: `Khám phá toàn bộ bản chất về ${cleanTitle}. Video giải thích trực quan, dễ hiểu và cô đọng nhất.`,
+    description: `Khám phá toàn bộ bản chất về ${cleanTitle}. Video giải thích trực quan, dễ hiểu và cô đọng nhất.${userBrand.cta ? `\n\n${userBrand.cta}` : ""}`,
     hashtags: [
       `#${cleanTitle.replace(/\s+/g, "").toLowerCase()}`,
+      userBrand.handle ? `#${userBrand.handle.replace(/[@#\s]/g, "")}` : null,
+      userBrand.brandName ? `#${userBrand.brandName.toLowerCase().replace(/[^a-z0-9]/g, "")}` : null,
       "#kienthuc",
+      "#taichinh",
       "#hocmoingay",
-      "#congnghe",
-      "#cuongit",
       "#xuhuong",
       "#videongan"
-    ],
+    ].filter(Boolean),
     chapters: Array.isArray(beatsData) && beatsData.length > 0 ? beatsData.map((b, idx) => ({
       index: idx + 1,
       title: b.meaning || b.title || `Phần ${idx + 1}`,

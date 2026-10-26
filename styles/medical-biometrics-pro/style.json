@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "medical-biometrics-pro",
+  "version": "1.0.0",
+  "name": "Medical Biometrics & Clinical Editorial",
+  "purpose": "Phong cách y sinh học & phóng sự y khoa công nghệ cao: Nền Deep Slate y tế, hình vẽ vector giải phẫu tự chạy, mô phỏng vi phẫu nội soi, nhịp đập ECG tuần hoàn, camera thở Parallax, số chạy động và lớp âm thanh sound design đa tầng",
+  "bestFor": [
+    "Giải thích bệnh học, ung thư, tim mạch, y tế cộng đồng",
+    "Phóng sự tiến bộ công nghệ y khoa (Nội soi ESD, Robot phẫu thuật Da Vinci)",
+    "Báo cáo thống kê dịch tễ (Globocan, WHO, Bộ Y Tế)",
+    "Video cảnh báo sức khỏe và kêu gọi tầm soát định kỳ"
+  ],
+  "notIdealFor": [
+    "Video hài hước nhí nhảnh",
+    "Vlog du lịch ẩm thực đời thường"
+  ],
+  "beatSeconds": {
+    "min": 8.0,
+    "max": 15.0,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Số liệu dịch tễ giật mình + Hình vẽ cơ quan giải phẫu vector phát sáng",
+    "tone": "Chuyên môn, sâu sắc, ấm áp, cảnh tỉnh và truyền hy vọng",
+    "structure": "Hook Báo động đỏ -> Nguyên nhân & Trẻ hóa -> Bẫy triệu chứng -> Giải pháp Vi phẫu -> Tỷ lệ sống 90% -> Outro Bảo vệ gia đình"
+  },
+  "visual": {
+    "palette": {
+      "background": "#060A14",
+      "surface": "rgba(15, 23, 42, 0.85)",
+      "accentPrimary": "#38BDF8",
+      "accentSecondary": "#F59E0B",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Neo-Clinical Biosensor HUD / Staggered Full-width Cards",
+    "cornerRadius": 24
+  },
+  "motion": {
+    "spring": {
+      "damping": 16,
+      "stiffness": 120,
+      "mass": 0.8
+    },
+    "cameraBreathing": true,
+    "continuousECG": true,
+    "wordPunching": true
+  },
+  "typography": {
+    "headlineFont": "Montserrat / Inter 950",
+    "bodyFont": "Inter 600",
+    "safeZoneY": [160, 1550]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "voiceId": "vi-VN-NamMinhNeural / HaiDang",
+    "bgm": "Ambient Tech Pulse (-18dB)",
+    "sfxCues": ["whoosh-cinematic", "impact-bass", "whoosh-short", "ping", "chime"],
+    "targetLufs": -12.5
+  }
+}

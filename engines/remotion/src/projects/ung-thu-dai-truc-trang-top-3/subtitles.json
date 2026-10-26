@@ -1,0 +1,1462 @@
+{
+  "totalDurationMs": 59228,
+  "totalFrames": 1776,
+  "words": [
+    {
+      "word": "Theo",
+      "startMs": 0,
+      "endMs": 259,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "báo",
+      "startMs": 259,
+      "endMs": 518,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "cáo",
+      "startMs": 518,
+      "endMs": 777,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "mới",
+      "startMs": 777,
+      "endMs": 1036,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "nhất",
+      "startMs": 1036,
+      "endMs": 1296,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "từ",
+      "startMs": 1296,
+      "endMs": 1555,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tổ",
+      "startMs": 1555,
+      "endMs": 1814,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "chức",
+      "startMs": 1814,
+      "endMs": 2073,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "Globocan",
+      "startMs": 2073,
+      "endMs": 2332,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "ung",
+      "startMs": 2332,
+      "endMs": 2592,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "thư",
+      "startMs": 2592,
+      "endMs": 2851,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "đại",
+      "startMs": 2851,
+      "endMs": 3110,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "trực",
+      "startMs": 3110,
+      "endMs": 3369,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tràng",
+      "startMs": 3369,
+      "endMs": 3628,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "đã",
+      "startMs": 3628,
+      "endMs": 3888,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "chính",
+      "startMs": 3888,
+      "endMs": 4147,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "thức",
+      "startMs": 4147,
+      "endMs": 4406,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "vươn",
+      "startMs": 4406,
+      "endMs": 4665,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "lên",
+      "startMs": 4665,
+      "endMs": 4924,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "đứng",
+      "startMs": 4924,
+      "endMs": 5184,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "thứ",
+      "startMs": 5184,
+      "endMs": 5443,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "ba",
+      "startMs": 5443,
+      "endMs": 5702,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "về",
+      "startMs": 5702,
+      "endMs": 5961,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "số",
+      "startMs": 5961,
+      "endMs": 6220,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "ca",
+      "startMs": 6220,
+      "endMs": 6480,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "mắc",
+      "startMs": 6480,
+      "endMs": 6739,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "mới",
+      "startMs": 6739,
+      "endMs": 6998,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tại",
+      "startMs": 6998,
+      "endMs": 7257,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "Việt",
+      "startMs": 7257,
+      "endMs": 7516,
+      "durationMs": 259,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "Nam",
+      "startMs": 7516,
+      "endMs": 7776,
+      "durationMs": 260,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "So",
+      "startMs": 7976,
+      "endMs": 8223,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "với",
+      "startMs": 8223,
+      "endMs": 8471,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "hai",
+      "startMs": 8471,
+      "endMs": 8719,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "năm",
+      "startMs": 8719,
+      "endMs": 8966,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "trước",
+      "startMs": 8966,
+      "endMs": 9214,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "căn",
+      "startMs": 9214,
+      "endMs": 9462,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "bệnh",
+      "startMs": 9462,
+      "endMs": 9709,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "này",
+      "startMs": 9709,
+      "endMs": 9957,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tăng",
+      "startMs": 9957,
+      "endMs": 10205,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "một",
+      "startMs": 10205,
+      "endMs": 10452,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "bậc",
+      "startMs": 10452,
+      "endMs": 10700,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "về",
+      "startMs": 10700,
+      "endMs": 10948,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "số",
+      "startMs": 10948,
+      "endMs": 11195,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "ca",
+      "startMs": 11195,
+      "endMs": 11443,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "mắc",
+      "startMs": 11443,
+      "endMs": 11691,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "và",
+      "startMs": 11691,
+      "endMs": 11938,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tăng",
+      "startMs": 11938,
+      "endMs": 12186,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tới",
+      "startMs": 12186,
+      "endMs": 12434,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "hai",
+      "startMs": 12434,
+      "endMs": 12681,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "bậc",
+      "startMs": 12681,
+      "endMs": 12929,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "về",
+      "startMs": 12929,
+      "endMs": 13177,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "số",
+      "startMs": 13177,
+      "endMs": 13424,
+      "durationMs": 247,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "ca",
+      "startMs": 13424,
+      "endMs": 13672,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "tử",
+      "startMs": 13672,
+      "endMs": 13920,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "vong",
+      "startMs": 13920,
+      "endMs": 14168,
+      "durationMs": 248,
+      "scene": "Scene1Hook"
+    },
+    {
+      "word": "Đáng",
+      "startMs": 14368,
+      "endMs": 14654,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "báo",
+      "startMs": 14654,
+      "endMs": 14940,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "động",
+      "startMs": 14940,
+      "endMs": 15227,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "bệnh",
+      "startMs": 15227,
+      "endMs": 15513,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "đang",
+      "startMs": 15513,
+      "endMs": 15800,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "trẻ",
+      "startMs": 15800,
+      "endMs": 16086,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "hóa",
+      "startMs": 16086,
+      "endMs": 16373,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "rõ",
+      "startMs": 16373,
+      "endMs": 16659,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "rệt",
+      "startMs": 16659,
+      "endMs": 16946,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "do",
+      "startMs": 16946,
+      "endMs": 17232,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "thói",
+      "startMs": 17232,
+      "endMs": 17518,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "quen",
+      "startMs": 17518,
+      "endMs": 17805,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "ăn",
+      "startMs": 17805,
+      "endMs": 18091,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "nhiều",
+      "startMs": 18091,
+      "endMs": 18378,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "thịt",
+      "startMs": 18378,
+      "endMs": 18664,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "đỏ",
+      "startMs": 18664,
+      "endMs": 18951,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "thịt",
+      "startMs": 18951,
+      "endMs": 19237,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "chế",
+      "startMs": 19237,
+      "endMs": 19524,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "biến",
+      "startMs": 19524,
+      "endMs": 19810,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "sẵn",
+      "startMs": 19810,
+      "endMs": 20097,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "thiếu",
+      "startMs": 20097,
+      "endMs": 20383,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "rau",
+      "startMs": 20383,
+      "endMs": 20669,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "xanh",
+      "startMs": 20669,
+      "endMs": 20956,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "lạm",
+      "startMs": 20956,
+      "endMs": 21242,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "dụng",
+      "startMs": 21242,
+      "endMs": 21529,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "rượu",
+      "startMs": 21529,
+      "endMs": 21815,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "bia",
+      "startMs": 21815,
+      "endMs": 22102,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "và",
+      "startMs": 22102,
+      "endMs": 22388,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "lười",
+      "startMs": 22388,
+      "endMs": 22675,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "vận",
+      "startMs": 22675,
+      "endMs": 22961,
+      "durationMs": 286,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "động",
+      "startMs": 22961,
+      "endMs": 23248,
+      "durationMs": 287,
+      "scene": "Scene2Causes"
+    },
+    {
+      "word": "Đa",
+      "startMs": 23448,
+      "endMs": 23706,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "số",
+      "startMs": 23706,
+      "endMs": 23965,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "người",
+      "startMs": 23965,
+      "endMs": 24223,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "bệnh",
+      "startMs": 24223,
+      "endMs": 24482,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "phát",
+      "startMs": 24482,
+      "endMs": 24740,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "hiện",
+      "startMs": 24740,
+      "endMs": 24999,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "ở",
+      "startMs": 24999,
+      "endMs": 25258,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "giai",
+      "startMs": 25258,
+      "endMs": 25516,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "đoạn",
+      "startMs": 25516,
+      "endMs": 25775,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "muộn",
+      "startMs": 25775,
+      "endMs": 26033,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "vì",
+      "startMs": 26033,
+      "endMs": 26292,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "dễ",
+      "startMs": 26292,
+      "endMs": 26550,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "nhầm",
+      "startMs": 26550,
+      "endMs": 26809,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "lẫn",
+      "startMs": 26809,
+      "endMs": 27068,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "với",
+      "startMs": 27068,
+      "endMs": 27326,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "rối",
+      "startMs": 27326,
+      "endMs": 27585,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "loạn",
+      "startMs": 27585,
+      "endMs": 27843,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "tiêu",
+      "startMs": 27843,
+      "endMs": 28102,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "hóa",
+      "startMs": 28102,
+      "endMs": 28361,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "thông",
+      "startMs": 28361,
+      "endMs": 28619,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "thường",
+      "startMs": 28619,
+      "endMs": 28878,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "từ",
+      "startMs": 28878,
+      "endMs": 29136,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "táo",
+      "startMs": 29136,
+      "endMs": 29395,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "bón",
+      "startMs": 29395,
+      "endMs": 29653,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "đau",
+      "startMs": 29653,
+      "endMs": 29912,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "bụng",
+      "startMs": 29912,
+      "endMs": 30171,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "đến",
+      "startMs": 30171,
+      "endMs": 30429,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "đi",
+      "startMs": 30429,
+      "endMs": 30688,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "ngoài",
+      "startMs": 30688,
+      "endMs": 30946,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "ra",
+      "startMs": 30946,
+      "endMs": 31205,
+      "durationMs": 259,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "máu",
+      "startMs": 31205,
+      "endMs": 31463,
+      "durationMs": 258,
+      "scene": "Scene3Symptoms"
+    },
+    {
+      "word": "Tuy",
+      "startMs": 31664,
+      "endMs": 31930,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "nhiên",
+      "startMs": 31930,
+      "endMs": 32197,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "nếu",
+      "startMs": 32197,
+      "endMs": 32463,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "phát",
+      "startMs": 32463,
+      "endMs": 32730,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "hiện",
+      "startMs": 32730,
+      "endMs": 32996,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "sớm",
+      "startMs": 32996,
+      "endMs": 33263,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "khi",
+      "startMs": 33263,
+      "endMs": 33530,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "tổn",
+      "startMs": 33530,
+      "endMs": 33796,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "thương",
+      "startMs": 33796,
+      "endMs": 34063,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "còn",
+      "startMs": 34063,
+      "endMs": 34329,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "nông",
+      "startMs": 34329,
+      "endMs": 34596,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "bác",
+      "startMs": 34596,
+      "endMs": 34862,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "sĩ",
+      "startMs": 34862,
+      "endMs": 35129,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "chỉ",
+      "startMs": 35129,
+      "endMs": 35396,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "cần",
+      "startMs": 35396,
+      "endMs": 35662,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "nội",
+      "startMs": 35662,
+      "endMs": 35929,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "soi",
+      "startMs": 35929,
+      "endMs": 36195,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "cắt",
+      "startMs": 36195,
+      "endMs": 36462,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "tách",
+      "startMs": 36462,
+      "endMs": 36728,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "niêm",
+      "startMs": 36728,
+      "endMs": 36995,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "mạc",
+      "startMs": 36995,
+      "endMs": 37262,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "mà",
+      "startMs": 37262,
+      "endMs": 37528,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "không",
+      "startMs": 37528,
+      "endMs": 37795,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "cần",
+      "startMs": 37795,
+      "endMs": 38061,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "phẫu",
+      "startMs": 38061,
+      "endMs": 38328,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "thuật",
+      "startMs": 38328,
+      "endMs": 38594,
+      "durationMs": 266,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "mở",
+      "startMs": 38594,
+      "endMs": 38861,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "lớn",
+      "startMs": 38861,
+      "endMs": 39128,
+      "durationMs": 267,
+      "scene": "Scene4Solution"
+    },
+    {
+      "word": "Tỷ",
+      "startMs": 39328,
+      "endMs": 39623,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "lệ",
+      "startMs": 39623,
+      "endMs": 39918,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "sống",
+      "startMs": 39918,
+      "endMs": 40213,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "sau",
+      "startMs": 40213,
+      "endMs": 40509,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "năm",
+      "startMs": 40509,
+      "endMs": 40804,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "năm",
+      "startMs": 40804,
+      "endMs": 41099,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "đạt",
+      "startMs": 41099,
+      "endMs": 41394,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "tới",
+      "startMs": 41394,
+      "endMs": 41690,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "90",
+      "startMs": 41690,
+      "endMs": 41985,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "phần",
+      "startMs": 41985,
+      "endMs": 42280,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "trăm",
+      "startMs": 42280,
+      "endMs": 42576,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "ở",
+      "startMs": 42576,
+      "endMs": 42871,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "giai",
+      "startMs": 42871,
+      "endMs": 43166,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "đoạn",
+      "startMs": 43166,
+      "endMs": 43461,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "sớm",
+      "startMs": 43461,
+      "endMs": 43757,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "Đó",
+      "startMs": 43757,
+      "endMs": 44052,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "là",
+      "startMs": 44052,
+      "endMs": 44347,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "lý",
+      "startMs": 44347,
+      "endMs": 44642,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "do",
+      "startMs": 44642,
+      "endMs": 44938,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "độ",
+      "startMs": 44938,
+      "endMs": 45233,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "tuổi",
+      "startMs": 45233,
+      "endMs": 45528,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "khuyến",
+      "startMs": 45528,
+      "endMs": 45824,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "cáo",
+      "startMs": 45824,
+      "endMs": 46119,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "tầm",
+      "startMs": 46119,
+      "endMs": 46414,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "soát",
+      "startMs": 46414,
+      "endMs": 46709,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "đã",
+      "startMs": 46709,
+      "endMs": 47005,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "được",
+      "startMs": 47005,
+      "endMs": 47300,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "hạ",
+      "startMs": 47300,
+      "endMs": 47595,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "từ",
+      "startMs": 47595,
+      "endMs": 47890,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "50",
+      "startMs": 47890,
+      "endMs": 48186,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "xuống",
+      "startMs": 48186,
+      "endMs": 48481,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "45",
+      "startMs": 48481,
+      "endMs": 48776,
+      "durationMs": 295,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "tuổi",
+      "startMs": 48776,
+      "endMs": 49072,
+      "durationMs": 296,
+      "scene": "Scene5Stats"
+    },
+    {
+      "word": "Đừng",
+      "startMs": 49272,
+      "endMs": 49547,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "chờ",
+      "startMs": 49547,
+      "endMs": 49822,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "đến",
+      "startMs": 49822,
+      "endMs": 50097,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "khi",
+      "startMs": 50097,
+      "endMs": 50372,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "có",
+      "startMs": 50372,
+      "endMs": 50648,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "triệu",
+      "startMs": 50648,
+      "endMs": 50923,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "chứng",
+      "startMs": 50923,
+      "endMs": 51198,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "mới",
+      "startMs": 51198,
+      "endMs": 51473,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "đi",
+      "startMs": 51473,
+      "endMs": 51748,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "khám",
+      "startMs": 51748,
+      "endMs": 52024,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "Hãy",
+      "startMs": 52024,
+      "endMs": 52299,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "chủ",
+      "startMs": 52299,
+      "endMs": 52574,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "động",
+      "startMs": 52574,
+      "endMs": 52849,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "tầm",
+      "startMs": 52849,
+      "endMs": 53124,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "soát",
+      "startMs": 53124,
+      "endMs": 53400,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "định",
+      "startMs": 53400,
+      "endMs": 53675,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "kỳ",
+      "startMs": 53675,
+      "endMs": 53950,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "ngay",
+      "startMs": 53950,
+      "endMs": 54225,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "hôm",
+      "startMs": 54225,
+      "endMs": 54500,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "nay",
+      "startMs": 54500,
+      "endMs": 54776,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "để",
+      "startMs": 54776,
+      "endMs": 55051,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "bảo",
+      "startMs": 55051,
+      "endMs": 55326,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "vệ",
+      "startMs": 55326,
+      "endMs": 55601,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "sức",
+      "startMs": 55601,
+      "endMs": 55876,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "khỏe",
+      "startMs": 55876,
+      "endMs": 56152,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "chính",
+      "startMs": 56152,
+      "endMs": 56427,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "bạn",
+      "startMs": 56427,
+      "endMs": 56702,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "và",
+      "startMs": 56702,
+      "endMs": 56977,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "gia",
+      "startMs": 56977,
+      "endMs": 57252,
+      "durationMs": 275,
+      "scene": "Scene6Outro"
+    },
+    {
+      "word": "đình",
+      "startMs": 57252,
+      "endMs": 57528,
+      "durationMs": 276,
+      "scene": "Scene6Outro"
+    }
+  ]
+}

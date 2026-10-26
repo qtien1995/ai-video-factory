@@ -1,5 +1,5 @@
 # ==============================================================================
-# AI VIDEO FACTORY V2 - AUTO SERVICE LAUNCHER
+# AI VIDEO FACTORY V3 - AUTO SERVICE LAUNCHER
 # Khoi dong tu dong FlowKit Backend, Google Flow Tab va CIT Voice Studio
 # ==============================================================================
 
@@ -9,7 +9,7 @@ $FlowUrl = "http://127.0.0.1:8100/health"
 $GoogleFlowUrl = "https://flow.google.com/"
 
 Write-Host "==================================================" -ForegroundColor Cyan
-Write-Host "   AI VIDEO FACTORY V2 - AUTO SERVICE LAUNCHER   " -ForegroundColor Cyan
+Write-Host "   AI VIDEO FACTORY V3 - AUTO SERVICE LAUNCHER   " -ForegroundColor Cyan
 Write-Host "==================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -30,6 +30,7 @@ if ($flowOnline) {
     $pythonExe = "$Root\.tools\flowkit\venv\Scripts\python.exe"
     $flowDir = "$Root\.tools\flowkit"
     if (Test-Path $pythonExe) {
+        $env:PYTHONPATH = $flowDir
         Start-Process -FilePath $pythonExe -ArgumentList "-m agent.main" -WorkingDirectory $flowDir -WindowStyle Minimized
         Start-Sleep -Seconds 3
         Write-Host "  -> FlowKit Backend da duoc khoi dong!" -ForegroundColor Green
@@ -62,7 +63,9 @@ if ($citOnline) {
 } else {
     Write-Host "  -> Dang tim kiem ung dung CIT Voice Studio..." -ForegroundColor Cyan
     $citExeCandidates = @(
+        "$env:LOCALAPPDATA\Programs\CIT Voice Studio\CIT-Voice-Studio.exe",
         "$env:LOCALAPPDATA\Programs\CIT Voice Studio\CIT Voice Studio.exe",
+        "$env:ProgramFiles\CIT Voice Studio\CIT-Voice-Studio.exe",
         "$env:ProgramFiles\CIT Voice Studio\CIT Voice Studio.exe",
         "D:\AI\CIT-Voice-Studio-v1.0.3-win-x86_64.exe"
     )

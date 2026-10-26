@@ -1,0 +1,77 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "ai-tech-briefing",
+  "version": "1.0.0",
+  "name": "AI Tech News Briefing",
+  "purpose": "Phong cách bản tin thời sự công nghệ & tin tức AI cao cấp: Nền Dark Slate Cyan, bố cục thẻ Hero Metric, so sánh đối lập Side-by-Side, quote trích dẫn phát ngôn và phụ đề speech-synced highlight từ",
+  "bestFor": [
+    "Bản tin thời sự công nghệ, AI & Phần mềm (AI Hot News)",
+    "Tổng hợp top 5 tin nóng trong tuần / trong ngày",
+    "Giải thích mô hình AI mới (MoE, LLM, Robotics, Big Tech)",
+    "So sánh vụ kiện pháp lý, tranh luận chính sách và đối đầu công nghệ"
+  ],
+  "notIdealFor": [
+    "Nội dung không hợp nhịp độ bóc tách"
+  ],
+  "beatSeconds": {
+    "min": 12.9,
+    "max": 25.8,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Trích xuất từ video tham chiếu",
+    "tone": "Authoritative, confident, tech-savvy",
+    "structure": "Hook -> Exploration -> Core Insight -> Climax -> Outro"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0f172a",
+      "surface": "#1e293b",
+      "accentPrimary": "#38bdf8",
+      "accentSecondary": "#f59e0b",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Hero Metric / Comparison Split",
+    "cornerRadius": 24
+  },
+  "imagePrompt": {
+    "stylePrefix": "style matched to Ai Tech Briefing, 1px solid rgba(255,255,255,0.12)",
+    "negativePrompt": "low quality, blurry, amateur rendering"
+  },
+  "motion": {
+    "spring": {
+      "damping": 18,
+      "stiffness": 140,
+      "mass": 0.8
+    },
+    "entrance": "slide-up + pop-scale(0.85 -> 1.0)",
+    "targetWpm": 150
+  },
+  "typography": {
+    "headlineFont": "Montserrat / Inter Bold",
+    "bodyFont": "Inter Regular",
+    "safeZoneY": [
+      260,
+      1550
+    ]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Authoritative, confident, tech-savvy",
+    "bgm": "Minimal low-tempo modern lo-fi / electronic pulse",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "High-contrast hero frame with key metric and accent glow"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "CanonicalVideo"
+  },
+  "prohibited": [
+    "Khung hình rỗng",
+    "Cắt chữ bằng ellipsis",
+    "Vi phạm safe zone [260, 1550]"
+  ]
+}

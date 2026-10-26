@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { exportDnaToStylePack } from "../style/exporter.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 
@@ -303,6 +304,13 @@ Toàn bộ nhịp diễn hoạt của video mẫu được trích xuất thành 
 
   fs.writeFileSync(path.join(vaultDir, "README.md"), readmeContent);
 
+  // 8. Tự động xuất sang thư viện Styles tập trung
+  try {
+    exportDnaToStylePack(dnaProfile, customId, vaultDir);
+  } catch (err) {
+    console.warn(`   ⚠️ Style export warning: ${err.message}`);
+  }
+
   console.log(`\n✅ [DNA Cloner] Reverse-Engineering HOÀN TẤT!`);
   console.log(`   └─ DNA JSON: ${dnaJsonPath}`);
   console.log(`   └─ Contact Sheet: ${contactSheetPath}`);
@@ -318,12 +326,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const args = process.argv.slice(2);
   const targetIndex = args.findIndex(a => !a.startsWith("-"));
   if (targetIndex === -1) {
-    console.error("Usage: node core/scripts/dna/analyze.js <video-path> [--id <custom-id>]");
+    console.error("Usage: node core/scripts/dna/analyze.js <video-path> [--name <style-name> | --id <custom-id>]");
     process.exit(1);
   }
   const videoPath = args[targetIndex];
   const idIndex = args.indexOf("--id");
-  const customId = idIndex !== -1 ? args[idIndex + 1] : null;
+  const nameIndex = args.indexOf("--name");
+  const customId = nameIndex !== -1 ? args[nameIndex + 1] : (idIndex !== -1 ? args[idIndex + 1] : null);
 
   analyzeReferenceVideo(videoPath, customId).catch(err => {
     console.error(`❌ DNA Analysis Failed:`, err.message);

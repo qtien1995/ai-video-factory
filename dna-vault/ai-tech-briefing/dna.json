@@ -1,0 +1,81 @@
+{
+  "id": "ai-tech-briefing",
+  "source": "video_2026-10-24_11-45-50.mp4",
+  "extractedAt": "2026-10-24T04:50:43.170Z",
+  "mediaSpecs": {
+    "width": 576,
+    "height": 1024,
+    "aspectRatio": "9:16",
+    "durationSec": 110.64,
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "sampleRate": "44100"
+  },
+  "rhythmAndPacing": {
+    "totalSceneCuts": 6,
+    "avgCutIntervalSec": 18.4,
+    "pacingVelocity": "CALM / DOCUMENTARY"
+  },
+  "clonedDnaBlueprint": {
+    "visualStyle": {
+      "palette": {
+        "background": "#0f172a",
+        "surface": "#1e293b",
+        "primaryText": "#ffffff",
+        "accentColor": "#38bdf8",
+        "secondaryAccent": "#f59e0b"
+      },
+      "cardArchetype": "Hero Metric / Comparison Split",
+      "cornerRadius": 24,
+      "borderStyle": "1px solid rgba(255,255,255,0.12)",
+      "shadow": "0 20px 40px rgba(0,0,0,0.5)"
+    },
+    "typography": {
+      "headlineFont": "Montserrat / Inter Bold",
+      "headlineSize": 64,
+      "bodyFont": "Inter Regular",
+      "bodySize": 36,
+      "textCasing": "mixed",
+      "safeZonePaddingY": [
+        260,
+        1550
+      ]
+    },
+    "subtitleStyle": {
+      "type": "speech-synced-word-highlight",
+      "container": "frosted-pill-glassmorphism",
+      "activeWordColor": "#38bdf8",
+      "inactiveWordColor": "rgba(255,255,255,0.7)",
+      "positionY": 1450
+    },
+    "motionPhysics": {
+      "springConfig": {
+        "damping": 18,
+        "stiffness": 140,
+        "mass": 0.8
+      },
+      "entranceMotion": "slide-up + pop-scale(0.85 -> 1.0)",
+      "continuousMotion": "subtle-floating(sin-wave +- 6px)",
+      "transitionStyle": "seamless-morph / quick-cut"
+    },
+    "soundDesign": {
+      "narrationPacingWpm": 150,
+      "voiceGender": "male",
+      "voiceTone": "Authoritative, confident, tech-savvy",
+      "bgmStyle": "Minimal low-tempo modern lo-fi / electronic pulse",
+      "sfxCueTypes": [
+        "whoosh-transition",
+        "pop-reveal",
+        "cash-ding",
+        "camera-click"
+      ]
+    }
+  },
+  "artifacts": {
+    "contactSheet": "dna-vault/ai-tech-briefing/raw/contact_sheet.jpg",
+    "audioTrack": "dna-vault/ai-tech-briefing/raw/audio.mp3",
+    "sceneCutsCount": 6,
+    "keyframesCount": 111
+  }
+}

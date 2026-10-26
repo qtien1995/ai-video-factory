@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "multi-asset-trading",
+  "version": "2.0.0",
+  "name": "Multi-Asset Trading & Candlestick Replay",
+  "purpose": "Phong cách giao dịch tài chính chuyên sâu: Tái hiện nến Nhật theo tick, vùng thanh khoản Smart Money, dải ticker ribbon và sổ cái kinh tế",
+  "bestFor": [
+    "Replay nến Nhật đa khung thời gian (Candlestick Replay cho Forex, Chứng khoán, Crypto)",
+    "Phân tích cấu trúc thị trường: Order Block, Fair Value Gap (FVG), Liquidity Hunt & Volume Profile",
+    "Digital Asset Forensics: Phân tích dòng tiền On-chain, Funding Rate, Liquidation Cascades",
+    "Sổ cái tài chính (Financial Ledger Newspaper) & Báo cáo thu nhập doanh nghiệp (Earnings & Valuation)"
+  ],
+  "notIdealFor": ["Clip giải trí đời sống", "Vlog du lịch ẩm thực"],
+  "beatSeconds": {
+    "min": 2.0,
+    "max": 4.2,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Một cú breakout giả, cú sập thanh khoản bất ngờ hoặc số liệu P/E gây sốc",
+    "tone": "Sắc bén, nhạy bén thị trường, phân tích xác suất và hành vi dòng tiền lớn",
+    "structure": "Cú quét thanh khoản -> Mô hình biểu đồ/nến -> Bóc tách dòng tiền cá mập -> Chiến lược Risk/Reward -> Outro quản trị vốn"
+  },
+  "visual": {
+    "palette": {
+      "background": "#070B19",
+      "surface": "#0F172A",
+      "accentPrimary": "#00E599",
+      "accentSecondary": "#FF4D6A",
+      "positive": "#00E599",
+      "negative": "#FF4D6A"
+    },
+    "cardStyle": "High-tech exchange terminal card with live order book, tick-by-tick candlestick canvas, and running ticker ribbons",
+    "cornerRadius": 16
+  },
+  "imagePrompt": {
+    "stylePrefix": "modern trading terminal display, crisp candlestick replay charts, glowing cyan and emerald order blocks, dark cobalt background, sleek fintech data interface",
+    "negativePrompt": "low quality, blurry, colorful messy cartoon, 3d toy coins, flat boring spreadsheet"
+  },
+  "motion": {
+    "spring": { "damping": 14, "stiffness": 150, "mass": 0.65 },
+    "entrance": "candlestick-grow + ticker-sweep + metric-counter-roll",
+    "targetWpm": 156
+  },
+  "typography": {
+    "headlineFont": "Barlow SemiCondensed Bold",
+    "bodyFont": "Be Vietnam Pro Bold",
+    "monoFont": "JetBrains Mono Bold",
+    "safeZoneY": [240, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, đĩnh đạc, nhanh nhạy, dứt khoát theo từng cú nảy giá",
+    "bgm": "Dark minimal techno / synthwave pulse / terminal typing & bell SFX",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Explosive candlestick breakout candle with liquidity swept line and bold profit multiplier badge"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "TradingReplayVideo"
+  },
+  "prohibited": [
+    "Nến vẽ lệch tỷ lệ wick và body",
+    "Dải ticker ribbon che lấp biểu đồ chính",
+    "Số liệu tài chính thiếu đơn vị đo lường ($/VND/%)"
+  ]
+}

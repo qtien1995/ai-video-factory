@@ -42,8 +42,18 @@ export async function renderProject({ project, kind = "preview", engine = "AUTO"
     const qc = inspectMedia(candidate, narration, spec, candidateSheet);
     if (!qc.pass) throw new Error(`Technical QA failed: ${qc.failures.join(", ")}`);
     for (const [source, destination] of [[candidate, final], [candidateSheet, finalSheet]]) {
-      if (fs.existsSync(destination)) fs.rmSync(destination);
-      fs.renameSync(source, destination);
+      if (fs.existsSync(destination)) {
+        try {
+          fs.rmSync(destination);
+          fs.renameSync(source, destination);
+        } catch {
+          // Fallback for Windows file locks (e.g. preview player or chat apps holding read locks)
+          fs.copyFileSync(source, destination);
+          try { fs.rmSync(source); } catch {}
+        }
+      } else {
+        fs.renameSync(source, destination);
+      }
     }
     const report = { ...qc, kind, engine: selectedEngine, output: final, contactSheet: finalSheet,
       routingReasons: routing.reasons, checkedAt: new Date().toISOString(), visualReviewed: false };

@@ -31,7 +31,7 @@ export const OutroCard: React.FC<OutroProps> = ({
         justifyContent: "center",
         padding: "80px 60px",
         zIndex: 60,
-        fontFamily: "'Inter', sans-serif"
+        fontFamily: "'Be Vietnam Pro', sans-serif"
       }}
     >
       {/* Creator Avatar / Brand Emblem */}

@@ -126,3 +126,28 @@ test("completed preview is a cache hit without calling the renderer", async () =
   await main(["render", "--project", id, "--kind", "preview"]);
   assert.equal(state.evaluate(id).done, true);
 });
+test("preview can be skipped cleanly without generating preview artifacts", () => {
+  const id = "skip_preview";
+  fixture(id);
+  state.recordStage(id, "SCRIPT", []);
+  state.recordStage(id, "BEATS", []);
+  state.approveGate(id, "GATE1", "approved");
+  state.recordStage(id, "CREATIVE_DIRECTION", []);
+  state.approveGate(id, "GATE2", "approved");
+  state.recordStage(id, "TTS", [], { voice: "vi-VN-HoaiMyNeural", rate: "+10%" });
+  state.recordStage(id, "STORYBOARD", []);
+  state.recordStage(id, "VIDEO_SPEC", []);
+  state.recordStage(id, "VALIDATION", []);
+  state.recordStage(id, "PRODUCTION", []);
+  // Preview skipped
+  state.recordStage(id, "PREVIEW", [], { engine: "REMOTION", skipped: true });
+  state.recordStage(id, "PREVIEW_QA", [], { reviewed: true, skipped: true });
+  state.approveGate(id, "GATE3", "approved direct final");
+  state.recordStage(id, "FINAL_RENDER", [], { engine: "REMOTION" });
+  state.recordStage(id, "FINAL_QA", ["qc.md"], { reviewed: true });
+  const evaluated = state.evaluate(id);
+  assert.equal(evaluated.stages.PREVIEW.status, "complete");
+  assert.equal(evaluated.stages.FINAL_RENDER.status, "complete");
+  assert.equal(evaluated.next, "DONE");
+});
+

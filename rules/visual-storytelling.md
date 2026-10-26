@@ -33,6 +33,27 @@ Trong storyboard hiện có, ghi cho từng thẻ: ý chính; phần bắt buộ
 - Mỗi beat có visual action có nghĩa: grow, draw, flow, fill, stack, split, merge, connect, count, morph, expand, collapse, focus, track, reveal, highlight hoặc interrupt.
 - Ưu tiên continuity: cảnh sau kế thừa trạng thái trước khi hợp lý. Motion diễn giải ý, không chỉ trang trí. Voice và timing thật là master timeline.
 
+## 5 Trụ Cột Sáng Tạo Đột Phá (Masterpiece Production Standards)
+
+Khi sản xuất video giải thích hoặc phóng sự công nghệ, tài chính, y khoa, bắt buộc áp dụng 5 trụ cột để đạt chất lượng phát sóng:
+
+1. **Vector Anatomy & Mechanism Illustration (Minh họa giải phẫu / cơ chế chuyển động)**:
+   - Thay vì dùng icon flat hoặc ảnh stock tĩnh nhàm chán, tự vẽ bằng code SVG Path mô phỏng chính xác cấu trúc giải phẫu học, linh kiện cơ khí hoặc sơ đồ luồng hệ thống.
+   - Kết hợp hiệu ứng quét tiêu điểm (target crosshair scanner, focal rings, radar pulse) bám sát vị trí được nhắc tới trong lời kể.
+2. **Micro-Simulation & Visual Metaphors (Mô phỏng vi mô & Ẩn dụ thị giác)**:
+   - Dựng trực quan cơ chế can thiệp hoặc tác động (ví dụ: mũi dao nội soi bóc tách polyp/khối u, tia laser, dòng tiền on-chain di chuyển qua các node ví).
+   - Biến những khái niệm y khoa, kỹ thuật trừu tượng thành hành động thị giác sinh động, dễ hiểu tức thì trong 3 giây.
+3. **Counters & Kinetic Metrics (Số liệu đếm tăng động xuyên suốt)**:
+   - Toàn bộ số liệu, phần trăm (%) và thước đo định lượng không được xuất hiện tĩnh đơ. Phải dùng hiệu ứng đếm số tăng/giảm mượt mà (`interpolate` từ 0 đến giá trị đích) kết hợp định dạng số bản địa (`toLocaleString('vi-VN')`).
+4. **Dynamic Camera Breathing & Parallax (Nhịp thở camera & Chiều sâu trường ảnh)**:
+   - Tuyệt đối cấm để khung hình tĩnh (freeze frame) nhàm chán. Mọi cảnh đều có nhịp thở điện ảnh chậm: `scale` từ 1.00 -> 1.03, micro-tilt xoay `0.15deg`, kết hợp nền đo nhịp tim (telemetry / ECG wave) chạy tuần hoàn tạo nhịp sống sinh học cho video.
+5. **Kinetic "Word-Punching" & Broadcast Sound Design (Phụ đề nổ chữ & Thiết kế âm thanh đa tầng)**:
+   - Phụ đề speech-synced áp dụng hiệu ứng "Word Punching": Từ đang đọc được phóng nhẹ (`scale: 1.22x`) và phủ ánh sáng neon/accent mà không làm xô lệch cấu trúc dòng chữ.
+   - Âm thanh phát sóng chuẩn mực: Phối trộn 3 lớp âm thanh chuyên nghiệp:
+     * Voiceover AI Studio rõ ràng, tách bạch (Hải Đăng / Nam Minh Neural).
+     * BGM Ambient Synth / Tech Pulse lót nền ở mức `-18dB` đến `-20dB`.
+     * Bộ SFX micro-cues (whoosh chuyển cảnh, impact gõ nhịp số liệu, ping radar, chime chốt hạ) căn khớp chính xác từng frame chuyển động.
+
 ## QA bằng hình ảnh thực tế
 
 1. Render frame khi toàn bộ chữ mỗi cảnh đã xuất hiện ổn định. Cảnh có nhiều trạng thái thẻ phải chụp từng trạng thái; không chỉ chụp giữa cảnh.
@@ -40,4 +61,4 @@ Trong storyboard hiện có, ghi cho từng thẻ: ý chính; phần bắt buộ
 3. Kiểm tra thêm đầu/giữa/cuối cụm, chuyển cụm, khoảng lặng và cảnh đông chữ nhất. Thẻ phải có đủ thời gian đọc sau khi xuất hiện.
 4. Tự sửa từng thẻ chưa đạt, render lại và xem lại đến khi đạt. Ghi scene/card, frame/time, đường dẫn ảnh gốc/360×640, lỗi, sửa đổi và kết quả vào qc.md. Chưa xem thì ghi chưa kiểm tra.
 5. Chạy lint/typecheck nếu có. Khi có MP4 mới: dùng FFprobe kiểm tra streams, codec, kích thước, fps, duration theo spec; FFmpeg trích frame từ chính MP4 đó để xem lại. Kiểm tra motion/audio thực tế. Lint hoặc exit code không chứng minh hình ảnh đạt.
-6. Khi được yêu cầu video hoàn chỉnh, chỉ bàn giao một MP4 ở output chuẩn (Factory: projects/<id>/output/final.mp4); cập nhật chính file đó khi có feedback. Không giao preview/v001/v002. Chỉ báo final/QA đạt sau kiểm tra cả kỹ thuật lẫn hình ảnh thực tế.
+6. Khi được yêu cầu video hoàn chỉnh, chỉ bàn giao duy nhất một MP4 ở output chuẩn (Factory: `projects/<id>/output/final.mp4`); cập nhật chính file đó khi có feedback. Bỏ hẳn khâu preview, cấm tạo hoặc copy ngầm file preview (`preview.mp4`, `preview-contact-sheet.svg`, `preview-qc.json`). Thư mục `output/` chỉ chứa sản phẩm final. Chỉ báo final/QA đạt sau kiểm tra cả kỹ thuật lẫn hình ảnh thực tế.

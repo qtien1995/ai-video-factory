@@ -51,7 +51,7 @@ function checkFfmpeg() {
 
 export async function runDoctor() {
   console.log("==================================================");
-  console.log("   AI VIDEO FACTORY V2 — PRE-FLIGHT HEALTH CHECK  ");
+  console.log("   AI VIDEO FACTORY V3 — PRE-FLIGHT HEALTH CHECK  ");
   console.log("==================================================\n");
 
   const results = {
@@ -81,7 +81,7 @@ export async function runDoctor() {
       results.flowkit.detail = `FastAPI Online (Chrome Extension Connected: ${data.extension_connected ? "YES" : "NO"})`;
       if (!data.extension_connected) {
         results.flowkit.status = "WARN";
-        results.flowkit.detail += " -> Open Chrome with flow.google.com tab to enable video generation.";
+        results.flowkit.detail += " -> Open Edge or browser with flow.google.com tab to enable video generation.";
       }
     } catch {
       results.flowkit.status = "PASS";
@@ -90,7 +90,7 @@ export async function runDoctor() {
   } else {
     results.flowkit.status = "OFFLINE";
     results.flowkit.detail = "FastAPI backend not running at :8100 (Required for Vox/FlowKit).";
-    results.flowkit.guide = "Run: & 'D:\\AI\\VIDEO AI\\.tools\\flowkit\\venv\\Scripts\\python.exe' -m agent.main";
+    results.flowkit.guide = "Run: $env:PYTHONPATH='D:\\AI\\VIDEO AI\\.tools\\flowkit'; & 'D:\\AI\\VIDEO AI\\.tools\\flowkit\\venv\\Scripts\\python.exe' -m agent.main";
   }
 
   // 3. FFmpeg

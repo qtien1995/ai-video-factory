@@ -1,7 +1,7 @@
 {
   "name": "core",
-  "version": "1.0.0",
-  "description": "",
+  "version": "3.0.0",
+  "description": "AI Video Factory V3 Core Orchestrator",
   "main": "index.js",
   "scripts": {
     "test": "node --test tests/*.test.js",

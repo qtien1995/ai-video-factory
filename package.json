@@ -9,6 +9,7 @@
     "studio": "powershell -ExecutionPolicy Bypass -File .\\scripts\\start-studio.ps1",
     "services": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
     "factory": "node core/scripts/factory/index.js",
+    "style": "node core/scripts/style/index.js",
     "dna": "node core/scripts/dna/index.js",
     "prompts": "node core/scripts/prompts/index.js",
     "verify": "node tests/e2e/test_final_video.cjs",

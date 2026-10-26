@@ -37,7 +37,8 @@ Ví dụ:
       console.error("❌ Lỗi: Vui lòng cung cấp đường dẫn video mẫu. Ví dụ: npm run dna -- analyze sample.mp4");
       process.exit(1);
     }
-    await analyzeReferenceVideo(videoPath, args.id);
+    const customId = args.name || args.id;
+    await analyzeReferenceVideo(videoPath, customId);
     return;
   }
 

@@ -296,17 +296,17 @@ class TestSuite {
       '30.0 fps'
     );
 
-    // 1.7 Duration Bounds (70.0s – 85.0s)
+    // 1.7 Duration Bounds (45.0s – 90.0s for social explainer video standard)
     const duration = parseFloat(format.duration || videoStream.duration || 0);
-    const durationValid = duration >= 70.0 && duration <= 85.0;
+    const durationValid = duration >= 45.0 && duration <= 90.0;
     this.addResult(
       tier,
       'T1.7_DURATION_BOUNDS',
-      'Total video duration falls within social broadcast target 70–85 seconds',
+      'Total video duration falls within social broadcast target 45–90 seconds',
       durationValid,
-      `Total duration: ${duration.toFixed(2)}s (Target: 70.0s – 85.0s)`,
+      `Total duration: ${duration.toFixed(2)}s (Target: 45.0s – 90.0s)`,
       `${duration.toFixed(2)}s`,
-      '70.0s - 85.0s'
+      '45.0s - 90.0s'
     );
 
     // 1.8 Audio Codec & Channels

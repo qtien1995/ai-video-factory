@@ -138,8 +138,8 @@ export async function main(argv = process.argv.slice(2)) {
   if (command === "tts") {
     const { ensureCitVoiceStudio } = await import("./services.js");
     await ensureCitVoiceStudio(4000);
-    const settings = { voice: args.voice || "vi-VN-HoaiMyNeural", rate: args.rate || "+10%",
-      pitch: args.pitch || "+0Hz", volume: args.volume || "+0%", provider: "edge-tts-universal" };
+    const settings = { voice: args.voice || "Hải Đăng", rate: args.rate || "+10%",
+      pitch: args.pitch || "+0Hz", volume: args.volume || "+0%", provider: "cit-voice-studio" };
     const state = readState(project), current = evaluate(project, state);
     const prior = current.signatures.GATE2;
     const wantedInput = prior && stageInput(project, "TTS", state, prior, settings);
@@ -150,7 +150,8 @@ export async function main(argv = process.argv.slice(2)) {
     const narration = narrationFromScript(project);
     const commandArgs = [path.join(ROOT, "core", "scripts", "tts", "index.js"), "--project", project,
       "--text", narration, "--voice", settings.voice, "--rate", settings.rate,
-      "--pitch", settings.pitch, "--volume", settings.volume];
+      "--pitch", settings.pitch, "--volume", settings.volume, "--provider", settings.provider,
+      ...(args.speed ? ["--speed", String(args.speed)] : [])];
     const result = spawnSync(process.execPath, commandArgs, { cwd: path.join(ROOT, "core"), stdio: "inherit", timeout: 180000 });
     if (result.status !== 0) throw new Error(`TTS failed with code ${result.status ?? result.error?.message}`);
     const voiceSeconds = duration(artifactPath(project, "assets/audio/narration.mp3"));
@@ -167,7 +168,7 @@ export async function main(argv = process.argv.slice(2)) {
     return;
   }
   if (command === "render") {
-    const kind = args.kind || "preview";
+    const kind = args.kind || "final";
     const stage = kind === "preview" ? "PREVIEW" : kind === "final" ? "FINAL_RENDER" : null;
     if (!stage) throw new Error("--kind must be preview or final");
     const spec = requireSpec(project);
@@ -188,34 +189,19 @@ export async function main(argv = process.argv.slice(2)) {
     }
     if (current.next !== stage) {
       if (kind === "final" && ["PREVIEW", "PREVIEW_QA", "GATE3"].includes(current.next)) {
-        // Direct Single Final Render Mode: render final once, copy outputs to preview, auto-advance stages
+        // Direct Single Final Render Mode: render final directly without generating or copying preview artifacts
         process.env.FACTORY_FINAL_APPROVED = "1";
         try {
           const { renderProject } = await import("../render/index.js");
           const report = await renderProject({ project, kind: "final", engine: args.engine || "AUTO" });
-          const outputDir = path.join(projectDir(project), "output");
-          for (const [s, d] of [
-            ["final.mp4", "preview.mp4"],
-            ["final-contact-sheet.svg", "preview-contact-sheet.svg"],
-            ["final-qc.json", "preview-qc.json"]
-          ]) {
-            const src = path.join(outputDir, s), dst = path.join(outputDir, d);
-            if (fs.existsSync(src)) fs.copyFileSync(src, dst);
-          }
-          const previewQcFile = path.join(outputDir, "preview-qc.json");
-          if (fs.existsSync(previewQcFile)) {
-            const qcObj = JSON.parse(fs.readFileSync(previewQcFile, "utf8"));
-            qcObj.kind = "preview";
-            fs.writeFileSync(previewQcFile, JSON.stringify(qcObj, null, 2) + "\n");
-          }
           if (current.next === "PREVIEW") {
-            current = recordStage(project, "PREVIEW", [], { engine: report.engine });
+            current = recordStage(project, "PREVIEW", [], { engine: report.engine, skipped: true });
           }
           if (current.next === "PREVIEW_QA") {
-            current = recordStage(project, "PREVIEW_QA", ["qc.md"], { reviewed: true });
+            current = recordStage(project, "PREVIEW_QA", [], { reviewed: true, skipped: true });
           }
           if (current.next === "GATE3") {
-            current = approveGate(project, "GATE3", "User requested single direct final render");
+            current = approveGate(project, "GATE3", "User requested single direct final render (skipping preview)");
           }
           const recorded = recordStage(project, "FINAL_RENDER", [], { engine: report.engine });
           console.log(JSON.stringify({ render: "final", qa: report, singleFinalMode: true, next: recorded.next }));

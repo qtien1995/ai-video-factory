@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "whiteboard-hand-draw",
+  "version": "2.0.0",
+  "name": "Whiteboard & Hand Draw",
+  "purpose": "Phong cách vẽ tay bảng trắng, minh họa nét mực tự vẽ trên giấy và bút dạ quang bám sát nhịp lời kể",
+  "bestFor": [
+    "Vẽ tay bảng trắng (Whiteboard Animation & Sketch)",
+    "Minh họa AI kể chuyện trên nền giấy trắng và giấy nhàu (Paper Clean & Textured)",
+    "Giải thích ẩn dụ trừu tượng, tư duy hình ảnh và triết lý cuộc sống",
+    "So sánh trực quan hai vật thể/nhân vật với nét vẽ viết dần (Write-on stroke)"
+  ],
+  "notIdealFor": ["Tin tức thời sự khẩn cấp", "Bản tin thị trường nến tài chính"],
+  "beatSeconds": {
+    "min": 2.2,
+    "max": 4.5,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Một nét vẽ phác họa bất ngờ mở ra câu hỏi ẩn dụ hoặc vấn đề cuộc sống",
+    "tone": "Ấm áp, gần gũi, truyền cảm hứng, nhịp kể chuyện thủ công thong thả",
+    "structure": "Phác họa vấn đề -> Từng nét giải thích cơ chế -> Minh họa cao trào -> Đúc kết bài học & Outro"
+  },
+  "visual": {
+    "palette": {
+      "background": "#FDFBF7",
+      "surface": "#FFFFFF",
+      "accentPrimary": "#1E293B",
+      "accentSecondary": "#F59E0B",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Warm paper card with sketched charcoal borders, torn paper edges, and fluorescent highlighter bands",
+    "cornerRadius": 16
+  },
+  "imagePrompt": {
+    "stylePrefix": "hand-drawn ink sketch illustration on textured white paper, minimalist charcoal outline, warm watercolor tint, crisp vector lines",
+    "negativePrompt": "low quality, 3d glossy render, realistic photo, cluttered neon, messy digital gradients"
+  },
+  "motion": {
+    "spring": { "damping": 18, "stiffness": 120, "mass": 0.85 },
+    "entrance": "stroke-dashoffset-draw + hand-follow + subtle-paper-pop",
+    "targetWpm": 145
+  },
+  "typography": {
+    "headlineFont": "Patrick Hand Regular",
+    "bodyFont": "Caveat Bold",
+    "monoFont": "JetBrains Mono Regular",
+    "safeZoneY": [250, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, ấm áp, thong thả, nhấn nhá từng câu chữ theo nét vẽ",
+    "bgm": "Acoustic guitar / warm subtle lo-fi / chalk & pencil SFX cues",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Hand holding pen finishing an eye-catching sketch with bright yellow highlighter title"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "WhiteboardVideo"
+  },
+  "prohibited": [
+    "Nét vẽ xuất hiện cùng lúc không có hiệu ứng vẽ dần",
+    "Bóng đổ 3D quá gắt làm mất chất thủ công mộc mạc",
+    "Chữ nhảy giật làm lệch toạ độ bút vẽ"
+  ]
+}

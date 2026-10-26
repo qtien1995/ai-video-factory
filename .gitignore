@@ -126,3 +126,16 @@ browser/
 Thumbs.db
 .agents/teamwork/
 
+# ==========================================
+# Scratch & Temporary Doc Dumps
+# ==========================================
+scratch/
+**/scratch/
+doc_content.txt
+scratch_doc.txt
+engines/remotion/preview-*.png
+!engines/remotion/preview-cloned.png
+!engines/remotion/preview-outro.png
+!engines/remotion/preview-table.png
+
+

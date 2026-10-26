@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "showcase-affiliate-luxury",
+  "version": "2.0.0",
+  "name": "Showcase Affiliate & Luxury Editorial",
+  "purpose": "Phong cách trưng bày sản phẩm thương mại điện tử, danh mục bất động sản kiến trúc, mỹ phẩm cao cấp và cẩm nang du lịch",
+  "bestFor": [
+    "Bán hàng Affiliate & TikTok Shop: Lộ diện sản phẩm (Mẫu 01-08), đường line chỉ tính năng xung quanh packshot & CTA chốt đơn",
+    "Bất động sản & Kiến trúc: Hồ sơ dự án (Real Estate Atlas, Residential Atelier), khung ảnh vòm và bố cục cắt lớp",
+    "Mỹ phẩm & Làm đẹp: Phong cách Beauty Luxury Noir & Editorial Light (espresso-plum, champagne gold, silk curves, bảng thành phần an toàn)",
+    "Du lịch & Khám phá: Bưu thiếp Postcard du lịch với tem địa danh, lộ trình route strip và checklist chi phí"
+  ],
+  "notIdealFor": ["Bản tin chiến sự khẩn cấp", "Kể chuyện hoạt hình thiếu nhi"],
+  "beatSeconds": {
+    "min": 2.2,
+    "max": 4.5,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Khoảnh khắc mở hộp/lộ diện sản phẩm hoặc hình ảnh căn biệt thự tuyệt mỹ gây mê hoặc",
+    "tone": "Sang trọng, cuốn hút, tinh tế, tập trung vào trải nghiệm xúc giác và giá trị độc bản",
+    "structure": "Hook thị giác sản phẩm/không gian -> Bóc tách 3 điểm đắt giá nhất -> Trải nghiệm thực tế -> Báo giá/Ưu đãi giới hạn -> Outro CTA"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0F0E11",
+      "surface": "#1A1820",
+      "accentPrimary": "#E2B774",
+      "accentSecondary": "#F472B6",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Frosted luxury glass card with champagne gold borders, arched window frames, and animated leader callout lines",
+    "cornerRadius": 20
+  },
+  "imagePrompt": {
+    "stylePrefix": "luxury editorial studio lighting, elegant product packshot centerpiece, soft silk draping, champagne gold and espresso plum tones, magazine quality advertisement",
+    "negativePrompt": "low quality, cheap plastic, harsh white flash, blurry background, messy text clutter"
+  },
+  "motion": {
+    "spring": { "damping": 18, "stiffness": 115, "mass": 0.85 },
+    "entrance": "scale-unveil + feature-line-draw + champagne-glow",
+    "targetWpm": 148
+  },
+  "typography": {
+    "headlineFont": "Cormorant Garamond Bold",
+    "bodyFont": "Plus Jakarta Sans SemiBold",
+    "monoFont": "JetBrains Mono Regular",
+    "safeZoneY": [250, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, ấm áp, lịch lãm, truyền cảm hứng sở hữu và nâng tầm phong cách sống",
+    "bgm": "Deep lounge ambient / elegant piano silk chords / subtle glass chime SFX",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Glossy arched product packshot with gold price ribbon and glowing feature callout lines"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "ShowcaseVideo"
+  },
+  "prohibited": [
+    "Đường line chỉ tính năng cắt ngang qua logo thương hiệu",
+    "Bảng giá thiếu đơn vị tiền tệ rõ ràng",
+    "Khung hình sản phẩm bị cắt cụt đầu đuôi"
+  ]
+}

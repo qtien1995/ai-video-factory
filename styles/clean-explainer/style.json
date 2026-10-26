@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "clean-explainer",
+  "version": "2.0.0",
+  "name": "Clean Explainer 2D",
+  "purpose": "Giải thích kiến thức, cơ chế và sản phẩm qua hệ thống 6 cảnh chuẩn Cường IT và 6 bố cục thẻ Archetypes",
+  "bestFor": [
+    "Giải thích công nghệ, phần mềm, cloud, AI tools",
+    "Bảo hiểm sức khỏe (BHSK), BHYT & An sinh gia đình",
+    "Kế hoạch tài chính, quản lý rủi ro & hợp đồng quyền lợi",
+    "Quy trình từng bước (Step-by-step How-it-works)"
+  ],
+  "notIdealFor": ["Clip hài ngắn", "MV ca nhạc"],
+  "beatSeconds": {
+    "min": 2.4,
+    "max": 4.8,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Nghịch lý thực tế hoặc câu hỏi nhức nhối về vấn đề thường gặp",
+    "tone": "Thực chiến, súc tích, mạch lạc, dễ hiểu và thấu cảm",
+    "structure": "Hook -> Problem -> Solution -> Workflow -> Benefits -> Outro"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0D1117",
+      "surface": "#161B22",
+      "accentPrimary": "#58A6FF",
+      "accentSecondary": "#34D399",
+      "positive": "#3FB950",
+      "negative": "#F85149"
+    },
+    "cardStyle": "Frosted glass card with 6 standard archetypes (Fork, Step Flow, Checklist, Hero Metric)",
+    "cornerRadius": 20
+  },
+  "imagePrompt": {
+    "stylePrefix": "modern clean digital explainer cards, glowing technical and healthcare UI schematics",
+    "negativePrompt": "low quality, blurry, messy cartoon, overcomplicated 3d"
+  },
+  "motion": {
+    "spring": { "damping": 15, "stiffness": 145, "mass": 0.65 },
+    "entrance": "slide-down-reveal",
+    "targetWpm": 152
+  },
+  "typography": {
+    "headlineFont": "Plus Jakarta Sans Bold",
+    "bodyFont": "Be Vietnam Pro SemiBold",
+    "monoFont": "Fira Code Regular",
+    "safeZoneY": [250, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, rõ chữ, truyền cảm, tốc độ ổn định",
+    "bgm": "Clean lo-fi tech / warm ambient",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Side-by-side comparison card (A vs B) with glowing question badge"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "CanonicalVideo"
+  },
+  "prohibited": [
+    "Khung hình rỗng",
+    "Cắt chữ bằng ellipsis",
+    "Vi phạm vùng an toàn mobile 9:16"
+  ]
+}

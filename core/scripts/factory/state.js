@@ -95,7 +95,11 @@ export function stageInput(projectId, stage, state, priorSignature = "", metadat
   const base = { stage, priorSignature, metadata };
   if (stage === "TTS") base.source = narrationFromScript(projectId);
   if (stage === "PREVIEW" || stage === "FINAL_RENDER") {
-    base.render = renderInput(projectId, metadata.engine || "REMOTION");
+    if (stage === "PREVIEW" && metadata?.skipped) {
+      base.render = "SKIPPED";
+    } else {
+      base.render = renderInput(projectId, metadata.engine || "REMOTION");
+    }
   }
   return hash(JSON.stringify(base));
 }
@@ -161,10 +165,11 @@ export function recordStage(projectId, stage, artifacts, metadata = {}) {
   if (current.next !== stage) throw new Error(`Expected ${current.next || "no stage"} before ${stage}`);
   const alternate = (stage === "BEATS" && artifacts.includes("beats.md")) ||
     (stage === "STORYBOARD" && artifacts.includes("storyboard.md"));
-  const required = alternate ? [] : (DEFAULT_ARTIFACTS[stage] || []);
+  const skippedStage = (stage === "PREVIEW" || stage === "PREVIEW_QA") && metadata.skipped;
+  const required = (alternate || skippedStage) ? [] : (DEFAULT_ARTIFACTS[stage] || []);
   const paths = [...new Set([...required, ...artifacts])];
-  if (["PREVIEW_QA", "FINAL_QA"].includes(stage) && !artifacts.length) throw new Error(`${stage} requires --artifact`);
-  if (["PREVIEW_QA", "FINAL_QA"].includes(stage) && !metadata.reviewed) throw new Error(`${stage} requires --reviewed after visual review`);
+  if (["PREVIEW_QA", "FINAL_QA"].includes(stage) && !metadata.skipped && !artifacts.length) throw new Error(`${stage} requires --artifact`);
+  if (["PREVIEW_QA", "FINAL_QA"].includes(stage) && !metadata.skipped && !metadata.reviewed) throw new Error(`${stage} requires --reviewed after visual review`);
   const previous = STAGES[STAGES.indexOf(stage) - 1];
   const prior = previous ? current.signatures[previous] : "";
   const input = stageInput(projectId, stage, state, prior, metadata);

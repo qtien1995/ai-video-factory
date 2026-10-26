@@ -1,0 +1,260 @@
+{
+  "$schema": "../schemas/style.schema.json",
+  "version": "2.1.0",
+  "updatedAt": "2026-10-24T04:50:43.175Z",
+  "styles": [
+    {
+      "id": "medical-biometrics-pro",
+      "name": "Medical Biometrics & Clinical Editorial",
+      "category": "medical",
+      "purpose": "Phong cách y sinh học & phóng sự y khoa công nghệ cao: Nền Deep Slate y tế, hình vẽ vector giải phẫu tự chạy, mô phỏng vi phẫu nội soi, nhịp đập ECG tuần hoàn, camera thở Parallax, số chạy động và lớp âm thanh sound design đa tầng",
+      "bestFor": [
+        "Giải thích bệnh học, ung thư, tim mạch, y tế cộng đồng",
+        "Phóng sự tiến bộ công nghệ y khoa (Nội soi ESD, Robot phẫu thuật Da Vinci)",
+        "Báo cáo thống kê dịch tễ (Globocan, WHO, Bộ Y Tế)",
+        "Video cảnh báo sức khỏe và kêu gọi tầm soát định kỳ"
+      ],
+      "tags": [
+        "medical",
+        "biometrics",
+        "clinical",
+        "anatomy",
+        "endoscopy",
+        "ecg-telemetry",
+        "counters",
+        "sound-design"
+      ],
+      "path": "styles/medical-biometrics-pro",
+      "targetWpm": 150,
+      "avgCutIntervalSec": 9.3,
+      "sourceDna": "UNG-THU-DAI-TRUC-TRANG-TOP-3"
+    },
+    {
+      "id": "whiteboard-hand-draw",
+      "name": "Whiteboard & Hand Draw",
+      "category": "whiteboard",
+      "purpose": "Phong cách vẽ tay bảng trắng, nét mực tự vẽ write-on, bàn tay cầm bút bám nét SVG và highlighter dạ quang bám sát lời kể",
+      "bestFor": [
+        "Vẽ tay bảng trắng (Whiteboard Animation & Sketch)",
+        "Minh họa AI kể chuyện trên nền giấy trắng và giấy nhàu (Paper Clean & Textured)",
+        "Giải thích ẩn dụ trừu tượng, tư duy hình ảnh và triết lý cuộc sống",
+        "So sánh trực quan hai vật thể/nhân vật với nét vẽ viết dần (Write-on stroke)"
+      ],
+      "tags": [
+        "whiteboard",
+        "hand-draw",
+        "paper-sketch",
+        "write-on",
+        "illustrated",
+        "highlighter",
+        "draw-motion"
+      ],
+      "path": "styles/whiteboard-hand-draw",
+      "targetWpm": 145,
+      "avgCutIntervalSec": 3.2,
+      "sourceDna": "TRAM-AI-WHITEBOARD-SUITE"
+    },
+    {
+      "id": "geopolitical-map-pro",
+      "name": "Geopolitical Map Pro",
+      "category": "map",
+      "purpose": "Phong cách bản đồ địa chính trị, chiến lược quân sự, tuyến thương mại hàng hải và diễn biến lịch sử toàn cầu",
+      "bestFor": [
+        "Bản đồ địa lý - chính trị thế giới & khu vực (Geopolitical & Fullscreen Map)",
+        "Xung đột quân sự, chiến lược phòng thủ, tuyến vận tải hàng hải & eo biển",
+        "Tranh chấp tài nguyên, liên minh quốc tế (NATO, BRICS, ASEAN) & biến động biên giới",
+        "Phim tài liệu lịch sử, diễn biến chiến dịch và phân tích quan hệ quốc tế"
+      ],
+      "tags": [
+        "geopolitics",
+        "map",
+        "military",
+        "strategy",
+        "routes",
+        "territory",
+        "tactical-hud"
+      ],
+      "path": "styles/geopolitical-map-pro",
+      "targetWpm": 150,
+      "avgCutIntervalSec": 3.6,
+      "sourceDna": "TRAM-AI-GEOPOLITICAL-MAP"
+    },
+    {
+      "id": "multi-asset-trading",
+      "name": "Multi-Asset Trading & Candlestick Replay",
+      "category": "finance",
+      "purpose": "Phong cách giao dịch tài chính chuyên sâu: Tái hiện nến Nhật theo tick, vùng thanh khoản Smart Money, dải ticker ribbon và sổ cái kinh tế",
+      "bestFor": [
+        "Replay nến Nhật đa khung thời gian (Candlestick Replay cho Forex, Chứng khoán, Crypto)",
+        "Phân tích cấu trúc thị trường: Order Block, Fair Value Gap (FVG), Liquidity Hunt & Volume Profile",
+        "Digital Asset Forensics: Phân tích dòng tiền On-chain, Funding Rate, Liquidation Cascades",
+        "Sổ cái tài chính (Financial Ledger Newspaper) & Báo cáo thu nhập doanh nghiệp (Earnings & Valuation)"
+      ],
+      "tags": [
+        "trading",
+        "forex",
+        "crypto",
+        "candlestick",
+        "order-block",
+        "ticker",
+        "liquidity",
+        "stocks"
+      ],
+      "path": "styles/multi-asset-trading",
+      "targetWpm": 156,
+      "avgCutIntervalSec": 2.8,
+      "sourceDna": "TRAM-AI-FINANCIAL-TRADING"
+    },
+    {
+      "id": "editorial-news-canvas",
+      "name": "Editorial News Canvas & Press Briefing",
+      "category": "editorial",
+      "purpose": "Phong cách báo chí chính luận & tin tức biên tập: Chèn bài báo thực tế với highlight trích dẫn, bảng điểm thể thao, thông số xe cộ và bảng học thuật",
+      "bestFor": [
+        "Thời sự chính luận, dân sinh, giao thông & biến động xã hội (Modern News Canvas & Crimson Timeline)",
+        "Chèn ảnh chụp bài báo thực tế (Press Clipping Mockup với vệt bút dạ quang trên VnExpress, Tuổi Trẻ, Bloomberg)",
+        "Bản tin thể thao: Tỉ số trận đấu (Scoreboard), thống kê cầu thủ & điểm nhấn highlight",
+        "Tin thị trường xe cộ: Spec cards so sánh mã lực, tăng tốc, dung lượng pin & đồng hồ đo tốc độ (Gauges)",
+        "Giáo dục & Học thuật: Bảng bài giảng step-by-step (Math Lesson Dark/Light), tuyển sinh & deadline"
+      ],
+      "tags": [
+        "editorial",
+        "news",
+        "press-clipping",
+        "newspaper",
+        "sports",
+        "auto",
+        "education",
+        "scoreboard"
+      ],
+      "path": "styles/editorial-news-canvas",
+      "targetWpm": 152,
+      "avgCutIntervalSec": 3.2,
+      "sourceDna": "TRAM-AI-EDITORIAL-NEWS"
+    },
+    {
+      "id": "showcase-affiliate-luxury",
+      "name": "Showcase Affiliate & Luxury Editorial",
+      "category": "showcase",
+      "purpose": "Phong cách trưng bày sản phẩm thương mại điện tử, danh mục bất động sản kiến trúc, mỹ phẩm cao cấp và cẩm nang du lịch",
+      "bestFor": [
+        "Bán hàng Affiliate & TikTok Shop: Lộ diện sản phẩm (Mẫu 01-08), đường line chỉ tính năng xung quanh packshot & CTA chốt đơn",
+        "Bất động sản & Kiến trúc: Hồ sơ dự án (Real Estate Atlas, Residential Atelier), khung ảnh vòm và bố cục cắt lớp",
+        "Mỹ phẩm & Làm đẹp: Phong cách Beauty Luxury Noir & Editorial Light (espresso-plum, champagne gold, silk curves, bảng thành phần an toàn)",
+        "Du lịch & Khám phá: Bưu thiếp Postcard du lịch với tem địa danh, lộ trình route strip và checklist chi phí"
+      ],
+      "tags": [
+        "affiliate",
+        "ecommerce",
+        "luxury",
+        "real-estate",
+        "beauty",
+        "travel",
+        "packshot",
+        "architecture"
+      ],
+      "path": "styles/showcase-affiliate-luxury",
+      "targetWpm": 148,
+      "avgCutIntervalSec": 3.4,
+      "sourceDna": "TRAM-AI-LUXURY-SHOWCASE"
+    },
+    {
+      "id": "finance-data-pro",
+      "name": "Finance Data Pro",
+      "category": "finance",
+      "purpose": "Phong cách tài chính & dữ liệu đầu tư chuyên sâu: Tích hợp Bar Chart Race chuẩn HODL.VN, nến TradingView và báo cáo vĩ mô",
+      "bestFor": [
+        "So sánh lãi suất kép & Đua tài sản qua các năm (Chuẩn DNA HODL)",
+        "Phân tích cổ phiếu, VN-Index & Kỹ thuật nến TradingView",
+        "Báo cáo vĩ mô, tháp tài sản, lạm phát & tiền tệ",
+        "Crypto, vàng, bất động sản & bảng xếp hạng Leaderboard"
+      ],
+      "tags": [
+        "finance",
+        "hodl-dna",
+        "race-chart",
+        "tradingview",
+        "macro",
+        "leaderboard",
+        "stocks"
+      ],
+      "path": "styles/finance-data-pro",
+      "targetWpm": 156,
+      "avgCutIntervalSec": 3,
+      "sourceDna": "HODL-VN-INVESTMENT-RACE"
+    },
+    {
+      "id": "clean-explainer",
+      "name": "Clean Explainer 2D",
+      "category": "tech",
+      "purpose": "Giải thích kiến thức, cơ chế và sản phẩm qua hệ thống 6 cảnh chuẩn Cường IT và 6 bố cục thẻ Archetypes",
+      "bestFor": [
+        "Giải thích công nghệ, phần mềm, cloud, AI tools",
+        "Bảo hiểm sức khỏe (BHSK), BHYT & An sinh gia đình",
+        "Kế hoạch tài chính, quản lý rủi ro & hợp đồng quyền lợi",
+        "Quy trình từng bước (Step-by-step How-it-works)"
+      ],
+      "tags": [
+        "explainer",
+        "cards",
+        "cuongit",
+        "tech",
+        "insurance",
+        "archetypes",
+        "workflow"
+      ],
+      "path": "styles/clean-explainer",
+      "targetWpm": 152,
+      "avgCutIntervalSec": 3.4
+    },
+    {
+      "id": "kinetic-minimalist",
+      "name": "Kinetic Minimalist",
+      "category": "kinetic",
+      "purpose": "Typography động tương phản mạnh mẽ, chữ lớn choán khung hình cho hook viral và thông điệp đanh thép",
+      "bestFor": [
+        "Hook video viral 15–30s",
+        "Bóc mẽ định kiến / Myth vs Fact",
+        "Tuyên ngôn thương hiệu & Thông điệp lãnh đạo",
+        "Phóng sự doanh nghiệp nhịp nhanh"
+      ],
+      "tags": [
+        "kinetic",
+        "minimalist",
+        "bold",
+        "monochrome",
+        "viral",
+        "punchy"
+      ],
+      "path": "styles/kinetic-minimalist",
+      "targetWpm": 168,
+      "avgCutIntervalSec": 1.8
+    },
+    {
+      "id": "ai-tech-briefing",
+      "name": "AI Tech News Briefing",
+      "category": "tech",
+      "purpose": "Bản tin công nghệ & tin tức AI cao cấp: Nền Dark Slate Cyan, bố cục thẻ Hero Metric, so sánh đối lập Side-by-Side, quote trích dẫn phát ngôn và phụ đề speech-synced highlight từ",
+      "bestFor": [
+        "Bản tin thời sự công nghệ, AI & Phần mềm (AI Hot News)",
+        "Tổng hợp top 5 tin nóng trong tuần / trong ngày",
+        "Giải thích mô hình AI mới (MoE, LLM, Robotics, Big Tech)",
+        "So sánh tranh luận chính sách, vụ kiện công nghệ và dữ liệu tài chính"
+      ],
+      "tags": [
+        "tech-news",
+        "ai-news",
+        "ai-briefing",
+        "hero-metric",
+        "comparison-card",
+        "slate-cyan",
+        "social-shorts"
+      ],
+      "path": "styles/ai-tech-briefing",
+      "targetWpm": 150,
+      "avgCutIntervalSec": 18.4,
+      "sourceDna": "ai-tech-briefing",
+      "previewImage": "styles/ai-tech-briefing/contact_sheet.jpg"
+    }
+  ]
+}

@@ -42,6 +42,7 @@ export async function ensureFlowKit(timeoutMs = 10000) {
     try {
       const child = spawn(pythonExe, ["-m", "agent.main"], {
         cwd: flowDir,
+        env: { ...process.env, PYTHONPATH: flowDir },
         detached: true,
         stdio: "ignore",
         windowsHide: true
@@ -73,14 +74,15 @@ export async function ensureFlowKit(timeoutMs = 10000) {
 }
 
 export async function ensureCitVoiceStudio(timeoutMs = 15000) {
-  const isOnline = await checkHttp("http://127.0.0.1:8001", 1000);
-  if (isOnline) return true;
+  if (await checkHttp("http://127.0.0.1:8002", 1000) || await checkHttp("http://127.0.0.1:8001", 1000)) return true;
 
-  console.log("⚡ [Auto-Service] CIT Voice Studio (:8001) chưa bật. Đang tự động kích hoạt...");
+  console.log("⚡ [Auto-Service] CIT Voice Studio (:8002 / :8001) chưa bật. Đang tự động kích hoạt...");
 
   const psCommand = `
     $exes = @(
+      "$env:LOCALAPPDATA\\Programs\\CIT Voice Studio\\CIT-Voice-Studio.exe",
       "$env:LOCALAPPDATA\\Programs\\CIT Voice Studio\\CIT Voice Studio.exe",
+      "$env:ProgramFiles\\CIT Voice Studio\\CIT-Voice-Studio.exe",
       "$env:ProgramFiles\\CIT Voice Studio\\CIT Voice Studio.exe",
       "D:\\AI\\CIT-Voice-Studio-v1.0.3-win-x86_64.exe"
     )

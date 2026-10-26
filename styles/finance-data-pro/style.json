@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "finance-data-pro",
+  "version": "2.0.0",
+  "name": "Finance Data Pro",
+  "purpose": "Phong cách tài chính & dữ liệu đầu tư chuyên sâu: Tích hợp Bar Chart Race chuẩn HODL.VN, nến TradingView và báo cáo vĩ mô",
+  "bestFor": [
+    "So sánh lãi suất kép & Đua tài sản qua các năm (Chuẩn DNA HODL)",
+    "Phân tích cổ phiếu, VN-Index & Kỹ thuật nến TradingView",
+    "Báo cáo vĩ mô, tháp tài sản, lạm phát & tiền tệ",
+    "Crypto, vàng, bất động sản & bảng xếp hạng Leaderboard"
+  ],
+  "notIdealFor": ["Vlog đời sống", "Kể chuyện thiếu nhi"],
+  "beatSeconds": {
+    "min": 2.0,
+    "max": 4.5,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Nghịch lý lợi nhuận / Thách thức kết quả cuộc đua tài sản",
+    "tone": "Chuyên gia tài chính sắc bén, kịch tính, số liệu định lượng rõ ràng",
+    "structure": "Hook số liệu/cuộc đua -> Bối cảnh thị trường -> Diễn biến biểu đồ/nến -> Đột phá lợi nhuận -> Leaderboard Outro"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0B0E14",
+      "surface": "#121824",
+      "accentPrimary": "#D4AF37",
+      "accentSecondary": "#38BDF8",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Obsidian dark glass with gold/cyan neon border highlight and dynamic leaderboard ranks",
+    "cornerRadius": 20
+  },
+  "imagePrompt": {
+    "stylePrefix": "obsidian high-tech financial terminal, glowing gold and cyan line charts, cinematic trading screens",
+    "negativePrompt": "low quality, blurry, bright pastel cartoon, messy desk"
+  },
+  "motion": {
+    "spring": { "damping": 13, "stiffness": 155, "mass": 0.6 },
+    "entrance": "slide-horizontal-expand + pop-scale",
+    "targetWpm": 156
+  },
+  "typography": {
+    "headlineFont": "Barlow Condensed Black",
+    "bodyFont": "Be Vietnam Pro Bold",
+    "monoFont": "JetBrains Mono Bold",
+    "safeZoneY": [240, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, nam trầm, dứt khoát, hào hứng theo nhịp nhảy số",
+    "bgm": "Deep synthwave / upbeat electronic sports tech beat",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Side-by-side asset race clash with gold crown, giant multiplier number (x5, x10) and TradingView spike"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "InvestmentRaceVideo"
+  },
+  "prohibited": [
+    "Khung hình rỗng",
+    "Cắt chữ bằng ellipsis",
+    "Số liệu nhảy không theo quán tính mượt mà"
+  ]
+}

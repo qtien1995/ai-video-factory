@@ -1,0 +1,70 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "editorial-news-canvas",
+  "version": "2.0.0",
+  "name": "Editorial News Canvas & Press Briefing",
+  "purpose": "Phong cách báo chí chính luận & tin tức biên tập: Chèn bài báo thực tế với highlight trích dẫn, bảng điểm thể thao, thông số xe cộ và bảng học thuật",
+  "bestFor": [
+    "Thời sự chính luận, dân sinh, giao thông & biến động xã hội (Modern News Canvas & Crimson Timeline)",
+    "Chèn ảnh chụp bài báo thực tế (Press Clipping Mockup với vệt bút dạ quang trên VnExpress, Tuổi Trẻ, Bloomberg)",
+    "Bản tin thể thao: Tỉ số trận đấu (Scoreboard), thống kê cầu thủ & điểm nhấn highlight",
+    "Tin thị trường xe cộ: Spec cards so sánh mã lực, tăng tốc, dung lượng pin & đồng hồ đo tốc độ (Gauges)",
+    "Giáo dục & Học thuật: Bảng bài giảng step-by-step (Math Lesson Dark/Light), tuyển sinh & deadline"
+  ],
+  "notIdealFor": ["Clip hài parody", "Video nhảy TikTok ngắn"],
+  "beatSeconds": {
+    "min": 2.2,
+    "max": 4.5,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Tiêu đề bài báo chấn động hoặc con số thống kê thực tế kèm ngày đăng nguồn chính thống",
+    "tone": "Nghiêm túc, chuẩn mực phát thanh viên, khách quan và đáng tin cậy",
+    "structure": "Tít báo/Sự kiện chấn động -> Trích dẫn bài viết có nguồn -> Số liệu/Bảng so sánh chuyên sâu -> Tác động xã hội -> Outro đúc kết"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0B101D",
+      "surface": "#131B2E",
+      "accentPrimary": "#E11D48",
+      "accentSecondary": "#38BDF8",
+      "positive": "#10B981",
+      "negative": "#EF4444"
+    },
+    "cardStyle": "Press clipping editorial card with paper tear edges, yellow highlight marker over quotes, and source metadata badge",
+    "cornerRadius": 16
+  },
+  "imagePrompt": {
+    "stylePrefix": "editorial press release layout, authentic news clipping collage, sleek dark briefing room background, highlighted text quotes, professional journalist presentation",
+    "negativePrompt": "low quality, childish cartoon, messy neon graffiti, distorted text, blurry camera"
+  },
+  "motion": {
+    "spring": { "damping": 16, "stiffness": 140, "mass": 0.75 },
+    "entrance": "slide-horizontal-unfold + press-highlight-sweep",
+    "targetWpm": 152
+  },
+  "typography": {
+    "headlineFont": "Fraunces Bold",
+    "bodyFont": "Be Vietnam Pro SemiBold",
+    "monoFont": "JetBrains Mono Regular",
+    "safeZoneY": [250, 1540]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, đĩnh đạc, rành rọt, chuẩn mực biên tập viên đài truyền hình",
+    "bgm": "Deep news briefing pulse / orchestral subtle rhythm / typewriter & camera shutter SFX",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Authentic newspaper clipping headline with red Breaking tag and bold yellow quote highlight"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "NewsCanvasVideo"
+  },
+  "prohibited": [
+    "Thiếu logo nguồn hoặc ngày tháng xuất bản bài báo",
+    "Màu nền và chữ bị chìm khó đọc lướt trên điện thoại",
+    "Highlight trích dẫn che mất chữ gốc của bài báo"
+  ]
+}

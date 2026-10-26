@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "kinetic-minimalist",
+  "version": "1.0.0",
+  "name": "Kinetic Minimalist",
+  "purpose": "Typography động tương phản mạnh mẽ, chữ lớn choán khung hình cho hook viral và thông điệp đanh thép",
+  "bestFor": [
+    "Hook video viral 15–30s",
+    "Bóc mẽ định kiến / Myth vs Fact",
+    "Tuyên ngôn thương hiệu & Thông điệp lãnh đạo",
+    "Phóng sự doanh nghiệp nhịp nhanh"
+  ],
+  "notIdealFor": ["Hướng dẫn chi tiết nhiều số liệu", "Bảng biểu phức tạp"],
+  "beatSeconds": {
+    "min": 1.2,
+    "max": 2.8,
+    "resetEveryBeats": 2
+  },
+  "script": {
+    "hookStyle": "Một câu tuyên bố gây tranh cãi hoặc bất ngờ cực độ",
+    "tone": "Đanh thép, dứt khoát, quyền lực, không dài dòng",
+    "structure": "Slam Hook -> Phá vỡ lầm tưởng -> Tuyên ngôn cốt lõi -> Call to action"
+  },
+  "visual": {
+    "palette": {
+      "background": "#000000",
+      "surface": "#111111",
+      "accentPrimary": "#FF0033",
+      "accentSecondary": "#FBBF24",
+      "positive": "#22C55E",
+      "negative": "#FF0033"
+    },
+    "cardStyle": "Bold edge borderless monochrome with red punch tag",
+    "cornerRadius": 8
+  },
+  "imagePrompt": {
+    "stylePrefix": "high contrast black and white cinematic photography, dramatic shadows, sharp brutalist typography",
+    "negativePrompt": "soft pastel, cute cartoon, colorful gradients"
+  },
+  "motion": {
+    "spring": { "damping": 10, "stiffness": 220, "mass": 0.4 },
+    "entrance": "slam-zoom-in",
+    "targetWpm": 168
+  },
+  "typography": {
+    "headlineFont": "Anton Regular",
+    "bodyFont": "Barlow Condensed Bold",
+    "safeZoneY": [220, 1560]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Hải Đăng studio, dứt khoát, nhịp điệu nhanh, giọng đọc sắc",
+    "bgm": "Heavy industrial pulse / punchy cinematic percussion",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "Giant bold red and white word slam with dramatic black background"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "VinFastKineticVideo"
+  },
+  "prohibited": [
+    "Khung hình rỗng",
+    "Các câu văn quá 6 chữ trên 1 dòng",
+    "Chuyển cảnh chậm chạp êm dịu"
+  ]
+}
