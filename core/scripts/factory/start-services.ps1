@@ -1,55 +1,17 @@
 # ==============================================================================
 # AI VIDEO FACTORY V3 - AUTO SERVICE LAUNCHER
-# Khoi dong tu dong FlowKit Backend, Google Flow Tab va CIT Voice Studio
+# Khoi dong tu dong CIT Voice Studio (VieNeu-TTS AI :8001)
 # ==============================================================================
 
-$Root = "D:\AI\VIDEO AI"
 $CitUrl = "http://127.0.0.1:8001"
-$FlowUrl = "http://127.0.0.1:8100/health"
-$GoogleFlowUrl = "https://flow.google.com/"
 
 Write-Host "==================================================" -ForegroundColor Cyan
 Write-Host "   AI VIDEO FACTORY V3 - AUTO SERVICE LAUNCHER   " -ForegroundColor Cyan
 Write-Host "==================================================" -ForegroundColor Cyan
 Write-Host ""
 
-# 1. FLOWKIT BACKEND (:8100)
-Write-Host "[1/3] Kiem tra FlowKit Backend (:8100)..." -ForegroundColor Yellow
-$flowOnline = $false
-try {
-    $res = Invoke-RestMethod -Uri $FlowUrl -TimeoutSec 2 -ErrorAction Stop
-    $flowOnline = $true
-} catch {
-    $flowOnline = $false
-}
-
-if ($flowOnline) {
-    Write-Host "  -> FlowKit Backend da chay san sang." -ForegroundColor Green
-} else {
-    Write-Host "  -> Dang khoi dong FlowKit Backend tren cong 8100..." -ForegroundColor Cyan
-    $pythonExe = "$Root\.tools\flowkit\venv\Scripts\python.exe"
-    $flowDir = "$Root\.tools\flowkit"
-    if (Test-Path $pythonExe) {
-        $env:PYTHONPATH = $flowDir
-        Start-Process -FilePath $pythonExe -ArgumentList "-m agent.main" -WorkingDirectory $flowDir -WindowStyle Minimized
-        Start-Sleep -Seconds 3
-        Write-Host "  -> FlowKit Backend da duoc khoi dong!" -ForegroundColor Green
-    } else {
-        Write-Host "  -> [ERROR] Khong tim thay Python tai $pythonExe" -ForegroundColor Red
-    }
-}
-
-# 2. GOOGLE FLOW TAB (CHROME)
-Write-Host "`n[2/3] Mo Google Flow tren trinh duyet..." -ForegroundColor Yellow
-try {
-    Start-Process $GoogleFlowUrl
-    Write-Host "  -> Da mo $GoogleFlowUrl (Extension FlowKit se tu dong ket noi)." -ForegroundColor Green
-} catch {
-    Write-Host "  -> [WARN] Khong the mo trinh duyet tu dong." -ForegroundColor Yellow
-}
-
-# 3. CIT VOICE STUDIO (:8001)
-Write-Host "`n[3/3] Kiem tra CIT Voice Studio (:8001)..." -ForegroundColor Yellow
+# KIEM TRA CIT VOICE STUDIO (:8001)
+Write-Host "Kiem tra CIT Voice Studio (VieNeu-TTS :8001)..." -ForegroundColor Yellow
 $citOnline = $false
 try {
     $res = Invoke-RestMethod -Uri $CitUrl -TimeoutSec 2 -ErrorAction Stop

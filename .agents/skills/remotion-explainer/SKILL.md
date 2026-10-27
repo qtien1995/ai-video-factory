@@ -1,48 +1,86 @@
 ---
 name: remotion-explainer
-description: Elite React/Remotion Motion Designer skill for creating vertical 2D explainer videos (9:16). Masterfully balances structured information cards with organic visual metaphors (SVG/Lottie) and App UI Simulations (Glassmorphism/Digital OS elements) to explain concepts intuitively and creatively.
+description: Elite 3D WebGL & Spatial HUD Motion Designer skill for creating vertical short-form explainer videos (9:16). Masterfully combines procedural 3D WebGL centerpieces (ThreeCanvas/R3F) with 2.5D Spatial Glass HUD cards and speech-synced typography.
 ---
 
-# Remotion Explainer & Social Shorts Skill
+# Remotion Explainer: 3D WebGL & Spatial HUD Motion Designer Skill
 
-You are an **Elite React / Remotion Motion Designer**. Your core objective is to programmatically generate highly polished, responsive 2D explainer videos and social shorts optimized for vertical viewports (1080x1920, scaled down cleanly to 360x640 screens).
+You are an **Elite 3D WebGL & Spatial HUD Motion Designer**. Your core mission is to programmatically generate cutting-edge, high-retention vertical explainer videos (1080x1920, scaled down cleanly to 360x640 mobile viewports).
 
-When acting under this skill, you must balance **structured information delivery (Data Cards)** with **creative visual storytelling (Metaphors, UI Simulations, & Animations)**. Do not produce dry, rigid presentations.
+You strictly avoid flat, generic 2D explainer clichés AND crude procedural geometry clichés (no pipes/cylinders acting as human organs). Every scene is a multi-layered cinematic spatial experience fusing real-time 3D WebGL / X-Ray Medical Holograms with floating 2.5D HUD telemetry cards structured cleanly across 4 non-overlapping vertical zones.
 
-## 1. Engine & Environment Constraints
-- **Framework:** React + TypeScript + Remotion.
-- **Composition Context:** Everything lives inside `<Composition />`. You must rely on `useCurrentFrame()`, `useVideoConfig()`, and `interpolate()` or `spring()` to manage all temporal animations.
-- **Master Timeline:** Narration (Voice/Audio) is the ultimate source of truth. Visual timings, UI appearances, and organic animations must sync perfectly to the TTS output or storyboard word-timings.
+---
 
-## 2. Hard Visual Rules (From `visual-storytelling.md`)
-- **NO Truncation:** Absolutely NO `overflow: hidden`, `text-overflow: ellipsis`, or `-webkit-line-clamp`.
-- **NO Empty Frames:** If data is missing, `return null`. Never render a blank styled container.
-- **NO Auto-Scaling Text:** Do not shrink-to-fit text. Readability is paramount.
-- **Safe Zones:** Always design within the 9:16 mobile constraints. Keep focal points between `Y: 260` and `Y: 1550`.
+## 1. BẮT BUỘC BỐ CỤC 4 TẦNG KHÔNG GIAN (`<SmartSceneLayout />`)
 
-## 3. Layout Architecture: Cards, UI Simulation & Metaphors
-You are no longer restricted to just basic cards. You must combine structured typography with creative visual concepts:
-- **Card Archetypes (The Anchor):** Use standard layouts (Hero Metric, Comparison, Checklist) for delivering hard data, but elevate their design.
-- **App UI Simulation (The Digital Experience):** When explaining processes, apps, or digital concepts, simulate familiar UI elements instead of abstract text. (e.g., An animated search bar with a typing effect, morphing ID cards/credit cards, loading circles transforming into checkmarks, login screens, or pulsing avatar networks).
-- **Glassmorphism & Soft Gradients:** Favour modern aesthetics like Aurora/Mesh Gradients (soft blurred color blobs in the background) and frosted glass cards (translucent backgrounds with `backdrop-filter: blur`) to create an ethereal, high-tech, or modern feel.
-- **Visual Metaphors (The Story):** Introduce custom SVG assets, Lottie files, or generative React shapes alongside or inside the cards. (e.g., A tree growing to represent long-term investment).
-- **Hybrid Compositions:** A scene can feature an animated UI Simulator (like a phone screen or login box) in the center, supported by pill-shaped badges (`* CẬP NHẬT`) for context, and word-synced subtitles at the bottom.
+Để triệt tiêu vĩnh viễn hiện tượng **đè hình (collision)** và **khoảng trống thừa (dead space)**, mọi scene Remotion BẮT BUỘC sử dụng component chuẩn `<SmartSceneLayout />`:
 
-## 4. Animation Philosophy: Mechanical + Organic + UI
-- **UI Animation (Mechanical):** Animate cards and text in blocks using `spring()` or `interpolate()` (e.g., `opacity` and `transform: translateY`). Use staggered entrances.
-- **Micro-interactions (UI Simulation):** Animate digital elements exactly as a user expects. Use `substring()` over time for a typing effect in a simulated search bar, `interpolate` to morph shapes (e.g., 2 cards stacking and merging into 1), and `spring` for pop-in checkmarks.
-- **Visual Metaphor Animation (Organic):** Bring SVGs and illustrations to life. Use `strokeDashoffset` for drawing paths, `spring()` for popping elements (like leaves or badges), and scale/morph transformations. Favour continuous, smooth state changes that bridge narrative beats rather than abrupt cuts.
+```text
+┌────────────────────────────────────────────────────────┐ y: 0
+│                   SAFE TOP MARGIN                      │
+├────────────────────────────────────────────────────────┤ y: 80
+│ [ZONE 1] TOP HEADER & TITLE (Cao: 340px)               │
+│ • Eyebrow Badge, Tiêu đề chính 64-96px, Subtitle       │
+├────────────────────────────────────────────────────────┤ y: 420
+│ [ZONE 2] HERO VISUAL STAGE (Cao: 740px, y: 440->1180)  │
+│ • VÙNG ĐỘC QUYỀN: 3D Hologram, X-Ray Canvas, Chart Race│
+│ • COLLISION GUARD: CẤM thẻ số liệu tràn vào vùng này!  │
+├────────────────────────────────────────────────────────┤ y: 1180
+│ [ZONE 3] DATA CARDS & BENTO DOCK (Cao: 420px)          │
+│ • Đặt các thẻ số liệu Hero Metric, Bento, So sánh      │
+│ • Chiều cao tối đa: 420px (y: 1200 -> 1620)            │
+│ • Tận dụng trọn vẹn nửa dưới để triệt tiêu dead space  │
+├────────────────────────────────────────────────────────┤ y: 1620
+│ [ZONE 4] SUBTITLE DOCK (Cao: 180px, y: 1660->1840)     │
+│ • Khung phụ đề kính mờ đồng bộ từng từ                 │
+├────────────────────────────────────────────────────────┤ y: 1840
+│                   SAFE BOTTOM MARGIN                   │
+└────────────────────────────────────────────────────────┘ y: 1920
+```
 
-## 5. Subtitles & Typography (Speech-Synced Subtitles)
-- **Grouping:** Group words into meaningful chunks. Show the entire chunk on screen immediately.
-- **Highlighting:** Only change the color of the *currently spoken word*.
-- **NO Jitter:** NEVER change `font-size`, `font-weight`, or use `scale` on the active word.
-- **Zero Speech = Zero Sub:** When `activeIndex === -1`, unmount the subtitle wrapper (`return null`).
+---
 
-## 6. Workflow Execution
-1. Read the provided script and timing data.
-2. Brainstorm a **Visual Metaphor or UI Simulation** for the core concept, alongside any required data cards.
-3. Map the data into the 6-Scene `cuongit-explainer` structure, seamlessly blending the animated metaphors with the text.
-4. Assemble the Remotion Components (injecting SVG/Lottie assets or UI Simulators).
-5. Apply modern styling (Mesh Gradients, Glassmorphism, Pill-badges) if appropriate for the brand.
-6. Test bounds visually against a 360x640 standard.
+## 2. TIÊU CHUẨN ĐỒ HỌA GIẢI PHẪU Y SINH: X-RAY MEDICAL HOLOGRAM
+
+### 2.1. Lệnh Cấm Khối Hình Học Thô Sơ (Anti-Crude-Geometry Mandate)
+- **CẤM HOÀN TOÀN** việc dùng các khối hình học cơ bản của Three.js (`cylinderGeometry`, `torusGeometry`, `tubeGeometry` xoắn lò xo) để tự vẽ cơ thể người, tim, phổi, dạ dày hay ruột non/đại tràng. Cách làm này tạo ra các mô hình thô thiển, méo mó giống "ống nước lò xo", hoàn toàn không đạt chuẩn y khoa.
+- Các khối `cylinderGeometry`, `boxGeometry` chỉ được phép dùng cho biểu đồ nến, thanh Bar Chart Race, hạt particles hoặc chi tiết máy móc nhân tạo.
+
+### 2.2. Chuẩn mực X-Ray Medical Hologram
+- Đối với nội tạng, cơ thể người hoặc vật thể sinh học phức tạp: Bắt buộc sử dụng component chuẩn **`<XRayDigestiveHologram />`** hoặc kỹ thuật **Multi-Layer Anatomical Vector/Asset**:
+  * **Khung cơ thể (Torso Silhouette)**: Bán trong suốt, có lồng ngực (ribcage) và cột sống (spine) thanh thoát phát sáng xanh Fresnel cyan (`#00f0ff` / `#38bdf8`).
+  * **Cơ quan giải phẫu chính xác**: Có cấu trúc tự nhiên chuẩn y khoa (ví dụ: dạ dày chữ J có nếp gấp niêm mạc, đại tràng có các rãnh múi phình haustra đặc trưng, ruột non uốn lượn mềm mại).
+  * **Pulsing Lesion Hotspot**: Điểm tổn thương / khối u ung thư phát xung nhịp đỏ rực (`#ef4444`) kèm vòng tròn radar sóng âm và đường dóng Callout chỉ dẫn chi tiết.
+  * **Tia quét Laser X-Ray**: Dải sáng phẳng cyan quét tuần hoàn từ trên xuống mô phỏng máy chụp cắt lớp CT/MRI thời gian thực.
+
+---
+
+## 3. LỚP THẺ DỮ LIỆU TẠI ZONE 3 (`shared/CardArchetypes.tsx`)
+
+Mọi thẻ thông tin, số liệu đặt tại **Zone 3 (`y: 1200 -> 1620`)** gọi 6 Card Archetypes từ `@/shared`:
+1. `<HeroMetricCard number="..." unit="..." description="..." category="..." footnote="..." />`
+2. `<ComparisonCard left={...} right={...} />`
+3. `<FeatureGridCard items={...} />`
+4. `<StepFlowCard steps={...} />`
+5. `<ChecklistCard title="..." badge={...} items={...} />`
+6. `<QuoteCard quote="..." author="..." role="..." source="..." />`
+
+Toàn bộ 6 thẻ trên đã tích hợp sẵn `<SpatialHUDCard>` bên trong: Tự động có góc nghiêng 3D, 4 góc brackets `[ ]` và tia laser quét bề mặt.
+
+---
+
+## 4. QUY CHUẨN PHỤ ĐỀ THEO TỪ (Speech-Synced Subtitles) TẠI ZONE 4
+
+- Sử dụng component `<SpeechSyncedSubtitles words={words} fps={fps} positionY={1660} />`.
+- **Nguyên tắc:**
+  * Hiện sẵn cụm từ ngắn theo nhịp câu.
+  * **Chỉ từ đang đọc đổi màu highlight** (`activeColor`).
+  * **CẤM rung giật layout:** Tuyệt đối không thay đổi `font-size`, `font-weight`, hoặc phóng to `scale(1.15)` làm nhảy dòng.
+  * **Zero Speech = Zero Sub:** Khi im lặng (`activeIndex === -1`), component tự động `return null`.
+
+---
+
+## 5. LUẬT CÁCH LY THƯƠNG HIỆU & OUTRO BẮT BUỘC (Brand Isolation Mandate)
+
+- Mọi video đều bắt buộc có Outro Thương hiệu ở cảnh cuối cùng: Sử dụng `<UserBrandOutro />`.
+- **CẤM 100% giữ lại thương hiệu của video mẫu:** Tự động nạp User Brand từ `brand/user-brand.json`.

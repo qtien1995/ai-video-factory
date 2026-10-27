@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/style.schema.json",
   "version": "2.1.0",
-  "updatedAt": "2026-10-24T04:50:43.175Z",
+  "updatedAt": "2026-10-26T15:55:03.729Z",
   "styles": [
     {
       "id": "medical-biometrics-pro",
@@ -255,6 +255,29 @@
       "avgCutIntervalSec": 18.4,
       "sourceDna": "ai-tech-briefing",
       "previewImage": "styles/ai-tech-briefing/contact_sheet.jpg"
+    },
+    {
+      "id": "tech-tv-tips",
+      "name": "TECH TV TIPS",
+      "category": "tech",
+      "purpose": "Phong cách video hướng dẫn kỹ thuật & tối ưu hệ thống: Nền Cyber Navy #0a121e, thẻ 2.5D Spatial TV Mockup 16:9, viền Electric Cyan #22d3ee, thước đo hiệu năng RAM trước & sau dọn dẹp, phụ đề speech-synced highlight từ",
+      "bestFor": [
+        "Video hướng dẫn thủ thuật công nghệ & mẹo tối ưu thiết bị",
+        "Hướng dẫn gỡ app rác, tắt quảng cáo Android / iOS / Tivi / PC",
+        "Shorts / TikTok / Reels 9:16 giữ chân người xem cao"
+      ],
+      "tags": [
+        "cloned",
+        "dna",
+        "tech-tv-tips",
+        "android-tv",
+        "system-optimization",
+        "cyan-glow"
+      ],
+      "path": "styles/tech-tv-tips",
+      "targetWpm": 155,
+      "avgCutIntervalSec": 8.03,
+      "sourceDna": "TECH-TV-TIPS"
     }
   ]
 }

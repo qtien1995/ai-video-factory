@@ -1,14 +1,15 @@
 {
   "$schema": "../../schemas/style.schema.json",
   "id": "medical-biometrics-pro",
-  "version": "1.0.0",
-  "name": "Medical Biometrics & Clinical Editorial",
-  "purpose": "Phong cách y sinh học & phóng sự y khoa công nghệ cao: Nền Deep Slate y tế, hình vẽ vector giải phẫu tự chạy, mô phỏng vi phẫu nội soi, nhịp đập ECG tuần hoàn, camera thở Parallax, số chạy động và lớp âm thanh sound design đa tầng",
+  "version": "2.0.0",
+  "name": "Medical Biometrics & Clinical Editorial (Hybrid 3D WebGL + 2.5D Spatial HUD)",
+  "purpose": "Phong cách y sinh học & phóng sự y khoa công nghệ cao tối tân: Kiến trúc Hybrid 3D WebGL (ThreeCanvas + R3F + Bioluminescence Bloom) cho vật thể giải phẫu trung tâm kết hợp 2.5D Spatial Glass HUD cho thẻ số liệu, nhịp đập ECG tuần hoàn, camera thở Parallax và sound design đa tầng",
   "bestFor": [
     "Giải thích bệnh học, ung thư, tim mạch, y tế cộng đồng",
     "Phóng sự tiến bộ công nghệ y khoa (Nội soi ESD, Robot phẫu thuật Da Vinci)",
     "Báo cáo thống kê dịch tễ (Globocan, WHO, Bộ Y Tế)",
-    "Video cảnh báo sức khỏe và kêu gọi tầm soát định kỳ"
+    "Video cảnh báo sức khỏe và kêu gọi tầm soát định kỳ",
+    "Mô phỏng cơ chế thuốc, sinh học phân tử và can thiệp vi phẫu"
   ],
   "notIdealFor": [
     "Video hài hước nhí nhảnh",
@@ -20,20 +21,36 @@
     "resetEveryBeats": 3
   },
   "script": {
-    "hookStyle": "Số liệu dịch tễ giật mình + Hình vẽ cơ quan giải phẫu vector phát sáng",
+    "hookStyle": "Số liệu dịch tễ giật mình + Mô hình giải phẫu 3D WebGL phát quang Bioluminescence",
     "tone": "Chuyên môn, sâu sắc, ấm áp, cảnh tỉnh và truyền hy vọng",
     "structure": "Hook Báo động đỏ -> Nguyên nhân & Trẻ hóa -> Bẫy triệu chứng -> Giải pháp Vi phẫu -> Tỷ lệ sống 90% -> Outro Bảo vệ gia đình"
   },
   "visual": {
+    "architecture": "Hybrid 3D WebGL + 2.5D Spatial Glass HUD",
+    "threeDStage": {
+      "renderer": "@remotion/three (ThreeCanvas)",
+      "fiber": "@react-three/fiber",
+      "drei": "@react-three/drei (Float, Sparkles, MeshDistortMaterial, PerspectiveCamera)",
+      "postprocessing": "@react-three/postprocessing (EffectComposer + Bloom)",
+      "rule": "Bắt buộc dùng 3D WebGL cho mô hình giải phẫu và thao tác vi phẫu trung tâm. CẤM vẽ minh họa chính bằng SVG phẳng 2D."
+    },
+    "hudCardStyle": {
+      "component": "SpatialHUDCard",
+      "perspective": "1200px",
+      "transformStyle": "preserve-3d",
+      "entryRotation": ["rotateX(16deg)", "rotateY(±12deg)", "translateZ(-80px)"],
+      "floatingPhysics": "Math.sin(frame * 0.08) * 5px",
+      "material": "Multi-layer Glassmorphism (backdrop-filter: blur(16px))",
+      "accents": "Corner brackets [ ], Neon glow shadow, Animated laser sweep line"
+    },
     "palette": {
       "background": "#060A14",
-      "surface": "rgba(15, 23, 42, 0.85)",
+      "surface": "rgba(15, 23, 42, 0.82)",
       "accentPrimary": "#38BDF8",
       "accentSecondary": "#F59E0B",
       "positive": "#10B981",
       "negative": "#EF4444"
     },
-    "cardStyle": "Neo-Clinical Biosensor HUD / Staggered Full-width Cards",
     "cornerRadius": 24
   },
   "motion": {

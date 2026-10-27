@@ -24,7 +24,7 @@ export const DEFAULT_ARTIFACTS = {
 
 export function projectDir(projectId) {
   if (!/^[a-zA-Z0-9_][a-zA-Z0-9_-]*$/.test(projectId || "")) throw new Error("Invalid project id");
-  const categories = ["financial-insurance", "social-shorts", "vox-style", "auto-cuts", "explainers"];
+  const categories = ["financial-insurance", "social-shorts", "motion-graphics", "auto-cuts", "explainers"];
   for (const cat of categories) {
     const candidate = path.join(ROOT, "projects", cat, projectId);
     if (fs.existsSync(candidate)) return candidate;

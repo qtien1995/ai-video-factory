@@ -15,7 +15,9 @@
     "baseUrl": ".",
     "paths": {
       "@styles": ["../../styles/index.ts"],
-      "@styles/*": ["../../styles/*"]
+      "@styles/*": ["../../styles/*"],
+      "@shared": ["src/shared/index.ts"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "exclude": ["remotion.config.ts"]

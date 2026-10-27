@@ -56,7 +56,6 @@ export async function runDoctor() {
 
   const results = {
     citVoice: { name: "CIT Voice Studio (VieNeu-TTS :8001)", status: "checking" },
-    flowkit: { name: "FlowKit Backend (FastAPI :8100)", status: "checking" },
     ffmpeg: { name: "FFmpeg & Media Pipeline", status: "checking" },
     workspace: { name: "Workspace Storage & Node.js", status: "checking" }
   };
@@ -72,26 +71,6 @@ export async function runDoctor() {
     results.citVoice.guide = "Run: python C:\\Users\\DELL\\.agents\\skills\\cit-voice-studio\\scripts\\cit_tts.py health";
   }
 
-  // 2. FlowKit
-  const flowRes = await pingHttp("http://127.0.0.1:8100/health");
-  if (flowRes.ok) {
-    try {
-      const data = JSON.parse(flowRes.body);
-      results.flowkit.status = "PASS";
-      results.flowkit.detail = `FastAPI Online (Chrome Extension Connected: ${data.extension_connected ? "YES" : "NO"})`;
-      if (!data.extension_connected) {
-        results.flowkit.status = "WARN";
-        results.flowkit.detail += " -> Open Edge or browser with flow.google.com tab to enable video generation.";
-      }
-    } catch {
-      results.flowkit.status = "PASS";
-      results.flowkit.detail = "FastAPI Online at http://127.0.0.1:8100";
-    }
-  } else {
-    results.flowkit.status = "OFFLINE";
-    results.flowkit.detail = "FastAPI backend not running at :8100 (Required for Vox/FlowKit).";
-    results.flowkit.guide = "Run: $env:PYTHONPATH='D:\\AI\\VIDEO AI\\.tools\\flowkit'; & 'D:\\AI\\VIDEO AI\\.tools\\flowkit\\venv\\Scripts\\python.exe' -m agent.main";
-  }
 
   // 3. FFmpeg
   const ffRes = checkFfmpeg();

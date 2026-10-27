@@ -1,3 +1,5 @@
+import { TechTvTipsTheme } from "./tech-tv-tips/theme";
+import { TestDnaZeroMediaTheme } from "./test-dna-zero-media/theme";
 import { AiTechBriefingTheme } from "./ai-tech-briefing/theme";
 import { StyleTheme } from "./types";
 import { FinanceDataProTheme } from "./finance-data-pro/theme";
@@ -12,6 +14,8 @@ import { MedicalBiometricsProTheme } from "./medical-biometrics-pro/theme";
 
 export * from "./types";
 export {
+  TechTvTipsTheme,
+  TestDnaZeroMediaTheme,
   AiTechBriefingTheme,
   FinanceDataProTheme,
   CleanExplainerTheme,
@@ -25,6 +29,8 @@ export {
 };
 
 export const STYLE_THEMES: Record<string, StyleTheme> = {
+  "tech-tv-tips": TechTvTipsTheme,
+  "test-dna-zero-media": TestDnaZeroMediaTheme,
   "medical-biometrics-pro": MedicalBiometricsProTheme,
   "medical-clinical": MedicalBiometricsProTheme,
   "y-te-suc-khoe": MedicalBiometricsProTheme,

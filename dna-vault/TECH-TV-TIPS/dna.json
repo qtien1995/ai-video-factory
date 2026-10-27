@@ -1,0 +1,197 @@
+{
+  "id": "TECH-TV-TIPS",
+  "sourceVideo": "FSave.com_Reels_Tivi-Android-day-quang-cao-va-app-rac-Cl_Media_1468688498478922_002_720p.mp4",
+  "extractedAt": "2026-10-26T15:55:03.724Z",
+  "archetype": "Tech Tutorial & System Optimization Explainer",
+  "metadata": {
+    "width": 720,
+    "height": 1280,
+    "aspectRatio": "9:16",
+    "durationSec": 48.17,
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "sampleRate": 48000
+  },
+  "audioMetrics": {
+    "integratedLufs": -14.2,
+    "truePeakDb": -0.7,
+    "loudnessRangeLu": 1.8,
+    "speechPacingWpm": 155,
+    "tone": "Chuyên gia công nghệ dứt khoát, đi thẳng vào vấn đề, tự nhiên, nhịp nhàng theo diễn biến thẻ"
+  },
+  "rhythmAndPacing": {
+    "totalSceneCuts": 5,
+    "avgCutIntervalSec": 8.03,
+    "minCutSec": 2.67,
+    "maxCutSec": 19.7,
+    "pacingVelocity": "CALM / DOCUMENTARY",
+    "cutTimestampsMs": [
+      2670,
+      10300,
+      30000,
+      33930,
+      43030
+    ]
+  },
+  "palette": {
+    "background": "#0a121e",
+    "surface": "#111d2e",
+    "accentPrimary": "#22d3ee",
+    "accentSecondary": "#f59e0b",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#94a3b8",
+    "positive": "#10b981",
+    "negative": "#ef4444",
+    "border": "rgba(34, 211, 238, 0.22)"
+  },
+  "typography": {
+    "fontFamily": "Montserrat, Inter, system-ui, sans-serif",
+    "headlineFont": "Montserrat Black",
+    "bodyFont": "Inter SemiBold",
+    "monoFont": "JetBrains Mono Bold",
+    "headlineSize": 64,
+    "bodySize": 34,
+    "safeZoneY": [
+      260,
+      1550
+    ]
+  },
+  "subtitles": {
+    "type": "speech-synced-word-highlight",
+    "container": "frosted-pill-glassmorphism",
+    "activeWordColor": "#22d3ee",
+    "inactiveWordColor": "rgba(255, 255, 255, 0.75)",
+    "positionY": 1450,
+    "highlightUnderline": true
+  },
+  "motionPhysics": {
+    "spring": {
+      "damping": 18,
+      "stiffness": 140,
+      "mass": 0.8
+    },
+    "entranceMotion": "slide-up + pop-scale(0.88 -> 1.0)",
+    "continuousMotion": "subtle-floating(sin-wave +- 6px)",
+    "transitionStyle": "quick-cut / smooth-morph"
+  },
+  "visualComponents": [
+    "FixedHeader (Eyebrow 'TIPS ANDROID TV' + Headline 'TIVI TRÀN APP RÁC' + Category Badge)",
+    "SpatialTvMockupCard (2.5D Glass TV frame 16:9 với viền phát sáng cyan và perspective tilt nhẹ)",
+    "PerformanceMetricGauge (Thước đo chiếm dụng RAM/Bộ nhớ trước & sau dọn dẹp)",
+    "StepByStepFlow (Thẻ quy trình 3 bước xử lý: Tắt quảng cáo -> Xóa app ngầm -> Tối ưu Launcher)",
+    "BottomSubtitlesAnchor (Speech-synced word highlight pill tại safe zone y: 1450)",
+    "BrandOutroCard (Nhận diện thương hiệu độc quyền của User theo Brand Isolation Mandate)"
+  ],
+  "sceneTimelineBlueprint": [
+    {
+      "sceneIndex": 1,
+      "startMs": 0,
+      "endMs": 2670,
+      "durationMs": 2670,
+      "role": "Hook 3s",
+      "visualArchetype": "Hero Headline + Shock Metric",
+      "focus": "Tivi Android vừa mở lên là giật lag, đơ cứng vì quảng cáo và ứng dụng rác bủa vây"
+    },
+    {
+      "sceneIndex": 2,
+      "startMs": 2670,
+      "endMs": 10300,
+      "durationMs": 7630,
+      "role": "Problem Framing",
+      "visualArchetype": "SpatialTvMockupCard / AlertBox",
+      "focus": "Vạch trần 3 thủ phạm ngầm: App rác tự khởi động, Service quảng cáo launcher và bộ đệm cache phình to"
+    },
+    {
+      "sceneIndex": 3,
+      "startMs": 10300,
+      "endMs": 30000,
+      "durationMs": 19700,
+      "role": "Core Steps Guide",
+      "visualArchetype": "StepByStepFlow + SpatialTvMockupCard",
+      "focus": "Hướng dẫn từng bước thực chiến: Vào Cài đặt hệ thống -> Tắt dịch vụ quảng cáo -> Gỡ triệt để bloatware chạy ngầm"
+    },
+    {
+      "sceneIndex": 4,
+      "startMs": 30000,
+      "endMs": 33930,
+      "durationMs": 3930,
+      "role": "Before/After Metric",
+      "visualArchetype": "PerformanceMetricGauge / Comparison",
+      "focus": "Hiệu năng bứt phá: Bộ nhớ RAM giảm từ 89% xuống 32%, tốc độ mở app nhanh gấp 3 lần"
+    },
+    {
+      "sceneIndex": 5,
+      "startMs": 33930,
+      "endMs": 43030,
+      "durationMs": 9100,
+      "role": "Pro Tip & Maintenance",
+      "visualArchetype": "ChecklistCard / TipBox",
+      "focus": "Lưu ý sống còn: Tắt tự động cập nhật app rác qua Google Play & chọn Launcher tinh gọn"
+    },
+    {
+      "sceneIndex": 6,
+      "startMs": 43030,
+      "endMs": 48169,
+      "durationMs": 5139,
+      "role": "Brand Outro & CTA",
+      "visualArchetype": "BrandOutroCard",
+      "focus": "Outro thương hiệu chính thức của User, kêu gọi để lại bình luận và đăng ký kênh"
+    }
+  ],
+  "clonedDnaBlueprint": {
+    "visualStyle": {
+      "palette": {
+        "background": "#0a121e",
+        "surface": "#111d2e",
+        "primaryText": "#ffffff",
+        "accentColor": "#22d3ee",
+        "secondaryAccent": "#f59e0b"
+      },
+      "cardArchetype": "SpatialTvMockupCard / StepByStepFlow / Metric Gauge",
+      "cornerRadius": 24,
+      "borderStyle": "1px solid rgba(34, 211, 238, 0.22)",
+      "shadow": "0 20px 40px rgba(0, 0, 0, 0.6)"
+    },
+    "typography": {
+      "headlineFont": "Montserrat Black",
+      "headlineSize": 64,
+      "bodyFont": "Inter SemiBold",
+      "bodySize": 34,
+      "textCasing": "mixed",
+      "safeZonePaddingY": [
+        260,
+        1550
+      ]
+    },
+    "subtitleStyle": {
+      "type": "speech-synced-word-highlight",
+      "container": "frosted-pill-glassmorphism",
+      "activeWordColor": "#22d3ee",
+      "inactiveWordColor": "rgba(255, 255, 255, 0.75)",
+      "positionY": 1450
+    },
+    "motionPhysics": {
+      "springConfig": {
+        "damping": 18,
+        "stiffness": 140,
+        "mass": 0.8
+      },
+      "entranceMotion": "slide-up + pop-scale(0.88 -> 1.0)",
+      "continuousMotion": "subtle-floating(sin-wave +- 6px)",
+      "transitionStyle": "quick-cut"
+    },
+    "soundDesign": {
+      "narrationPacingWpm": 155,
+      "voiceGender": "male",
+      "voiceTone": "Tự nhiên, dứt khoát, chuyên môn công nghệ thực chiến",
+      "bgmStyle": "Minimal electronic beat, low-tempo hi-hats, subtle cyber pulse",
+      "sfxCueTypes": [
+        "whoosh-transition",
+        "pop-reveal",
+        "digital-ding",
+        "success-chime"
+      ]
+    }
+  }
+}

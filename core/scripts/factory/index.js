@@ -63,7 +63,7 @@ export async function main(argv = process.argv.slice(2)) {
   }
   if (command === "fast-track") {
     const { ensureServices } = await import("./services.js");
-    await ensureServices({ tts: true, flowkit: false });
+    await ensureServices({ tts: true });
     let current = evaluate(project);
     console.log(`[Fast-Track] Project: ${project} (Current stage: ${current.next})`);
     if (current.next === "GATE1") {
@@ -173,10 +173,6 @@ export async function main(argv = process.argv.slice(2)) {
     if (!stage) throw new Error("--kind must be preview or final");
     const spec = requireSpec(project);
     const requestedEngine = String(args.engine || "AUTO").toUpperCase();
-    if (requestedEngine === "FLOWKIT" || spec.engine === "FLOWKIT") {
-      const { ensureFlowKit } = await import("./services.js");
-      await ensureFlowKit(5000);
-    }
     const routing = routeSpec(spec, requestedEngine);
     if (!routing.success) throw new Error(`Engine incompatible: ${routing.reasons.join("; ")}`);
     let current = evaluate(project);

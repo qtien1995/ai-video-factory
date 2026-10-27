@@ -1,110 +1,133 @@
 import React from "react";
+import { useCurrentFrame, useVideoConfig, spring } from "remotion";
+import { SpatialHUDCard } from "./SpatialHUDCard";
 
 // ============================================================================
 // ARCHETYPE 1: HERO METRIC & FOOTNOTE
 // ============================================================================
 export interface HeroMetricCardProps {
-  category: string;
+  category?: string;
   number: string;
-  unit: string;
+  unit?: string;
   description: string;
   footnote?: string;
   accentColor?: string;
   backgroundColor?: string;
   borderColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
 export const HeroMetricCard: React.FC<HeroMetricCardProps> = ({
   category,
   number,
-  unit,
+  unit = "",
   description,
   footnote,
   accentColor = "#fbbf24",
-  backgroundColor = "rgba(23, 23, 23, 0.88)",
-  borderColor = "rgba(255, 255, 255, 0.14)",
+  backgroundColor,
+  borderColor,
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
 }) => {
   if (!number && !description) return null;
 
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
+
   return (
-    <div
-      style={{
-        background: backgroundColor,
-        border: `2px solid ${borderColor}`,
-        borderRadius: 28,
-        padding: "36px 32px",
-        display: "flex",
-        flexDirection: "column",
-        gap: 16,
-        backdropFilter: "blur(16px)",
-        width: "100%",
-        maxWidth: 920,
-        boxShadow: "0 20px 50px rgba(0,0,0,0.85)",
-      }}
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      background={backgroundColor}
+      borderColor={borderColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 920, padding: "32px 32px" }}
     >
-      {category && (
-        <div
-          style={{
-            display: "inline-flex",
-            alignSelf: "flex-start",
-            padding: "6px 16px",
-            borderRadius: 100,
-            background: `${accentColor}25`,
-            color: accentColor,
-            fontSize: 22,
-            fontWeight: 800,
-            textTransform: "uppercase",
-            letterSpacing: 1.2,
-          }}
-        >
-          {category}
-        </div>
-      )}
-
-      <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
-        <span
-          style={{
-            fontSize: 96,
-            fontWeight: 900,
-            color: "#ffffff",
-            lineHeight: 1,
-            letterSpacing: "-1px",
-          }}
-        >
-          {number}
-        </span>
-        <span style={{ fontSize: 36, fontWeight: 800, color: accentColor }}>
-          {unit}
-        </span>
-      </div>
-
-      <p
+      <div
         style={{
-          fontSize: 28,
-          color: "#e5e5e5",
-          lineHeight: 1.4,
-          margin: 0,
-          fontWeight: 600,
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+          width: "100%",
         }}
       >
-        {description}
-      </p>
+        {category && (
+          <div
+            style={{
+              display: "inline-flex",
+              alignSelf: "flex-start",
+              padding: "6px 16px",
+              borderRadius: 100,
+              background: `${accentColor}25`,
+              color: accentColor,
+              fontSize: 22,
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: 1.2,
+            }}
+          >
+            {category}
+          </div>
+        )}
 
-      {footnote && (
-        <div
+        <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+          <span
+            style={{
+              fontSize: 96,
+              fontWeight: 900,
+              color: "#ffffff",
+              lineHeight: 1,
+              letterSpacing: "-1px",
+            }}
+          >
+            {number}
+          </span>
+          {unit && (
+            <span style={{ fontSize: 36, fontWeight: 800, color: accentColor }}>
+              {unit}
+            </span>
+          )}
+        </div>
+
+        <p
           style={{
-            marginTop: 8,
-            paddingTop: 14,
-            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-            fontSize: 20,
-            color: "#a3a3a3",
-            lineHeight: 1.3,
+            fontSize: 28,
+            color: "#e5e5e5",
+            lineHeight: 1.4,
+            margin: 0,
+            fontWeight: 600,
           }}
         >
-          * {footnote}
-        </div>
-      )}
-    </div>
+          {description}
+        </p>
+
+        {footnote && (
+          <div
+            style={{
+              marginTop: 8,
+              paddingTop: 14,
+              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+              fontSize: 20,
+              color: "#a3a3a3",
+              lineHeight: 1.3,
+            }}
+          >
+            * {footnote}
+          </div>
+        )}
+      </div>
+    </SpatialHUDCard>
   );
 };
 
@@ -114,116 +137,150 @@ export const HeroMetricCard: React.FC<HeroMetricCardProps> = ({
 export interface ComparisonCardProps {
   left: { title: string; badge: string; points: string[]; isNegative?: boolean };
   right: { title: string; badge: string; points: string[]; isPositive?: boolean };
+  accentColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
-export const ComparisonCard: React.FC<ComparisonCardProps> = ({ left, right }) => {
+export const ComparisonCard: React.FC<ComparisonCardProps> = ({
+  left,
+  right,
+  accentColor = "#38bdf8",
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
+}) => {
   if (!left && !right) return null;
 
-  return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: 20,
-        width: "100%",
-        maxWidth: 960,
-      }}
-    >
-      {/* Left Column */}
-      <div
-        style={{
-          background: left.isNegative ? "rgba(239, 68, 68, 0.12)" : "rgba(30, 30, 30, 0.85)",
-          border: `2px solid ${
-            left.isNegative ? "rgba(239, 68, 68, 0.4)" : "rgba(255, 255, 255, 0.12)"
-          }`,
-          borderRadius: 24,
-          padding: 28,
-          display: "flex",
-          flexDirection: "column",
-          gap: 14,
-          backdropFilter: "blur(12px)",
-        }}
-      >
-        <span
-          style={{
-            fontSize: 18,
-            fontWeight: 800,
-            color: left.isNegative ? "#f87171" : "#d4d4d4",
-            background: left.isNegative ? "rgba(239, 68, 68, 0.25)" : "rgba(255, 255, 255, 0.12)",
-            padding: "6px 14px",
-            borderRadius: 8,
-            alignSelf: "flex-start",
-            textTransform: "uppercase",
-          }}
-        >
-          {left.badge}
-        </span>
-        <h4 style={{ fontSize: 26, fontWeight: 800, color: "#ffffff", margin: 0 }}>
-          {left.title}
-        </h4>
-        <ul
-          style={{
-            margin: 0,
-            paddingLeft: 20,
-            color: "#d4d4d4",
-            fontSize: 22,
-            lineHeight: 1.5,
-          }}
-        >
-          {left.points.map((pt, i) => (
-            <li key={i}>{pt}</li>
-          ))}
-        </ul>
-      </div>
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
 
-      {/* Right Column */}
+  return (
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 960, padding: "26px" }}
+    >
       <div
         style={{
-          background: right.isPositive ? "rgba(34, 197, 94, 0.14)" : "rgba(30, 30, 30, 0.85)",
-          border: `2px solid ${
-            right.isPositive ? "rgba(34, 197, 94, 0.45)" : "rgba(255, 255, 255, 0.12)"
-          }`,
-          borderRadius: 24,
-          padding: 28,
-          display: "flex",
-          flexDirection: "column",
-          gap: 14,
-          backdropFilter: "blur(12px)",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 20,
+          width: "100%",
         }}
       >
-        <span
+        {/* Left Column */}
+        <div
           style={{
-            fontSize: 18,
-            fontWeight: 800,
-            color: right.isPositive ? "#4ade80" : "#fbbf24",
-            background: right.isPositive ? "rgba(34, 197, 94, 0.25)" : "rgba(251, 191, 36, 0.2)",
-            padding: "6px 14px",
-            borderRadius: 8,
-            alignSelf: "flex-start",
-            textTransform: "uppercase",
+            background: left.isNegative
+              ? "rgba(239, 68, 68, 0.15)"
+              : "rgba(30, 30, 30, 0.65)",
+            border: `1.5px solid ${
+              left.isNegative ? "rgba(239, 68, 68, 0.45)" : "rgba(255, 255, 255, 0.12)"
+            }`,
+            borderRadius: 20,
+            padding: 24,
+            display: "flex",
+            flexDirection: "column",
+            gap: 14,
           }}
         >
-          {right.badge}
-        </span>
-        <h4 style={{ fontSize: 26, fontWeight: 800, color: "#ffffff", margin: 0 }}>
-          {right.title}
-        </h4>
-        <ul
+          <span
+            style={{
+              fontSize: 18,
+              fontWeight: 800,
+              color: left.isNegative ? "#f87171" : "#d4d4d4",
+              background: left.isNegative
+                ? "rgba(239, 68, 68, 0.25)"
+                : "rgba(255, 255, 255, 0.12)",
+              padding: "6px 14px",
+              borderRadius: 8,
+              alignSelf: "flex-start",
+              textTransform: "uppercase",
+            }}
+          >
+            {left.badge}
+          </span>
+          <h4 style={{ fontSize: 26, fontWeight: 800, color: "#ffffff", margin: 0 }}>
+            {left.title}
+          </h4>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: 20,
+              color: "#d4d4d4",
+              fontSize: 22,
+              lineHeight: 1.5,
+            }}
+          >
+            {left.points.map((pt, i) => (
+              <li key={i}>{pt}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right Column */}
+        <div
           style={{
-            margin: 0,
-            paddingLeft: 20,
-            color: "#ffffff",
-            fontSize: 22,
-            lineHeight: 1.5,
-            fontWeight: 600,
+            background: right.isPositive
+              ? "rgba(34, 197, 94, 0.18)"
+              : "rgba(30, 30, 30, 0.65)",
+            border: `1.5px solid ${
+              right.isPositive ? "rgba(34, 197, 94, 0.55)" : "rgba(255, 255, 255, 0.12)"
+            }`,
+            borderRadius: 20,
+            padding: 24,
+            display: "flex",
+            flexDirection: "column",
+            gap: 14,
           }}
         >
-          {right.points.map((pt, i) => (
-            <li key={i}>{pt}</li>
-          ))}
-        </ul>
+          <span
+            style={{
+              fontSize: 18,
+              fontWeight: 800,
+              color: right.isPositive ? "#4ade80" : "#fbbf24",
+              background: right.isPositive
+                ? "rgba(34, 197, 94, 0.28)"
+                : "rgba(251, 191, 36, 0.2)",
+              padding: "6px 14px",
+              borderRadius: 8,
+              alignSelf: "flex-start",
+              textTransform: "uppercase",
+            }}
+          >
+            {right.badge}
+          </span>
+          <h4 style={{ fontSize: 26, fontWeight: 800, color: "#ffffff", margin: 0 }}>
+            {right.title}
+          </h4>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: 20,
+              color: "#ffffff",
+              fontSize: 22,
+              lineHeight: 1.5,
+              fontWeight: 600,
+            }}
+          >
+            {right.points.map((pt, i) => (
+              <li key={i}>{pt}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </SpatialHUDCard>
   );
 };
 
@@ -233,64 +290,86 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({ left, right }) =
 export interface FeatureGridCardProps {
   items: Array<{ icon: string; title: string; desc: string }>;
   accentColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
 export const FeatureGridCard: React.FC<FeatureGridCardProps> = ({
   items = [],
   accentColor = "#fbbf24",
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
 }) => {
   if (!items || items.length === 0) return null;
 
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${Math.min(items.length, 3)}, 1fr)`,
-        gap: 16,
-        width: "100%",
-        maxWidth: 960,
-      }}
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 960, padding: "24px" }}
     >
-      {items.map((item, idx) => (
-        <div
-          key={idx}
-          style={{
-            background: "rgba(25, 25, 25, 0.88)",
-            border: "1.5px solid rgba(255, 255, 255, 0.12)",
-            borderRadius: 20,
-            padding: "24px 16px",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 12,
-            backdropFilter: "blur(12px)",
-          }}
-        >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${Math.min(items.length, 3)}, 1fr)`,
+          gap: 16,
+          width: "100%",
+        }}
+      >
+        {items.map((item, idx) => (
           <div
+            key={idx}
             style={{
-              width: 58,
-              height: 58,
-              borderRadius: "50%",
-              background: `${accentColor}25`,
+              background: "rgba(25, 25, 30, 0.65)",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+              borderRadius: 18,
+              padding: "24px 16px",
+              textAlign: "center",
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
-              fontSize: 26,
-              color: accentColor,
+              gap: 12,
             }}
           >
-            {item.icon}
+            <div
+              style={{
+                width: 58,
+                height: 58,
+                borderRadius: "50%",
+                background: `${accentColor}25`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 26,
+                color: accentColor,
+              }}
+            >
+              {item.icon}
+            </div>
+            <h4 style={{ fontSize: 22, fontWeight: 800, color: "#ffffff", margin: 0 }}>
+              {item.title}
+            </h4>
+            <p style={{ fontSize: 18, color: "#a3a3a3", margin: 0, lineHeight: 1.35 }}>
+              {item.desc}
+            </p>
           </div>
-          <h4 style={{ fontSize: 22, fontWeight: 800, color: "#ffffff", margin: 0 }}>
-            {item.title}
-          </h4>
-          <p style={{ fontSize: 18, color: "#a3a3a3", margin: 0, lineHeight: 1.35 }}>
-            {item.desc}
-          </p>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </SpatialHUDCard>
   );
 };
 
@@ -300,59 +379,81 @@ export const FeatureGridCard: React.FC<FeatureGridCardProps> = ({
 export interface StepFlowCardProps {
   steps: Array<{ stepNumber: string; title: string; detail: string; active?: boolean }>;
   accentColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
 export const StepFlowCard: React.FC<StepFlowCardProps> = ({
   steps = [],
   accentColor = "#fbbf24",
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
 }) => {
   if (!steps || steps.length === 0) return null;
 
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 16,
-        width: "100%",
-        maxWidth: 920,
-      }}
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 920, padding: "26px 28px" }}
     >
-      {steps.map((st, idx) => (
-        <div
-          key={idx}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 20,
-            background: st.active ? `${accentColor}18` : "rgba(20, 20, 20, 0.8)",
-            border: `2px solid ${st.active ? accentColor : "rgba(255, 255, 255, 0.1)"}`,
-            borderRadius: 20,
-            padding: "20px 24px",
-            backdropFilter: "blur(10px)",
-          }}
-        >
-          <span
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+          width: "100%",
+        }}
+      >
+        {steps.map((st, idx) => (
+          <div
+            key={idx}
             style={{
-              fontSize: 32,
-              fontWeight: 900,
-              color: st.active ? accentColor : "#737373",
-              fontFamily: "monospace",
+              display: "flex",
+              alignItems: "center",
+              gap: 20,
+              background: st.active ? `${accentColor}20` : "rgba(25, 25, 30, 0.6)",
+              border: `1.5px solid ${st.active ? accentColor : "rgba(255, 255, 255, 0.1)"}`,
+              borderRadius: 18,
+              padding: "18px 22px",
             }}
           >
-            {st.stepNumber}
-          </span>
-          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <h4 style={{ fontSize: 24, fontWeight: 800, color: "#ffffff", margin: 0 }}>
-              {st.title}
-            </h4>
-            <p style={{ fontSize: 20, color: "#a3a3a3", margin: 0, lineHeight: 1.3 }}>
-              {st.detail}
-            </p>
+            <span
+              style={{
+                fontSize: 32,
+                fontWeight: 900,
+                color: st.active ? accentColor : "#737373",
+                fontFamily: "monospace",
+              }}
+            >
+              {st.stepNumber}
+            </span>
+            <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+              <h4 style={{ fontSize: 24, fontWeight: 800, color: "#ffffff", margin: 0 }}>
+                {st.title}
+              </h4>
+              <p style={{ fontSize: 20, color: "#a3a3a3", margin: 0, lineHeight: 1.3 }}>
+                {st.detail}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </SpatialHUDCard>
   );
 };
 
@@ -361,16 +462,32 @@ export const StepFlowCard: React.FC<StepFlowCardProps> = ({
 // ============================================================================
 export interface ChecklistCardProps {
   title: string;
-  badge: { text: string; color: "green" | "yellow" | "red" };
+  badge?: { text: string; color: "green" | "yellow" | "red" };
   items: string[];
+  accentColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
 export const ChecklistCard: React.FC<ChecklistCardProps> = ({
   title,
   badge,
   items = [],
+  accentColor = "#38bdf8",
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
 }) => {
   if (!title && items.length === 0) return null;
+
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
 
   const badgeColors = {
     green: { bg: "rgba(34, 197, 94, 0.2)", text: "#4ade80", border: "#22c55e" },
@@ -379,51 +496,55 @@ export const ChecklistCard: React.FC<ChecklistCardProps> = ({
   }[badge?.color || "yellow"];
 
   return (
-    <div
-      style={{
-        background: "rgba(24, 24, 27, 0.92)",
-        border: "2px solid rgba(255, 255, 255, 0.14)",
-        borderRadius: 24,
-        padding: "32px 28px",
-        width: "100%",
-        maxWidth: 920,
-        display: "flex",
-        flexDirection: "column",
-        gap: 18,
-        backdropFilter: "blur(14px)",
-      }}
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 920, padding: "30px 28px" }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h3 style={{ fontSize: 28, fontWeight: 800, color: "#ffffff", margin: 0 }}>
-          {title}
-        </h3>
-        {badge && (
-          <span
-            style={{
-              fontSize: 18,
-              fontWeight: 800,
-              background: badgeColors.bg,
-              color: badgeColors.text,
-              border: `1px solid ${badgeColors.border}`,
-              padding: "5px 14px",
-              borderRadius: 100,
-            }}
-          >
-            {badge.text}
-          </span>
-        )}
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        {items.map((it, idx) => (
-          <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-            <span style={{ color: badgeColors.text, fontSize: 24, lineHeight: 1 }}>✔</span>
-            <span style={{ fontSize: 22, color: "#e4e4e7", lineHeight: 1.4, fontWeight: 500 }}>
-              {it}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 18,
+          width: "100%",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: "#ffffff", margin: 0 }}>
+            {title}
+          </h3>
+          {badge && (
+            <span
+              style={{
+                fontSize: 18,
+                fontWeight: 800,
+                background: badgeColors.bg,
+                color: badgeColors.text,
+                border: `1px solid ${badgeColors.border}`,
+                padding: "5px 14px",
+                borderRadius: 100,
+              }}
+            >
+              {badge.text}
             </span>
-          </div>
-        ))}
+          )}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {items.map((it, idx) => (
+            <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+              <span style={{ color: badgeColors.text, fontSize: 24, lineHeight: 1 }}>✔</span>
+              <span style={{ fontSize: 22, color: "#e4e4e7", lineHeight: 1.4, fontWeight: 500 }}>
+                {it}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </SpatialHUDCard>
   );
 };
 
@@ -436,6 +557,9 @@ export interface QuoteCardProps {
   role: string;
   source?: string;
   accentColor?: string;
+  staggerIndex?: number;
+  enableScanline?: boolean;
+  enableBrackets?: boolean;
 }
 
 export const QuoteCard: React.FC<QuoteCardProps> = ({
@@ -444,81 +568,97 @@ export const QuoteCard: React.FC<QuoteCardProps> = ({
   role,
   source,
   accentColor = "#fbbf24",
+  staggerIndex = 0,
+  enableScanline = true,
+  enableBrackets = true,
 }) => {
   if (!quote) return null;
 
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const springVal = spring({
+    frame,
+    fps,
+    config: { damping: 15, stiffness: 130 },
+  });
+
   return (
-    <div
-      style={{
-        position: "relative",
-        background: "rgba(20, 20, 25, 0.88)",
-        border: "2px solid rgba(255, 255, 255, 0.14)",
-        borderRadius: 28,
-        padding: "40px 36px",
-        width: "100%",
-        maxWidth: 920,
-        display: "flex",
-        flexDirection: "column",
-        gap: 20,
-        backdropFilter: "blur(16px)",
-      }}
+    <SpatialHUDCard
+      frame={frame}
+      springVal={springVal}
+      staggerIndex={staggerIndex}
+      accentColor={accentColor}
+      enableScanline={enableScanline}
+      enableBrackets={enableBrackets}
+      style={{ maxWidth: 920, padding: "36px 34px" }}
     >
-      <span
-        style={{
-          position: "absolute",
-          top: 16,
-          left: 24,
-          fontSize: 80,
-          color: `${accentColor}25`,
-          fontFamily: "Georgia, serif",
-          lineHeight: 1,
-        }}
-      >
-        “
-      </span>
-      <p
-        style={{
-          fontSize: 26,
-          fontStyle: "italic",
-          color: "#ffffff",
-          lineHeight: 1.5,
-          margin: 0,
-          zIndex: 1,
-          fontWeight: 500,
-        }}
-      >
-        "{quote}"
-      </p>
       <div
         style={{
+          position: "relative",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-          paddingTop: 16,
-          marginTop: 8,
+          flexDirection: "column",
+          gap: 20,
+          width: "100%",
         }}
       >
-        <div>
-          <div style={{ fontSize: 22, fontWeight: 800, color: accentColor }}>
-            {author}
+        <span
+          style={{
+            position: "absolute",
+            top: -12,
+            left: -8,
+            fontSize: 80,
+            color: `${accentColor}25`,
+            fontFamily: "Georgia, serif",
+            lineHeight: 1,
+            pointerEvents: "none",
+          }}
+        >
+          “
+        </span>
+        <p
+          style={{
+            fontSize: 26,
+            fontStyle: "italic",
+            color: "#ffffff",
+            lineHeight: 1.5,
+            margin: 0,
+            zIndex: 1,
+            fontWeight: 500,
+          }}
+        >
+          "{quote}"
+        </p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+            paddingTop: 16,
+            marginTop: 8,
+          }}
+        >
+          <div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: accentColor }}>
+              {author}
+            </div>
+            <div style={{ fontSize: 18, color: "#a1a1aa", marginTop: 2 }}>{role}</div>
           </div>
-          <div style={{ fontSize: 18, color: "#a1a1aa", marginTop: 2 }}>{role}</div>
+          {source && (
+            <span
+              style={{
+                fontSize: 16,
+                color: "#94a3b8",
+                background: "rgba(255, 255, 255, 0.08)",
+                padding: "4px 12px",
+                borderRadius: 6,
+              }}
+            >
+              Nguồn: {source}
+            </span>
+          )}
         </div>
-        {source && (
-          <span
-            style={{
-              fontSize: 16,
-              color: "#94a3b8",
-              background: "rgba(255, 255, 255, 0.08)",
-              padding: "4px 12px",
-              borderRadius: 6,
-            }}
-          >
-            Nguồn: {source}
-          </span>
-        )}
       </div>
-    </div>
+    </SpatialHUDCard>
   );
 };

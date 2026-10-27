@@ -3,3 +3,7 @@ export * from "./primitives";
 export * from "./SpeechSyncedSubtitles";
 export * from "./UserBrandOutro";
 export * from "./CardArchetypes";
+export * from "./SpatialHUDCard";
+export * from "./SmartSceneLayout";
+export * from "./XRayDigestiveHologram";
+export * from "./three";

@@ -1,0 +1,78 @@
+{
+  "$schema": "../../schemas/style.schema.json",
+  "id": "tech-tv-tips",
+  "version": "1.0.0",
+  "name": "TECH TV TIPS",
+  "purpose": "Phong cách video hướng dẫn kỹ thuật và tối ưu hệ thống bóc tách từ video tham chiếu",
+  "bestFor": [
+    "Video hướng dẫn thủ thuật công nghệ",
+    "Mẹo tối ưu Android / iOS / Tivi / Máy tính",
+    "Shorts / TikTok / Reels 9:16 giữ chân cao"
+  ],
+  "notIdealFor": [
+    "Phim tài liệu dài tập",
+    "Video kể chuyện chậm rãi không có số liệu kỹ thuật"
+  ],
+  "beatSeconds": {
+    "min": 2.67,
+    "max": 19.7,
+    "resetEveryBeats": 3
+  },
+  "script": {
+    "hookStyle": "Đánh thẳng vào nỗi đau thiết bị giật lag, đơ cứng vì quảng cáo và bloatware",
+    "tone": "Tự nhiên, dứt khoát, chuyên môn công nghệ thực chiến",
+    "structure": "Hook 3s -> Problem Framing -> Step-by-Step Guide -> Before/After Metric -> Pro Tip -> Outro CTA"
+  },
+  "visual": {
+    "palette": {
+      "background": "#0a121e",
+      "surface": "#111d2e",
+      "accentPrimary": "#22d3ee",
+      "accentSecondary": "#f59e0b",
+      "positive": "#10b981",
+      "negative": "#ef4444"
+    },
+    "cardStyle": "SpatialTvMockupCard / StepByStepFlow / Metric Gauge",
+    "cornerRadius": 24
+  },
+  "imagePrompt": {
+    "stylePrefix": "modern dark cyber ui, android tv system dashboard, electric cyan neon accents, sleek dark glassmorphism",
+    "negativePrompt": "low quality, blurry, amateur rendering, cluttered"
+  },
+  "motion": {
+    "spring": {
+      "damping": 18,
+      "stiffness": 140,
+      "mass": 0.8
+    },
+    "entrance": "slide-up + pop-scale(0.88 -> 1.0)",
+    "targetWpm": 155
+  },
+  "typography": {
+    "headlineFont": "Montserrat Black",
+    "bodyFont": "Inter SemiBold",
+    "safeZoneY": [
+      260,
+      1550
+    ]
+  },
+  "audio": {
+    "voiceGender": "male",
+    "tone": "Tự nhiên, dứt khoát, chuyên môn công nghệ thực chiến",
+    "bgm": "Minimal electronic beat, low-tempo hi-hats, subtle cyber pulse",
+    "targetLufs": -12.5
+  },
+  "thumbnail": {
+    "style": "High-contrast hero frame with key metric and accent glow"
+  },
+  "renderer": {
+    "primary": "remotion",
+    "composition": "CanonicalVideo"
+  },
+  "prohibited": [
+    "Khung hình rỗng",
+    "Cắt chữ bằng ellipsis",
+    "Vi phạm safe zone [260, 1550]",
+    "Mang thông tin thương hiệu của video mẫu vào sản phẩm"
+  ]
+}

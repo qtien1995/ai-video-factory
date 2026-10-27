@@ -7,7 +7,7 @@ import { Config } from "@remotion/cli/config";
 import { enableTailwind } from "@remotion/tailwind-v4";
 import path from "node:path";
 
-Config.setVideoImageFormat("jpeg");
+Config.setVideoImageFormat("png");
 Config.setOverwriteOutput(true);
 Config.overrideWebpackConfig((current) => {
   const withTailwind = enableTailwind(current);
@@ -17,7 +17,8 @@ Config.overrideWebpackConfig((current) => {
       ...withTailwind.resolve,
       alias: {
         ...(withTailwind.resolve?.alias || {}),
-        "@styles": path.resolve(__dirname, "../../styles"),
+        "@styles": path.resolve(process.cwd(), "../../styles"),
+        "@shared": path.resolve(process.cwd(), "src/shared"),
       },
     },
   };

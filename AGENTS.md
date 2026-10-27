@@ -1,4 +1,4 @@
-# AGENTS.md — AI VIDEO FACTORY V3 (STREAMLINED)
+# AGENTS.md — AI VIDEO FACTORY V3 (STREAMLINED & AUTONOMOUS)
 
 ## Mục tiêu
 
@@ -6,35 +6,29 @@
 
 - **Engine chính duy nhất**: **Remotion** (React, TypeScript, Tailwind/CSS).
 - **Voiceover**: Bắt buộc tạo giọng đọc qua **CIT Voice Studio** (VieNeu-TTS local AI `:8001`, mặc định: "Hải Đăng" 48kHz studio, trích xuất timing word thật).
-- **Chiến lược phát triển tối thượng**: **Copy & Clone DNA từ Video Mẫu Chuyên Nghiệp 100%**. Bóc tách từng mili-giây, từng chuyển động, layout và nhịp điệu của các video viral để tái hiện hoàn hảo bằng code.
+- **Chiến lược phát triển tối thượng**: **Copy & Clone DNA từ Video Mẫu Chuyên Nghiệp 100% (Zero-Media, 100% Code-Ready)**. Bóc tách từng mili-giây, từng chuyển động, layout và nhịp điệu của các video viral để tái hiện hoàn hảo bằng code.
 - **An toàn dữ liệu**: Không xóa, di chuyển hoặc làm hỏng các project video cũ trong `projects/` hoặc bản xuất trong `renders/`.
 
 ---
 
-## QUY TRÌNH BÓC TÁCH & CLONE DNA VIDEO MẪU 100%
+## QUY TRÌNH BÓC TÁCH & CLONE DNA "ZERO-MEDIA, 100% CODE-READY"
 
 Khi người dùng cung cấp một video mẫu (file `.mp4`, đường dẫn, hoặc link video):
 
 ```text
-VIDEO MẪU (MP4 / LINK)
-➔ BƯỚC 1: BÓC TÁCH VẬT LÝ TỰ ĐỘNG (`npm run dna -- analyze <path> [--name <style-name>]`)
-  ├─ Trích xuất Technical Specs (Resolution, FPS, Codec, Duration)
-  ├─ Tách Audio Track độc lập (`narration.wav` / `audio.mp3`)
-  ├─ Bắt Scene Cuts tự động (Điểm chuyển cảnh)
-  ├─ Trích xuất 1fps Frames để phân tích chuyển động liên tục
-  └─ Tạo ảnh Contact Sheet lưới (Tổng quan thị giác toàn bộ video)
-➔ BƯỚC 2: GIẢI PHẪU 5 TẦNG DNA (5-Layer Deep Breakdown)
-  ├─ 1. Hook 3s đầu: Visual Hook (vật thể, hiệu ứng) + Verbal Hook + Text Hook (font, màu)
-  ├─ 2. Layout & Colors: Palette nền/thẻ/accent, bo góc (radius), đổ bóng, safe zone
-  ├─ 3. Typography & Subtitles: Font family, casing, vị trí Y, kiểu highlight từng từ
-  ├─ 4. Motion & Spring Physics: Nhịp chuyển cảnh (s/cut), spring damping/stiffness, idle animation
-  └─ 5. Sound Design & Audio: Tốc độ đọc WPM, nhịp ngắt nghỉ, năng lượng BGM, danh sách cues SFX
-➔ BƯỚC 3: TỰ ĐỘNG ĐÓNG GÓI VÀO THƯ VIỆN STYLE (`styles/<style-name>/`)
+VIDEO MẪU (MP4 / ĐƯỜNG DẪN)
+➔ BƯỚC 1: BÓC TÁCH THÔNG SỐ TRONG BỘ NHỚ (`npm run dna -- analyze <path> [--name <style-name>]`)
+  ├─ Trích xuất Technical Specs (Resolution, FPS, Codec, Duration) bằng FFprobe
+  ├─ Bắt Scene Cuts chính xác (mili-giây) bằng FFmpeg select filter vào mảng `cutTimestampsMs`
+  ├─ Đo đạc âm thanh EBU R128 thực tế (Integrated LUFS, True Peak, LRA)
+  └─ ZERO-MEDIA MANDATE: Tuyệt đối KHÔNG lưu file video, audio (.wav/.mp3), frame ảnh hay contact sheet vào đĩa
+➔ BƯỚC 2: XUẤT 3 FILE LẬP TRÌNH DUY NHẤT VÀO `dna-vault/<id>/`
+  ├─ 1. `dna.json`: Thông số đo đạc thực tế (`metadata`, `rhythmAndPacing` với `cutTimestampsMs`) + design tokens
+  ├─ 2. `README.md`: Báo cáo giải phẫu 5 tầng DNA & bí quyết giữ chân người xem (Retention Secrets)
+  └─ 3. `replication-prompt.md`: Cẩm nang hướng dẫn kỹ thuật cho Dev & AI tái tạo 100% phong cách bằng code Remotion
+➔ BƯỚC 3: TỰ ĐỘNG ĐỒNG BỘ VÀO THƯ VIỆN STYLE TẬP TRUNG (`styles/<style-name>/`)
   ├─ Tự động sinh `style.json` (chuẩn schema) + `theme.ts` (TypeScript dùng ngay cho Remotion)
-  ├─ Lưu ảnh Contact Sheet vào `styles/<style-name>/contact_sheet.jpg`
   └─ Tự động đăng ký vào `styles/registry.json` và export qua alias `@styles`
-➔ BƯỚC 4: SẢN XUẤT VIDEO MỚI
-  └─ Chọn Style từ `styles/`, giữ nguyên 100% DNA chuyển động & layout, thay thế kịch bản và nội dung mới
 ```
 
 > [!CAUTION]
@@ -43,28 +37,47 @@ VIDEO MẪU (MP4 / LINK)
 > 2. **CẤM 100% giữ lại thương hiệu của video mẫu**: Khi bóc tách video tham khảo, tuyệt đối KHÔNG mang tên kênh, logo, slogan, watermark hay hotline của tác giả gốc (như HODL.VN, Cường IT...) vào code sản phẩm.
 > 3. **Tự động thay thế bằng Thương hiệu của User**: Toàn bộ Outro, Eyebrow và Watermark bắt buộc nạp thông tin nhận diện của User (được định cấu hình tại `brand/user-brand.json`).
 
+---
+
+## CƠ CHẾ TỔNG ĐẠO DIỄN TỰ ĐỘNG PHỐI HỢP 10 SKILLS (AUTONOMOUS MULTI-SKILL ORCHESTRATION)
+
+Hệ thống sở hữu 10 Skills tinh gọn trong `.agents/skills/`. Khi làm việc với User, Agent đóng vai **Master AI Director**, tự động điều phối các skill theo 2 ngữ cảnh:
+
+### 1. KHI USER CUNG CẤP VIDEO MẪU VÀ YÊU CẦU HỌC / PHÂN TÍCH DNA:
+- **Bước 1**: Chạy `npm run dna -- analyze <video> [--name <style-name>]` để trích xuất bộ khung số liệu kỹ thuật vào `dna-vault/<id>/`.
+- **Bước 2**: Tự động dùng tri thức chuyên gia của Agent (tổng hợp từ `motion-ai-kit`, `gsap-skills`, `remotion-explainer`, `reels-scripting`) để phân tích sâu, hoàn thiện bảng màu thực tế, cấu trúc `visualComponents`, `sceneTimelineBlueprint` vào `dna.json` và hoàn thiện `replication-prompt.md` mà không lưu lại bất kỳ file media hay ảnh cắt frame nào trên đĩa.
+
+### 2. KHI USER CUNG CẤP NỘI DUNG / Ý TƯỞNG VÀ YÊU CẦU LÀM VIDEO:
+Agent **BẮT BUỘC** đóng vai **Master AI Director**, tự động lập **Bản Kế Hoạch Đạo Diễn (Director's Blueprint)** trình bày rõ cho User biết các Skill sẽ phối hợp với nhau theo 4 chặng:
+
+```text
+BẢN KẾ HOẠCH ĐẠO DIỄN (DIRECTOR'S BLUEPRINT)
+────────────────────────────────────────────────────────────────────────────────
+➔ CHẶNG 1: TIỀN KỲ & KỊCH BẢN (PRE-PRODUCTION & SCRIPTING)
+  ├─ [prompts-chat]     : Kích hoạt Persona chuyên gia & ẩn dụ thị giác (Visual Metaphor) cho Hook mở đầu.
+  ├─ [reels-scripting]  : Phân rã cấu trúc Scene chuẩn nhịp cắt DNA, viết Hook 3s đầu giữ chân (High Retention).
+  └─ [humanizer]        : Viết lại toàn bộ lời thoại sang ngôn ngữ nói tự nhiên của người Việt, khử giọng AI robot.
+
+➔ CHẶNG 2: GIỌNG ĐỌC & ĐỒNG BỘ THỜI GIAN THỰC (VOICEOVER & TIMING)
+  └─ [cit-voice-studio] : Gọi VieNeu-TTS local (:8001, giọng Hải Đăng studio 48kHz), trích xuất timing chuẩn từng từ.
+
+➔ CHẶNG 3: PHỐI TRỘN DNA & LẬP TRÌNH THỊ GIÁC (VISUAL CODE & DNA MIXING)
+  ├─ Tự động Mix & Match tokens từ `dna-vault/` và `styles/` phù hợp với nội dung.
+  ├─ [remotion-explainer]        : Dựng thẻ 2.5D Spatial Glass HUD hoặc 3D ThreeCanvas trung tâm.
+  ├─ [gsap-skills]               : Diễn hoạt biểu đồ đua tài sản, nến TradingView, số liệu nhảy hoặc đường cong SVG.
+  ├─ [motion-ai-kit]             : Tính toán thông số Spring physics (damping, stiffness, mass) theo cảm xúc từng cảnh.
+  ├─ [remotion-markup & best-practices] : Lập trình React component / spec tuân thủ Safe Zone 9:16 và tối ưu render.
+  └─ [auto-footage]              : (Chỉ kích hoạt nếu đầu vào là video quay sẵn talking-head để jump-cut & chèn overlay).
+
+➔ CHẶNG 4: RENDER, CHUẨN HÓA EBU R128 & KIỂM ĐỊNH (RENDER & QUALITY GATE)
+  ├─ Render trực tiếp Final MP4 qua Remotion CLI với props động `inputProps.json`.
+  ├─ Chuẩn hóa âm lượng EBU R128: -12.5 LUFS, True Peak < -1.0 dBFS.
+  └─ Chạy kiểm thử E2E 4-Tier: `npm run verify -- --project <dir>`.
+```
 
 ---
 
-## 2 Workflows sản xuất chính
-
-1. **Remotion Explainer (`remotion-template`) [Chính]**:
-   - **Mục đích**: Giải thích kiến thức, tài chính, công nghệ, bảo hiểm 45–60 giây.
-   - **3 Style Cốt Lõi Tinh Gọn (`styles/`)**:
-     * `finance-data-pro`: Tài chính & Dữ liệu chuyên sâu (Tích hợp 100% DNA HODL.VN Bar Chart Race + TradingView + Báo cáo vĩ mô).
-     * `clean-explainer`: Giải thích thẻ 2D chuẩn Cường IT (6 cảnh Hook->Problem->Solution->Workflow->Benefits->Outro, 2 preset: Tech/Bảo hiểm).
-     * `kinetic-minimalist`: Chữ động siêu lớn tương phản mạnh mẽ cho hook viral 15–30s.
-   - **Quy trình**: Kịch bản + Beats ➔ Ghép giọng CIT Voice Studio Hải Đăng (lấy timing thật) ➔ Render qua engine `engines/remotion` ➔ Xuất Final MP4 trực tiếp (điều chỉnh trực tiếp trên video).
-   - **Lưu trữ**: `projects/social-shorts/CNT-[YYYYMMDD]-[TEN-DU-AN]` hoặc `projects/financial-insurance/`.
-
-2. **Auto Footage (`auto-footage`) [Chính]**:
-   - **Mục đích**: Video quay sẵn (talking-head, review clip, podcast).
-   - **Quy trình**: Cắt bỏ khoảng lặng (jump-cut tự động) ➔ Phụ đề động speech-synced ➔ Chèn motion graphic overlays ➔ Xuất Final MP4 hoàn chỉnh.
-   - **Lưu trữ**: `projects/auto-cuts/CNT-[YYYYMMDD]-[TEN-DU-AN]`.
-
----
-
-## Pipeline Chuẩn 3 Bước Bắt Buộc & 2 Chế Độ Thực Hiện
+## 2 Chế Độ Thực Hiện Khi Sản Xuất Video
 
 > [!IMPORTANT]
 > **2 CHẾ ĐỘ THỰC HIỆN (BẮT BUỘC ĐỀ XUẤT CHO USER CHỌN KHI BẮT ĐẦU)**:
@@ -96,7 +109,6 @@ QUY TRÌNH 3 BƯỚC BẮT BUỘC (KHI DUYỆT TỪNG BƯỚC)
 > 2. **Chỉ xuất trực tiếp 1 file Final duy nhất**: Sau khi duyệt storyboard/still frames (Bước 2), xuất thẳng trực tiếp `projects/<id>/output/final.mp4` (chuẩn 1080×1920, EBU R128 -12.5 LUFS).
 > 3. **Thư mục `output/` sạch sẽ chuẩn mực**: Chỉ được phép chứa `final.mp4`, `final-contact-sheet.svg`, `final-qc.json`, thư mục `dist/` và `storyboard/`. Tuyệt đối cấm để lọt bất kỳ file `preview.*` nào vào thư mục bàn giao.
 
-
 ---
 
 ## Hàng rào an toàn thị giác bắt buộc (Hard Constraints)
@@ -117,23 +129,38 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
    - `Integrated Loudness`: **-14 đến -12 LUFS** (chuẩn **-12.5 LUFS** cho TikTok/Reels/Shorts).
    - `Loudness Range (LRA)`: **< 8 LU**.
    - `True Peak`: **< -1.0 dBFS** (chống clipping/méo tiếng).
+7. **Kiến trúc Thị giác Hybrid 3D WebGL + 2.5D Spatial HUD**:
+   - Đối với các dự án y sinh/công nghệ: Dùng `@remotion/three` (`<ThreeCanvas>`), `@react-three/fiber` cho vật thể trung tâm kết hợp thẻ `SpatialHUDCard` (2.5D Spatial Glass HUD) với perspective 3D, 4 góc brackets `[ ]` và tia quét laser.
+   - CẤM HOÀN TOÀN việc vẽ minh họa trung tâm bằng hình học `<svg>` 2D phẳng đơn giản.
 
 ---
 
-## Factory CLI & Lệnh tắt Nhanh
+## Bảng Tra Cứu 10 Skills & Vai Trò Trong Xưởng
 
-- `npm run style -- list`: **Xem danh mục toàn bộ các Style có sẵn trong xưởng (`styles/`)**.
-- `npm run style -- show <id>`: **Xem chi tiết bảng màu, typography, spring physics của style**.
-- `npm run dna -- analyze <video-file> [--name <style-name>]`: **Bóc tách video mẫu và tự động lưu thành Style mới trong `styles/<style-name>/`**.
-- `npm run dna -- list`: Xem danh mục các DNA Profile đã bóc tách trong `dna-vault/`.
-- `npm run doctor`: Kiểm tra sức khỏe hệ thống (CIT Voice Studio, FFmpeg, Remotion).
-- `npm run studio`: Khởi động Remotion Studio trực quan để xem trước cảnh quay.
-- `npm run services`: Khởi động các background services (CIT Voice Studio, FlowKit).
-- `npm run factory -- status --project <id>`: Kiểm tra trạng thái dự án.
-- `npm run factory -- approve --gate GATE1|GATE2|GATE3 --project <id> --evidence "lời duyệt"`: Phê duyệt chốt chặn.
-- `npm run factory -- tts --project <id>`: Tạo voice và đo timing thật bằng FFprobe.
-- `npm run factory -- render --kind final --project <id>`: Render Remotion trực tiếp Final MP4 + chuẩn hóa EBU R128 + contact sheet QA.
-- `npm run factory -- package --project <id>`: Tự động trích xuất 3 thumbnails, sinh metadata SEO và caption mạng xã hội.
-- `npm run verify -- --project <dir>`: Chạy bộ kiểm thử E2E 4-Tier kiểm tra file MP4 xuất xưởng.
-- `npm test`: Chạy toàn bộ unit test của Factory Core.
-- `npm run lint` & `npm run typecheck`: Kiểm tra chất lượng mã nguồn TypeScript/ESLint.
+| STT | Tên Skill | Chức năng trong Factory |
+| :--- | :--- | :--- |
+| 1 | `prompts-chat` | Khai thác thư viện 1.100+ prompt và Role-Playing Personas để nhập vai chuyên gia, gợi mở visual metaphors và hook độc đáo. |
+| 2 | `reels-scripting` | Cấu trúc hóa kịch bản video ngắn giữ chân cao (3s Hook, Problem, Solution, CTA) theo nhịp timecode chính xác. |
+| 3 | `humanizer` | Khử văn phong máy móc của AI, tinh chỉnh câu từ tự nhiên, ấm áp như người thật nói chuyện. |
+| 4 | `cit-voice-studio` | Tạo giọng đọc AI chất lượng studio 48kHz (VieNeu-TTS local `:8001`) và trích xuất timing từng từ. |
+| 5 | `remotion-explainer` | Thiết kế không gian 3D WebGL và thẻ 2.5D Spatial Glass HUD cho video explainer dọc 9:16. |
+| 6 | `gsap-skills` | Diễn hoạt biểu đồ đua tài sản (Bar Chart Race), nến chứng khoán, vẽ đồ thị SVG và timeline tweening phức tạp. |
+| 7 | `motion-ai-kit` | Tính toán cấu hình Spring physics (damping, stiffness, mass), hàm linear() và audit MotionScore. |
+| 8 | `remotion-markup` | Quy chuẩn JSX/TSX layout an toàn mobile, trigger animation theo frame và tối ưu luồng hiển thị text. |
+| 9 | `remotion-best-practices` | Tiêu chuẩn kỹ thuật Remotion, Rules of Hooks, dynamic metadata, composition props và hiệu năng render. |
+| 10 | `auto-footage` | Tự động jump-cut khoảng lặng và chèn motion graphic overlays cho video quay sẵn (talking-head). |
+
+---
+
+## Factory CLI & Lệnh Tắt Nhanh
+
+- `npm run check`: **Kiểm tra toàn diện sức khỏe hệ thống (Voice Studio, Remotion, FFmpeg, Dung lượng)**.
+- `npm run start`: **Khởi động dịch vụ giọng đọc AI ngầm (CIT Voice Studio VieNeu-TTS `:8001`)**.
+- `npm run studio`: **Mở giao diện xem trước Remotion Studio trực quan**.
+- `npm run make -- --project <tên_folder>`: **Lệnh 1 chạm: Tạo giọng TTS -> Render MP4 -> Kiểm định EBU R128 -> Đóng gói**.
+- `npm run dna -- analyze <video-file> [--name <style-name>]`: **Bóc tách video mẫu Zero-Media, sinh 3 file: `dna.json`, `README.md`, `replication-prompt.md`**.
+- `npm run dna -- list`: **Xem danh mục toàn bộ DNA Profiles trong `dna-vault/`**.
+- `npm run dna -- prompt <id>`: **Xem cẩm nang kỹ thuật `replication-prompt.md` của một DNA Profile**.
+- `npm run style -- list`: **Xem danh mục toàn bộ Style trong `styles/`**.
+- `npm run clean`: **Dọn dẹp nhanh các file rác tạm sinh ra sau render**.
+- `npm run verify -- --project <dir>`: **Chạy bộ kiểm thử E2E 4-Tier kiểm tra file MP4 xuất xưởng**.

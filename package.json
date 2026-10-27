@@ -5,8 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "doctor": "node core/scripts/factory/index.js doctor",
+    "check": "node core/scripts/factory/index.js doctor",
+    "start": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
     "studio": "powershell -ExecutionPolicy Bypass -File .\\scripts\\start-studio.ps1",
+    "make": "node core/scripts/factory/make.js",
+    "clean": "node scripts/clean.js",
+    "doctor": "node core/scripts/factory/index.js doctor",
     "services": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
     "factory": "node core/scripts/factory/index.js",
     "style": "node core/scripts/style/index.js",
@@ -24,5 +28,8 @@
     "cit-voice-studio"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/three": "^4.0.519"
+  }
 }
