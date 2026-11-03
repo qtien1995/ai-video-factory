@@ -1,6 +1,7 @@
 import { TechTvTipsTheme } from "./tech-tv-tips/theme";
 import { TestDnaZeroMediaTheme } from "./test-dna-zero-media/theme";
 import { AiTechBriefingTheme } from "./ai-tech-briefing/theme";
+import { CinematicSaasCraftTheme } from "./cinematic-saas-craft/theme";
 import { StyleTheme } from "./types";
 import { FinanceDataProTheme } from "./finance-data-pro/theme";
 import { CleanExplainerTheme } from "./clean-explainer/theme";
@@ -13,10 +14,12 @@ import { ShowcaseAffiliateLuxuryTheme } from "./showcase-affiliate-luxury/theme"
 import { MedicalBiometricsProTheme } from "./medical-biometrics-pro/theme";
 
 export * from "./types";
+export * from "./cinematic-saas-craft/components";
 export {
   TechTvTipsTheme,
   TestDnaZeroMediaTheme,
   AiTechBriefingTheme,
+  CinematicSaasCraftTheme,
   FinanceDataProTheme,
   CleanExplainerTheme,
   KineticMinimalistTheme,
@@ -29,6 +32,12 @@ export {
 };
 
 export const STYLE_THEMES: Record<string, StyleTheme> = {
+  "cinematic-saas-craft": CinematicSaasCraftTheme,
+  "cinematic-saas": CinematicSaasCraftTheme,
+  "saas-promo": CinematicSaasCraftTheme,
+  "product-craft": CinematicSaasCraftTheme,
+  "spatial-craft": CinematicSaasCraftTheme,
+  "exploded-view": CinematicSaasCraftTheme,
   "tech-tv-tips": TechTvTipsTheme,
   "test-dna-zero-media": TestDnaZeroMediaTheme,
   "medical-biometrics-pro": MedicalBiometricsProTheme,

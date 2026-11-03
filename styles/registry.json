@@ -4,6 +4,31 @@
   "updatedAt": "2026-10-26T15:55:03.729Z",
   "styles": [
     {
+      "id": "cinematic-saas-craft",
+      "name": "Cinematic Product & 3D Spatial Craft",
+      "category": "tech",
+      "purpose": "Phong cách quảng bá sản phẩm, SaaS & công nghệ điện ảnh cao cấp: Chiều sâu không gian 3D, bóc tách exploded-view đa tầng, camera lướt nghiêng cận cảnh (graze-tour), lắp ráp thẻ thông số động (progressive assembly) và lớp âm thanh SFX đồng bộ vi mô.",
+      "bestFor": [
+        "Quảng bá sản phẩm công nghệ, SaaS, Mobile App & Web Platform",
+        "Video giới thiệu tính năng mới (Product Feature Launch / Teaser)",
+        "Bóc tách cấu trúc kiến trúc phần mềm, mô hình dữ liệu (Exploded View)",
+        "Trình diễn giao diện người dùng cao cấp (Cinematic UI Showcase 9:16)",
+        "Video gọi vốn & Pitch deck motion cho Startup"
+      ],
+      "tags": [
+        "cinematic",
+        "saas",
+        "3d-spatial",
+        "exploded-view",
+        "graze-tour",
+        "sound-design"
+      ],
+      "path": "styles/cinematic-saas-craft",
+      "targetWpm": 145,
+      "avgCutIntervalSec": 6.5,
+      "sourceDna": "video-shotcraft-curated"
+    },
+    {
       "id": "medical-biometrics-pro",
       "name": "Medical Biometrics & Clinical Editorial",
       "category": "medical",

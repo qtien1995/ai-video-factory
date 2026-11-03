@@ -767,7 +767,7 @@ function generateConformingFixture(fixtureDir) {
 // CLI Entrypoint
 async function main() {
   const args = process.argv.slice(2);
-  let targetPath = DEFAULT_TARGET_MP4;
+  let targetPath = null;
   let projectDir = DEFAULT_PROJECT_DIR;
   let runTier = 'all';
   let selfTest = false;
@@ -785,6 +785,10 @@ async function main() {
     } else if (args[i] === '--json') {
       jsonMode = true;
     }
+  }
+
+  if (!targetPath) {
+    targetPath = path.join(projectDir, 'output', 'final.mp4');
   }
 
   if (!FFMPEG_BIN || !FFPROBE_BIN) {

@@ -6,6 +6,21 @@
 
 ---
 
+## NGUYÊN TẮC CỐT LÕI: KHÔNG STYLE CỐ ĐỊNH — PHỐI TRỘN SÁNG TẠO [THỊ GIÁC] × [CHUYỂN ĐỘNG]
+
+> [!IMPORTANT]
+> 1. **KHÔNG CÓ STYLE CỐ ĐỊNH (ZERO FIXED TEMPLATES)**: Nghiêm cấm rập khuôn hay đóng khung video vào một style mặc định duy nhất. Mỗi sản phẩm phải là sự sáng tạo độc bản, tạo dấu ấn thị giác mạnh mẽ.
+> 2. **CÔNG THỨC BẮT BUỘC [THỊ GIÁC] × [CHUYỂN ĐỘNG]**:
+>    - **Phong cách Thị giác**: Xác lập không gian thẩm mỹ, bảng màu, chất liệu (3D vô cực, OLED đen sâu, neon cyber, editorial báo chí...) và typography tương phản cao.
+>    - **Ngôn ngữ Chuyển động**: Xác lập động lực học vật lý (Spring physics đầm hoặc nảy), góc máy 3D (graze-tour, exploded-view), diễn hoạt biểu đồ SVG, kinetic text slam và âm thanh tối giản (BGM dịu êm, TUYỆT ĐỐI CẤM SFX).
+> 3. **CHUYỂN ĐỘNG HOÀN HẢO 100%**: Easing mượt mà, triệt tiêu giật lag, đồng bộ chuẩn xác từng từ với giọng đọc AI.
+> 4. **KIẾN TRÚC PHÂN CẢNH ĐỘNG — CẤM FIX CỨNG 6 CẢNH (ZERO FIXED 6-SCENE CONSTRAINT)**:
+>    - Tuyệt đối không ép mọi video vào khuôn mẫu 6 cảnh (`Hook -> Problem -> Solution -> Workflow -> Benefits -> Outro`). Rập khuôn 6 cảnh sẽ làm video nghèo nàn, dễ đoán và bỏ lỡ các ý sâu của chủ đề.
+>    - Số cảnh ($N$ cảnh) phải linh hoạt theo chiều sâu ý tưởng và thời lượng (3-4 cảnh cho Micro-Explainer 30s, 4-5 cảnh cho Myth-Busting, 6-9 cảnh cho Case Study/Deep Dive, hoặc $N$ cảnh cho Step-by-Step).
+>    - Nguyên tắc: "Ý nào cảnh đó — Chuyển ý là chuyển cảnh". Không neo cảnh quá lâu (>12-15s), không cắt nhỏ máy móc.
+
+---
+
 ## KIẾN TRÚC 4 TẦNG KHÔNG GIAN BẮT BUỘC (STRICT 4-ZONE VERTICAL ARCHITECTURE)
 
 Để triệt tiêu vĩnh viễn hiện tượng **đè hình (collision)** và **khoảng trống thừa (dead space)**, toàn bộ khung hình 1080×1920 BẮT BUỘC tuân thủ phân tầng nghiêm ngặt thông qua component chuẩn `<SmartSceneLayout />`:
@@ -82,6 +97,34 @@ Khi sản xuất video giải thích hoặc phóng sự công nghệ, tài chín
    - Khung hình luôn có nhịp thở điện ảnh chậm: `scale` từ 1.00 -> 1.025, micro-tilt xoay `0.3deg`, kết hợp nền đo nhịp tim (telemetry / ECG wave) chạy tuần hoàn.
 5. **Speech-Synced Subtitles Chuẩn Mực**:
    - Hiện sẵn cụm từ ngắn trong khung kính mờ. **Chỉ từ đang đọc đổi màu highlight**. CẤM đổi cỡ chữ hoặc scale làm nhảy dòng rung chữ. Zero Speech = Zero Sub.
+
+---
+
+## QUY ĐỊNH BẮT BUỘC VỀ TYPOGRAPHY & FONT TIẾNG VIỆT (VIETNAMESE TYPOGRAPHY MANDATE)
+
+1. **Font Bản Ngữ Tiếng Việt Chuẩn Xác 100%**:
+   - Sử dụng ưu tiên số 1: `Be Vietnam Pro`, `Montserrat`, `Segoe UI`.
+   - Nghiêm cấm sử dụng các font chỉ hỗ trợ Latin cơ bản (như Inter bản thiếu dấu, Roboto gốc) gây lỗi "Font Fallback Mismatch" (hiện tượng chữ nhảy lò cò: chữ không dấu dùng font này, chữ có dấu dùng font khác khiến nét chữ to nhỏ lệch lạc, dấu bị méo hoặc thụt lệch).
+
+2. **Cơ Chế Nhúng & Nạp Font Tuyệt Đối An Toàn**:
+   - **Khi render SVG / Storyboard HTML**: Bắt buộc nhúng `@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap');` vào thẻ `<defs><style>` của SVG và `<head>` của HTML.
+   - **Khi render Remotion**: Nạp font thông qua `@remotion/fonts` hoặc Google Fonts kết hợp barrier `delayRender()` / `continueRender()`. Đảm bảo font sẵn sàng 100% trước khi xuất frame video.
+
+3. **Kỷ Luật CSS Typography Tiếng Việt**:
+   - Chỉ dùng `font-weight` hợp lệ theo thang chuẩn CSS: `400`, `500`, `600`, `700`, `800`, `900` (tuyệt đối cấm các số tùy tiện như 950).
+   - Nghiêm cấm co hẹp khoảng cách chữ âm (`letter-spacing: -1px` hoặc âm) trên văn bản tiếng Việt vì sẽ khiến các dấu thanh (sắc, huyền, hỏi, ngã, nặng, ơ, ư) bị đè dính vào nhau.
+
+---
+
+## TIÊU CHUẨN ÂM THANH: ZERO-SFX & BROADCAST BGM (NO SFX MANDATE)
+
+> [!IMPORTANT]
+> **LỆNH CẤM SFX HOÀN TOÀN TRÊN TOÀN BỘ VIDEO**:
+> - Người dùng cấm 100% việc chèn hiệu ứng âm thanh vi mô (SFX: whoosh, click, impact, pop, laser, glitch, beep, chime...).
+> - Toàn bộ audio chỉ gồm đúng 2 tầng:
+>   1. **Voiceover**: Giọng đọc AI chính (VieNeu-TTS Hải Đăng 48kHz), trong trẻo, tự nhiên, âm lượng chủ đạo.
+>   2. **Nhạc nền BGM**: Âm lượng êm dịu, nép sau giọng đọc (volume ~ 0.10 - 0.13, khoảng -18dB đến -22dB).
+> - Chuẩn EBU R128: Integrated Loudness từ **-14.0 đến -12.0 LUFS** (chuẩn **-12.5 LUFS**), True Peak `< -1.0 dBFS`, LRA `< 8.0 LU`.
 
 ---
 

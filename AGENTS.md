@@ -77,7 +77,52 @@ BẢN KẾ HOẠCH ĐẠO DIỄN (DIRECTOR'S BLUEPRINT)
 
 ---
 
+## LUẬT BẮT BUỘC: KHÔNG STYLE CỐ ĐỊNH & PHỐI TRỘN THỊ GIÁC × CHUYỂN ĐỘNG (STYLE × MOTION DYNAMIC BLENDING MANDATE)
+
+> [!IMPORTANT]
+> **1. TUYỆT ĐỐI KHÔNG CÓ STYLE CỐ ĐỊNH (ZERO FIXED TEMPLATES)**:
+> - Cấm hoàn toàn việc đóng khung video vào một khuôn mẫu hay style có sẵn duy nhất. Mỗi video làm ra phải là một **tác phẩm sáng tạo độc bản (bespoke)**, tạo ấn tượng thị giác mạnh mẽ, mới lạ và giữ chân người xem (retention) cao nhất.
+>
+> **2. CÔNG THỨC 2 TẦNG PHỐI TRỘN BẮT BUỘC CHO MỌI VIDEO**:
+> Mỗi video xuất xưởng bắt buộc phải là phép nhân có chủ đích giữa:
+> ```text
+> VIDEO HOÀN CHỈNH = [PHONG CÁCH THỊ GIÁC]  ×  [NGÔN NGỮ CHUYỂN ĐỘNG]
+>                    (Visual Art Direction)       (Motion Choreography)
+> ```
+> - **Tầng 1: Phong cách Thị giác (Visual Art Direction - "Trông như thế nào?")**:
+>   Quyết định bảng màu, chất liệu bề mặt (3D Spatial vô cực, Dark Tech OLED, Editorial Báo chí, Neon Cyber HUD, Tactical Blueprint, Minimalist White...), typography tương phản cao và bố cục khung hình 9:16 an toàn.
+> - **Tầng 2: Phong cách Chuyển động & Góc máy (Motion Choreography - "Biến chuyển ra sao?")**:
+>   Quyết định vật lý chuyển động (Spring physics: đầm mượt hoặc nảy đàn hồi), ngôn ngữ góc máy điện ảnh (3D Graze-tour lướt nghiêng, Exploded-view bóc tách không gian, Punch-in phóng đại), diễn hoạt biểu đồ SVG/GSAP, Kinetic Text Slam, và nhịp cắt dồn dập hay chuyển cảnh thở nhẹ.
+>
+> **3. CHUYỂN ĐỘNG HOÀN HẢO 100% (ZERO JANK / PERFECT RETENTION)**:
+> - Mọi chuyển động phải mượt mà tuyệt đối, easing chuẩn tự nhiên, không giật cục.
+> - Ăn khớp 100% từng từ với giọng đọc AI (word-level sync) và nhạc nền BGM êm ái nép sau lời thoại (TUYỆT ĐỐI CẤM SFX).
+>
+> **4. KIẾN TRÚC PHÂN CẢNH ĐỘNG — TUYỆT ĐỐI CẤM FIX CỨNG 6 CẢNH (DYNAMIC SCENE ARCHITECTURE MANDATE)**:
+> - **CẤM 100% rập khuôn video nào cũng 6 cảnh** (`Hook -> Problem -> Solution -> Workflow -> Benefits -> Outro`). Việc fix cứng 6 cảnh là lối mòn tai hại: gây nhàm chán thị giác, dễ đoán, gượng ép chia cắt nội dung và **không thể khai thác trọn vẹn toàn bộ ý đồ/chiều sâu của chủ đề**.
+> - **Nguyên tắc "Nội dung quyết định số cảnh & cấu trúc" (Form Follows Content)**: Mỗi video có thời lượng, lượng thông tin và thể loại khác nhau, do đó số lượng cảnh ($N$ cảnh) và mạch phân cảnh phải được "may đo" linh hoạt:
+>   * **Dạng Quick Insight / Micro-Explainer (30s – 45s)**: **3 – 4 cảnh** (Hook câu hỏi triệu đô ➔ Bản chất cơ chế ➔ Đòn bẩy/Ứng dụng thực tế ➔ Outro CTA).
+>   * **Dạng Myth-Busting / Đột phá tư duy (45s – 60s)**: **4 – 5 cảnh** (Hook giật ngược quan điểm ➔ Niềm tin sai lầm phổ biến ➔ Bóc trần sự thật ngầm ➔ Dẫn chứng/Số liệu thực chiến ➔ Đúc kết & Outro CTA).
+>   * **Dạng Case Study / Drama tài chính / Deep Dive (60s – 90s+)**: **6 – 9 cảnh** (Mở đầu chấn động ➔ Bối cảnh lịch sử ➔ Ngòi nổ xung đột ➔ Cơ chế vận hành ngầm ➔ Cú sập / Bước ngoặt cao trào ➔ Hậu quả diện rộng ➔ Đúc kết xương máu & Outro CTA).
+>   * **Dạng Top danh sách / Listicle / So sánh đối đầu (60s – 90s)**: **5 – 10 cảnh** (Hook thách thức ➔ Bối cảnh bài toán ➔ Phân tích từng mục/tiêu chí riêng ➔ Bảng so sánh tổng kết ➔ Khuyến nghị tối ưu & Outro CTA).
+>   * **Dạng Step-by-Step / Hướng dẫn thực chiến**: **$N$ cảnh tùy số bước** (Hook vấn đề ➔ Các bước thực hiện cụ thể Bước 1, 2, 3... ➔ Lưu ý sống còn ➔ Thành quả & Outro CTA).
+> - **Kỷ luật "Ý nào cảnh đó — Chuyển ý là chuyển cảnh"**:
+>   * Mỗi cảnh phục vụ 1 ý niệm thị giác trọng tâm (Core Visual Beat).
+>   * Thời lượng cảnh co giãn từ 4s đến 12s theo dung lượng thông tin; tuyệt đối không giữ một cảnh quá lâu (>12-15s) gây chết khung hình, và không chia nhỏ cơ học vô nghĩa chỉ để đếm đủ cảnh.
+
+---
+
 ## 2 Chế Độ Thực Hiện Khi Sản Xuất Video
+
+> [!IMPORTANT]
+> **LUẬT ĐỀ XUẤT 3 PHƯƠNG ÁN BẮT BUỘC (MANDATORY 3-OPTION PROPOSAL)**:
+> Khi Người dùng yêu cầu làm 1 video bất kỳ về bất cứ nội dung/ý tưởng nào, Agent **BẮT BUỘC PHẢI ĐỀ XUẤT 3 PHƯƠNG ÁN KHÁC BIỆT & HỎI Ý KIẾN USER TRƯỚC KHI LÀM** — TUYỆT ĐỐI CẤM BỎ QUA BƯỚC NÀY.
+> 3 phương án phải phân hóa rõ về:
+> 1. **Góc tiếp cận & Hook** (Drama/khiêu khích, phân tích logic/số liệu, hoặc phóng sự/kể chuyện).
+> 2. **Số lượng cảnh & Mạch phân cảnh dự kiến ($N$ cảnh)**: Xác định rõ phương án gồm bao nhiêu cảnh và sườn mạch dẫn truyện (Narrative Arc) tương ứng để khai thác triệt để nội dung (TUYỆT ĐỐI KHÔNG mặc định 6 cảnh).
+> 3. **Sự phối trộn [Phong cách Thị giác] × [Ngôn ngữ Chuyển động] (KHÔNG DÙNG THẺ HỘP)**: Phân hóa rõ cách kết hợp (ví dụ: Editorial Báo chí × Kinetic Slam dồn dập, hoặc 3D Spatial vô cực × Graze-tour lướt cận cảnh đầm mượt).
+> 4. **Nhịp độ & Thiết kế Âm thanh (Pacing & Sound Design)**: Dồn dập kịch tính với beat-sync, điềm tĩnh chuyên gia với ambient drone, hay hiện đại công nghệ với nhạc nền BGM êm dịu (TUYỆT ĐỐI KHÔNG DÙNG SFX).
+> Chỉ khi User bấm chọn/chốt 1 phương án mới được phép bắt tay vào viết Kịch bản chi tiết.
 
 > [!IMPORTANT]
 > **2 CHẾ ĐỘ THỰC HIỆN (BẮT BUỘC ĐỀ XUẤT CHO USER CHỌN KHI BẮT ĐẦU)**:
@@ -88,8 +133,8 @@ BẢN KẾ HOẠCH ĐẠO DIỄN (DIRECTOR'S BLUEPRINT)
 QUY TRÌNH 3 BƯỚC BẮT BUỘC (KHI DUYỆT TỪNG BƯỚC)
 ────────────────────────────────────────────────────────────────────────
 ➔ BƯỚC 1: KỊCH BẢN TỪNG PHẦN (SCRIPT BREAKDOWN)
-  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh (Hook, Problem, Solution, Workflow, Benefits, Outro)
-  ├─ Nêu rõ nội dung lời thoại (voiceover) và thời lượng dự kiến từng đoạn
+  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh linh hoạt (số cảnh N may đo theo nội dung, tuyệt đối KHÔNG gượng ép vào 6 cảnh)
+  ├─ Nêu rõ visual concept, nội dung lời thoại (voiceover) và thời lượng dự kiến từng đoạn
   └─ Dừng lại chờ User phản hồi / góp ý kịch bản
 
 ➔ BƯỚC 2: DỰNG RENDER HÌNH ĐỂ HÌNH DUNG VIDEO (STORYBOARD / VISUAL FRAMES)
@@ -117,19 +162,29 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
 - [`rules/visual-storytelling.md`](rules/visual-storytelling.md) — Chi tiết thiết kế thẻ, ngắt dòng, phân bổ dọc, phụ đề và kiểm tra thực tế trên 360×640.
 - [`rules/card-archetypes.md`](rules/card-archetypes.md) — 6 bố cục thẻ mẫu chuẩn (Hero Metric, Comparison, Feature Grid, Step Flow, Checklist, Quote).
 
-1. **Thiết kế riêng từng thẻ**: Một ý chính rõ ràng, phân cấp rõ Tiêu đề / Nội dung / Số liệu / Nhấn mạnh. Font size phải đọc rõ ràng trên mobile viewport 360×640.
-2. **CẤM cắt chữ**: Tuyệt đối không dùng `overflow: hidden`, `text-overflow: ellipsis`, hoặc `-webkit-line-clamp` để giấu chữ thừa. Cấm tự co chữ (shrink-to-fit) làm nát layout.
-3. **CẤM render khung rỗng**: Khi title/description rỗng hoặc undefined, component phải `return null`, tuyệt đối không render wrapper có viền/nền trống.
-4. **Phụ đề theo từ (Speech-Synced Subtitles)**:
+1. **LOẠI BỎ PHONG CÁCH ĐÓNG HỘP THẺ (NO CARDS / BORDERLESS MANDATE)**: Người dùng đã loại bỏ phong cách thẻ card/HUD. Ưu tiên tuyệt đối các phong cách tràn viền (Kinetic Typography, 3D Spatial vô cực với leader lines, Editorial báo chí, Biểu đồ TradingView toàn cảnh, Tactical Map, Whiteboard). Tuyệt đối không tự ý đóng khung dữ liệu vào các thẻ hộp cứng nhắc.
+2. **QUY ĐỊNH BẮT BUỘC VỀ TYPOGRAPHY & FONT TIẾNG VIỆT (VIETNAMESE TYPOGRAPHY MANDATE)**:
+   - **Bắt buộc 100% font hỗ trợ tiếng Việt hoàn hảo**: Ưu tiên số 1 `Be Vietnam Pro`, `Montserrat`, `Segoe UI`. Nghiêm cấm dùng font Latin thiếu dấu gây hiện tượng "Font Fallback Mismatch" (chữ nhảy lò cò, lệch dấu, chữ to chữ nhỏ).
+   - **Nhúng font đồng bộ**: Khi dựng SVG/HTML preview, bắt buộc nhúng Google Fonts `Be Vietnam Pro` trực tiếp trong `<defs><style>` của SVG và `<head>` của HTML. Khi render Remotion, sử dụng `@remotion/fonts` với barrier `delayRender()` / `continueRender()`.
+   - **Kỷ luật CSS Typography**: Chỉ dùng `font-weight` chuẩn CSS (`400` đến `900`, cấm 950+). Cấm dùng `letter-spacing` co âm làm dính đè dấu thanh.
+3. **CẤM cắt chữ**: Tuyệt đối không dùng `overflow: hidden`, `text-overflow: ellipsis`, hoặc `-webkit-line-clamp` để giấu chữ thừa. Cấm tự co chữ (shrink-to-fit) làm nát layout.
+4. **CẤM render khung rỗng**: Khi title/description rỗng hoặc undefined, component phải `return null`, tuyệt đối không render wrapper có viền/nền trống.
+5. **Phụ đề theo từ (Speech-Synced Subtitles)**:
    - Hiện sẵn cụm từ ngắn theo nhịp câu.
    - **Chỉ từ đang đọc đổi màu highlight**. CẤM đổi cỡ chữ, độ đậm, scale (không dùng `scale(1.15)`) làm nhảy dòng/rung chữ.
    - **Zero Speech = Zero Sub**: Khi im lặng (`activeIndex === -1`), ẩn hoàn toàn cả chữ lẫn khung nền phụ đề (`return null`).
-5. **Mobile Safe Zones**: Phân bố thị giác cân đối dọc theo khung 9:16 (trải từ `y: 260` đến `y: 1550`), tránh dồn cục ở nửa trên bỏ trống nửa dưới.
-6. **Tiêu chuẩn Audio (EBU R128 Bắt buộc)**:
+6. **Mobile Safe Zones**: Phân bố thị giác cân đối dọc theo khung 9:16 (trải từ `y: 260` đến `y: 1550`), tránh dồn cục ở nửa trên bỏ trống nửa dưới.
+7. **Tiêu chuẩn Audio (EBU R128 Bắt buộc)**:
    - `Integrated Loudness`: **-14 đến -12 LUFS** (chuẩn **-12.5 LUFS** cho TikTok/Reels/Shorts).
    - `Loudness Range (LRA)`: **< 8 LU**.
    - `True Peak`: **< -1.0 dBFS** (chống clipping/méo tiếng).
-7. **Kiến trúc Thị giác Hybrid 3D WebGL + 2.5D Spatial HUD**:
+8. **LỆNH CẤM SFX HOÀN TOÀN TRÊN TOÀN HỆ THỐNG (ZERO-SFX MANDATE)**:
+   - Người dùng cấm 100% việc chèn hiệu ứng âm thanh vi mô (SFX: whoosh, click, impact, pop, laser, glitch, beep, chime...). Gây khó chịu và phân tâm khi nghe.
+   - Cấu trúc âm thanh CHỈ gồm 2 tầng duy nhất:
+     * **Tầng 1 (Chính)**: Giọng đọc AI thuyết minh (VieNeu-TTS Hải Đăng 48kHz, to rõ, tự nhiên).
+     * **Tầng 2 (Nền)**: Nhạc nền BGM (âm lượng dịu êm, nép sau giọng đọc ở mức -18dB đến -22dB).
+   - Tuyệt đối KHÔNG lồng ghép bất kỳ file SFX nào vào audio mix từ nay về sau.
+9. **Kiến trúc Thị giác Hybrid 3D WebGL + 2.5D Spatial HUD**:
    - Đối với các dự án y sinh/công nghệ: Dùng `@remotion/three` (`<ThreeCanvas>`), `@react-three/fiber` cho vật thể trung tâm kết hợp thẻ `SpatialHUDCard` (2.5D Spatial Glass HUD) với perspective 3D, 4 góc brackets `[ ]` và tia quét laser.
    - CẤM HOÀN TOÀN việc vẽ minh họa trung tâm bằng hình học `<svg>` 2D phẳng đơn giản.
 
@@ -140,7 +195,7 @@ Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
 | STT | Tên Skill | Chức năng trong Factory |
 | :--- | :--- | :--- |
 | 1 | `prompts-chat` | Khai thác thư viện 1.100+ prompt và Role-Playing Personas để nhập vai chuyên gia, gợi mở visual metaphors và hook độc đáo. |
-| 2 | `reels-scripting` | Cấu trúc hóa kịch bản video ngắn giữ chân cao (3s Hook, Problem, Solution, CTA) theo nhịp timecode chính xác. |
+| 2 | `reels-scripting` | Cấu trúc hóa kịch bản video ngắn giữ chân cao với số cảnh linh hoạt theo thể loại (Hook, Narrative Arc theo chủ đề, CTA) theo nhịp timecode chính xác. |
 | 3 | `humanizer` | Khử văn phong máy móc của AI, tinh chỉnh câu từ tự nhiên, ấm áp như người thật nói chuyện. |
 | 4 | `cit-voice-studio` | Tạo giọng đọc AI chất lượng studio 48kHz (VieNeu-TTS local `:8001`) và trích xuất timing từng từ. |
 | 5 | `remotion-explainer` | Thiết kế không gian 3D WebGL và thẻ 2.5D Spatial Glass HUD cho video explainer dọc 9:16. |

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&amp;display=swap');
+      * { font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .mono { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+      .glow-green { filter: url(#glowGreen); }
+      .glow-cyan { filter: url(#glowCyan); }
+      .glow-red { filter: url(#glowRed); }
+      .glow-gold { filter: url(#glowGold); }
+    </style>
+
+    
+    <!-- Gradients Background Deep OLED Space -->
+    <radialGradient id="bgRadialOLED" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#071329"/>
+      <stop offset="50%" stop-color="#030814"/>
+      <stop offset="100%" stop-color="#010307"/>
+    </radialGradient>
+    
+    <radialGradient id="bgRadialRed" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1A0508"/>
+      <stop offset="50%" stop-color="#0B0204"/>
+      <stop offset="100%" stop-color="#020001"/>
+    </radialGradient>
+
+    <radialGradient id="bgRadialEmerald" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#042316"/>
+      <stop offset="50%" stop-color="#020F0A"/>
+      <stop offset="100%" stop-color="#010403"/>
+    </radialGradient>
+
+    <!-- Metallic Materials 3D -->
+    <linearGradient id="gold3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF275"/>
+      <stop offset="30%" stop-color="#EAB308"/>
+      <stop offset="70%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#713F12"/>
+    </linearGradient>
+
+    <linearGradient id="steel3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="35%" stop-color="#94A3B8"/>
+      <stop offset="70%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="darkSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="redGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F87171" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Isometric Grid Pattern -->
+    <pattern id="isoGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 60 52 L 30 104 L 0 52 Z" fill="none" stroke="#1E293B" stroke-width="0.75" stroke-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+
+    <rect width="1080" height="1920" fill="url(#bgRadialOLED)"/>
+    <rect width="1080" height="1920" fill="url(#isoGrid)"/>
+
+    <!-- Top Minimal Tagline -->
+    <g transform="translate(540, 310)">
+      <rect x="-180" y="0" width="360" height="38" rx="19" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="0" y="24" text-anchor="middle" font-size="14" font-weight="900" fill="#FDE047" letter-spacing="3">ĐẦU TƯ BỀN VỮNG</text>
+    </g>
+
+    <!-- 3D CENTRAL PIECE: Golden Shield of Financial Prudence & Strategic Compass -->
+    <g transform="translate(540, 780)">
+      <!-- Aura Glow -->
+      <circle cx="0" cy="0" r="320" fill="#F59E0B" opacity="0.12" filter="url(#glowGold)"/>
+
+      <!-- 3D Golden Crest Shield -->
+      <path d="M 0,-180 L 160,-100 L 140,80 C 120,180 0,240 0,240 C 0,240 -120,180 -140,80 L -160,-100 Z" fill="url(#gold3D)" stroke="#FEF08A" stroke-width="5" filter="url(#glowGold)"/>
+      <path d="M 0,-150 L 130,-80 L 115,70 C 100,150 0,200 0,200 C 0,200 -100,150 -115,70 L -130,-80 Z" fill="#0A0F1D"/>
+
+      <!-- Inside Shield: CFO True Cashflow Emblem -->
+      <circle cx="0" cy="0" r="75" fill="url(#steel3D)" stroke="#FEF08A" stroke-width="3"/>
+      <text x="0" y="-8" text-anchor="middle" font-size="28" font-weight="900" fill="#FEF08A">CFO > 0</text>
+      <text x="0" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#38BDF8">TIỀN THẬT LÀ VUA</text>
+    </g>
+
+    <!-- Creator & Channel Branding Centerpiece (y: 1080 - 1380) -->
+    <g transform="translate(540, 1140)">
+      <text x="0" y="0" text-anchor="middle" font-size="56" font-weight="900" fill="url(#gold3D)" filter="url(#glowGold)" letter-spacing="2">TÀI CHÍNH THỰC CHIẾN</text>
+      <text x="0" y="55" text-anchor="middle" font-size="32" font-weight="800" fill="#FFFFFF">TIẾN DƯƠNG</text>
+      <text x="0" y="95" text-anchor="middle" font-size="22" font-weight="600" fill="#38BDF8">@tienduong</text>
+
+      <rect x="-260" y="130" width="520" height="42" rx="21" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+      <text x="0" y="157" text-anchor="middle" font-size="16" font-weight="700" fill="#FDE047" letter-spacing="2">HOẠCH ĐỊNH TÀI CHÍNH · ĐẦU TƯ BỀN VỮNG</text>
+    </g>
+
+    <!-- Interactive Call To Action (3D Glass Box) -->
+    <g transform="translate(100, 1420)">
+      <rect x="0" y="0" width="880" height="130" rx="20" fill="#0B132B" stroke="#0284C7" stroke-width="2"/>
+      <text x="440" y="50" text-anchor="middle" font-size="22" font-weight="800" fill="#38BDF8">BẠN ĐÃ CƠ CẤU DANH MỤC CHO CHU KỲ MỚI?</text>
+      <text x="440" y="95" text-anchor="middle" font-size="26" font-weight="900" fill="#FEF08A">Bình luận danh mục cổ phiếu bạn quan tâm bên dưới 👇</text>
+    </g>
+
+    <!-- Disclaimer -->
+    <text x="540" y="1620" text-anchor="middle" font-size="16" font-weight="400" fill="#64748B">Số liệu mang tính chất tham khảo · Không phải khuyến nghị đầu tư</text>
+
+</svg>

@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&amp;display=swap');
+      * { font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .mono { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+      .glow-green { filter: url(#glowGreen); }
+      .glow-cyan { filter: url(#glowCyan); }
+      .glow-red { filter: url(#glowRed); }
+      .glow-gold { filter: url(#glowGold); }
+    </style>
+
+    
+    <!-- Gradients Background Deep OLED Space -->
+    <radialGradient id="bgRadialOLED" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#071329"/>
+      <stop offset="50%" stop-color="#030814"/>
+      <stop offset="100%" stop-color="#010307"/>
+    </radialGradient>
+    
+    <radialGradient id="bgRadialRed" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1A0508"/>
+      <stop offset="50%" stop-color="#0B0204"/>
+      <stop offset="100%" stop-color="#020001"/>
+    </radialGradient>
+
+    <radialGradient id="bgRadialEmerald" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#042316"/>
+      <stop offset="50%" stop-color="#020F0A"/>
+      <stop offset="100%" stop-color="#010403"/>
+    </radialGradient>
+
+    <!-- Metallic Materials 3D -->
+    <linearGradient id="gold3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF275"/>
+      <stop offset="30%" stop-color="#EAB308"/>
+      <stop offset="70%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#713F12"/>
+    </linearGradient>
+
+    <linearGradient id="steel3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="35%" stop-color="#94A3B8"/>
+      <stop offset="70%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="darkSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="redGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F87171" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Isometric Grid Pattern -->
+    <pattern id="isoGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 60 52 L 30 104 L 0 52 Z" fill="none" stroke="#1E293B" stroke-width="0.75" stroke-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+
+    <rect width="1080" height="1920" fill="url(#bgRadialRed)"/>
+    <rect width="1080" height="1920" fill="url(#isoGrid)"/>
+
+    <g transform="translate(90, 290)">
+      <rect x="0" y="0" width="270" height="38" rx="19" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="1.5"/>
+      <text x="135" y="24" text-anchor="middle" font-size="14" font-weight="900" fill="#F87171" letter-spacing="2">SỰ THẬT TÀN NHẪN</text>
+      
+      <text x="0" y="95" font-size="44" font-weight="800" fill="#94A3B8">NĂNG SUẤT TFP 30 NĂM</text>
+      <text x="0" y="175" font-size="96" font-weight="900" fill="url(#redGlass)" filter="url(#glowRed)">TFP ≈ 0%</text>
+    </g>
+
+    <!-- 3D CENTRAL PIECE: Side-by-Side Visual Split (Robot Arm vs Manual Labor) -->
+    <g transform="translate(540, 950)">
+      <!-- Dividing Laser Line -->
+      <line x1="0" y1="-280" x2="0" y2="280" stroke="#334155" stroke-width="2" stroke-dasharray="10 8"/>
+
+      <!-- LEFT SIDE: Vietnam Manual Labor ($6.7 / hour) -->
+      <g transform="translate(-240, 0)">
+        <circle cx="0" cy="-60" r="140" fill="#1C1917" stroke="#EF4444" stroke-width="3"/>
+        <!-- Stylized Wrench / Needle Assembly (Thủ công) -->
+        <g transform="translate(0, -60)">
+          <line x1="-50" y1="50" x2="50" y2="-50" stroke="#94A3B8" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="50" cy="-50" r="24" fill="#0F172A" stroke="#94A3B8" stroke-width="8"/>
+          <!-- Hourglass Draining Sand -->
+          <polygon points="-25,-70 25,-70 0,-40" fill="#F59E0B"/>
+          <polygon points="-25,-10 25,-10 0,-40" fill="#F59E0B"/>
+        </g>
+        <text x="0" y="130" text-anchor="middle" font-size="34" font-weight="900" fill="#EF4444">$6.7 / GIỜ</text>
+        <text x="0" y="170" text-anchor="middle" font-size="18" font-weight="700" fill="#94A3B8">LAO ĐỘNG VIỆT NAM</text>
+        <text x="0" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#EF4444">85% GIA CÔNG LẮP RÁP</text>
+      </g>
+
+      <!-- RIGHT SIDE: China High-Tech AI Robotics ($14.0+ / hour) -->
+      <g transform="translate(240, 0)">
+        <circle cx="0" cy="-60" r="140" fill="#042F2E" stroke="#10B981" stroke-width="3" filter="url(#glowGreen)"/>
+        <!-- 3D Robotic Arm with Laser Gripper Assembly -->
+        <g transform="translate(0, -60)">
+          <rect x="-60" y="40" width="120" height="24" fill="#334155" rx="6"/>
+          <line x1="0" y1="40" x2="30" y2="-20" stroke="#38BDF8" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="30" cy="-20" r="18" fill="#0284C7"/>
+          <line x1="30" y1="-20" x2="-20" y2="-80" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="-20" cy="-80" r="12" fill="#34D399"/>
+          <!-- Microchip being placed -->
+          <rect x="-35" y="-110" width="30" height="30" fill="#10B981" stroke="#FEF08A" stroke-width="2"/>
+        </g>
+        <text x="0" y="130" text-anchor="middle" font-size="34" font-weight="900" fill="#34D399">> $14.0 / GIỜ</text>
+        <text x="0" y="170" text-anchor="middle" font-size="18" font-weight="700" fill="#94A3B8">TRUNG QUỐC TỰ ĐỘNG HÓA</text>
+        <text x="0" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#34D399">CHỦ ĐỘNG CÔNG NGHỆ LÕI</text>
+      </g>
+    </g>
+
+    <g transform="translate(90, 1460)">
+      <text x="0" y="30" font-size="28" font-weight="900" fill="#F87171">THÂM DỤNG LAO ĐỘNG GIÁ RẺ ĐÃ CHẠM TRẦN TĂNG TRƯỞNG</text>
+      <text x="0" y="65" font-size="20" font-weight="500" fill="#94A3B8">Nếu không có đổi mới công nghệ (TFP), 300 tỷ USD chỉ tạo lạm phát.</text>
+    </g>
+
+</svg>

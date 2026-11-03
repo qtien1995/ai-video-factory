@@ -16,6 +16,7 @@
     "style": "node core/scripts/style/index.js",
     "dna": "node core/scripts/dna/index.js",
     "prompts": "node core/scripts/prompts/index.js",
+    "export:capcut": "python scripts/export_capcut.py",
     "verify": "node tests/e2e/test_final_video.cjs",
     "test": "npm test --prefix core",
     "lint": "npm run lint --prefix engines/remotion",

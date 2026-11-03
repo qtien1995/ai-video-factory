@@ -150,7 +150,7 @@ VIDEO MẪU (MP4 / LINK)
 QUY TRÌNH 3 BƯỚC BẮT BUỘC (KHI DUYỆT TỪNG BƯỚC)
 ────────────────────────────────────────────────────────────────────────
 ➔ BƯỚC 1: KỊCH BẢN TỪNG PHẦN (SCRIPT BREAKDOWN)
-  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh (Hook, Problem, Solution, Workflow, Benefits, Outro)
+  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh linh hoạt (số cảnh N may đo theo nội dung, tuyệt đối KHÔNG gượng ép vào 6 cảnh)
   ├─ Nêu rõ nội dung lời thoại (voiceover) và thời lượng dự kiến từng đoạn
   └─ Dừng lại chờ User phản hồi / góp ý kịch bản
 
