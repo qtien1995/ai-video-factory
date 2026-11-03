@@ -39,7 +39,7 @@ export async function main(argv = process.argv.slice(2)) {
   const [command, ...rest] = argv;
   const args = minimist(rest, { boolean: ["reviewed"] });
   if (!command || command === "help") {
-    console.log("factory <doctor|status|next|record|approve|fast-track|check|dirty|tts|render|package> --project <id> [options]");
+    console.log("factory <doctor|status|next|record|approve|check|dirty|tts|render|package> --project <id> [options]");
     return;
   }
   if (command === "doctor" || command === "health") {
@@ -61,30 +61,7 @@ export async function main(argv = process.argv.slice(2)) {
     await packageProject(project);
     return;
   }
-  if (command === "fast-track") {
-    const { ensureServices } = await import("./services.js");
-    await ensureServices({ tts: true });
-    let current = evaluate(project);
-    console.log(`[Fast-Track] Project: ${project} (Current stage: ${current.next})`);
-    if (current.next === "GATE1") {
-      current = approveGate(project, "GATE1", "Fast-track: Auto-approved standard script & beats");
-      console.log(`[Fast-Track] Approved GATE1 -> Next: ${current.next}`);
-    }
-    if (current.next === "CREATIVE_DIRECTION") {
-      const cdFile = path.join(projectDir(project), "creative-direction.md");
-      if (!fs.existsSync(cdFile)) {
-        fs.writeFileSync(cdFile, "# Creative Direction\n\nFast-track standard explainer template with high-contrast mobile typography.\n");
-      }
-      current = recordStage(project, "CREATIVE_DIRECTION", ["creative-direction.md"]);
-      console.log(`[Fast-Track] Recorded CREATIVE_DIRECTION -> Next: ${current.next}`);
-    }
-    if (current.next === "GATE2") {
-      current = approveGate(project, "GATE2", "Fast-track: Auto-selected standard creative direction");
-      console.log(`[Fast-Track] Approved GATE2 -> Next: ${current.next}`);
-    }
-    console.log(JSON.stringify({ project, mode: "fast-track", next: current.next }, null, 2));
-    return;
-  }
+  // fast-track: đã loại bỏ hoàn toàn theo chuẩn V4 Bespoke (không tồn tại tự duyệt)
   if (command === "status") { console.log(JSON.stringify(status(project), null, 2)); return; }
   if (command === "next") { console.log(JSON.stringify({ project, next: evaluate(project).next })); return; }
   if (command === "check") {

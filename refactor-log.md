@@ -80,3 +80,20 @@
 - Kiểm tra cuối bước:
   - `npm run typecheck`: PASS.
   - `npm test`: PASS.
+
+## BƯỚC 4 — LUẬT MỚI + CỔNG QC CỨNG + BỎ FAST-TRACK + TÀI LIỆU
+- 4.1 Thay toàn bộ `AGENTS.md` bằng PHỤ LỤC A (nguyên văn).
+- 4.2 Tạo `rules/bespoke-creativity.md` bằng PHỤ LỤC B (nguyên văn).
+- 4.3 Viết lại `rules/visual-storytelling.md`: giữ typography tiếng Việt, phụ đề đồng bộ, safe-zone 9:16, kỷ luật chữ (không cắt chữ/không co chữ/không khung rỗng); xoá mọi phần thiết kế thẻ/bố cục mẫu/kiến trúc 4 vùng; thêm câu nguyên tắc số 1 ở đầu file.
+- 4.4 Cổng QC cứng trong `core/scripts/factory/make.js`:
+  - Sau render: (a) trích frame tĩnh tại 10/30/50/70/90% vào `output/storyboard-check/`; (b) chạy bộ kiểm định `tests/e2e/test_final_video.cjs`; (c) fail bất kỳ tiêu chuẩn nào -> đổi tên thành `final.FAILED.mp4`, exit 1. Chỉ giữ `final.mp4` khi pass 100%.
+- 4.5 Bỏ hoàn toàn fast-track:
+  - Gỡ lệnh fast-track khỏi `core/scripts/factory/index.js` và usage.
+  - Trong `make.js`: kiểm tra cổng duyệt qua `factory next`, nếu thuộc {SCRIPT, BEATS, GATE1, CREATIVE_DIRECTION, GATE2} thì dừng ngay, cấm tự duyệt.
+- 4.6 Viết lại `README.md` chuẩn V4 Bespoke (dưới 120 dòng).
+- 4.7 Rút gọn `MAINTENANCE.md` còn dưới 1 trang vận hành hiện hành.
+- Kiểm tra:
+  - Grep "fast-track" trong `core/scripts/factory`: 0 kết quả thực thi.
+  - `npm run typecheck`: PASS.
+  - `npm test`: PASS.
+  - Thử nghiệm make trên dự án chưa duyệt: dừng đúng cách, báo lỗi Gate Check Blocked.

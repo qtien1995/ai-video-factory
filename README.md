@@ -1,110 +1,63 @@
-# AI VIDEO FACTORY V3 🚀
+# AI VIDEO FACTORY V4 — BESPOKE
 
-> **Workspace sản xuất video ngắn (9:16) chuyên nghiệp cho TikTok, Reels, YouTube Shorts với Remotion & AI Voice Studio.**  
-> **Tích hợp bộ công cụ Reverse-Engineering: Bóc tách và Nhân bản DNA Video Mẫu Chuyên Nghiệp 100%.**
+> V4: bỏ khuôn thẻ, bỏ template bên thứ ba, styles/DNA chỉ còn là tài liệu tham khảo.
+
+AI Video Factory V4 sản xuất video ngắn mạng xã hội theo triết lý **độc bản (bespoke)**: mỗi video là một tác phẩm may đo riêng cho nội dung, không rập khuôn mẫu. Thư mục `styles/` và `dna-vault/` đóng vai trò ngân hàng nguyên liệu tham khảo sáng tạo (lấy ý tưởng palette, nhịp cắt, kỹ thuật chuyển động; cấm import code và cấm clone bố cục).
 
 ---
 
-## ⚡ Bắt đầu nhanh trong 3 bước
+## ⚡ BẮT ĐẦU NHANH
 
-### 1. Kiểm tra môi trường
 ```bash
+# 1. Kiểm tra sức khoẻ hệ thống (Voice Studio, Remotion, FFmpeg, Dung lượng)
 npm run doctor
-```
-Kiểm tra xem CIT Voice Studio (VieNeu-TTS :8001), FFmpeg và Remotion đã sẵn sàng chưa.
 
-### 2. Khởi động dịch vụ hỗ trợ
-```bash
+# 2. Khởi động dịch vụ giọng đọc AI local (CIT Voice Studio VieNeu-TTS :8001)
 npm run services
-```
-Tự động kích hoạt CIT Voice Studio (giọng chuẩn Studio Hải Đăng 48kHz) và các công cụ cần thiết.
 
-### 3. Mở Remotion Studio xem trước
-```bash
+# 3. Mở Remotion Studio xem trước trực quan
 npm run studio
 ```
-Mở giao diện Remotion Studio trực tiếp trên trình duyệt để chỉnh sửa timeline, components và typography thời gian thực.
 
 ---
 
-## 🧬 Chiến lược "Copy to Win": Bóc tách DNA Video Mẫu 100%
+## 🎬 QUY TRÌNH SẢN XUẤT 7 BƯỚC
 
-Cách nhanh nhất để làm ra video đẳng cấp là học hỏi từ các pro creators. Chỉ cần gửi file video mẫu (`.mp4`):
-
-```bash
-# Bóc tách toàn diện video mẫu
-npm run dna -- analyze "duong/dan/video-mau.mp4" --id <TEN-PHONG-CACH>
-
-# Xem danh sách các phong cách DNA đã bóc tách
-npm run dna -- list
-```
-
-**Hệ thống sẽ tự động bóc tách 5 tầng DNA:**
-1. **Bức tranh thị giác tổng quan (Contact Sheet)**: Tạo 1 ảnh lưới chụp toàn bộ nhịp video.
-2. **Audio Track độc lập**: Tách riêng giọng đọc, đo tốc độ WPM, nhạc nền và thời điểm chèn SFX.
-3. **Cắt cảnh tự động (Scene Cuts)**: Xác định chính xác từng điểm chuyển cảnh (cut frequency).
-4. **Bảng màu & Typography**: Bóc tách mã màu nền, màu thẻ, màu accent, font size và vị trí phụ đề an toàn.
-5. **Physics chuyển động (Spring Motion)**: Giải mã thông số lò xo (`damping`, `stiffness`), hiệu ứng xuất hiện và continuous idle animation.
-
-Tất cả được lưu trữ tại `dna-vault/<id>/` và sẵn sàng tái hiện 1:1 bằng Remotion!
+1. **Brief**: 1 video = 1 ý niệm chính; dọc 9:16 (1080×1920), 45-90 giây.
+2. **Art Direction Sheet**: Director lập sheet (mẫu `rules/bespoke-creativity.md`) trình User duyệt (Gate 1 & Gate 2). Cấm fast-track tự duyệt.
+3. **Kịch bản**: Số cảnh $N$ may đo theo nội dung (cấm fix cứng 6 cảnh); hook 3s đầu; văn phong nói tự nhiên (`humanizer`, `reels-scripting`).
+4. **Voice & Timing**: CIT Voice Studio (giọng khóa cứng "Hải Đăng" 48kHz, speed tùy chỉnh theo project), trích xuất timing từng từ.
+5. **Dựng cảnh Bespoke**: Code riêng trong `projects/<id>/` trên nền sân khấu `BespokeVideo`. Tối thiểu 3 kỹ thuật chuyển động/video.
+6. **Kiểm tra Frame Tĩnh**: Xuất frame kiểm tra chống tràn chữ, che chữ, khoảng trống chết trước khi render.
+7. **Render & Hard QC Gate**: Render trực tiếp Final MP4 (1080x1920, EBU R128 -12.5 LUFS), chạy bộ kiểm thử E2E; fail bất kỳ lỗi nào sẽ dừng và đổi tên thành `final.FAILED.mp4`.
 
 ---
 
-## 🎬 2 Workflows sản xuất chính
+## 🛠️ LỆNH THƯỜNG DÙNG
 
-| Workflow | Đầu vào | Quy trình | Lưu trữ |
-| :--- | :--- | :--- | :--- |
-| **Remotion Explainer** | Ý tưởng / Kịch bản giải thích | Khung 6 cảnh chuẩn hoặc 100% DNA đã bóc tách + CIT Voice + Subtitle highlight từ | `projects/social-shorts/` |
-| **Auto Footage** | Video quay sẵn (talking-head, review) | Cắt lọc khoảng lặng (jump-cut) + Phụ đề động + Motion Overlays | `projects/auto-cuts/` |
+- `npm run doctor` — Kiểm tra sức khỏe toàn bộ workspace.
+- `npm run services` — Khởi động VieNeu-TTS local (:8001).
+- `npm run studio` — Mở giao diện Remotion Studio.
+- `npm run make -- --project <id>` — Sản xuất video: kiểm tra Gate -> TTS Hải Đăng -> Render -> Hard QC Gate.
+- `npm run verify -- --project <dir>` — Chạy bộ kiểm thử E2E 4-Tier lên video thành phẩm.
+- `npm run dna -- analyze <video.mp4>` — Bóc tách nhịp cắt & EBU R128 video mẫu vào `dna-vault/` (tham khảo, không sinh style).
+- `node core/scripts/validate/reference.js <video.mp4>` — Đo nhanh thông số video mẫu (in JSON ra stdout).
+- `npm test`, `npm run typecheck`, `npm run lint` — Kiểm tra chất lượng mã nguồn.
 
 ---
 
-## 📁 Cấu trúc thư mục tinh gọn
+## 📂 CẤU TRÚC THƯ MỤC
 
 ```text
-D:\AI\VIDEO AI\
-├── .agents/skills/      # 6 kỹ năng AI cốt lõi (remotion-explainer, cit-voice-studio, auto-footage, prompts-chat...)
-├── .tools/              # FFmpeg tĩnh & FlowKit engine
-├── assets/              # Kho âm thanh BGM, SFX, fonts, hình ảnh
-├── brand/               # Nhận diện thương hiệu & cấu hình cá nhân
-├── config/              # Cấu hình chuẩn factory-config.json
-├── core/                # Bộ não điều phối: Factory CLI, DNA Reverse-Engineering, loudness EBU R128
-├── dna-vault/           # Kho lưu trữ các Bộ Gen Video (DNA Profiles) đã bóc tách
-├── engines/
-│   └── remotion/        # Engine dựng video Remotion React/TypeScript duy nhất
-├── projects/            # Thư mục chứa các video thực tế (không xóa khi dọn dẹp)
-├── prompts/             # Kho 1.100+ prompts.chat, hook-crafter, personas
-├── renders/             # Nơi lưu trữ các video MP4 thành phẩm
-├── rules/               # Luật thiết kế visual-storytelling & 6 card-archetypes
-├── templates/
-│   └── cuongit-explainer/ # Template mẫu 6 cảnh chuẩn Remotion
-├── tests/               # Bộ test tự động E2E 4-tier kiểm tra chất lượng video
-├── AGENTS.md            # Quy chuẩn bắt buộc cho AI Agent
-└── package.json         # Danh mục lệnh npm điều khiển toàn bộ workspace
-```
-
----
-
-## 🛠️ Danh mục lệnh điều khiển
-
-```bash
-# Bóc tách video mẫu
-npm run dna -- analyze "path/to/video.mp4" --id <NAME>
-npm run dna -- list
-
-# Kiểm tra sức khỏe toàn hệ thống
-npm run doctor
-
-# Mở Remotion Studio trực quan
-npm run studio
-
-# Chạy test kiểm thử logic Factory
-npm test
-
-# Kiểm tra cú pháp TypeScript & Linting
-npm run typecheck
-npm run lint
-
-# Kiểm định chất lượng video MP4 đã xuất (Loudness, Resolution, Codec, Freeze frame)
-npm run verify -- --target projects/<id>/output/final.mp4
+ai-video-factory/
+├── AGENTS.md                   # Hiến chương V4 Bespoke & Luật Tối Cao
+├── brand/                      # Nhận diện thương hiệu User (Tiến Dương / Manulife)
+├── config/                     # Cấu hình hệ thống & component-index.json
+├── core/                       # Bộ máy điều phối: scripts, factory, tts, validate
+├── dna-vault/                  # Ngân hàng tham khảo DNA Profiles (chỉ đọc)
+├── engines/remotion/           # Engine Remotion, composition BespokeVideo & toolbox shared
+├── projects/                   # Thư mục mã nguồn và tài sản của từng video
+├── rules/                      # Quy chuẩn sáng tạo: bespoke-creativity, visual-storytelling
+├── styles/                     # Ngân hàng tham khảo phong cách (chỉ đọc)
+└── tests/                      # Bộ kiểm định E2E (test_final_video.cjs)
 ```

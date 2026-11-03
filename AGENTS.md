@@ -1,221 +1,103 @@
-# AGENTS.md — AI VIDEO FACTORY V3 (STREAMLINED & AUTONOMOUS)
+# AGENTS.md — AI VIDEO FACTORY V4 (BESPOKE)
 
 ## Mục tiêu
 
-Đây là workspace sản xuất video social tối ưu bằng Codex/Antigravity. Mục tiêu là video hoàn chỉnh, visual storytelling cuốn hút, thiết kế chuẩn mobile 9:16 (kiểm tra trên viewport 360×640).
+Workspace sản xuất video social bằng Codex/Antigravity theo triết lý **độc bản (bespoke)**: mỗi video là một tác phẩm được may đo riêng cho nội dung của nó. `styles/` và `dna-vault/` được giữ lại với tư cách **ngân hàng nguyên liệu tham khảo** — kho ý tưởng để sáng tạo, không phải khuôn để áp dụng. Các template và thư viện prompt mẫu của bên thứ ba đã bị loại bỏ. Thứ được chuẩn hoá chỉ gồm: hạ tầng kỹ thuật, quy trình, và cổng chất lượng.
 
-- **Engine chính duy nhất**: **Remotion** (React, TypeScript, Tailwind/CSS).
-- **Voiceover**: Bắt buộc tạo giọng đọc qua **CIT Voice Studio** (VieNeu-TTS local AI `:8001`, mặc định: "Hải Đăng" 48kHz studio, trích xuất timing word thật).
-- **Chiến lược phát triển tối thượng**: **Copy & Clone DNA từ Video Mẫu Chuyên Nghiệp 100% (Zero-Media, 100% Code-Ready)**. Bóc tách từng mili-giây, từng chuyển động, layout và nhịp điệu của các video viral để tái hiện hoàn hảo bằng code.
-- **An toàn dữ liệu**: Không xóa, di chuyển hoặc làm hỏng các project video cũ trong `projects/` hoặc bản xuất trong `renders/`.
+- **Engine duy nhất**: Remotion (React, TypeScript) qua composition `BespokeVideo`.
+- **Voiceover**: CIT Voice Studio (VieNeu-TTS local `:8001`, giọng "Hải Đăng" 48kHz, trích xuất timing từng từ).
 
----
+## THỨ ĐƯỢC KHÓA — CHỈ 3 NHÓM NÀY, NGOÀI RA KHÔNG KHÓA GÌ HẾT
 
-## QUY TRÌNH BÓC TÁCH & CLONE DNA "ZERO-MEDIA, 100% CODE-READY"
+1. **Giọng đọc "Hải Đăng"** — giọng thương hiệu duy nhất. Không cấu hình nào được đổi giọng; CIT Voice Studio offline thì DỪNG và báo lỗi, cấm tự thay giọng khác (chỉ khi User cho phép rõ ràng mới dùng giọng thay thế). Tốc độ đọc KHÔNG khóa: chọn theo nội dung từng video qua trường `ttsSpeed` trong inputProps của project.
+2. **Brand của User** (`brand/`: Tiến Dương / Manulife) — nạp cho mọi video, cấm brand của video mẫu/người khác.
+3. **Cổng QC kỹ thuật** ở mục dưới — đó là chuẩn kỹ thuật, không phải khuôn sáng tạo.
 
-Khi người dùng cung cấp một video mẫu (file `.mp4`, đường dẫn, hoặc link video):
-
-```text
-VIDEO MẪU (MP4 / ĐƯỜNG DẪN)
-➔ BƯỚC 1: BÓC TÁCH THÔNG SỐ TRONG BỘ NHỚ (`npm run dna -- analyze <path> [--name <style-name>]`)
-  ├─ Trích xuất Technical Specs (Resolution, FPS, Codec, Duration) bằng FFprobe
-  ├─ Bắt Scene Cuts chính xác (mili-giây) bằng FFmpeg select filter vào mảng `cutTimestampsMs`
-  ├─ Đo đạc âm thanh EBU R128 thực tế (Integrated LUFS, True Peak, LRA)
-  └─ ZERO-MEDIA MANDATE: Tuyệt đối KHÔNG lưu file video, audio (.wav/.mp3), frame ảnh hay contact sheet vào đĩa
-➔ BƯỚC 2: XUẤT 3 FILE LẬP TRÌNH DUY NHẤT VÀO `dna-vault/<id>/`
-  ├─ 1. `dna.json`: Thông số đo đạc thực tế (`metadata`, `rhythmAndPacing` với `cutTimestampsMs`) + design tokens
-  ├─ 2. `README.md`: Báo cáo giải phẫu 5 tầng DNA & bí quyết giữ chân người xem (Retention Secrets)
-  └─ 3. `replication-prompt.md`: Cẩm nang hướng dẫn kỹ thuật cho Dev & AI tái tạo 100% phong cách bằng code Remotion
-➔ BƯỚC 3: TỰ ĐỘNG ĐỒNG BỘ VÀO THƯ VIỆN STYLE TẬP TRUNG (`styles/<style-name>/`)
-  ├─ Tự động sinh `style.json` (chuẩn schema) + `theme.ts` (TypeScript dùng ngay cho Remotion)
-  └─ Tự động đăng ký vào `styles/registry.json` và export qua alias `@styles`
-```
-
-> [!CAUTION]
-> **LUẬT CÁCH LY THƯƠNG HIỆU & OUTRO BẮT BUỘC (BRAND ISOLATION MANDATE)**:
-> 1. **Mọi video đều cần có Outro Thương hiệu**: Tạo điểm dừng kết thúc chuyên nghiệp, kêu gọi hành động (CTA), ghi nhớ thương hiệu và tuân thủ pháp lý/disclaimer.
-> 2. **CẤM 100% giữ lại thương hiệu của video mẫu**: Khi bóc tách video tham khảo, tuyệt đối KHÔNG mang tên kênh, logo, slogan, watermark hay hotline của tác giả gốc (như HODL.VN, Cường IT...) vào code sản phẩm.
-> 3. **Tự động thay thế bằng Thương hiệu của User**: Toàn bộ Outro, Eyebrow và Watermark bắt buộc nạp thông tin nhận diện của User (được định cấu hình tại `brand/user-brand.json`).
+Mọi mặc định còn lại (thang chữ trong design-system, cụm phụ đề 6 từ, vị trí phụ đề, palette gợi ý...) chỉ là điểm khởi đầu an toàn: **Art Direction Sheet có quyền ghi đè tất cả cho từng video**. Cấm chôn thêm bất kỳ thông số sáng tạo nào vào code dưới dạng hằng số bắt buộc.
+- **An toàn dữ liệu**: Không xoá/di chuyển/hỏng dữ liệu trong `projects/` và `renders/`. Brand của User nằm ở `brand/` (user-brand.json, manulife/) — mọi video đều nạp brand này, cấm giữ brand của bất kỳ video mẫu/người khác nào.
 
 ---
 
-## CƠ CHẾ TỔNG ĐẠO DIỄN TỰ ĐỘNG PHỐI HỢP 10 SKILLS (AUTONOMOUS MULTI-SKILL ORCHESTRATION)
+## ⚖️ LUẬT TỐI CAO: SÁNG TẠO ĐỘC BẢN — CẤM KHUÔN
 
-Hệ thống sở hữu 10 Skills tinh gọn trong `.agents/skills/`. Khi làm việc với User, Agent đóng vai **Master AI Director**, tự động điều phối các skill theo 2 ngữ cảnh:
+> Luật này cao hơn mọi hướng dẫn khác. Mâu thuẫn thì luật này thắng.
 
-### 1. KHI USER CUNG CẤP VIDEO MẪU VÀ YÊU CẦU HỌC / PHÂN TÍCH DNA:
-- **Bước 1**: Chạy `npm run dna -- analyze <video> [--name <style-name>]` để trích xuất bộ khung số liệu kỹ thuật vào `dna-vault/<id>/`.
-- **Bước 2**: Tự động dùng tri thức chuyên gia của Agent (tổng hợp từ `motion-ai-kit`, `gsap-skills`, `remotion-explainer`, `reels-scripting`) để phân tích sâu, hoàn thiện bảng màu thực tế, cấu trúc `visualComponents`, `sceneTimelineBlueprint` vào `dna.json` và hoàn thiện `replication-prompt.md` mà không lưu lại bất kỳ file media hay ảnh cắt frame nào trên đĩa.
+**ĐIỀU 1 — KHÔNG ÁP KHUÔN; NGUYÊN LIỆU THÌ ĐƯỢC MƯỢN, PHẢI BIẾN ĐỔI:**
+- `styles/` và `dna-vault/` là tài liệu tham khảo sáng tạo: agent ĐƯỢC đọc để lấy ý — palette, nhịp cắt, kỹ thuật chuyển động, số liệu đo, cấu trúc giữ chân người xem.
+- Cấm tuyệt đối: (a) import code từ `styles/` vào engine hay project (không còn registry, không còn alias `@styles`, không còn cơ chế áp style bằng máy); (b) áp nguyên một style hoặc một DNA profile vào video; (c) clone bố cục của video mẫu. Mượn ý tưởng là bắt buộc phải biến đổi: phong cách cuối cùng của mỗi video là một bản TỔNG HỢP MỚI, sinh ra từ kịch bản của chính video đó.
+- Art Direction Sheet của mỗi video phải ghi rõ: đã mượn nguyên liệu gì từ kho tham khảo, và đã biến đổi nó như thế nào cho nội dung này.
+- Cấm bố cục "thẻ/hộp chứa 1 icon đứng giữa khung + chữ chạy bên dưới" làm bố cục chính. Thẻ chỉ được dùng khi nội dung là bảng số liệu/so sánh, Director ghi lý do trong Blueprint, và tổng thời lượng cảnh dạng thẻ ≤ 30% video.
+- Code dựng cảnh của mỗi video sống trong thư mục project của video đó (`projects/<id>/`). **Cấm đưa bố cục của một video vào `engines/remotion/src/shared/` để tái sử dụng cho video khác** — đó là cách khuôn tái sinh.
 
-### 2. KHI USER CUNG CẤP NỘI DUNG / Ý TƯỞNG VÀ YÊU CẦU LÀM VIDEO:
-Agent **BẮT BUỘC** đóng vai **Master AI Director**, tự động lập **Bản Kế Hoạch Đạo Diễn (Director's Blueprint)** trình bày rõ cho User biết các Skill sẽ phối hợp với nhau theo 4 chặng:
+**ĐIỀU 2 — ART DIRECTION SHEET TRƯỚC KHI CODE:**
+Mỗi video, trước khi viết code, Director bắt buộc xuất Art Direction Sheet (mẫu trong `rules/bespoke-creativity.md`) gồm: (1) Ẩn dụ thị giác sinh ra từ nội dung; (2) Ngôn ngữ hình ảnh chủ đạo; (3) Palette & chất liệu theo cảm xúc chủ đề; (4) Ngôn ngữ chuyển động riêng. Chưa được User duyệt = không code.
 
-```text
-BẢN KẾ HOẠCH ĐẠO DIỄN (DIRECTOR'S BLUEPRINT)
-────────────────────────────────────────────────────────────────────────────────
-➔ CHẶNG 1: TIỀN KỲ & KỊCH BẢN (PRE-PRODUCTION & SCRIPTING)
-  ├─ [prompts-chat]     : Kích hoạt Persona chuyên gia & ẩn dụ thị giác (Visual Metaphor) cho Hook mở đầu.
-  ├─ [reels-scripting]  : Phân rã cấu trúc Scene chuẩn nhịp cắt DNA, viết Hook 3s đầu giữ chân (High Retention).
-  └─ [humanizer]        : Viết lại toàn bộ lời thoại sang ngôn ngữ nói tự nhiên của người Việt, khử giọng AI robot.
+**ĐIỀU 3 — HÌNH PHẢI TỰ KỂ ĐƯỢC CÂU CHUYỆN:**
+Chuẩn chất lượng để soi (mô tả chuẩn, không phải template để copy):
+- **Chuẩn A — Ẩn dụ tiến hoá liên tục:** một hình tượng trung tâm biến đổi/tăng trưởng xuyên suốt video, đi cùng mạch nội dung (ví dụ: cái cây lớn dần theo các cột mốc của một kế hoạch tài chính dài hạn).
+- **Chuẩn B — Sơ đồ sống:** các sơ đồ/sơ đồ cơ chế tự vận động để giải thích (rẽ nhánh kịch bản, mức quỹ vơi dần theo thời gian...), chữ chỉ đóng vai trò chú thích.
+Một cảnh mà tắt tiếng vẫn không hiểu hình đang nói gì = cảnh hỏng, làm lại.
 
-➔ CHẶNG 2: GIỌNG ĐỌC & ĐỒNG BỘ THỜI GIAN THỰC (VOICEOVER & TIMING)
-  └─ [cit-voice-studio] : Gọi VieNeu-TTS local (:8001, giọng Hải Đăng studio 48kHz), trích xuất timing chuẩn từng từ.
+**ĐIỀU 4 — KẾT HỢP ÍT NHẤT 3 KỸ THUẬT:** animated chart, kinetic typography, SVG diagram/path animation, 3D stage, map, timeline, particles... tuỳ nội dung. Cấm dùng 1 loại component lặp cho toàn video. Danh mục khả năng xem ở `config/component-index.json` — đó là danh mục *công cụ*, không phải danh mục phong cách.
 
-➔ CHẶNG 3: PHỐI TRỘN DNA & LẬP TRÌNH THỊ GIÁC (VISUAL CODE & DNA MIXING)
-  ├─ Tự động Mix & Match tokens từ `dna-vault/` và `styles/` phù hợp với nội dung.
-  ├─ [remotion-explainer]        : Dựng thẻ 2.5D Spatial Glass HUD hoặc 3D ThreeCanvas trung tâm.
-  ├─ [gsap-skills]               : Diễn hoạt biểu đồ đua tài sản, nến TradingView, số liệu nhảy hoặc đường cong SVG.
-  ├─ [motion-ai-kit]             : Tính toán thông số Spring physics (damping, stiffness, mass) theo cảm xúc từng cảnh.
-  ├─ [remotion-markup & best-practices] : Lập trình React component / spec tuân thủ Safe Zone 9:16 và tối ưu render.
-  └─ [auto-footage]              : (Chỉ kích hoạt nếu đầu vào là video quay sẵn talking-head để jump-cut & chèn overlay).
-
-➔ CHẶNG 4: RENDER, CHUẨN HÓA EBU R128 & KIỂM ĐỊNH (RENDER & QUALITY GATE)
-  ├─ Render trực tiếp Final MP4 qua Remotion CLI với props động `inputProps.json`.
-  ├─ Chuẩn hóa âm lượng EBU R128: -12.5 LUFS, True Peak < -1.0 dBFS.
-  └─ Chạy kiểm thử E2E 4-Tier: `npm run verify -- --project <dir>`.
-```
+**ĐIỀU 5 — KIỂM TRA CHỐNG RẬP KHUÔN TRƯỚC RENDER:**
+- Bố cục giống video trước → làm lại Art Direction.
+- Trên 50% cảnh là bố cục thẻ/hộp → làm lại Art Direction.
+- Cảnh nào chỉ có 1 phần tử đứng yên giữa khung quá 3 giây → làm lại cảnh đó.
 
 ---
 
-## LUẬT BẮT BUỘC: KHÔNG STYLE CỐ ĐỊNH & PHỐI TRỘN THỊ GIÁC × CHUYỂN ĐỘNG (STYLE × MOTION DYNAMIC BLENDING MANDATE)
+## QUY TRÌNH SẢN XUẤT (7 bước, không nhảy bước ở chế độ duyệt)
 
-> [!IMPORTANT]
-> **1. TUYỆT ĐỐI KHÔNG CÓ STYLE CỐ ĐỊNH (ZERO FIXED TEMPLATES)**:
-> - Cấm hoàn toàn việc đóng khung video vào một khuôn mẫu hay style có sẵn duy nhất. Mỗi video làm ra phải là một **tác phẩm sáng tạo độc bản (bespoke)**, tạo ấn tượng thị giác mạnh mẽ, mới lạ và giữ chân người xem (retention) cao nhất.
->
-> **2. CÔNG THỨC 2 TẦNG PHỐI TRỘN BẮT BUỘC CHO MỌI VIDEO**:
-> Mỗi video xuất xưởng bắt buộc phải là phép nhân có chủ đích giữa:
-> ```text
-> VIDEO HOÀN CHỈNH = [PHONG CÁCH THỊ GIÁC]  ×  [NGÔN NGỮ CHUYỂN ĐỘNG]
->                    (Visual Art Direction)       (Motion Choreography)
-> ```
-> - **Tầng 1: Phong cách Thị giác (Visual Art Direction - "Trông như thế nào?")**:
->   Quyết định bảng màu, chất liệu bề mặt (3D Spatial vô cực, Dark Tech OLED, Editorial Báo chí, Neon Cyber HUD, Tactical Blueprint, Minimalist White...), typography tương phản cao và bố cục khung hình 9:16 an toàn.
-> - **Tầng 2: Phong cách Chuyển động & Góc máy (Motion Choreography - "Biến chuyển ra sao?")**:
->   Quyết định vật lý chuyển động (Spring physics: đầm mượt hoặc nảy đàn hồi), ngôn ngữ góc máy điện ảnh (3D Graze-tour lướt nghiêng, Exploded-view bóc tách không gian, Punch-in phóng đại), diễn hoạt biểu đồ SVG/GSAP, Kinetic Text Slam, và nhịp cắt dồn dập hay chuyển cảnh thở nhẹ.
->
-> **3. CHUYỂN ĐỘNG HOÀN HẢO 100% (ZERO JANK / PERFECT RETENTION)**:
-> - Mọi chuyển động phải mượt mà tuyệt đối, easing chuẩn tự nhiên, không giật cục.
-> - Ăn khớp 100% từng từ với giọng đọc AI (word-level sync) và nhạc nền BGM êm ái nép sau lời thoại (TUYỆT ĐỐI CẤM SFX).
->
-> **4. KIẾN TRÚC PHÂN CẢNH ĐỘNG — TUYỆT ĐỐI CẤM FIX CỨNG 6 CẢNH (DYNAMIC SCENE ARCHITECTURE MANDATE)**:
-> - **CẤM 100% rập khuôn video nào cũng 6 cảnh** (`Hook -> Problem -> Solution -> Workflow -> Benefits -> Outro`). Việc fix cứng 6 cảnh là lối mòn tai hại: gây nhàm chán thị giác, dễ đoán, gượng ép chia cắt nội dung và **không thể khai thác trọn vẹn toàn bộ ý đồ/chiều sâu của chủ đề**.
-> - **Nguyên tắc "Nội dung quyết định số cảnh & cấu trúc" (Form Follows Content)**: Mỗi video có thời lượng, lượng thông tin và thể loại khác nhau, do đó số lượng cảnh ($N$ cảnh) và mạch phân cảnh phải được "may đo" linh hoạt:
->   * **Dạng Quick Insight / Micro-Explainer (30s – 45s)**: **3 – 4 cảnh** (Hook câu hỏi triệu đô ➔ Bản chất cơ chế ➔ Đòn bẩy/Ứng dụng thực tế ➔ Outro CTA).
->   * **Dạng Myth-Busting / Đột phá tư duy (45s – 60s)**: **4 – 5 cảnh** (Hook giật ngược quan điểm ➔ Niềm tin sai lầm phổ biến ➔ Bóc trần sự thật ngầm ➔ Dẫn chứng/Số liệu thực chiến ➔ Đúc kết & Outro CTA).
->   * **Dạng Case Study / Drama tài chính / Deep Dive (60s – 90s+)**: **6 – 9 cảnh** (Mở đầu chấn động ➔ Bối cảnh lịch sử ➔ Ngòi nổ xung đột ➔ Cơ chế vận hành ngầm ➔ Cú sập / Bước ngoặt cao trào ➔ Hậu quả diện rộng ➔ Đúc kết xương máu & Outro CTA).
->   * **Dạng Top danh sách / Listicle / So sánh đối đầu (60s – 90s)**: **5 – 10 cảnh** (Hook thách thức ➔ Bối cảnh bài toán ➔ Phân tích từng mục/tiêu chí riêng ➔ Bảng so sánh tổng kết ➔ Khuyến nghị tối ưu & Outro CTA).
->   * **Dạng Step-by-Step / Hướng dẫn thực chiến**: **$N$ cảnh tùy số bước** (Hook vấn đề ➔ Các bước thực hiện cụ thể Bước 1, 2, 3... ➔ Lưu ý sống còn ➔ Thành quả & Outro CTA).
-> - **Kỷ luật "Ý nào cảnh đó — Chuyển ý là chuyển cảnh"**:
->   * Mỗi cảnh phục vụ 1 ý niệm thị giác trọng tâm (Core Visual Beat).
->   * Thời lượng cảnh co giãn từ 4s đến 12s theo dung lượng thông tin; tuyệt đối không giữ một cảnh quá lâu (>12-15s) gây chết khung hình, và không chia nhỏ cơ học vô nghĩa chỉ để đếm đủ cảnh.
+1. **Brief**: 1 video = 1 ý chính. Nội dung quá tải thì tách thành nhiều video, không nén.
+2. **Art Direction Sheet** → chờ User duyệt (Điều 2). **Cấm fast-track dưới mọi hình thức**: Gate 1 (kịch bản) và Gate 2 (Art Direction) phải do User duyệt thật qua lệnh `approve`; `make` sẽ dừng nếu chưa duyệt. Không tồn tại cơ chế tự duyệt hay "hướng standard" nào trong nhà máy này.
+3. **Kịch bản**: số cảnh N do nội dung quyết định (cấm fix cứng số cảnh); mỗi cảnh 4-12 giây; hook phải nằm trong 3 giây đầu; viết bằng giọng nói tự nhiên (skill `humanizer`, `reels-scripting`).
+4. **Voice & Timing**: CIT Voice Studio, lấy timing từng từ; chừa nhịp nghỉ giữa các cảnh.
+5. **Dựng cảnh**: code riêng trong `projects/<id>/`, dùng composition `BespokeVideo` làm sân khấu (nền + phụ đề đồng bộ + brand outro + tiến trình). Dùng toolbox ở `engines/remotion/src/shared/` (primitives, 3D stage, finance primitives) và các skill khả năng (`gsap-skills`, `motion-ai-kit`, `remotion-markup`, `remotion-best-practices`).
+6. **Kiểm tra frame tĩnh từng cảnh** (tràn chữ, che chữ, khoảng trống chết) trước khi render final.
+7. **Render + QC cứng** (mục dưới). Pass mới có file final.
+
+Đầu vào là video quay sẵn (talking-head): dùng skill `auto-footage` (jump-cut + overlay), vẫn áp dụng Luật Tối Cao cho phần overlay.
+Đầu vào là video mẫu để học: dùng `npm run dna -- analyze <video>` để đo (nhịp cắt, LUFS, mật độ) và lưu kết quả vào `dna-vault/` làm tài liệu tham khảo, hoặc đo nhanh không lưu bằng `core/scripts/validate/reference.js`. Chỉ học *nhịp và số liệu*, cấm copy bố cục, và phân tích DNA **không bao giờ** tự sinh style.
 
 ---
 
-## 2 Chế Độ Thực Hiện Khi Sản Xuất Video
+## CỔNG CHẤT LƯỢNG (HARD GATES — fail là dừng, không xuất final)
 
-> [!IMPORTANT]
-> **LUẬT ĐỀ XUẤT 3 PHƯƠNG ÁN BẮT BUỘC (MANDATORY 3-OPTION PROPOSAL)**:
-> Khi Người dùng yêu cầu làm 1 video bất kỳ về bất cứ nội dung/ý tưởng nào, Agent **BẮT BUỘC PHẢI ĐỀ XUẤT 3 PHƯƠNG ÁN KHÁC BIỆT & HỎI Ý KIẾN USER TRƯỚC KHI LÀM** — TUYỆT ĐỐI CẤM BỎ QUA BƯỚC NÀY.
-> 3 phương án phải phân hóa rõ về:
-> 1. **Góc tiếp cận & Hook** (Drama/khiêu khích, phân tích logic/số liệu, hoặc phóng sự/kể chuyện).
-> 2. **Số lượng cảnh & Mạch phân cảnh dự kiến ($N$ cảnh)**: Xác định rõ phương án gồm bao nhiêu cảnh và sườn mạch dẫn truyện (Narrative Arc) tương ứng để khai thác triệt để nội dung (TUYỆT ĐỐI KHÔNG mặc định 6 cảnh).
-> 3. **Sự phối trộn [Phong cách Thị giác] × [Ngôn ngữ Chuyển động] (KHÔNG DÙNG THẺ HỘP)**: Phân hóa rõ cách kết hợp (ví dụ: Editorial Báo chí × Kinetic Slam dồn dập, hoặc 3D Spatial vô cực × Graze-tour lướt cận cảnh đầm mượt).
-> 4. **Nhịp độ & Thiết kế Âm thanh (Pacing & Sound Design)**: Dồn dập kịch tính với beat-sync, điềm tĩnh chuyên gia với ambient drone, hay hiện đại công nghệ với nhạc nền BGM êm dịu (TUYỆT ĐỐI KHÔNG DÙNG SFX).
-> Chỉ khi User bấm chọn/chốt 1 phương án mới được phép bắt tay vào viết Kịch bản chi tiết.
+Bộ kiểm định: `tests/e2e/test_final_video.cjs`, chạy bắt buộc trong `npm run make`.
 
-> [!IMPORTANT]
-> **2 CHẾ ĐỘ THỰC HIỆN (BẮT BUỘC ĐỀ XUẤT CHO USER CHỌN KHI BẮT ĐẦU)**:
-> 1. **Chế độ Rảnh tay**: Người dùng đưa nội dung/chủ đề, hệ thống tự động chạy toàn bộ quy trình từ A-Z và trả về video Final MP4 hoàn chỉnh.
-> 2. **Chế độ Duyệt từng bước**: Bắt buộc đi tuần tự từng bước, trả kết quả trên chat để người dùng tương tác duyệt, **TUYỆT ĐỐI CẤM NHẢY CÓC**.
-
-```text
-QUY TRÌNH 3 BƯỚC BẮT BUỘC (KHI DUYỆT TỪNG BƯỚC)
-────────────────────────────────────────────────────────────────────────
-➔ BƯỚC 1: KỊCH BẢN TỪNG PHẦN (SCRIPT BREAKDOWN)
-  ├─ Trình bày kịch bản phân rã chi tiết từng cảnh linh hoạt (số cảnh N may đo theo nội dung, tuyệt đối KHÔNG gượng ép vào 6 cảnh)
-  ├─ Nêu rõ visual concept, nội dung lời thoại (voiceover) và thời lượng dự kiến từng đoạn
-  └─ Dừng lại chờ User phản hồi / góp ý kịch bản
-
-➔ BƯỚC 2: DỰNG RENDER HÌNH ĐỂ HÌNH DUNG VIDEO (STORYBOARD / VISUAL FRAMES)
-  ├─ Dựng layout / render các khung hình trực quan (still frames / mockup thẻ)
-  ├─ Thể hiện màu sắc, typography, safe zone, vị trí text, icon/graphics
-  └─ Trả kết quả trực quan trên chat để User dễ dàng hình dung toàn bộ video
-
-➔ BƯỚC 3: USER CHỐT MỚI BẮT ĐẦU LÀM VIDEO LUÔN (FINAL MP4 DIRECT)
-  ├─ Chỉ khi User xác nhận chốt kịch bản & hình ảnh ở Bước 1 và 2 mới tiến hành code & render
-  ├─ Bỏ qua khâu preview phân giải thấp, xuất thẳng video FINAL MP4 hoàn chỉnh (1080x1920, EBU R128 -12.5 LUFS)
-  └─ Nếu có yêu cầu điều chỉnh sau khi xem, tiến hành điều chỉnh trực tiếp trên video final
-```
-
-> [!CAUTION]
-> **LUẬT DUY NHẤT 1 FILE FINAL MP4 — CẤM HOÀN TOÀN FILE PREVIEW (SINGLE FINAL MP4 MANDATE)**:
-> 1. **Bỏ hẳn 100% khâu preview**: Áp dụng bắt buộc cho mọi video tạo mới. Tuyệt đối KHÔNG render video preview, KHÔNG chạy ngầm tạo hoặc sao chép bất kỳ file preview nào (`preview.mp4`, `preview-contact-sheet.svg`, `preview-qc.json`).
-> 2. **Chỉ xuất trực tiếp 1 file Final duy nhất**: Sau khi duyệt storyboard/still frames (Bước 2), xuất thẳng trực tiếp `projects/<id>/output/final.mp4` (chuẩn 1080×1920, EBU R128 -12.5 LUFS).
-> 3. **Thư mục `output/` sạch sẽ chuẩn mực**: Chỉ được phép chứa `final.mp4`, `final-contact-sheet.svg`, `final-qc.json`, thư mục `dist/` và `storyboard/`. Tuyệt đối cấm để lọt bất kỳ file `preview.*` nào vào thư mục bàn giao.
+- Khổ hình 1080×1920 (9:16) trừ khi brief ghi khác; 30fps; H.264 + AAC stereo 48kHz.
+- Thời lượng theo brief (mặc định 45-90 giây).
+- **Âm lượng: Integrated Loudness -14 đến -12 LUFS; True Peak < -1.0 dBFS; LRA < 8 LU.**
+- **Freeze: không đoạn đứng hình nào quá 3 giây.** Không blackout.
+- Phụ đề khớp timing giọng đọc; chỉ từ đang đọc được highlight; không SFX (chỉ giọng đọc + BGM nền -18..-22dB nếu có).
+- Font tiếng Việt chuẩn (Be Vietnam Pro ưu tiên); cấm cắt chữ, cấm co chữ, cấm render khung rỗng.
+- Video phải có Brand Outro của User.
 
 ---
 
-## Hàng rào an toàn thị giác bắt buộc (Hard Constraints)
+## BẢNG SKILLS & VAI TRÒ
 
-Trước khi code Remotion, Agent **BẮT BUỘC** đọc:
-- [`rules/visual-storytelling.md`](rules/visual-storytelling.md) — Chi tiết thiết kế thẻ, ngắt dòng, phân bổ dọc, phụ đề và kiểm tra thực tế trên 360×640.
-- [`rules/card-archetypes.md`](rules/card-archetypes.md) — 6 bố cục thẻ mẫu chuẩn (Hero Metric, Comparison, Feature Grid, Step Flow, Checklist, Quote).
+| Skill | Vai trò |
+| :--- | :--- |
+| `reels-scripting` | Cấu trúc kịch bản ngắn, hook 3 giây, nhịp theo timecode |
+| `humanizer` | Khử giọng AI, lời thoại tự nhiên như người nói |
+| `remotion-explainer` | Quy trình dựng bespoke trong Remotion (đã viết lại theo file này) |
+| `gsap-skills` | Diễn hoạt biểu đồ, đồ thị SVG, timeline phức tạp |
+| `motion-ai-kit` | Spring physics, easing, audit chuyển động |
+| `remotion-markup` | Quy chuẩn JSX/TSX, layout mobile an toàn |
+| `remotion-best-practices` | Chuẩn kỹ thuật Remotion, hiệu năng render |
+| `auto-footage` | Jump-cut + overlay cho video quay sẵn |
 
-1. **LOẠI BỎ PHONG CÁCH ĐÓNG HỘP THẺ (NO CARDS / BORDERLESS MANDATE)**: Người dùng đã loại bỏ phong cách thẻ card/HUD. Ưu tiên tuyệt đối các phong cách tràn viền (Kinetic Typography, 3D Spatial vô cực với leader lines, Editorial báo chí, Biểu đồ TradingView toàn cảnh, Tactical Map, Whiteboard). Tuyệt đối không tự ý đóng khung dữ liệu vào các thẻ hộp cứng nhắc.
-2. **QUY ĐỊNH BẮT BUỘC VỀ TYPOGRAPHY & FONT TIẾNG VIỆT (VIETNAMESE TYPOGRAPHY MANDATE)**:
-   - **Bắt buộc 100% font hỗ trợ tiếng Việt hoàn hảo**: Ưu tiên số 1 `Be Vietnam Pro`, `Montserrat`, `Segoe UI`. Nghiêm cấm dùng font Latin thiếu dấu gây hiện tượng "Font Fallback Mismatch" (chữ nhảy lò cò, lệch dấu, chữ to chữ nhỏ).
-   - **Nhúng font đồng bộ**: Khi dựng SVG/HTML preview, bắt buộc nhúng Google Fonts `Be Vietnam Pro` trực tiếp trong `<defs><style>` của SVG và `<head>` của HTML. Khi render Remotion, sử dụng `@remotion/fonts` với barrier `delayRender()` / `continueRender()`.
-   - **Kỷ luật CSS Typography**: Chỉ dùng `font-weight` chuẩn CSS (`400` đến `900`, cấm 950+). Cấm dùng `letter-spacing` co âm làm dính đè dấu thanh.
-3. **CẤM cắt chữ**: Tuyệt đối không dùng `overflow: hidden`, `text-overflow: ellipsis`, hoặc `-webkit-line-clamp` để giấu chữ thừa. Cấm tự co chữ (shrink-to-fit) làm nát layout.
-4. **CẤM render khung rỗng**: Khi title/description rỗng hoặc undefined, component phải `return null`, tuyệt đối không render wrapper có viền/nền trống.
-5. **Phụ đề theo từ (Speech-Synced Subtitles)**:
-   - Hiện sẵn cụm từ ngắn theo nhịp câu.
-   - **Chỉ từ đang đọc đổi màu highlight**. CẤM đổi cỡ chữ, độ đậm, scale (không dùng `scale(1.15)`) làm nhảy dòng/rung chữ.
-   - **Zero Speech = Zero Sub**: Khi im lặng (`activeIndex === -1`), ẩn hoàn toàn cả chữ lẫn khung nền phụ đề (`return null`).
-6. **Mobile Safe Zones**: Phân bố thị giác cân đối dọc theo khung 9:16 (trải từ `y: 260` đến `y: 1550`), tránh dồn cục ở nửa trên bỏ trống nửa dưới.
-7. **Tiêu chuẩn Audio (EBU R128 Bắt buộc)**:
-   - `Integrated Loudness`: **-14 đến -12 LUFS** (chuẩn **-12.5 LUFS** cho TikTok/Reels/Shorts).
-   - `Loudness Range (LRA)`: **< 8 LU**.
-   - `True Peak`: **< -1.0 dBFS** (chống clipping/méo tiếng).
-8. **LỆNH CẤM SFX HOÀN TOÀN TRÊN TOÀN HỆ THỐNG (ZERO-SFX MANDATE)**:
-   - Người dùng cấm 100% việc chèn hiệu ứng âm thanh vi mô (SFX: whoosh, click, impact, pop, laser, glitch, beep, chime...). Gây khó chịu và phân tâm khi nghe.
-   - Cấu trúc âm thanh CHỈ gồm 2 tầng duy nhất:
-     * **Tầng 1 (Chính)**: Giọng đọc AI thuyết minh (VieNeu-TTS Hải Đăng 48kHz, to rõ, tự nhiên).
-     * **Tầng 2 (Nền)**: Nhạc nền BGM (âm lượng dịu êm, nép sau giọng đọc ở mức -18dB đến -22dB).
-   - Tuyệt đối KHÔNG lồng ghép bất kỳ file SFX nào vào audio mix từ nay về sau.
-9. **Kiến trúc Thị giác Hybrid 3D WebGL + 2.5D Spatial HUD**:
-   - Đối với các dự án y sinh/công nghệ: Dùng `@remotion/three` (`<ThreeCanvas>`), `@react-three/fiber` cho vật thể trung tâm kết hợp thẻ `SpatialHUDCard` (2.5D Spatial Glass HUD) với perspective 3D, 4 góc brackets `[ ]` và tia quét laser.
-   - CẤM HOÀN TOÀN việc vẽ minh họa trung tâm bằng hình học `<svg>` 2D phẳng đơn giản.
+Prompt lõi dùng khi sản xuất (chỉ các file này): `prompts/story-director.md`, `prompts/creative-director.md`, `prompts/hook-crafter.md`, `prompts/production-agent.md`, `prompts/reference-analyzer.md`, `prompts/video-personas.md`.
 
----
+## LỆNH THƯỜNG DÙNG
 
-## Bảng Tra Cứu 10 Skills & Vai Trò Trong Xưởng
-
-| STT | Tên Skill | Chức năng trong Factory |
-| :--- | :--- | :--- |
-| 1 | `prompts-chat` | Khai thác thư viện 1.100+ prompt và Role-Playing Personas để nhập vai chuyên gia, gợi mở visual metaphors và hook độc đáo. |
-| 2 | `reels-scripting` | Cấu trúc hóa kịch bản video ngắn giữ chân cao với số cảnh linh hoạt theo thể loại (Hook, Narrative Arc theo chủ đề, CTA) theo nhịp timecode chính xác. |
-| 3 | `humanizer` | Khử văn phong máy móc của AI, tinh chỉnh câu từ tự nhiên, ấm áp như người thật nói chuyện. |
-| 4 | `cit-voice-studio` | Tạo giọng đọc AI chất lượng studio 48kHz (VieNeu-TTS local `:8001`) và trích xuất timing từng từ. |
-| 5 | `remotion-explainer` | Thiết kế không gian 3D WebGL và thẻ 2.5D Spatial Glass HUD cho video explainer dọc 9:16. |
-| 6 | `gsap-skills` | Diễn hoạt biểu đồ đua tài sản (Bar Chart Race), nến chứng khoán, vẽ đồ thị SVG và timeline tweening phức tạp. |
-| 7 | `motion-ai-kit` | Tính toán cấu hình Spring physics (damping, stiffness, mass), hàm linear() và audit MotionScore. |
-| 8 | `remotion-markup` | Quy chuẩn JSX/TSX layout an toàn mobile, trigger animation theo frame và tối ưu luồng hiển thị text. |
-| 9 | `remotion-best-practices` | Tiêu chuẩn kỹ thuật Remotion, Rules of Hooks, dynamic metadata, composition props và hiệu năng render. |
-| 10 | `auto-footage` | Tự động jump-cut khoảng lặng và chèn motion graphic overlays cho video quay sẵn (talking-head). |
-
----
-
-## Factory CLI & Lệnh Tắt Nhanh
-
-- `npm run check`: **Kiểm tra toàn diện sức khỏe hệ thống (Voice Studio, Remotion, FFmpeg, Dung lượng)**.
-- `npm run start`: **Khởi động dịch vụ giọng đọc AI ngầm (CIT Voice Studio VieNeu-TTS `:8001`)**.
-- `npm run studio`: **Mở giao diện xem trước Remotion Studio trực quan**.
-- `npm run make -- --project <tên_folder>`: **Lệnh 1 chạm: Tạo giọng TTS -> Render MP4 -> Kiểm định EBU R128 -> Đóng gói**.
-- `npm run dna -- analyze <video-file> [--name <style-name>]`: **Bóc tách video mẫu Zero-Media, sinh 3 file: `dna.json`, `README.md`, `replication-prompt.md`**.
-- `npm run dna -- list`: **Xem danh mục toàn bộ DNA Profiles trong `dna-vault/`**.
-- `npm run dna -- prompt <id>`: **Xem cẩm nang kỹ thuật `replication-prompt.md` của một DNA Profile**.
-- `npm run style -- list`: **Xem danh mục toàn bộ Style trong `styles/`**.
-- `npm run clean`: **Dọn dẹp nhanh các file rác tạm sinh ra sau render**.
-- `npm run verify -- --project <dir>`: **Chạy bộ kiểm thử E2E 4-Tier kiểm tra file MP4 xuất xưởng**.
+- `npm run doctor` — kiểm tra sức khoẻ hệ thống (Voice Studio, Remotion, FFmpeg).
+- `npm run services` — khởi động CIT Voice Studio.
+- `npm run studio` — mở Remotion Studio.
+- `npm run make -- --project <id>` — kiểm tra Gate 1/2 đã duyệt → TTS → render → verify (fail QC = dừng, không final).
+- `npm run verify -- --target <file.mp4>` — chạy bộ kiểm định độc lập.
+- `npm run dna -- analyze <video.mp4>` — đo video mẫu và lưu vào dna-vault làm tài liệu tham khảo (không sinh style).
+- `node core/scripts/validate/reference.js <video.mp4>` — đo thông số video mẫu (JSON, không lưu gì).
+- `npm test`, `npm run typecheck`, `npm run lint` — kiểm tra code.

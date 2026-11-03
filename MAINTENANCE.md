@@ -1,90 +1,42 @@
-# CẨM NANG VẬN HÀNH & BẢO TRÌ HỆ THỐNG
-**AI Video Factory V3 — Modular Architecture**
+# CẨM NANG VẬN HÀNH & BẢO TRÌ (FACTORY V4 BESPOKE)
 
-> Tài liệu hướng dẫn ngắn gọn dành cho kỹ thuật viên và người vận hành không chuyên.
+> Tài liệu vận hành ngắn gọn dành cho kỹ thuật viên và người vận hành hệ thống.
 
 ---
 
-## 1. Ba lệnh cơ bản chạy từ A đến Z (Quick Start)
-
-Chỉ cần mở PowerShell hoặc Terminal tại thư mục gốc của dự án và chạy tuần tự 3 lệnh:
+## 1. Ba Lệnh Cơ Bản (Quick Start)
 
 ```bash
-# Bước 1: Khởi động dịch vụ hỗ trợ giọng đọc (VieNeu-TTS AI :8001)
-npm run start
+# 1. Khởi động dịch vụ giọng đọc AI local (VieNeu-TTS Hải Đăng 48kHz :8001)
+npm run services
 
-# Bước 2: Kiểm tra sức khỏe hệ thống (FFmpeg, Node.js, Voice Studio)
-npm run check
+# 2. Kiểm tra sức khỏe toàn bộ hệ thống (FFmpeg, Node, Remotion, TTS)
+npm run doctor
 
-# Bước 3: Tự động sản xuất video hoàn chỉnh (TTS -> Render Final MP4 -> QC -> Packaging)
+# 3. Sản xuất video hoàn chỉnh (Kiểm tra Gate -> TTS -> Render Final -> QC Gate)
 npm run make -- --project <tên_folder_dự_án>
 ```
 
-*Ví dụ thực tế:*
-```bash
-npm run make -- --project CNT-20261025-UNG-THU-DAI-TRUC-TRANG-TOP-3
-```
-
-> **Lệnh bổ trợ khi cần:**
-> * `npm run studio`: Mở giao diện Web xem trước (Remotion Studio) để căn chỉnh khung hình.
-> * `npm run clean`: Dọn dẹp nhanh các file nháp tạm (.tmp, .raw.mp4) sau khi render.
+> **Lệnh bổ trợ:**
+> - `npm run studio`: Mở giao diện Remotion Studio xem trước trực quan.
+> - `npm run clean`: Dọn dẹp nhanh các file tạm (.tmp, .raw.mp4) sau render.
+> - `npm run verify -- --project <dir>`: Chạy kiểm định E2E độc lập lên video final.
 
 ---
 
-## 2. Vị trí các tệp cần sửa đổi khi bảo trì (Key Touchpoints)
+## 2. Vị Trí Can Thiệp Khi Tùy Chỉnh (Key Touchpoints)
 
-Khi cần tùy chỉnh hành vi hoặc giao diện của xưởng video, bạn chỉ cần can thiệp vào đúng 4 vị trí sau:
-
-### 🎙️ 1. Thay đổi giọng đọc & âm điệu thuyết minh (TTS)
-* **Tệp cần sửa:** [`core/scripts/tts/index.js`](file:///d:/AI/VIDEO%20AI/core/scripts/tts/index.js)
-* **Nội dung điều chỉnh:**
-  * Thay đổi tên giọng đọc mặc định (dòng 178: `voice = argv.voice || "Hải Đăng"`).
-  * Tùy chỉnh tốc độ đọc (dòng 179: `speed = 0.85` — 1.0 là tốc độ chuẩn, 0.85 là truyền cảm/chậm rãi).
-  * Điều chỉnh địa chỉ server CIT Voice Studio cục bộ (mặc định: `http://127.0.0.1:8001`).
+1. **Thông tin Thương hiệu User**: [`brand/user-brand.json`](file:///d:/AI/VIDEO%20AI/brand/user-brand.json) — Cập nhật tên kênh, slogan, handle và disclaimer.
+2. **Tốc độ đọc giọng Hải Đăng**: Đặt `ttsSpeed` trong file `inputProps.json` của từng project (hoặc truyền cờ `--speed <value>` khi chạy TTS). Không cần sửa mã nguồn.
+3. **Mã nguồn cảnh video**: Viết code riêng cho từng cảnh trong thư mục dự án `projects/<id>/`. Dùng composition `BespokeVideo` làm sân khấu trống.
 
 ---
 
-### 🎨 2. Tùy chỉnh bố cục thẻ, hiệu ứng & chuyển động (Components)
-* **Thư mục cần sửa:** [`engines/remotion/src/shared/`](file:///d:/AI/VIDEO%20AI/engines/remotion/src/shared)
-* **Các linh kiện chính:**
-  * [`CardArchetypes.tsx`](file:///d:/AI/VIDEO%20AI/engines/remotion/src/shared/CardArchetypes.tsx): Sửa 6 bố cục thẻ chuẩn (Hero Metric, So sánh 2 cột, Lưới đặc tính, Quy trình các bước...).
-  * [`SpatialHUDCard.tsx`](file:///d:/AI/VIDEO%20AI/engines/remotion/src/shared/SpatialHUDCard.tsx): Hiệu ứng thẻ 2.5D Spatial Glass HUD nghiêng thị sai và laser quét.
-  * [`SpeechSyncedSubtitles.tsx`](file:///d:/AI/VIDEO%20AI/engines/remotion/src/shared/SpeechSyncedSubtitles.tsx): Cỡ chữ, màu highlight từng từ theo giọng nói thật.
-  * [`UserBrandOutro.tsx`](file:///d:/AI/VIDEO%20AI/engines/remotion/src/shared/UserBrandOutro.tsx): Hoạt cảnh Outro kết thúc video (Logo, Slogan, Kêu gọi hành động CTA).
-
----
-
-### 📁 3. Thêm một video dự án mới
-* **Thư mục thao tác:** Tạo một thư mục con mới trong [`projects/`](file:///d:/AI/VIDEO%20AI/projects) theo phân loại phù hợp:
-  * `projects/financial-insurance/`: Video tài chính, bảo hiểm, ngân hàng.
-  * `projects/explainers/`: Video giải thích kiến thức, công nghệ dạng thẻ 2D.
-  * `projects/motion-graphics/`: Video đồ họa chuyển động, timeline phức tạp.
-  * `projects/social-shorts/`: Video ngắn 15–30s viral TikTok/Reels.
-* **Cấu trúc tối thiểu của 1 folder dự án:**
-  ```text
-  projects/<nhóm>/<MÃ-DỰ-ÁN>/
-  ├── script.md              # Kịch bản lời thoại
-  ├── beats.json             # Phân rã nhịp các cảnh (Hook, Problem, Solution...)
-  └── assets/
-      └── audio/             # Nhạc nền bgm.mp3 hoặc sfx (nếu có)
-  ```
-
----
-
-### 🏷️ 4. Thay đổi thông tin nhận diện thương hiệu (Brand)
-* **Tệp cần sửa:** [`brand/user-brand.json`](file:///d:/AI/VIDEO%20AI/brand/user-brand.json)
-* **Nội dung điều chỉnh:**
-  * Tên kênh (`channelName`), slogan (`tagline`).
-  * Tên người sáng tạo (`creatorHandle`), số hotline/website.
-  * Màu sắc nhận diện (`brandColor`).
-
----
-
-## 3. Khắc phục sự cố nhanh (Troubleshooting)
+## 3. Khắc Phục Sự Cố Nhanh (Troubleshooting)
 
 | Hiện tượng | Nguyên nhân | Cách xử lý |
 | :--- | :--- | :--- |
-| **Báo lỗi `CIT Voice Studio OFFLINE`** | Chưa mở app CIT Voice Studio trên máy | Mở icon `CIT Voice Studio` trên màn hình Desktop hoặc chạy `npm run start`. |
-| **Video render xong bị lệch tiếng** | File `timing.json` không khớp thời lượng thực | Chạy lại `npm run factory -- tts --project <tên_folder>` để đo lại nhịp bằng FFprobe. |
-| **Bị tràn bộ nhớ đệm render** | Webpack cache hoặc tệp tạm quá nhiều | Chạy lệnh `npm run clean`. |
-| **Không mở được Remotion Studio** | Port Remotion bị chiếm dụng | Tắt bớt terminal cũ và chạy lại `npm run studio`. |
+| **Báo lỗi `CIT Voice Studio OFFLINE`** | Chưa mở app CIT Voice Studio trên máy (:8001) | Chạy `npm run services` hoặc mở CIT Voice Studio. Chỉ dùng `ALLOW_VOICE_FALLBACK=1` khi User cho phép. |
+| **Make báo `GATE CHECK BLOCKED`** | Dự án chưa qua Gate 1 (Kịch bản) hoặc Gate 2 (Art Direction) | Trình kịch bản & Art Direction Sheet cho User; sau đó duyệt bằng `node core/scripts/factory/index.js approve --project <id> --gate <GATE1\|GATE2>`. |
+| **Video bị đổi tên thành `final.FAILED.mp4`** | Không vượt qua bộ kiểm định Hard QC (loudness, peak, freeze, duration...) | Xem thông báo lỗi QC trên terminal, kiểm tra 5 frame tĩnh trong `output/storyboard-check/`, tinh chỉnh code và chạy lại `make`. |
+| **Không mở được Remotion Studio** | Port 3000 bị chiếm dụng | Tắt terminal cũ đang chạy studio hoặc chạy `npm run clean`. |
