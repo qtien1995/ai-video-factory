@@ -16,6 +16,7 @@ import { CamCumSuyTimVideo } from "../../../projects/financial-insurance/CNT-202
 import { BietBoiSaoMangPhaoVideo } from "../../../projects/financial-insurance/CNT-20261030-BIET-BOI-SAO-VAN-MANG-PHAO/remotion/BietBoiSaoMangPhaoVideo";
 import { TranhBienAllInVsPhongThuVideo } from "../../../projects/financial-insurance/CNT-20261102-TRANH-BIEN-ALLIN-VS-PHONG-THU/remotion/TranhBienAllInVsPhongThuVideo";
 import { VanCo300TyUsdTtckVideo } from "../../../projects/financial-insurance/CNT-20261102-VAN-CO-300-TY-USD-TTCK/remotion/VanCo300TyUsdTtckVideo";
+import { SuThatNgamBaoHiemVideo } from "../../../projects/financial-insurance/CNT-20261103-SU-THAT-NGAM-BAO-HIEM-RUT-VON-LO/remotion/SuThatNgamBaoHiemVideo";
 import { ExplodedView3D } from "../../../styles/cinematic-saas-craft/components/ExplodedView3D";
 import { GrazeFaceTour3D } from "../../../styles/cinematic-saas-craft/components/GrazeFaceTour3D";
 import { ProgressiveCardAssemble } from "../../../styles/cinematic-saas-craft/components/ProgressiveCardAssemble";
@@ -231,6 +232,16 @@ export const RemotionRoot: React.FC = () => {
         id="VanCo300TyUsdTtckVideo"
         component={VanCo300TyUsdTtckVideo}
         durationInFrames={4965}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* Sự Thật Ngầm Khi Rút Vốn Bảo Hiểm (Myth-Busting 4 Scenes Editorial) */}
+      <Composition
+        id="SuThatNgamBaoHiemVideo"
+        component={SuThatNgamBaoHiemVideo}
+        durationInFrames={1346}
         fps={30}
         width={1080}
         height={1920}
