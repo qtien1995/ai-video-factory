@@ -1,7 +1,7 @@
 {
   "version": "4.0.0",
-  "lastUpdated": "2026-10-26",
-  "description": "Component Registry & Index for Remotion Visual Core V4 (Spatial 3D & HUD Architecture)",
+  "lastUpdated": "2026-11-03",
+  "description": "Component & Capability Index — danh mục công cụ chế tác, không phải danh mục phong cách.",
   "components": [
     {
       "name": "Stage3DWrapper",
@@ -24,77 +24,9 @@
         "ambientIntensity": "number (default 0.6)",
         "dirLightIntensity": "number (default 1.2)",
         "dirLightPosition": "[number, number, number] (default [5, 8, 5])",
-        "width": "number (optional, defaults to videoConfig.width)",
-        "height": "number (optional, defaults to videoConfig.height)",
+        "width": "number (optional)",
+        "height": "number (optional)",
         "style": "React.CSSProperties"
-      }
-    },
-    {
-      "name": "ColonHologram3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/Medical3DPrimitives.tsx",
-      "category": "3d-medical",
-      "tags": ["medical", "colon", "biometrics", "hologram", "polyp", "cancer", "tube"],
-      "description": "Procedural 3D colonic intestine hologram using TubeGeometry along a CatmullRomCurve3 with physical holographic glass, outer wireframe scan grid, and a pulsing MeshDistortMaterial polyp warning sphere at the rectum.",
-      "props": {
-        "progress": "number (0 to 1 entrance progress, default 1)",
-        "highlightPolyp": "boolean (whether polyp pulses red warning, default true)",
-        "accentColor": "string (default '#38bdf8')",
-        "polypColor": "string (default '#ef4444')",
-        "wireframeOpacity": "number (default 0.25)"
-      }
-    },
-    {
-      "name": "EndoscopySimulation3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/Medical3DPrimitives.tsx",
-      "category": "3d-medical",
-      "tags": ["medical", "endoscopy", "laser", "polyp", "surgery", "simulation"],
-      "description": "Procedural 3D endoscopic closeup inside the intestinal mucosa: gut wall lining, distorting polyp, advancing metallic endoscope probe, and glowing 3D surgical laser beam with polyp detachment lifting animation.",
-      "props": {
-        "cutProgress": "number (0: intact, 0.25-0.75: laser firing, 0.5-1.0: polyp detachment & suction)",
-        "accentColor": "string (default '#00f0ff')"
-      }
-    },
-    {
-      "name": "BioShield3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/Medical3DPrimitives.tsx",
-      "category": "3d-medical",
-      "tags": ["medical", "shield", "insurance", "protection", "screening", "icosahedron"],
-      "description": "Dual-layer icosahedron holographic shield with counter-rotating inner glass core and outer wireframe cage plus equatorial energy ring for screening and healthcare protection scenes.",
-      "props": {
-        "progress": "number (0 to 1 spring entrance)",
-        "accentColor": "string (default '#38bdf8')",
-        "radius": "number (default 1.4)"
-      }
-    },
-    {
-      "name": "DNAStrand3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/Medical3DPrimitives.tsx",
-      "category": "3d-medical",
-      "tags": ["medical", "dna", "genetics", "biotechnology", "helix"],
-      "description": "Parametric double-helix DNA strand with nucleotide node spheres and glowing base-pair rungs rotating continuously in 3D space.",
-      "props": {
-        "rungsCount": "number (default 18)",
-        "radius": "number (default 1.1)",
-        "heightStep": "number (default 0.22)",
-        "accentColor": "string (default '#38bdf8')",
-        "secondaryColor": "string (default '#ec4899')"
-      }
-    },
-    {
-      "name": "BloodCellStream3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/Medical3DPrimitives.tsx",
-      "category": "3d-medical",
-      "tags": ["medical", "blood", "erythrocyte", "stream", "flow", "vascular"],
-      "description": "3D streaming flow of biconcave red blood cells (erythrocytes) tumbling realistically along the vascular axis in 3D space.",
-      "props": {
-        "count": "number (default 18)",
-        "flowSpeed": "number (default 0.035)",
-        "cellColor": "string (default '#dc2626')"
       }
     },
     {
@@ -139,122 +71,112 @@
       }
     },
     {
-      "name": "SpatialHUDCard",
+      "name": "ExplosiveGlitchTV3D",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/SpatialHUDCard.tsx",
-      "category": "hud-container",
-      "tags": ["hud", "spatial", "glassmorphism", "brackets", "laser", "scanline", "tilt"],
-      "description": "2.5D Spatial Glass HUD Card container combining 3D perspective, floating physics, multi-layer glassmorphism, sci-fi corner brackets [ ], and animated laser sweep scanline.",
+      "sourcePath": "engines/remotion/src/shared/three/ExplosiveGlitchTV3D.tsx",
+      "category": "3d-fx",
+      "tags": ["3d", "glitch", "tv", "shockwave", "screens", "popups"],
+      "description": "Procedural 3D CRT television monitor with shockwave glitch particle rings, jitter distortion, and popup advert billboards.",
       "props": {
-        "frame": "number (required, useCurrentFrame())",
-        "springVal": "number (spring progress 0 to 1, default 1)",
-        "staggerIndex": "number (default 0)",
-        "accentColor": "string (default '#38BDF8')",
-        "borderColor": "string (optional custom border)",
-        "background": "string (optional custom background gradient)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)",
-        "style": "React.CSSProperties"
+        "width": "number (default 1080)",
+        "height": "number (default 1920)"
       }
     },
     {
-      "name": "HeroMetricCard",
+      "name": "ExplodedView3D",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-1", "hero-metric", "stat", "kpi", "footnote"],
-      "description": "Archetype 1: Oversized hero KPI metric (e.g. 96px number + 36px unit) with category badge, description, footnote, and automatic SpatialHUDCard 3D tilt & laser effects.",
+      "sourcePath": "engines/remotion/src/shared/three/ExplodedView3D.tsx",
+      "category": "3d-motion",
+      "tags": ["3d", "exploded-view", "spatial", "saas", "cards"],
+      "description": "Exploded-view 3D multi-layered stack camera fly-through with physics-based spring displacement and depth perspective.",
       "props": {
-        "category": "string (optional badge text)",
-        "number": "string (required large stat number)",
-        "unit": "string (optional metric unit)",
-        "description": "string (required explanation text)",
-        "footnote": "string (optional source / caveat)",
-        "accentColor": "string (default '#fbbf24')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "headline": "string",
+        "subheadline": "string",
+        "layers": "ExplodedLayer[]",
+        "durationInFrames": "number"
       }
     },
     {
-      "name": "ComparisonCard",
+      "name": "GrazeFaceTour3D",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-2", "comparison", "side-by-side", "vs", "pros-cons"],
-      "description": "Archetype 2: Side-by-side comparison card (left column vs right column) with positive/negative semantic badges and bullet points in a unified SpatialHUDCard 3D envelope.",
+      "sourcePath": "engines/remotion/src/shared/three/GrazeFaceTour3D.tsx",
+      "category": "3d-motion",
+      "tags": ["3d", "graze-tour", "spatial", "cinematic"],
+      "description": "Extreme close-up grazing camera tour over spatial cards with dynamic depth of field and smooth lighting sweeps.",
       "props": {
-        "left": "{ title: string; badge: string; points: string[]; isNegative?: boolean }",
-        "right": "{ title: string; badge: string; points: string[]; isPositive?: boolean }",
-        "accentColor": "string (default '#38bdf8')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "headline": "string",
+        "tagline": "string",
+        "items": "TourCardItem[]"
       }
     },
     {
-      "name": "FeatureGridCard",
+      "name": "ProgressiveCardAssemble",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-3", "grid", "features", "benefits", "icons"],
-      "description": "Archetype 3: 3-column feature and benefit grid card with circular glowing icon badges, bold headings, and descriptions inside a SpatialHUDCard 3D wrapper.",
+      "sourcePath": "engines/remotion/src/shared/three/ProgressiveCardAssemble.tsx",
+      "category": "motion-assemble",
+      "tags": ["assemble", "motion", "typography", "stagger"],
+      "description": "Progressive multi-part assembly animation with sequential stagger, spring dynamics, and metric counters.",
       "props": {
-        "items": "Array<{ icon: string; title: string; desc: string }>",
-        "accentColor": "string (default '#fbbf24')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "eyebrow": "string",
+        "badge": "string",
+        "title": "string",
+        "originalValue": "string",
+        "newValue": "string",
+        "features": "string[]"
       }
     },
     {
-      "name": "StepFlowCard",
+      "name": "MetricCounter",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-4", "workflow", "steps", "timeline", "process"],
-      "description": "Archetype 4: Sequential step flow cards with monospace numbered badges (01, 02, 03), active step highlighted state, and SpatialHUDCard floating physics.",
+      "sourcePath": "engines/remotion/src/shared/primitives.tsx",
+      "category": "motion-data",
+      "tags": ["counter", "metric", "number", "spring"],
+      "description": "Spring-interpolated animated numerical counter with formatting and custom duration.",
       "props": {
-        "steps": "Array<{ stepNumber: string; title: string; detail: string; active?: boolean }>",
-        "accentColor": "string (default '#fbbf24')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "from": "number (default 0)",
+        "to": "number",
+        "duration": "number",
+        "formatter": "(n: number) => string"
       }
     },
     {
-      "name": "ChecklistCard",
+      "name": "HighlightBadge",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-5", "checklist", "status", "audit", "compliance"],
-      "description": "Archetype 5: Checklist card with header status pill badge (green/yellow/red) and tick-mark criteria items wrapped in SpatialHUDCard 3D perspective.",
+      "sourcePath": "engines/remotion/src/shared/primitives.tsx",
+      "category": "motion-ui",
+      "tags": ["badge", "pill", "tag", "highlight"],
+      "description": "Glowing pill badge with entrance spring animation and semantic accent colors.",
       "props": {
-        "title": "string (card title)",
-        "badge": "{ text: string; color: 'green' | 'yellow' | 'red' }",
-        "items": "string[] (checklist items)",
-        "accentColor": "string (default '#38bdf8')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "text": "string",
+        "color": "string",
+        "delay": "number"
       }
     },
     {
-      "name": "QuoteCard",
+      "name": "SpeechSyncedSubtitles",
       "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/CardArchetypes.tsx",
-      "category": "hud-card",
-      "tags": ["archetype-6", "quote", "statement", "expert", "testimonial"],
-      "description": "Archetype 6: Statement and quote card featuring an oversized watermark quotation mark, italic statement text, author, role, and source chip inside a SpatialHUDCard 3D frame.",
+      "sourcePath": "engines/remotion/src/shared/SpeechSyncedSubtitles.tsx",
+      "category": "subtitles",
+      "tags": ["subtitles", "karaoke", "speech-sync", "safe-zone"],
+      "description": "Speech-synced word-level subtitle renderer. Only active word is highlighted; zero layout shifts, zero speech = zero sub.",
       "props": {
-        "quote": "string (quote text)",
-        "author": "string (speaker name)",
-        "role": "string (speaker role)",
-        "source": "string (optional source / publication)",
-        "accentColor": "string (default '#fbbf24')",
-        "staggerIndex": "number (default 0)",
-        "enableScanline": "boolean (default true)",
-        "enableBrackets": "boolean (default true)"
+        "words": "SubtitleWord[]",
+        "fps": "number (default 30)",
+        "positionY": "number (default 1530)",
+        "activeColor": "string (default '#D4AF37')"
+      }
+    },
+    {
+      "name": "UserBrandOutro",
+      "importPath": "@/shared",
+      "sourcePath": "engines/remotion/src/shared/UserBrandOutro.tsx",
+      "category": "branding",
+      "tags": ["branding", "outro", "cta", "disclaimer", "mandate"],
+      "description": "Mandatory user brand outro card with avatar monogram, channel branding, call-to-action, and legal disclaimer.",
+      "props": {
+        "brand": "UserBrandConfig",
+        "headline": "string",
+        "accentColor": "string (default '#D4AF37')"
       }
     }
   ]

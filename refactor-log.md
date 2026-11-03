@@ -56,3 +56,27 @@
   - `npm run typecheck`: PASS.
   - `npm test`: PASS.
   - Render thử 450 frames của `BespokeVideo` ra file tạm: ffprobe xác nhận 1080x1920, 30fps, 450 frames, 15.00s. File tạm đã xoá.
+
+## BƯỚC 3 — CẮT ĐƯỜNG DNA→STYLE, DỌN PHẦN CÒN LẠI, KHÓA GIỌNG HẢI ĐĂNG
+- 3.1 DNA chỉ còn là đo + tham khảo:
+  - Đã gỡ `exportDnaToStylePack` khỏi `core/scripts/dna/analyze.js`.
+  - Kiểm chứng analyze lên video mẫu: sinh profile vào `dna-vault/`, git status xác nhận `styles/` không thay đổi.
+- 3.2 Tạo `core/scripts/validate/reference.js`:
+  - Đo duration, resolution, fps, LUFS + true peak (EBU R128), cut timestamps, silence > 0.7s. In JSON ra stdout, không ghi file.
+- 3.3 Xoá primitive y tế:
+  - Đã xoá `engines/remotion/src/shared/XRayDigestiveHologram.tsx`, `engines/remotion/src/shared/three/Medical3DPrimitives.tsx`, `engines/remotion/src/shared/three/Liver3DPrimitives.tsx`.
+  - Gỡ import/export liên quan trong `shared/index.ts` và `shared/three/index.ts`.
+- 3.4 Chuyển dữ liệu output cũ:
+  - Tạo `projects/archive-van-co-300-ty-usd-ttck/` và git mv toàn bộ scenes từ `engines/remotion/public/van-co-300-ty-usd-ttck/` sang đó.
+  - File captions `emergency-insurance.json` không thuộc video van-co nên giữ nguyên.
+- 3.5 Chuẩn hoá đường dẫn config:
+  - Thay thế mọi path tuyệt đối `D:\VIDEO AI` và `D:\AI\VIDEO AI` trong `config/gen-video.json` và `config/factory-config.json` thành đường dẫn tương đối (`"."`).
+- 3.6 Viết lại `config/component-index.json` thành danh mục KHẢ NĂNG (chỉ giữ các components còn tồn tại).
+- 3.7 Cập nhật skill `.agents/skills/remotion-explainer/SKILL.md` chuẩn V4 Bespoke với đoạn văn bắt buộc.
+- 3.8 Khóa giọng Hải Đăng + mở tốc độ TTS:
+  - Gán cứng `voice = "Hải Đăng"` trong nhánh CIT Voice Studio.
+  - Dừng và báo lỗi khi CIT offline (chỉ fallback Edge-TTS khi `ALLOW_VOICE_FALLBACK=1`).
+  - Tốc độ đọc resolution: `--speed` -> `inputProps.json` (`spec.ttsSpeed`) -> mặc định `0.85`.
+- Kiểm tra cuối bước:
+  - `npm run typecheck`: PASS.
+  - `npm test`: PASS.

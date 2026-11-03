@@ -138,8 +138,32 @@ export async function main(argv = process.argv.slice(2)) {
   if (command === "tts") {
     const { ensureCitVoiceStudio } = await import("./services.js");
     await ensureCitVoiceStudio(4000);
-    const settings = { voice: args.voice || "Hải Đăng", rate: args.rate || "+10%",
-      pitch: args.pitch || "+0Hz", volume: args.volume || "+0%", provider: "cit-voice-studio" };
+
+    // Resolve speed: flag --speed -> inputProps.json (ttsSpeed / spec.ttsSpeed) -> default 0.85
+    let resolvedSpeed = 0.85;
+    if (args.speed != null) {
+      resolvedSpeed = Number(args.speed);
+    } else {
+      const inputPropsFile = path.join(projectDir(project), "inputProps.json");
+      if (fs.existsSync(inputPropsFile)) {
+        try {
+          const inputProps = JSON.parse(fs.readFileSync(inputPropsFile, "utf8"));
+          const projectSpeed = inputProps.ttsSpeed ?? inputProps.spec?.ttsSpeed;
+          if (projectSpeed != null && !isNaN(Number(projectSpeed))) {
+            resolvedSpeed = Number(projectSpeed);
+          }
+        } catch {}
+      }
+    }
+
+    const settings = {
+      voice: "Hải Đăng",
+      speed: resolvedSpeed,
+      rate: args.rate || "+10%",
+      pitch: args.pitch || "+0Hz",
+      volume: args.volume || "+0%",
+      provider: "cit-voice-studio",
+    };
     const state = readState(project), current = evaluate(project, state);
     const prior = current.signatures.GATE2;
     const wantedInput = prior && stageInput(project, "TTS", state, prior, settings);
@@ -149,9 +173,8 @@ export async function main(argv = process.argv.slice(2)) {
     if (current.next !== "TTS") throw new Error(`Expected ${current.next} before TTS`);
     const narration = narrationFromScript(project);
     const commandArgs = [path.join(ROOT, "core", "scripts", "tts", "index.js"), "--project", project,
-      "--text", narration, "--voice", settings.voice, "--rate", settings.rate,
-      "--pitch", settings.pitch, "--volume", settings.volume, "--provider", settings.provider,
-      ...(args.speed ? ["--speed", String(args.speed)] : [])];
+      "--text", narration, "--speed", String(resolvedSpeed), "--rate", settings.rate,
+      "--pitch", settings.pitch, "--volume", settings.volume, "--provider", settings.provider];
     const result = spawnSync(process.execPath, commandArgs, { cwd: path.join(ROOT, "core"), stdio: "inherit", timeout: 180000 });
     if (result.status !== 0) throw new Error(`TTS failed with code ${result.status ?? result.error?.message}`);
     const voiceSeconds = duration(artifactPath(project, "assets/audio/narration.mp3"));

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "mode": "AUTO",
-  "workspace_root": "D:\\VIDEO AI",
+  "workspace_root": ".",
   "defaults": {
     "width": 1080,
     "height": 1920,
@@ -26,10 +26,10 @@
     "creator_profile": "tien-duong"
   },
   "paths": {
-    "schemas": "D:\\VIDEO AI\\schemas",
-    "brand": "D:\\VIDEO AI\\brand",
-    "creative_library": "D:\\VIDEO AI\\creative-library",
-    "component_library": "D:\\VIDEO AI\\component-library",
-    "jobs": "D:\\VIDEO AI\\jobs"
+    "schemas": "./schemas",
+    "brand": "./brand",
+    "creative_library": "./creative-library",
+    "component_library": "./component-library",
+    "jobs": "./jobs"
   }
 }

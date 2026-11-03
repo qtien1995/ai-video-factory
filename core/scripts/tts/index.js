@@ -173,15 +173,13 @@ async function run() {
   const argv = minimist(process.argv.slice(2));
   const projectId = argv.project;
   const text = argv.text;
-  let provider = (argv.provider || "auto").toLowerCase();
-  let voice = argv.voice;
+  const speed = argv.speed != null ? Number(argv.speed) : 0.85;
   const rate = argv.rate || "+10%";
-  const speed = argv.speed || 0.85;
   const pitch = argv.pitch || "+0Hz";
   const volume = argv.volume || "+0%";
   
   if (!projectId || !text) {
-    console.error("Usage: node index.js --project <project-id> --text \"<narration>\" [--voice <voice>] [--speed <speed>] [--provider <cit|edge-tts|auto>]");
+    console.error("Usage: node index.js --project <project-id> --text \"<narration>\" [--speed <speed>]");
     process.exit(1);
   }
 
@@ -200,21 +198,24 @@ async function run() {
 
   console.log(`🎙️ [AI Audio Studio] Generating narration for project: ${projectId}...`);
 
-  // Auto-detect provider if "auto" or "cit"
-  let useCit = false;
-  if (provider === "cit" || provider === "cit-voice-studio" || provider === "auto") {
-    const isCitOnline = await checkHttp("http://127.0.0.1:8001", 1500);
-    if (isCitOnline) {
-      useCit = true;
-      if (!voice || voice === "vi-VN-HoaiMyNeural") voice = "Hải Đăng";
-      console.log(`✨ Using CIT Voice Studio (VieNeu-TTS :8001 | Voice: "${voice}" 48kHz Studio)`);
-    } else if (provider === "cit" || provider === "cit-voice-studio") {
-      console.warn("⚠️ CIT Voice Studio requested but port :8001 is offline. Falling back to Edge-TTS...");
-    }
-  }
+  // Check CIT Voice Studio status
+  const isCitOnline = await checkHttp("http://127.0.0.1:8001", 1500);
 
-  // 1. Try CIT Voice Studio if active
-  if (useCit) {
+  if (!isCitOnline) {
+    if (process.env.ALLOW_VOICE_FALLBACK === "1") {
+      console.warn("⚠️ CIT Voice Studio (:8001) is offline, but ALLOW_VOICE_FALLBACK=1 is set. Falling back to Edge-TTS...");
+    } else {
+      console.error("❌ [CIT Voice Studio Error] CIT Voice Studio (VieNeu-TTS local :8001) đang OFFLINE!");
+      console.error("   Giọng đọc 'Hải Đăng' là thứ DUY NHẤT được khóa cứng theo chuẩn Factory V4.");
+      console.error("   Vui lòng khởi động dịch vụ giọng đọc bằng: npm run services");
+      console.error("   (Chỉ đặt ALLOW_VOICE_FALLBACK=1 nếu User chủ động cho phép dùng giọng thay thế).");
+      process.exit(1);
+    }
+  } else {
+    // CIT Voice Studio: voice luôn là "Hải Đăng"
+    const voice = "Hải Đăng";
+    console.log(`✨ Using CIT Voice Studio (VieNeu-TTS :8001 | Voice: "${voice}" 48kHz Studio | Speed: ${speed})`);
+
     try {
       const citRes = await generateViaCitVoiceStudio(text, voice, speed);
       const audioBytes = Buffer.from(citRes.audio_base64, "base64");
@@ -267,7 +268,8 @@ async function run() {
         durationFrames,
         fps: 30,
         provider: "cit-voice-studio",
-        voice,
+        voice: "Hải Đăng",
+        speed,
         measuredBy: "ffprobe",
         words
       };
@@ -277,13 +279,18 @@ async function run() {
       console.log(`⏱️  Timing: ${measuredSec.toFixed(2)}s (${durationMs}ms) / ${durationFrames} frames (${words.length} words synced)`);
       return;
     } catch (citErr) {
-      console.warn(`⚠️ CIT Voice Studio synthesis failed: ${citErr.message}. Falling back to Edge-TTS...`);
+      if (process.env.ALLOW_VOICE_FALLBACK !== "1") {
+        console.error(`❌ [CIT Synthesis Error] ${citErr.message}`);
+        console.error("   Dừng quy trình vì hệ thống khóa cứng giọng Hải Đăng.");
+        process.exit(1);
+      }
+      console.warn(`⚠️ CIT Voice Studio synthesis failed: ${citErr.message}. ALLOW_VOICE_FALLBACK=1 active -> falling back to Edge-TTS...`);
     }
   }
 
-  // 2. Edge-TTS Fallback
-  if (!voice || voice === "Hải Đăng") voice = "vi-VN-HoaiMyNeural";
-  console.log(`🌐 Using Edge-TTS Universal (Voice: "${voice}" | Rate: ${rate})`);
+  // Edge-TTS Fallback (chỉ kích hoạt khi ALLOW_VOICE_FALLBACK=1)
+  const fallbackVoice = argv.voice || "vi-VN-HoaiMyNeural";
+  console.log(`🌐 Using Edge-TTS Universal Fallback (Voice: "${fallbackVoice}" | Rate: ${rate})`);
 
   let lastError = null;
   for (let attempt = 1; attempt <= 3; attempt++) {

@@ -3,7 +3,6 @@ import path from "node:path";
 import os from "node:os";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { exportDnaToStylePack } from "../style/exporter.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 
@@ -538,13 +537,6 @@ const opacity = Math.min(1, cardEntrance * 1.5);
 `;
   const replicationPromptPath = path.join(vaultDir, "replication-prompt.md");
   fs.writeFileSync(replicationPromptPath, replicationPromptContent);
-
-  // 9. Synchronize to Central Styles Library
-  try {
-    exportDnaToStylePack(dnaProfile, customId, vaultDir);
-  } catch (err) {
-    console.warn(`   ⚠️ Style export warning: ${err.message}`);
-  }
 
   console.log(`\n✅ [DNA Cloner] Reverse-Engineering HOÀN TẤT (100% Code-Ready)!`);
   console.log(`   └─ File 1: ${dnaJsonPath}`);
