@@ -31,3 +31,28 @@
   - Grep kiểm tra `@styles`, `styles/registry`, `scripts/style`: 0 kết quả.
   - `npm run typecheck`: PASS (0 errors).
   - `npm test`: PASS (9/9 passed).
+
+## BƯỚC 2 — GỠ HỆ THẺ, DỰNG CANVAS TRỐNG BespokeVideo
+- Danh sách 13 composition project thật (CNT-*) trong Root cũ được gỡ khỏi Studio (toàn bộ code trong `projects/` vẫn giữ nguyên):
+  1. `UngThuDaiTrucTrangVideo` (`CNT-20261025-UNG-THU-DAI-TRUC-TRANG-TOP-3`)
+  2. `UngThuDaiTrucTrangHookScene` (`CNT-20261025-UNG-THU-DAI-TRUC-TRANG-TOP-3`)
+  3. `CleanYourTvVideo` (`CNT-20261026-CLEANYOURTV-DEBLOAT-AI`)
+  4. `AiJobSearchVideo` (`CNT-20261026-AI-JOB-SEARCH`)
+  5. `FinCopilotVideo` (`CNT-20261029-FINCOPILOT-AI-PROMO`)
+  6. `BhytBiKhoaVideo` (`CNT-20261029-BHYT-BI-KHOA-VIEN-PHI`)
+  7. `BhytBiKhoaVideo3D` (`CNT-20261029-BHYT-BI-KHOA-VIEN-PHI`)
+  8. `ViemGanRuouVideo` (`CNT-20261029-VIEM-GAN-RUOU-BENH-LY-NGHIEM-TRONG`)
+  9. `CamCumSuyTimVideo` (`CNT-20261030-CAM-CUM-HOA-SUY-TIM-CAP-RSV`)
+  10. `BietBoiSaoMangPhaoVideo` (`CNT-20261030-BIET-BOI-SAO-VAN-MANG-PHAO`)
+  11. `TranhBienAllInVsPhongThuVideo` (`CNT-20261102-TRANH-BIEN-ALLIN-VS-PHONG-THU`)
+  12. `VanCo300TyUsdTtckVideo` (`CNT-20261102-VAN-CO-300-TY-USD-TTCK`)
+  13. `SuThatNgamBaoHiemVideo` (`CNT-20261103-SU-THAT-NGAM-BAO-HIEM-RUT-VON-LO`)
+- Đã xoá: `engines/remotion/src/shared/CardArchetypes.tsx`, `engines/remotion/src/shared/SpatialHUDCard.tsx`, `engines/remotion/src/shared/SmartSceneLayout.tsx`, `engines/remotion/src/CanonicalVideo/`, `engines/remotion/src/examples/`, `rules/card-archetypes.md`.
+- Đã tạo: `engines/remotion/src/BespokeVideo/index.tsx` (BespokeSpec, neutral placeholder sequence, SpeechSyncedSubtitles, UserBrandOutro, segmented progress bar, calculateBespokeMetadata).
+- Đã viết lại `engines/remotion/src/Root.tsx`: CHỈ còn composition `BespokeVideo`.
+- Đã cập nhật `engines/remotion/src/shared/index.ts`: gỡ export của 3 file thẻ đã xoá.
+- Kiểm tra:
+  - Grep kiểm tra `CardArchetypes`, `SpatialHUDCard`, `SmartSceneLayout`, `CanonicalVideo` trong `engines/remotion/src`: 0 kết quả.
+  - `npm run typecheck`: PASS.
+  - `npm test`: PASS.
+  - Render thử 450 frames của `BespokeVideo` ra file tạm: ffprobe xác nhận 1080x1920, 30fps, 450 frames, 15.00s. File tạm đã xoá.

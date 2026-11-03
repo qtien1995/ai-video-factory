@@ -9,6 +9,7 @@ import path from "node:path";
 
 Config.setVideoImageFormat("png");
 Config.setOverwriteOutput(true);
+Config.setAudioCodec("aac");
 Config.overrideWebpackConfig((current) => {
   const withTailwind = enableTailwind(current);
   return {
@@ -17,7 +18,6 @@ Config.overrideWebpackConfig((current) => {
       ...withTailwind.resolve,
       alias: {
         ...(withTailwind.resolve?.alias || {}),
-        "@styles": path.resolve(process.cwd(), "../../styles"),
         "@shared": path.resolve(process.cwd(), "src/shared"),
       },
     },
