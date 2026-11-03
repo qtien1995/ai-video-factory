@@ -14,8 +14,6 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-      "@styles": ["../../styles/index.ts"],
-      "@styles/*": ["../../styles/*"],
       "@shared": ["src/shared/index.ts"],
       "@shared/*": ["src/shared/*"]
     }

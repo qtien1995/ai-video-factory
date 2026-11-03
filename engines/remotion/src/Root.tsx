@@ -17,9 +17,9 @@ import { BietBoiSaoMangPhaoVideo } from "../../../projects/financial-insurance/C
 import { TranhBienAllInVsPhongThuVideo } from "../../../projects/financial-insurance/CNT-20261102-TRANH-BIEN-ALLIN-VS-PHONG-THU/remotion/TranhBienAllInVsPhongThuVideo";
 import { VanCo300TyUsdTtckVideo } from "../../../projects/financial-insurance/CNT-20261102-VAN-CO-300-TY-USD-TTCK/remotion/VanCo300TyUsdTtckVideo";
 import { SuThatNgamBaoHiemVideo } from "../../../projects/financial-insurance/CNT-20261103-SU-THAT-NGAM-BAO-HIEM-RUT-VON-LO/remotion/SuThatNgamBaoHiemVideo";
-import { ExplodedView3D } from "../../../styles/cinematic-saas-craft/components/ExplodedView3D";
-import { GrazeFaceTour3D } from "../../../styles/cinematic-saas-craft/components/GrazeFaceTour3D";
-import { ProgressiveCardAssemble } from "../../../styles/cinematic-saas-craft/components/ProgressiveCardAssemble";
+import { ExplodedView3D } from "./shared/three/ExplodedView3D";
+import { GrazeFaceTour3D } from "./shared/three/GrazeFaceTour3D";
+import { ProgressiveCardAssemble } from "./shared/three/ProgressiveCardAssemble";
 import { NonCardStylesShowcase } from "./examples/NonCardStylesShowcase";
 
 /**
