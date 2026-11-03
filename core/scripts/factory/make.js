@@ -139,6 +139,10 @@ try {
   }
   console.log(`   ✅ Đã trích 5 frame tĩnh tại 10%, 30%, 50%, 70%, 90%`);
 
+  // Dọn dẹp tệp FAILED cũ nếu có để đảm bảo quy chuẩn T4.5 (chỉ duy nhất final.mp4)
+  const prevFailed = path.join(pDir, "output", "final.FAILED.mp4");
+  if (fs.existsSync(prevFailed)) fs.rmSync(prevFailed);
+
   // (b) Chạy bộ kiểm định lên file final: tests/e2e/test_final_video.cjs
   console.log(`\n🔬 [HARD QC GATE] Chạy bộ kiểm định E2E chất lượng video final...`);
   const testSuite = path.join(ROOT, "tests", "e2e", "test_final_video.cjs");

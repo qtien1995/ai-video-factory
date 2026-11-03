@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "project": {
+    "id": "test-bespoke-01",
+    "title": "Vì sao cần quỹ dự phòng 3 tháng lương & Lớp phòng thủ tài sản",
+    "version": 1
+  },
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fpsPreference": 30,
+    "targetDurationMs": 57029
+  },
+  "content": {
+    "coreMessage": "Vì sao cần quỹ dự phòng 3 tháng lương và cấu trúc phòng thủ tài sản đa tầng trước biến cố cuộc đời.",
+    "audience": "Người tích lũy tài chính, gia đình trẻ, nhà đầu tư muốn bảo toàn dòng tiền",
+    "tone": "Định lượng, khách quan, chuyên nghiệp, bảo vệ đa tầng",
+    "language": "vi-VN"
+  },
+  "composition": "TestBespoke01",
+  "engineRouting": {
+    "suggestedEngine": "REMOTION",
+    "reason": "Bespoke dynamic timeline chart, multi-line progress tracking, leader badges, summary leaderboard and branded outro"
+  },
+  "script": {
+    "narration": "Mỗi năm để dành 30 triệu đồng, sau 20 năm chọn gửi tiết kiệm ngân hàng hay tham gia Xanh Phú Quý Flex? Đường đua tài sản này sẽ khiến bạn bất ngờ! Trong 3 năm đầu, sổ tiết kiệm áp đảo hoàn toàn khi đạt 100 triệu, trong khi bảo hiểm chỉ còn 60 triệu do khấu trừ chi phí ban đầu. Nhưng đổi lại, Xanh Phú Quý Flex bật ngay tấm khiên bảo vệ 1,5 tỷ đồng ngay từ ngày đầu tiên. Đến năm thứ 10, nhờ cơ chế thưởng duy trì hợp đồng và lãi kép quỹ cổ phiếu, giá trị tài khoản bảo hiểm cán mốc 415 triệu, chính thức san bằng và nhỉnh hơn tiết kiệm ngân hàng. Và sau 20 năm, tổng vốn 600 triệu gửi tiết kiệm đạt 1,11 tỷ. Nhưng quỹ tăng trưởng của Xanh Phú Quý Flex đã vọt lên 1,75 tỷ đồng, bỏ xa tới 640 triệu đồng! Nếu bình an, bạn có cả gia tài hưu trí vượt trội. Nếu rủi ro ập đến ở năm thứ 3, tiết kiệm chỉ có 100 triệu, còn gia đình bạn nhận ngay 1,5 tỷ đồng bảo vệ. Đó là sức mạnh của bài toán quản trị gia sản đa tầng! Tôi là Tiến Dương từ Tài Chính Thực Chiến. Hãy bình luận phương án tích lũy của bạn bên dưới để cùng mổ xẻ!",
+    "scenes": [
+      {
+        "id": "scene-01",
+        "durationMs": 7000,
+        "purpose": "Hook - Vạch xuất phát tích lũy & Quỹ an toàn",
+        "narration": "Mỗi năm để dành 30 triệu đồng, sau 20 năm chọn gửi tiết kiệm ngân hàng hay tham gia Xanh Phú Quý Flex? Đường đua tài sản này sẽ khiến bạn bất ngờ!",
+        "visualIntent": {
+          "description": "Vạch xuất phát đường đua tài chính, trục thời gian mở rộng với vầng hào quang neon navy.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "stat-pop", "subject": "Start Badges" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-02",
+        "durationMs": 11500,
+        "purpose": "Tension 1 - Sổ tiết kiệm vs Khiên bảo vệ 1,5 Tỷ",
+        "narration": "Trong 3 năm đầu, sổ tiết kiệm áp đảo hoàn toàn khi đạt 100 triệu, trong khi bảo hiểm chỉ còn 60 triệu do khấu trừ chi phí ban đầu. Nhưng đổi lại, Xanh Phú Quý Flex bật ngay tấm khiên bảo vệ 1,5 tỷ đồng ngay từ ngày đầu tiên.",
+        "visualIntent": {
+          "description": "Biểu đồ so sánh phân tầng: tiết kiệm 100tr vs khiên phòng thủ bảo vệ 1.5 tỷ đồng.",
+          "layout": "split"
+        },
+        "motionIntent": [
+          { "type": "reveal-sequence", "subject": "Shield Marker" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-03",
+        "durationMs": 9500,
+        "purpose": "Breakthrough - Đổi ngôi điểm cân bằng",
+        "narration": "Đến năm thứ 10, nhờ cơ chế thưởng duy trì hợp đồng và lãi kép quỹ cổ phiếu, giá trị tài khoản bảo hiểm cán mốc 415 triệu, chính thức san bằng và nhỉnh hơn tiết kiệm ngân hàng.",
+        "visualIntent": {
+          "description": "Đường cong tài sản bứt phá vượt qua mốc cân bằng 415 triệu, hiệu ứng ánh sáng emerald.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "progress", "subject": "Crossover Lead" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-04",
+        "durationMs": 9500,
+        "purpose": "Growth - Bứt phá gia sản 1,75 Tỷ",
+        "narration": "Và sau 20 năm, tổng vốn 600 triệu gửi tiết kiệm đạt 1,11 tỷ. Nhưng quỹ tăng trưởng của Xanh Phú Quý Flex đã vọt lên 1,75 tỷ đồng, bỏ xa tới 640 triệu đồng!",
+        "visualIntent": {
+          "description": "Đỉnh cao gia sản: mốc 1,75 Tỷ bứt phá, độ chênh lệch lợi nhuận +640 triệu đồng.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "progress", "subject": "Finish Line" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-05",
+        "durationMs": 13000,
+        "purpose": "Core Lesson - Quản trị gia sản & Quỹ an toàn đa tầng",
+        "narration": "Nếu bình an, bạn có cả gia tài hưu trí vượt trội. Nếu rủi ro ập đến ở năm thứ 3, tiết kiệm chỉ có 100 triệu, còn gia đình bạn nhận ngay 1,5 tỷ đồng bảo vệ. Đó là sức mạnh của bài toán quản trị gia sản đa tầng!",
+        "visualIntent": {
+          "description": "Bảng đối soát quản trị gia sản 2 kịch bản: Hưu trí bình an vs Rủi ro đột ngột, khiên bảo hộ 1.5 tỷ rực sáng.",
+          "layout": "grid"
+        },
+        "motionIntent": [
+          { "type": "stagger", "subject": "Leaderboard Cards" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-06",
+        "durationMs": 6529,
+        "purpose": "Outro - Nhận diện thương hiệu Tiến Dương",
+        "narration": "Tôi là Tiến Dương từ Tài Chính Thực Chiến. Hãy bình luận phương án tích lũy của bạn bên dưới để cùng mổ xẻ!",
+        "visualIntent": {
+          "description": "Outro thương hiệu chính thức Tiến Dương · Tài Chính Thực Chiến, nút CTA thảo luận.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "fade-in", "subject": "Outro Card" }
+        ],
+        "assets": []
+      }
+    ]
+  }
+}

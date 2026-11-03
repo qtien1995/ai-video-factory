@@ -1,0 +1,58 @@
+{
+  "scenes": [
+    {
+      "id": "scene-01",
+      "durationMs": 7000,
+      "visuals": "Fixed Header tài chính thực chiến, vạch xuất phát 2 tài sản GTK và FLEX.",
+      "motion": "Kinetic intro, pulsing neon grid, start markers.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "ĐƯỜNG ĐUA TÍCH LŨY 20 NĂM (30TR/NĂM)\n• Gửi tiết kiệm ngân hàng\n• Xanh Phú Quý Flex",
+      "voiceover": "Mỗi năm để dành 30 triệu đồng, sau 20 năm chọn gửi tiết kiệm ngân hàng hay tham gia Xanh Phú Quý Flex? Đường đua tài sản này sẽ khiến bạn bất ngờ!"
+    },
+    {
+      "id": "scene-02",
+      "durationMs": 11500,
+      "visuals": "Sổ tiết kiệm vọt lên 100tr, Flex 60tr do trừ phí ban đầu, Event Marker Khiên 1.5 Tỷ xuất hiện.",
+      "motion": "Split columns, shield impact bloom, glow expansion.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "GIAI ĐOẠN 3 NĂM ĐẦU:\n• Tiết kiệm: 100 Triệu\n• Flex: 60 Triệu\n➔ BẬT KHIÊN BẢO VỆ 1,5 TỶ NGAY NGÀY ĐẦU!",
+      "voiceover": "Trong 3 năm đầu, sổ tiết kiệm áp đảo hoàn toàn khi đạt 100 triệu, trong khi bảo hiểm chỉ còn 60 triệu do khấu trừ chi phí ban đầu. Nhưng đổi lại, Xanh Phú Quý Flex bật ngay tấm khiên bảo vệ 1,5 tỷ đồng ngay từ ngày đầu tiên."
+    },
+    {
+      "id": "scene-03",
+      "durationMs": 9500,
+      "visuals": "Đường cong Flex vượt qua GTK tại mốc 415 triệu, nhận huy hiệu ngôi sao vàng.",
+      "motion": "Smooth curve interpolation, crossover pulse, star badge.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "ĐỔI NGÔI NĂM THỨ 10:\n• Thưởng duy trì + Lãi kép\n• Flex cán mốc 415 Triệu\n➔ VƯỢT LÃI TIẾT KIỆM NGÂN HÀNG!",
+      "voiceover": "Đến năm thứ 10, nhờ cơ chế thưởng duy trì hợp đồng và lãi kép quỹ cổ phiếu, giá trị tài khoản bảo hiểm cán mốc 415 triệu, chính thức san bằng và nhỉnh hơn tiết kiệm ngân hàng."
+    },
+    {
+      "id": "scene-04",
+      "durationMs": 9500,
+      "visuals": "Trục Y mở rộng, Flex chạm 1,75 Tỷ, GTK 1,11 Tỷ, chênh lệch +640 triệu đồng.",
+      "motion": "Finishing line glow, number counter surge to 1.75 tỷ.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "CÁN ĐÍCH 20 NĂM (VỐN 600TR):\n• Tiết kiệm: 1,11 Tỷ\n• Flex: 1,75 Tỷ\n➔ CHÊNH LỆCH: +640 TRIỆU ĐỒNG!",
+      "voiceover": "Và sau 20 năm, tổng vốn 600 triệu gửi tiết kiệm đạt 1,11 tỷ. Nhưng quỹ tăng trưởng của Xanh Phú Quý Flex đã vọt lên 1,75 tỷ đồng, bỏ xa tới 640 triệu đồng!"
+    },
+    {
+      "id": "scene-05",
+      "durationMs": 13000,
+      "visuals": "Leaderboard Card so sánh đa chiều: Khi sống thọ (1,75 Tỷ vs 1,11 Tỷ) và khi có rủi ro (1,56 Tỷ vs 100 Triệu).",
+      "motion": "2-column comparative layout, shield glow highlight.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "BÀI TOÁN QUẢN TRỊ ĐA TẦNG:\n• Bình an: Hưu trí 1,75 Tỷ vượt trội\n• Rủi ro năm 3: Nhận ngay 1,5 Tỷ bảo vệ\n➔ PHÒNG THỦ KÍN — TẤN CÔNG BỀN",
+      "voiceover": "Nếu bình an, bạn có cả gia tài hưu trí vượt trội. Nếu rủi ro ập đến ở năm thứ 3, tiết kiệm chỉ có 100 triệu, còn gia đình bạn nhận ngay 1,5 tỷ đồng bảo vệ. Đó là sức mạnh của bài toán quản trị gia sản đa tầng!"
+    },
+    {
+      "id": "scene-06",
+      "durationMs": 6529,
+      "visuals": "Branded Outro Card Tiến Dương · Tài Chính Thực Chiến, CTA bình luận bên dưới.",
+      "motion": "Outro card spring in, CTA pulse.",
+      "audio": "Voiceover + gentle background music.",
+      "text": "TIẾN DƯƠNG — TÀI CHÍNH THỰC CHIẾN\nHoạch định tài chính · Đầu tư bền vững\nBình luận phương án của bạn bên dưới 👇",
+      "voiceover": "Tôi là Tiến Dương từ Tài Chính Thực Chiến. Hãy bình luận phương án tích lũy của bạn bên dưới để cùng mổ xẻ!"
+    }
+  ]
+}

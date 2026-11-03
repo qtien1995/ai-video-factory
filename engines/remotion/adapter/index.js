@@ -81,12 +81,12 @@ export async function render(spec, options) {
       fs.cpSync(sourceAssets, assetsDir, { recursive: true });
     }
 
-    // Determine composition (custom project composition or CanonicalVideo)
-    const compositionId = options.composition || spec.composition || spec.project?.composition || "CanonicalVideo";
+    // Determine composition (custom project composition or BespokeVideo)
+    const compositionId = options.composition || spec.composition || spec.project?.composition || "BespokeVideo";
 
     // Render using CLI
     const port = await findRenderPort();
-    const remotionCmd = `npx remotion render src/index.ts ${compositionId} "${outputPath}" --props="${inputPropsPath}" --public-dir="${publicDir}" --port=${port} --log=info --muted`;
+    const remotionCmd = `npx remotion render src/index.ts ${compositionId} "${outputPath}" --props="${inputPropsPath}" --public-dir="${publicDir}" --port=${port} --log=info --muted --video-bitrate=3500k`;
     
     console.log(`[Remotion Adapter] Running: ${remotionCmd}`);
     execSync(remotionCmd, { cwd: engineRoot, stdio: "inherit" });

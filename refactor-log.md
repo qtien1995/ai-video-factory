@@ -97,3 +97,33 @@
   - `npm run typecheck`: PASS.
   - `npm test`: PASS.
   - Thử nghiệm make trên dự án chưa duyệt: dừng đúng cách, báo lỗi Gate Check Blocked.
+
+
+## BƯỚC 5 — NGHIỆM THU BẰNG 1 VIDEO THẬT
+- Tạo dự án nghiệm thu `projects/test-bespoke-01/`:
+  - `art-direction.md` & `creative-direction.md`: Viết theo chuẩn PHỤ LỤC B (Bespoke Creative Direction Sheet), có mục 6 ghi rõ nguyên liệu tham khảo mượn từ `styles/` và `dna-vault/` cùng cách biến đổi cho nội dung tài chính.
+  - `script.md`: Kịch bản 6 cảnh chủ đề tài chính cá nhân ("3 Lỗ Hổng Khiến Người Kiếm Trăm Triệu Vẫn Rỗng Túi"), viết theo phong cách tự nhiên (reels-scripting + humanizer).
+  - `beats.json` & `storyboard.json`: Phân bổ nhịp điệu và hình ảnh chi tiết cho 6 cảnh.
+  - Audio & Timing: Nạp audio giọng Hải Đăng 48kHz (`assets/audio/narration.mp3`) với 57.028s (1711 frames @ 30fps) và timing từng từ (`assets/audio/timing.json`).
+  - `specs/video-spec.json`: Đặc tả kỹ thuật chuẩn VideoSpec schema (9:16, 1080x1920, 30fps, target duration 57029ms).
+  - `remotion/TestBespoke01Video.tsx`: Dựng bespoke độc bản kết hợp hơn 3 kỹ thuật thị giác:
+    1. Kinetic typography & dynamic SVG timeline.
+    2. Dynamic comparative SVG multi-track line chart.
+    3. 3D rotating shield / concentric vault rings.
+    4. Dynamic audio waveform & pulsing micro-motion.
+    5. Animated floating brand outro with scanning streak.
+    - Tuyệt đối không import từ `styles/`, không dùng các component thẻ đã xoá.
+  - Đăng ký composition `TestBespoke01` trong `engines/remotion/src/Root.tsx`.
+- Pipeline Execution & Cổng QC cứng:
+  - Chạy `npm run make -- --project test-bespoke-01`.
+  - Tự động trích xuất 5 still frames vào `output/storyboard-check/`.
+  - Tự động chạy bộ kiểm định `tests/e2e/test_final_video.cjs`.
+  - Kết quả kiểm định: **22/22 assertions PASS (100%), Exit Code 0**.
+  - File bàn giao duy nhất: `projects/test-bespoke-01/output/final.mp4` (25.67 MB > 5MB).
+  - Đo lường thực tế:
+    - Thời lượng: 57.03s (chuẩn broadcast 45-90s).
+    - Integrated Loudness: -13.2 LUFS (chuẩn -14.0 đến -12.0 LUFS).
+    - True Peak: -1.4 dBFS (chuẩn < -1.0 dBFS).
+    - LRA: 1.0 LU (< 8.0 LU).
+    - Freeze frames: 0.
+    - Blackout frames: 0.

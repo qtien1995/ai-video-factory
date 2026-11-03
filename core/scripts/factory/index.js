@@ -144,7 +144,7 @@ export async function main(argv = process.argv.slice(2)) {
     const state = readState(project), current = evaluate(project, state);
     const prior = current.signatures.GATE2;
     const wantedInput = prior && stageInput(project, "TTS", state, prior, settings);
-    if (current.stages.TTS.status === "complete" && state.stages.TTS.input === wantedInput) {
+    if (current.stages.TTS.status === "complete") {
       console.log(JSON.stringify({ stage: "TTS", cache: "HIT" })); return;
     }
     if (current.next !== "TTS") throw new Error(`Expected ${current.next} before TTS`);

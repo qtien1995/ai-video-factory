@@ -41,7 +41,7 @@ export function muxAndNormalize(raw, narration, output, targetSeconds) {
   try {
     run("ffmpeg", ["-y", "-i", raw, "-i", narration, "-map", "0:v:0", "-map", "1:a:0",
       "-c:v", "copy", "-af", "acompressor=threshold=-25dB:ratio=3:attack=5:release=50:makeup=2dB,loudnorm=I=-12.5:LRA=7:TP=-1.5:linear=false,apad",
-      "-c:a", "aac", "-b:a", "192k", "-t", String(targetSeconds), temp]);
+      "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", String(targetSeconds), temp]);
     if (!fs.existsSync(temp) || fs.statSync(temp).size === 0) throw new Error("Mux produced no MP4");
     fs.renameSync(temp, output);
     fs.rmSync(raw);

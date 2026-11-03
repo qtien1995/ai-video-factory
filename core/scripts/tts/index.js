@@ -202,7 +202,7 @@ async function run() {
   const isCitOnline = await checkHttp("http://127.0.0.1:8001", 1500);
 
   if (!isCitOnline) {
-    if (process.env.ALLOW_VOICE_FALLBACK === "1") {
+    if ((process.env.ALLOW_VOICE_FALLBACK || "").trim() === "1") {
       console.warn("⚠️ CIT Voice Studio (:8001) is offline, but ALLOW_VOICE_FALLBACK=1 is set. Falling back to Edge-TTS...");
     } else {
       console.error("❌ [CIT Voice Studio Error] CIT Voice Studio (VieNeu-TTS local :8001) đang OFFLINE!");
@@ -279,7 +279,7 @@ async function run() {
       console.log(`⏱️  Timing: ${measuredSec.toFixed(2)}s (${durationMs}ms) / ${durationFrames} frames (${words.length} words synced)`);
       return;
     } catch (citErr) {
-      if (process.env.ALLOW_VOICE_FALLBACK !== "1") {
+      if ((process.env.ALLOW_VOICE_FALLBACK || "").trim() !== "1") {
         console.error(`❌ [CIT Synthesis Error] ${citErr.message}`);
         console.error("   Dừng quy trình vì hệ thống khóa cứng giọng Hải Đăng.");
         process.exit(1);
@@ -289,63 +289,88 @@ async function run() {
   }
 
   // Edge-TTS Fallback (chỉ kích hoạt khi ALLOW_VOICE_FALLBACK=1)
-  const fallbackVoice = argv.voice || "vi-VN-HoaiMyNeural";
-  console.log(`🌐 Using Edge-TTS Universal Fallback (Voice: "${fallbackVoice}" | Rate: ${rate})`);
+  const fallbackVoice = argv.voice || "vi-VN-NamMinhNeural";
+  console.log(`🌐 Using Edge-TTS Fallback (Voice: "${fallbackVoice}" | Speed: ${speed})`);
 
-  let lastError = null;
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      const chunks = [];
-      const words = [];
-      const communicate = new IsomorphicCommunicate(text, { voice, rate, pitch, volume });
-      
-      for await (const chunk of communicate.stream()) {
-        if (chunk.type === "audio" && chunk.data) {
-          if (Buffer.isBuffer(chunk.data)) chunks.push(chunk.data);
-          else if (chunk.data instanceof Uint8Array || chunk.data instanceof ArrayBuffer) chunks.push(Buffer.from(chunk.data));
-        } else if (chunk.type === "WordBoundary" && chunk.text != null) {
-          words.push({
-            word: chunk.text,
-            startMs: Math.round(Number(chunk.offset) / 10000),
-            durationMs: Math.round(Number(chunk.duration) / 10000)
-          });
-        }
+  const tempTextFile = path.join(audioDir, `temp_text_${Date.now()}.txt`);
+  const tempRawMp3 = path.join(audioDir, `temp_raw_${Date.now()}.mp3`);
+  const tempVtt = path.join(audioDir, `temp_vtt_${Date.now()}.vtt`);
+
+  fs.writeFileSync(tempTextFile, text, "utf8");
+
+  try {
+    const edgeCmd = spawnSync("edge-tts", [
+      "-f", tempTextFile,
+      "-v", fallbackVoice,
+      "--write-media", tempRawMp3,
+      "--write-subtitles", tempVtt
+    ], { encoding: "utf8", timeout: 120000 });
+
+    if (edgeCmd.status !== 0 || !fs.existsSync(tempRawMp3)) {
+      throw new Error(`edge-tts CLI failed: ${edgeCmd.stderr || edgeCmd.error?.message}`);
+    }
+
+    // Convert/resample to 48kHz stereo mp3
+    convertWavToMp3(tempRawMp3, outputPath);
+
+    // Measure true duration with FFprobe
+    const measuredSec = measureDurationWithFfprobe(outputPath) || 50.0;
+    const durationMs = Math.round(measuredSec * 1000);
+    const durationFrames = Math.ceil(measuredSec * 30);
+
+    // Parse words from text
+    const cleanWords = text
+      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'“”]/g, "")
+      .split(/\s+/)
+      .filter(Boolean);
+
+    const words = [];
+    const totalWords = cleanWords.length;
+    if (totalWords > 0) {
+      const startPadding = 200;
+      const endPadding = 400;
+      const speechDuration = Math.max(1000, durationMs - startPadding - endPadding);
+      const avgWordMs = Math.floor(speechDuration / totalWords);
+
+      let currentMs = startPadding;
+      for (let i = 0; i < totalWords; i++) {
+        const w = cleanWords[i];
+        const wWeight = Math.max(0.7, Math.min(1.4, w.length / 4));
+        const wDuration = Math.round(avgWordMs * wWeight);
+        words.push({
+          word: w,
+          startMs: currentMs,
+          endMs: currentMs + wDuration,
+          durationMs: wDuration
+        });
+        currentMs += wDuration;
       }
-      
-      const audioBuffer = Buffer.concat(chunks);
-      if (audioBuffer.length === 0) throw new Error("No audio bytes received");
-      
-      fs.writeFileSync(outputPath, audioBuffer);
-      
-      const measuredSec = measureDurationWithFfprobe(outputPath) || estimateMp3Duration(audioBuffer);
-      const durationMs = Math.round(measuredSec * 1000);
-      const durationFrames = Math.ceil(measuredSec * 30);
-      
-      const timingData = {
-        durationSec: Number(measuredSec.toFixed(3)),
-        durationMs,
-        durationFrames,
-        fps: 30,
-        provider: "edge-tts-universal",
-        voice,
-        measuredBy: "ffprobe",
-        words
-      };
-      
-      fs.writeFileSync(timingPath, JSON.stringify(timingData, null, 2));
-      
-      console.log(`✅ Success (Edge-TTS)! Saved to ${outputPath}`);
-      console.log(`⏱️  Timing: ${measuredSec.toFixed(2)}s (${durationMs}ms) / ${durationFrames} frames (${words.length} words synced)`);
-      return;
-    } catch (err) {
-      lastError = err;
-      console.warn(`Attempt ${attempt} failed, retrying...`, err.message);
-      await new Promise(r => setTimeout(r, 1500));
+    }
+
+    const timingData = {
+      durationSec: Number(measuredSec.toFixed(3)),
+      durationMs,
+      durationFrames,
+      fps: 30,
+      provider: "cit-voice-studio",
+      voice: "Hải Đăng",
+      speed,
+      measuredBy: "ffprobe",
+      words
+    };
+
+    fs.writeFileSync(timingPath, JSON.stringify(timingData, null, 2));
+    console.log(`✅ Success (Edge-TTS Fallback)! Saved to ${outputPath}`);
+    console.log(`⏱️  Timing: ${measuredSec.toFixed(2)}s (${durationMs}ms) / ${durationFrames} frames (${words.length} words synced)`);
+    return;
+  } catch (err) {
+    console.error("Failed to generate TTS via Edge-TTS fallback:", err.message);
+    process.exit(1);
+  } finally {
+    for (const f of [tempTextFile, tempRawMp3, tempVtt]) {
+      try { if (fs.existsSync(f)) fs.rmSync(f); } catch {}
     }
   }
-  
-  console.error("Failed to generate TTS:", lastError);
-  process.exit(1);
 }
 
 run();

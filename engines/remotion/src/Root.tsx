@@ -5,16 +5,25 @@ import {
   BespokeVideo,
   calculateBespokeMetadata,
 } from "./BespokeVideo";
+import { TestBespoke01Video } from "../../../projects/test-bespoke-01/remotion/TestBespoke01Video";
 
 /**
  * AI Video Factory V4 — Remotion Root
- * Pure Bespoke Architecture:
- * - Empty-stage composition `BespokeVideo` drives dynamic video rendering.
- * - Project codes are fully decoupled and live in `projects/<id>/`.
+ * Registered compositions:
+ * - `TestBespoke01`: Acceptance test bespoke video project
+ * - `BespokeVideo`: Dynamic empty-stage composition for bespoke pipeline
  */
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="TestBespoke01"
+        component={TestBespoke01Video}
+        durationInFrames={1711}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
       <Composition
         id="BespokeVideo"
         component={BespokeVideo}
