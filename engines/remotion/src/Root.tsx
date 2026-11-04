@@ -6,12 +6,13 @@ import {
   calculateBespokeMetadata,
 } from "./BespokeVideo";
 import { TestBespoke01Video } from "../../../projects/test-bespoke-01/remotion/TestBespoke01Video";
+import { FptCrashVideo } from "../../../projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/remotion/FptCrashVideo";
 
 /**
  * AI Video Factory V4 — Remotion Root
- * Registered compositions:
- * - `TestBespoke01`: Acceptance test bespoke video project
- * - `BespokeVideo`: Dynamic empty-stage composition for bespoke pipeline
+ * Master Composition:
+ * - `BespokeVideo`: Dynamic empty-stage composition for bespoke video pipeline.
+ *   Receives inputProps (scenes, subtitles, brandOutro, audio) per project.
  */
 export const RemotionRoot: React.FC = () => {
   return (
@@ -37,17 +38,17 @@ export const RemotionRoot: React.FC = () => {
               {
                 id: "scene-01-hook",
                 durationInFrames: 150,
-                label: "Cảnh 1: Hook 3s Giữ Chân",
+                label: "Cảnh 1: Hook 3s Giữ Chân (Ẩn Dụ Thị Giác)",
               },
               {
                 id: "scene-02-core",
                 durationInFrames: 150,
-                label: "Cảnh 2: Bản Chất Cơ Chế",
+                label: "Cảnh 2: Bản Chất Cơ Chế (Sơ Đồ Sống)",
               },
               {
                 id: "scene-03-action",
                 durationInFrames: 150,
-                label: "Cảnh 3: Hành Động & Outro",
+                label: "Cảnh 3: Hành Động & Outro Thương Hiệu",
               },
             ],
             brandOutroFrames: 90,
@@ -65,6 +66,22 @@ export const RemotionRoot: React.FC = () => {
           },
         }}
         calculateMetadata={calculateBespokeMetadata}
+      />
+      <Composition
+        id="FptDauDanGiamNhuRac"
+        component={FptCrashVideo}
+        durationInFrames={1515}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FptCrashCaseStudy"
+        component={FptCrashVideo}
+        durationInFrames={1515}
+        fps={30}
+        width={1080}
+        height={1920}
       />
     </>
   );

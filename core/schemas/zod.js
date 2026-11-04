@@ -17,7 +17,7 @@ const MotionIntentSchema = z.object({
 
 const VisualIntentSchema = z.object({
   description: z.string(),
-  layout: z.enum(["split", "centered", "overlay", "grid"]).optional(),
+  layout: z.string().optional(), // Linh hoạt cho mọi layout bespoke (split, centered, timeline, chart, 3d-stage...)
   focalPoint: z.string().optional()
 });
 

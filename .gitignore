@@ -112,6 +112,11 @@ templates/whiteboard-video/assets/whiteboard/
 !/projects/test-bespoke-01/
 !/projects/test-bespoke-01/**
 /projects/test-bespoke-01/output/
+!/projects/financial-insurance/
+/projects/financial-insurance/*
+!/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/
+!/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/**
+/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/output/
 
 
 # ==========================================
@@ -137,6 +142,7 @@ scratch/
 **/scratch/
 doc_content.txt
 scratch_doc.txt
+scratch_*.txt
 engines/remotion/preview-*.png
 !engines/remotion/preview-cloned.png
 !engines/remotion/preview-outro.png

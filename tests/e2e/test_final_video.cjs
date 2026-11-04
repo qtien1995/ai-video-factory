@@ -18,15 +18,8 @@ const path = require('node:path');
 const os = require('node:os');
 const { spawnSync } = require('node:child_process');
 
-// Default target and project paths
+// Default paths
 const WORKSPACE_ROOT = path.resolve(__dirname, '../..');
-const DEFAULT_PROJECT_DIR = path.join(
-  WORKSPACE_ROOT,
-  'projects',
-  'flow-stories',
-  'CNT-20261005-AO-TUONG-BHYT-THE-TU'
-);
-const DEFAULT_TARGET_MP4 = path.join(DEFAULT_PROJECT_DIR, 'output', 'final.mp4');
 
 // Binary resolution for FFmpeg / FFprobe
 function resolveBinary(name) {
@@ -768,7 +761,7 @@ function generateConformingFixture(fixtureDir) {
 async function main() {
   const args = process.argv.slice(2);
   let targetPath = null;
-  let projectDir = DEFAULT_PROJECT_DIR;
+  let projectDir = null;
   let runTier = 'all';
   let selfTest = false;
   let jsonMode = false;
@@ -787,8 +780,21 @@ async function main() {
     }
   }
 
-  if (!targetPath) {
-    targetPath = path.join(projectDir, 'output', 'final.mp4');
+  if (!selfTest) {
+    if (!targetPath && !projectDir) {
+      console.log(`
+🔬 [AI Video Factory QC Gate] Bộ kiểm định video đầu ra
+======================================================
+Cách sử dụng:
+  node tests/e2e/test_final_video.cjs --project <đường_dẫn_dự_án>
+  node tests/e2e/test_final_video.cjs --target <file_video.mp4>
+  node tests/e2e/test_final_video.cjs --self-test
+`);
+      process.exit(1);
+    }
+    if (!targetPath && projectDir) {
+      targetPath = path.join(projectDir, 'output', 'final.mp4');
+    }
   }
 
   if (!FFMPEG_BIN || !FFPROBE_BIN) {

@@ -32,11 +32,11 @@ Sử dụng skill này khi:
   - Kiểu 2: Highlight từng từ đang đọc (Karaoke-style highlight).
 
 ### Bước 4: Chèn Motion Graphics Overlays
-Lựa chọn các mẫu overlay phù hợp từ `component-library/overlays/`:
-- **`breaking-news`**: Dải tin giật gân, sự kiện nóng, ticker chạy chân trang.
-- **`stat-callout`**: Hộp chỉ số, thống kê khi người nói nhắc đến số liệu.
+Sử dụng các motion overlays trực quan phù hợp với nội dung:
+- **`breaking-news`**: Dải tin sự kiện nóng, ticker chạy chân trang.
+- **`stat-callout`**: Chỉ số, đồ thị hoặc thống kê khi người nói nhắc đến số liệu.
 - **`split-screen`**: Chia đôi màn hình (người nói + ảnh/video minh họa B-roll).
-- **`quote-card`**: Thẻ trích dẫn lời nói hoặc phát biểu quan trọng.
+- **`quote-callout`**: Trích dẫn lời nói hoặc phát biểu quan trọng.
 - **`big-number`**: Số đếm nhảy số ấn tượng.
 - **`shimmer-sweep` / `grain-overlay`**: Hiệu ứng cinematic & ánh sáng.
 

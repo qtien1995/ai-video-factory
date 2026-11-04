@@ -1,11 +1,11 @@
 {
-  "version": "4.0.0",
-  "lastUpdated": "2026-11-03",
-  "description": "Component & Capability Index — danh mục công cụ chế tác, không phải danh mục phong cách.",
+  "version": "4.1.0",
+  "lastUpdated": "2026-11-04",
+  "description": "Component & Capability Index — Danh mục công cụ kỹ thuật nền tảng (Low-level Primitives), KHÔNG PHẢI menu chọn món hay khuôn mẫu phong cách. TUYỆT ĐỐI CẤM lắp ghép các component này thành chuỗi thẻ/hộp lặp lại. Bắt buộc sáng tạo Ẩn dụ thị giác (Chuẩn A) hoặc Sơ đồ sống (Chuẩn B) may đo theo từng kịch bản.",
   "components": [
     {
       "name": "Stage3DWrapper",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/three/Stage3DWrapper.tsx",
       "category": "3d-stage",
       "tags": ["3d", "three", "canvas", "lighting", "bloom", "camera", "particles"],
@@ -31,7 +31,7 @@
     },
     {
       "name": "Candlestick3DChart",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/three/Finance3DPrimitives.tsx",
       "category": "3d-finance",
       "tags": ["finance", "trading", "candlestick", "chart", "crypto", "stocks"],
@@ -46,7 +46,7 @@
     },
     {
       "name": "BarRace3DTowers",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/three/Finance3DPrimitives.tsx",
       "category": "3d-finance",
       "tags": ["finance", "data", "bar-chart", "bar-race", "towers", "monolith"],
@@ -60,7 +60,7 @@
     },
     {
       "name": "WealthVaultShield3D",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/three/Finance3DPrimitives.tsx",
       "category": "3d-finance",
       "tags": ["finance", "vault", "wealth", "capital", "shield", "diamond", "gold"],
@@ -71,63 +71,34 @@
       }
     },
     {
-      "name": "ExplosiveGlitchTV3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/ExplosiveGlitchTV3D.tsx",
-      "category": "3d-fx",
-      "tags": ["3d", "glitch", "tv", "shockwave", "screens", "popups"],
-      "description": "Procedural 3D CRT television monitor with shockwave glitch particle rings, jitter distortion, and popup advert billboards.",
+      "name": "HyperCanvasPlate",
+      "importPath": "@shared",
+      "sourcePath": "engines/remotion/src/shared/HyperCanvasPlate.tsx",
+      "category": "procedural-canvas",
+      "tags": ["canvas", "html5", "2d", "procedural", "hybrid", "charts", "particles"],
+      "description": "Native HTML5 Canvas 2D procedural rendering layer inside Remotion. Executes custom draw(ctx, frame, progress, width, height) functions deterministically frame-by-frame with zero external render overhead.",
       "props": {
-        "width": "number (default 1080)",
-        "height": "number (default 1920)"
+        "draw": "(context: HyperCanvasDrawContext) => void",
+        "backgroundColor": "string (optional)",
+        "style": "React.CSSProperties"
       }
     },
     {
-      "name": "ExplodedView3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/ExplodedView3D.tsx",
-      "category": "3d-motion",
-      "tags": ["3d", "exploded-view", "spatial", "saas", "cards"],
-      "description": "Exploded-view 3D multi-layered stack camera fly-through with physics-based spring displacement and depth perspective.",
+      "name": "HyperPlateVideo",
+      "importPath": "@shared",
+      "sourcePath": "engines/remotion/src/shared/HyperCanvasPlate.tsx",
+      "category": "hybrid-plate",
+      "tags": ["hyperframes", "overlay", "webm", "alpha", "transparent", "plate"],
+      "description": "Transparent WebM (Alpha channel) or MP4 video overlay plate rendered by HyperFrames CLI and loaded deterministically into Remotion scenes.",
       "props": {
-        "headline": "string",
-        "subheadline": "string",
-        "layers": "ExplodedLayer[]",
-        "durationInFrames": "number"
-      }
-    },
-    {
-      "name": "GrazeFaceTour3D",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/GrazeFaceTour3D.tsx",
-      "category": "3d-motion",
-      "tags": ["3d", "graze-tour", "spatial", "cinematic"],
-      "description": "Extreme close-up grazing camera tour over spatial cards with dynamic depth of field and smooth lighting sweeps.",
-      "props": {
-        "headline": "string",
-        "tagline": "string",
-        "items": "TourCardItem[]"
-      }
-    },
-    {
-      "name": "ProgressiveCardAssemble",
-      "importPath": "@/shared",
-      "sourcePath": "engines/remotion/src/shared/three/ProgressiveCardAssemble.tsx",
-      "category": "motion-assemble",
-      "tags": ["assemble", "motion", "typography", "stagger"],
-      "description": "Progressive multi-part assembly animation with sequential stagger, spring dynamics, and metric counters.",
-      "props": {
-        "eyebrow": "string",
-        "badge": "string",
-        "title": "string",
-        "originalValue": "string",
-        "newValue": "string",
-        "features": "string[]"
+        "src": "string (path to video plate)",
+        "opacity": "number (default 1)",
+        "style": "React.CSSProperties"
       }
     },
     {
       "name": "MetricCounter",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/primitives.tsx",
       "category": "motion-data",
       "tags": ["counter", "metric", "number", "spring"],
@@ -136,25 +107,26 @@
         "from": "number (default 0)",
         "to": "number",
         "duration": "number",
-        "formatter": "(n: number) => string"
+        "decimals": "number (default 0)"
       }
     },
     {
       "name": "HighlightBadge",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/primitives.tsx",
       "category": "motion-ui",
       "tags": ["badge", "pill", "tag", "highlight"],
       "description": "Glowing pill badge with entrance spring animation and semantic accent colors.",
       "props": {
-        "text": "string",
+        "label": "string",
         "color": "string",
-        "delay": "number"
+        "bgColor": "string",
+        "borderColor": "string"
       }
     },
     {
       "name": "SpeechSyncedSubtitles",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/SpeechSyncedSubtitles.tsx",
       "category": "subtitles",
       "tags": ["subtitles", "karaoke", "speech-sync", "safe-zone"],
@@ -168,7 +140,7 @@
     },
     {
       "name": "UserBrandOutro",
-      "importPath": "@/shared",
+      "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/UserBrandOutro.tsx",
       "category": "branding",
       "tags": ["branding", "outro", "cta", "disclaimer", "mandate"],

@@ -2,10 +2,12 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 
 /**
- * AI VIDEO FACTORY V2 — MOBILE DESIGN SYSTEM (1080 × 1920)
+ * AI VIDEO FACTORY V4 — MOBILE DESIGN TOKENS (1080 × 1920)
  * 
- * Standardized Typography & Full-Bleed Layout Anchors to eliminate dead space
- * and ensure immediate mobile readability on TikTok, Reels, and Shorts.
+ * Lưu ý theo AGENTS.md V4 (Bespoke):
+ * File này chỉ cung cấp các anchor layout và typography tham khảo an toàn trên thiết bị di động (9:16).
+ * MỌI màu sắc, chất liệu, bố cục hình ảnh và chuyển động phải được may đo độc bản (Bespoke)
+ * từ Art Direction Sheet của từng video, CẤM rập khuôn thẻ hoặc ép bảng màu cố định.
  */
 
 // ============================================================================
@@ -28,13 +30,13 @@ export const MOBILE_TYPOGRAPHY = {
     lineHeight: 1.25,
   },
   
-  // Editorial Cards
-  cardTitle: {
+  // Editorial Elements
+  sectionTitle: {
     fontSize: 40,
     fontWeight: 900 as const,
     lineHeight: 1.25,
   },
-  cardBody: {
+  bodyText: {
     fontSize: 30,
     fontWeight: 700 as const,
     lineHeight: 1.45,
@@ -54,7 +56,7 @@ export const MOBILE_TYPOGRAPHY = {
 } as const;
 
 // ============================================================================
-// 2. VERTICAL ANCHORS & ZERO DEAD SPACE ZONES (1080 × 1920)
+// 2. VERTICAL ANCHORS & SAFE ZONES (1080 × 1920)
 // ============================================================================
 export const MOBILE_LAYOUT = {
   width: 1080,
@@ -67,10 +69,10 @@ export const MOBILE_LAYOUT = {
   headerTop: 120,
   headerHeight: 250,
   
-  // Center Hero Visual Anchor (Perfectly centered in the upper-middle)
+  // Center Hero Visual Anchor (Center point for visual metaphors)
   centerAnchorY: 760,
   
-  // Lower Content Zone (Pushed down appropriately to leave room for Hero)
+  // Lower Zone
   lowerZoneTop: 1300,
   
   // Bottom Subtitle & Platform UI Safe Zone
@@ -78,7 +80,7 @@ export const MOBILE_LAYOUT = {
 } as const;
 
 // ============================================================================
-// 3. COLOR PALETTE
+// 3. COLOR PALETTE PRESETS (Tham khảo - Nên ghi đè theo từng Art Direction)
 // ============================================================================
 export const MOBILE_COLORS = {
   bgDark: "#030712",
@@ -99,11 +101,11 @@ export const MOBILE_COLORS = {
   red: "#dc2626",
   redLight: "#f87171",
   
-  cardBg: "rgba(15, 23, 42, 0.95)",
+  surfaceDark: "rgba(15, 23, 42, 0.95)",
 } as const;
 
 // ============================================================================
-// 4. REUSABLE FULL-BLEED COMPONENTS
+// 4. REUSABLE PRIMITIVES
 // ============================================================================
 
 /**
@@ -206,77 +208,6 @@ export const StandardSubtitleBar: React.FC<{
           {text}
         </div>
       </div>
-    </div>
-  );
-};
-
-/**
- * Standard Lower-Space Fill Card (Eliminates dead space in bottom half)
- */
-export const StandardLowerCard: React.FC<{
-  title?: string;
-  description?: string;
-  badge?: string;
-  content?: string;
-  accentColor?: string;
-  borderColor?: string;
-  badgeColor?: string;
-}> = ({
-  title,
-  description,
-  badge,
-  content,
-  accentColor = MOBILE_COLORS.gold,
-  borderColor,
-  badgeColor,
-}) => {
-  const displayTitle = title || badge;
-  const displayDescription = description || content;
-  const finalBorder = borderColor || badgeColor || accentColor || MOBILE_COLORS.goldBorder;
-  const finalAccent = badgeColor || accentColor || MOBILE_COLORS.gold;
-
-  // Zero Phantom Containers: Do not render anything if both title and description are missing
-  if (!displayTitle && !displayDescription) return null;
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: MOBILE_LAYOUT.safeMarginHorizontal,
-        right: MOBILE_LAYOUT.safeMarginHorizontal,
-        top: MOBILE_LAYOUT.lowerZoneTop,
-        background: "rgba(15, 23, 42, 0.92)",
-        border: `3px solid ${finalBorder}`,
-        borderRadius: 32,
-        padding: "36px 40px",
-        textAlign: "center",
-        zIndex: 40,
-        boxShadow: "0 25px 60px rgba(0,0,0,0.85)",
-      }}
-    >
-      {displayTitle && (
-        <div
-          style={{
-            fontFamily: MOBILE_TYPOGRAPHY.fontFamily,
-            color: finalAccent,
-            ...MOBILE_TYPOGRAPHY.cardTitle,
-            marginBottom: 12,
-          }}
-        >
-          {displayTitle}
-        </div>
-      )}
-      {displayDescription && (
-        <div
-          style={{
-            fontFamily: MOBILE_TYPOGRAPHY.fontFamily,
-            color: "#cbd5e1",
-            ...MOBILE_TYPOGRAPHY.cardBody,
-          }}
-        >
-          {displayDescription}
-        </div>
-      )}
     </div>
   );
 };

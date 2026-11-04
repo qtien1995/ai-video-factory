@@ -2,9 +2,9 @@
 
 ## Mục tiêu
 
-Phân tích reference video để thư viện học **cách video kể bằng chuyển động**, không sao chép video.
+Phân tích reference video để thư viện học **nhịp và số liệu chuyển động** (nhịp cắt, LUFS, mật độ chữ), TUYỆT ĐỐI KHÔNG sao chép bố cục hay sinh style.
 
-Không lưu hay tái sử dụng footage, nhạc, asset nhận diện hoặc shot cụ thể nếu chưa có quyền.
+Không lưu hay tái sử dụng footage, nhạc, asset nhận diện hoặc shot cụ thể của video mẫu.
 
 ## Phân tích bắt buộc
 
@@ -18,7 +18,10 @@ Không lưu hay tái sử dụng footage, nhạc, asset nhận diện hoặc sho
 
 ## Output
 
-Lưu ở `D:\VIDEO AI\creative-library\references\<reference-id>\analysis.json`.
+Lưu tại `dna-vault/<reference-id>/analysis.json` qua lệnh:
+```bash
+npm run dna -- analyze <video.mp4>
+```
 
 ```json
 {

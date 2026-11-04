@@ -1,0 +1,67 @@
+{
+  "scenes": [
+    {
+      "id": "scene-01",
+      "durationMs": 6412,
+      "visuals": "Sân khấu Dark Navy Slate Monolith. Đồ thị nến FPT cắm dốc thẳng đứng từ đỉnh 97.4k về 52.7k. Biểu tượng mã FPT nứt vỡ cùng huy hiệu cảnh báo đỏ -46% viền laser vàng.",
+      "motion": "Camera zoom-in chấn động, khối trụ nứt đôi theo đường chéo, số nhảy đếm ngược thời gian thực, screen-shake cảnh báo.",
+      "audio": "Giọng đọc Hải Đăng + tiếng Whoosh mạnh mở đầu và chuông cảnh báo Alarm.",
+      "text": "FPT: CÚ SẬP BỐC HƠI -46%\nĐẦU ĐÀN RƠI NHƯ CỔ RÁC?\n• Đỉnh 97.4k ➔ Về đáy 52.7k",
+      "voiceover": "FPT — cổ phiếu quốc dân, lãi hơn mười nghìn tỷ, hợp tác với NVIDIA... nhưng tại sao giá lại bốc hơi gần một nửa như một cổ phiếu rác?"
+    },
+    {
+      "id": "scene-02",
+      "durationMs": 7331,
+      "visuals": "Lao vào vết nứt, vệt laser đỏ cắt đôi ảo tưởng 'tích sản nhắm mắt cũng giàu', sóng tim ECG âm nặng -43%, chuyển sang radar giải phẫu 3 sự thật trần trụi.",
+      "motion": "Vết cắt laser chém đôi dòng chữ ảo tưởng, sóng tim đập dập dờn, chỉ số âm đỏ chớp nháy.",
+      "audio": "Giọng đọc Hải Đăng + âm thanh bàn phím phân tích tài chính.",
+      "text": "ẢO TƯỞNG: TÍCH SẢN NHẮM MẮT CŨNG GIÀU\nDANH MỤC ÂM NẶNG\n➔ ĐỪNG ĐỔ LỖI THỊ TRƯỜNG: 3 SỰ THẬT TRẦN TRỤI",
+      "voiceover": "Nhiều anh em tin vào câu 'tích sản nhắm mắt cũng giàu', để rồi tài khoản âm nặng mà không hiểu chuyện gì xảy ra. Đừng đổ lỗi cho lái, đây là ba sự thật trần trụi."
+    },
+    {
+      "id": "scene-03",
+      "durationMs": 8546,
+      "visuals": "Pipeline rò rỉ dòng tiền: Cột Lợi nhuận kế toán 10.287 Tỷ chia đôi, đối lập dòng tiền thực thu CFO chỉ 5.060 Tỷ (0.49x). Mộc đỏ 'KẸT CÔNG NỢ' đóng chấn động.",
+      "motion": "Đường ống rò rỉ các hạt tiền tệ rơi xuống, cột lợi nhuận phân rã để lộ phần kẹt sổ nợ, dấu mộc đỏ dập mạnh.",
+      "audio": "Giọng đọc Hải Đăng + tiếng đập thud dứt khoát.",
+      "text": "SỰ THẬT 1: LÃI 10 NGHÌN TỶ NHƯNG TIỀN MẶT MỘT NỬA\n• LNST sổ sách: 10.287 Tỷ\n• Tiền thật về túi (CFO): 5.060 Tỷ (0.49x)\n➔ >5.000 TỶ KẸT Ở SỔ NỢ KHÁCH HÀNG",
+      "voiceover": "Thứ nhất: Lãi kế toán mười nghìn tỷ, nhưng tiền thật thu về chỉ có năm nghìn tỷ! Tỷ lệ thu tiền chỉ đạt không phẩy bốn mươi chín lần, hơn một nửa tiền kẹt cứng ở nợ khách hàng."
+    },
+    {
+      "id": "scene-04",
+      "durationMs": 8312,
+      "visuals": "Van áp suất xoay chốt, kim đồng hồ tỷ lệ room ngoại giật lùi từ 49% xuống 26.6%. Đối lập là bong bóng Free-Float nhỏ lẻ phình to 75.7%.",
+      "motion": "Kim đồng hồ giật lùi dồn dập, van áp suất xả hơi bốc khói, bong bóng Free-Float lan rộng toàn màn hình.",
+      "audio": "Giọng đọc Hải Đăng + tiếng xả van áp suất.",
+      "text": "SỰ THẬT 2: KHỐI NGOẠI THÁO CHẠY — XẢ KHO CHO F0\n• Room ngoại: 49% ➔ 26.6%\n• Nhỏ lẻ ôm trọn Free-float: 75.7%\n➔ CỔ PHIẾU PHÂN MẢNH: BÁN THÁO TUYẾT LĂN",
+      "voiceover": "Thứ hai: Khối ngoại tháo chạy! Từng kín room bốn mươi chín phần trăm, nay Tây xả ròng tụt về hai mươi sáu phần trăm, nhỏ lẻ ôm trọn đẩy trôi nổi lên bảy mươi lăm phần trăm."
+    },
+    {
+      "id": "scene-05",
+      "durationMs": 5499,
+      "visuals": "Lõi chip vi xử lý AI quá nhiệt bốc khói tia lửa điện, P/E 28.5x nổ tung và xẹp về 18.2x khi chi phí đầu tư ngốn sạch dòng tiền.",
+      "motion": "Chip AI chớp sáng quá tải, nứt vỡ bốc khói, thước đo P/E co lại theo phản xạ đàn hồi.",
+      "audio": "Giọng đọc Hải Đăng + tiếng chập điện và nổ xì hơi.",
+      "text": "SỰ THẬT 3: BONG BÓNG ĐỊNH GIÁ AI XẸP HƠI\n• P/E đỉnh: 28x ➔ Định giá lại về 18x\n➔ AI CHƯA ĐẺ RA TIỀN — CHI PHÍ MÁY MÓC NGỐN SẠCH DÒNG TIỀN",
+      "voiceover": "Thứ ba: Bong bóng AI xẹp hơi, P/E hai mươi tám lần bị nén sâu khi chi phí máy móc ngốn sạch dòng tiền."
+    },
+    {
+      "id": "scene-06",
+      "durationMs": 9441,
+      "visuals": "Lưới laser kỹ thuật: Radar quét 360 độ, RSI 16.4 vùng quá bán cực đại lịch sử. Hai hàng rào laser: vùng cản hồi 56k-58k và ngưỡng cắt lỗ sinh tử 50.100 đ.",
+      "motion": "Radar quét góc rộng, tia laser đỏ cảnh báo ngưỡng 50.1k, vạch vàng nhấp nháy vùng 56k-58k.",
+      "audio": "Giọng đọc Hải Đăng + âm thanh radar sweep cảnh báo.",
+      "text": "CHIẾN LƯỢC: RSI 16 — CẤM BẮT DAO RƠI!\n• RSI 16.4: Quá bán cực đại\n• Hồi lên 56k - 58k: Canh hạ tỷ trọng\n• Cắt lỗ sinh tử: 50.100 đ",
+      "voiceover": "Hiện tại RSI mười sáu điểm quá bán cực đại, nhưng cấm bắt dao rơi dưới MA hai trăm! Vùng cản hồi năm mươi sáu đến năm mươi tám là để hạ tỷ trọng, ngưỡng cắt lỗ sinh tử là năm mươi nghìn một trăm đồng."
+    },
+    {
+      "id": "scene-07",
+      "durationMs": 4959,
+      "visuals": "Terminal tương tác nhận diện thương hiệu Tiến Dương · TÀI CHÍNH THỰC CHIẾN, Outro thẻ vàng sang trọng cùng câu hỏi kêu gọi tương tác comment.",
+      "motion": "Chữ terminal gõ phím mượt mà, Outro card tiến vào với độ nảy spring nhẹ nhàng, box comment phát sáng pulse.",
+      "audio": "Giọng đọc Hải Đăng + tiếng click gõ phím và outro chime.",
+      "text": "BẠN ĐANG KẸP FPT GIÁ NÀO?\nTIẾN DƯƠNG — TÀI CHÍNH THỰC CHIẾN\n👇 Comment bên dưới để cùng tính điểm thoát hàng an toàn!",
+      "voiceover": "Bạn đang kẹp FPT giá nào? Comment bên dưới để cùng tính điểm thoát nhé!"
+    }
+  ]
+}

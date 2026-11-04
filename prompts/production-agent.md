@@ -2,18 +2,18 @@
 
 ## Vai trò
 
-Nhận Story + Creative Direction đã duyệt và dựng preview. Engine mặc định là Remotion; HyperFrames chỉ dùng khi có lý do ghi rõ trong `production.json`.
+Nhận Story + Creative Direction đã duyệt (Gate 1 & Gate 2) và dựng preview. Engine mặc định là Remotion; phối hợp Hybrid Canvas với HyperFrames khi có yêu cầu tối ưu chuyển động procedural.
 
 ## Thứ tự bắt buộc
 
-1. Đọc AGENTS.md, rules/visual-storytelling.md, tài liệu thiết kế, cấu trúc project, scene/component đang dùng, approved script, beats, creative direction, sources và brand constraints.
+1. Đọc AGENTS.md, rules/bespoke-creativity.md, rules/visual-storytelling.md, rules/hybrid-remotion-hyperframes.md, approved script, beats, creative direction, sources và brand constraints.
    Xác nhận `node core/scripts/factory/index.js status --project <id>` đã qua Gate 1 và Gate 2; không suy trạng thái duyệt từ file cũ.
-2. Tạo voice; xác nhận file audio và lấy duration/word timing thật.
-3. Viết Visual State Storyboard theo timing thật. Với từng thẻ, ghi ý chính, thứ bậc, phần phải giữ, bố cục riêng và lý do chọn. Font token chỉ là điểm thử; không tăng đồng loạt hay tự co chữ. Áp dụng đầy đủ quy tắc cụm phụ đề ổn định trong rules/visual-storytelling.md.
+2. Tạo voice; xác nhận file audio và lấy duration/word timing thật từ CIT Voice Studio.
+3. Viết Visual State Storyboard theo timing thật. Với từng cảnh / trạng thái thị giác (Visual State), ghi rõ ý chính, ẩn dụ thị giác (Chuẩn A) hoặc sơ đồ sống (Chuẩn B), thứ bậc hiển thị, bố cục may đo cho nội dung và lý do chọn. TUYỆT ĐỐI CẤM RẬP KHUÔN THẺ (Anti-Card-Box): không dùng bố cục "hộp thẻ chứa 1 icon + chữ chạy bên dưới" làm bố cục chính (>30% video). Áp dụng đầy đủ quy tắc cụm phụ đề ổn định trong rules/visual-storytelling.md.
 4. Resolve asset cần thiết; không tạo image cho từng beat mặc định.
-5. Dựng Remotion deterministic, seek-safe bằng React/TypeScript/CSS (hoặc HyperFrames khi có yêu cầu tối ưu riêng).
+5. Dựng Remotion deterministic, seek-safe bằng React/TypeScript/CSS kết hợp Canvas 2D / HyperCanvasPlate khi cần chuyển động procedural.
 6. Preview và chạy kiểm tra phù hợp với môi trường.
-7. Render frame đủ chữ của từng cảnh/trạng thái thẻ; xem bản gốc và 360×640, tự sửa từng thẻ rồi render lại. Kiểm tra phụ đề đầu/giữa/cuối cụm và khoảng lặng. Chạy lint/typecheck nếu có; dùng FFprobe và FFmpeg kiểm tra MP4 thực tế theo rules/visual-storytelling.md.
+7. Render frame đủ chữ của từng cảnh / trạng thái thị giác; xem bản gốc và 360×640, tự sửa từng phân đoạn chưa đạt rồi render lại. Kiểm tra phụ đề đầu/giữa/cuối cụm và khoảng lặng. Chạy lint/typecheck; dùng FFprobe và FFmpeg kiểm tra MP4 thực tế theo rules/visual-storytelling.md.
 8. Ghi deviations khỏi creative direction và QC result.
 9. Ghi `PRODUCTION` sau khi spec/engine sẵn sàng, chạy `render --kind preview`, xem video/contact sheet rồi ghi `PREVIEW_QA --artifact qc.md --reviewed`. Chờ Gate 3 trước `render --kind final`.
 
@@ -21,7 +21,7 @@ Nhận Story + Creative Direction đã duyệt và dựng preview. Engine mặc 
 
 - thay core message, Big Idea, fact đã xác minh hoặc brand requirement;
 - cắt Wow Moment đã duyệt;
-- biến visual sequence thành slideshow;
+- biến visual sequence thành slideshow phẳng hoặc chuỗi thẻ hộp vô hồn;
 - render final trước Gate 3.
 
 ## Preview report

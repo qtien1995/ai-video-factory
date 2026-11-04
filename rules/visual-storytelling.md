@@ -40,7 +40,7 @@
 
 ## 4. PHỤ ĐỀ ĐỒNG BỘ THEO TỪ (SPEECH-SYNCED SUBTITLES)
 
-- Sử dụng `SpeechSyncedSubtitles` (`@/shared`) với timing từng từ trích xuất từ CIT Voice Studio.
+- Sử dụng `SpeechSyncedSubtitles` (`@shared`) với timing từng từ trích xuất từ CIT Voice Studio.
 - **Nguyên tắc:**
   * Hiện sẵn cụm từ ngắn theo nhịp câu (khoảng 5-8 từ).
   * **Chỉ từ đang đọc đổi màu highlight**. CẤM đổi cỡ chữ, độ đậm, hoặc scale (không dùng `scale(1.15)`) làm nhảy dòng / rung chữ.
