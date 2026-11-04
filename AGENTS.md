@@ -1,8 +1,8 @@
-# AGENTS.md — AI VIDEO FACTORY V4 (BESPOKE)
+# AGENTS.md — AI VIDEO FACTORY V4 (PURE BESPOKE)
 
 ## Mục tiêu
 
-Workspace sản xuất video social bằng Codex/Antigravity theo triết lý **độc bản (bespoke)**: mỗi video là một tác phẩm được may đo riêng cho nội dung của nó. `styles/` và `dna-vault/` được giữ lại với tư cách **ngân hàng nguyên liệu tham khảo** — kho ý tưởng để sáng tạo, không phải khuôn để áp dụng. Các template và thư viện prompt mẫu của bên thứ ba đã bị loại bỏ. Thứ được chuẩn hoá chỉ gồm: hạ tầng kỹ thuật, quy trình, và cổng chất lượng.
+Workspace sản xuất video social bằng Codex/Antigravity theo triết lý **độc bản thuần túy (Pure Bespoke)**: mỗi video là một tác phẩm nghệ thuật được may đo riêng cho nội dung của nó. Toàn bộ style preset, template và DNA vault đã bị loại bỏ hoàn toàn. Không có kho phong cách cố định, không có khuôn mẫu. Mỗi lần làm video, Agent tự do sáng tạo 100% từ kịch bản và cảm xúc của đề tài. Thứ được chuẩn hoá duy nhất chỉ gồm: hạ tầng kỹ thuật, quy trình, và cổng chất lượng.
 
 - **Engine duy nhất**: Remotion (React, TypeScript) qua composition `BespokeVideo`.
 - **Voiceover**: CIT Voice Studio (VieNeu-TTS local `:8001`, giọng "Hải Đăng" 48kHz, trích xuất timing từng từ).
@@ -14,23 +14,22 @@ Workspace sản xuất video social bằng Codex/Antigravity theo triết lý **
 3. **Cổng QC kỹ thuật** ở mục dưới — đó là chuẩn kỹ thuật, không phải khuôn sáng tạo.
 
 Mọi mặc định còn lại (thang chữ trong design-system, cụm phụ đề 6 từ, vị trí phụ đề, palette gợi ý...) chỉ là điểm khởi đầu an toàn: **Art Direction Sheet có quyền ghi đè tất cả cho từng video**. Cấm chôn thêm bất kỳ thông số sáng tạo nào vào code dưới dạng hằng số bắt buộc.
-- **An toàn dữ liệu**: Không xoá/di chuyển/hỏng dữ liệu trong `projects/` và `renders/`. Brand của User nằm ở `brand/` (user-brand.json, manulife/) — mọi video đều nạp brand này, cấm giữ brand của bất kỳ video mẫu/người khác nào.
+- **An toàn dữ liệu**: Không xoá/di chuyển/hỏng dữ liệu trong `projects/`. Brand của User nằm ở `brand/` (user-brand.json, manulife/) — mọi video đều nạp brand này, cấm giữ brand của bất kỳ video mẫu/người khác nào.
 
 ---
 
-## ⚖️ LUẬT TỐI CAO: SÁNG TẠO ĐỘC BẢN — CẤM KHUÔN
+## ⚖️ LUẬT TỐI CAO: SÁNG TẠO ĐỘC BẢN THUẦN TÚY — CẤM KHUÔN & PRESET
 
 > Luật này cao hơn mọi hướng dẫn khác. Mâu thuẫn thì luật này thắng.
 
-**ĐIỀU 1 — KHÔNG ÁP KHUÔN; NGUYÊN LIỆU THÌ ĐƯỢC MƯỢN, PHẢI BIẾN ĐỔI:**
-- `styles/` và `dna-vault/` là tài liệu tham khảo sáng tạo: agent ĐƯỢC đọc để lấy ý — palette, nhịp cắt, kỹ thuật chuyển động, số liệu đo, cấu trúc giữ chân người xem.
-- Cấm tuyệt đối: (a) import code từ `styles/` vào engine hay project (không còn registry, không còn alias `@styles`, không còn cơ chế áp style bằng máy); (b) áp nguyên một style hoặc một DNA profile vào video; (c) clone bố cục của video mẫu. Mượn ý tưởng là bắt buộc phải biến đổi: phong cách cuối cùng của mỗi video là một bản TỔNG HỢP MỚI, sinh ra từ kịch bản của chính video đó.
-- Art Direction Sheet của mỗi video phải ghi rõ: đã mượn nguyên liệu gì từ kho tham khảo, và đã biến đổi nó như thế nào cho nội dung này.
+**ĐIỀU 1 — SÁNG TẠO ĐỘC BẢN THUẦN TÚY (ZERO PRESET, PURE BESPOKE):**
+- Dự án không sử dụng bất kỳ thư viện styles hay khuôn mẫu DNA nào. Mỗi video là một bản thiết kế mới hoàn toàn, sinh ra từ nội dung kịch bản.
+- Cấm clone bố cục của video mẫu. Mọi ý tưởng thị giác, palette màu, chuyển động và visual metaphor phải được sáng tạo riêng cho kịch bản của video đó.
 - Cấm bố cục "thẻ/hộp chứa 1 icon đứng giữa khung + chữ chạy bên dưới" làm bố cục chính. Thẻ chỉ được dùng khi nội dung là bảng số liệu/so sánh, Director ghi lý do trong Blueprint, và tổng thời lượng cảnh dạng thẻ ≤ 30% video.
 - Code dựng cảnh của mỗi video sống trong thư mục project của video đó (`projects/<id>/`). **Cấm đưa bố cục của một video vào `engines/remotion/src/shared/` để tái sử dụng cho video khác** — đó là cách khuôn tái sinh.
 
 **ĐIỀU 2 — ART DIRECTION SHEET TRƯỚC KHI CODE:**
-Mỗi video, trước khi viết code, Director bắt buộc xuất Art Direction Sheet (mẫu trong `rules/bespoke-creativity.md`) gồm: (1) Ẩn dụ thị giác sinh ra từ nội dung; (2) Ngôn ngữ hình ảnh chủ đạo; (3) Palette & chất liệu theo cảm xúc chủ đề; (4) Ngôn ngữ chuyển động riêng. Chưa được User duyệt = không code.
+Mỗi video, trước khi viết code, Director bắt buộc xuất Art Direction Sheet (mẫu trong `rules/bespoke-creativity.md`) gồm: (1) Ẩn dụ thị giác sinh ra từ nội dung; (2) Ngôn ngữ hình ảnh chủ đạo; (3) Palette & chất liệu theo cảm xúc chủ đề; (4) Ngôn ngữ chuyển động riêng; (5) Điểm đột phá thị giác độc bản. Chưa được User duyệt = không code.
 
 **ĐIỀU 3 — HÌNH PHẢI TỰ KỂ ĐƯỢC CÂU CHUYỆN:**
 Chuẩn chất lượng để soi (mô tả chuẩn, không phải template để copy):
@@ -38,12 +37,18 @@ Chuẩn chất lượng để soi (mô tả chuẩn, không phải template đ�
 - **Chuẩn B — Sơ đồ sống:** các sơ đồ/sơ đồ cơ chế tự vận động để giải thích (rẽ nhánh kịch bản, mức quỹ vơi dần theo thời gian...), chữ chỉ đóng vai trò chú thích.
 Một cảnh mà tắt tiếng vẫn không hiểu hình đang nói gì = cảnh hỏng, làm lại.
 
-**ĐIỀU 4 — KẾT HỢP ÍT NHẤT 3 KỸ THUẬT:** animated chart, kinetic typography, SVG diagram/path animation, 3D stage, map, timeline, particles... tuỳ nội dung. Cấm dùng 1 loại component lặp cho toàn video. Danh mục khả năng xem ở `config/component-index.json` — đó là danh mục *công cụ*, không phải danh mục phong cách.
+**ĐIỀU 4 — KẾT HỢP ÍT NHẤT 3 KỸ THUẬT:** animated chart, kinetic typography, SVG diagram/path animation, 3D stage, map, timeline, particles, procedural canvas... tuỳ nội dung. Cấm dùng 1 loại component lặp cho toàn video. Danh mục khả năng xem ở `config/component-index.json` — đó là danh mục *công cụ*, không phải danh mục phong cách.
 
 **ĐIỀU 5 — KIỂM TRA CHỐNG RẬP KHUÔN TRƯỚC RENDER:**
 - Bố cục giống video trước → làm lại Art Direction.
 - Trên 50% cảnh là bố cục thẻ/hộp → làm lại Art Direction.
 - Cảnh nào chỉ có 1 phần tử đứng yên giữa khung quá 3 giây → làm lại cảnh đó.
+
+**ĐIỀU 6 — KỶ LUẬT CHỐNG BIAS TỪ DỰ ÁN GẦN NHẤT (ANTI-RECENCY BIAS & TABULA RASA):**
+- **Cấm tuyệt đối tham chiếu/sao chép dự án cũ**: Khi bắt đầu một video mới, cấm Agent mở mã nguồn, layout, visual effects hoặc component từ các dự án trước đó trong `projects/` để copy-paste. Mỗi video phải xuất phát từ một tờ giấy trắng (Tabula Rasa), giải quyết bài toán thị giác riêng của chính kịch bản đó.
+- **Bản sắc thị giác theo chủ đề (Thematic Visual Identity)**: Cấm tư duy dùng một phong cách "tủ" (như dark-tech, canvas matrix, hạt neon, laser scanner) cho mọi video. Video gia đình/trẻ em phải ấm áp, tươi sáng (warm cream, emerald, amber); video y tế phải clinical, cảnh báo thực tế; video vĩ mô/tài chính phải biểu đồ rõ ràng, mạch lạc. Dùng sai tone cảm xúc = video hỏng.
+- **Visual Metaphor độc bản 100%**: Ẩn dụ thị giác trung tâm phải mới hoàn toàn cho từng video, không tái chế ẩn dụ của video trước.
+- **Giữ sạch `Root.tsx` tuyệt đối**: Không hardcode import component của từng video vào `Root.tsx`. Mọi video sản xuất qua pipeline động `BespokeVideo` hoặc dynamic inputProps, không để lại rác trong engine cốt lõi.
 
 ---
 
@@ -58,7 +63,6 @@ Một cảnh mà tắt tiếng vẫn không hiểu hình đang nói gì = cảnh
 7. **Render + QC cứng** (mục dưới). Pass mới có file final.
 
 Đầu vào là video quay sẵn (talking-head): dùng skill `auto-footage` (jump-cut + overlay), vẫn áp dụng Luật Tối Cao cho phần overlay.
-Đầu vào là video mẫu để học: dùng `npm run dna -- analyze <video>` để đo (nhịp cắt, LUFS, mật độ) và lưu kết quả vào `dna-vault/` làm tài liệu tham khảo, hoặc đo nhanh không lưu bằng `core/scripts/validate/reference.js`. Chỉ học *nhịp và số liệu*, cấm copy bố cục, và phân tích DNA **không bao giờ** tự sinh style.
 
 ---
 
@@ -82,14 +86,14 @@ Bộ kiểm định: `tests/e2e/test_final_video.cjs`, chạy bắt buộc trong
 | :--- | :--- |
 | `reels-scripting` | Cấu trúc kịch bản ngắn, hook 3 giây, nhịp theo timecode |
 | `humanizer` | Khử giọng AI, lời thoại tự nhiên như người nói |
-| `remotion-explainer` | Quy trình dựng bespoke trong Remotion (đã viết lại theo file này) |
+| `remotion-explainer` | Quy trình dựng bespoke trong Remotion |
 | `gsap-skills` | Diễn hoạt biểu đồ, đồ thị SVG, timeline phức tạp |
 | `motion-ai-kit` | Spring physics, easing, audit chuyển động |
 | `remotion-markup` | Quy chuẩn JSX/TSX, layout mobile an toàn |
 | `remotion-best-practices` | Chuẩn kỹ thuật Remotion, hiệu năng render |
 | `auto-footage` | Jump-cut + overlay cho video quay sẵn |
 
-Prompt lõi dùng khi sản xuất (chỉ các file này): `prompts/story-director.md`, `prompts/creative-director.md`, `prompts/hook-crafter.md`, `prompts/production-agent.md`, `prompts/reference-analyzer.md`, `prompts/video-personas.md`.
+Prompt lõi dùng khi sản xuất: `prompts/story-director.md`, `prompts/creative-director.md`, `prompts/hook-crafter.md`, `prompts/production-agent.md`, `prompts/video-personas.md`.
 
 ## LỆNH THƯỜNG DÙNG
 
@@ -98,6 +102,5 @@ Prompt lõi dùng khi sản xuất (chỉ các file này): `prompts/story-direct
 - `npm run studio` — mở Remotion Studio.
 - `npm run make -- --project <id>` — kiểm tra Gate 1/2 đã duyệt → TTS → render → verify (fail QC = dừng, không final).
 - `npm run verify -- --target <file.mp4>` — chạy bộ kiểm định độc lập.
-- `npm run dna -- analyze <video.mp4>` — đo video mẫu và lưu vào dna-vault làm tài liệu tham khảo (không sinh style).
 - `node core/scripts/validate/reference.js <video.mp4>` — đo thông số video mẫu (JSON, không lưu gì).
 - `npm test`, `npm run typecheck`, `npm run lint` — kiểm tra code.

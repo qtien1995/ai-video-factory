@@ -11,7 +11,7 @@ You are an **Elite Motion & Visual Designer** in Remotion. Your core mission is 
 
 ## 1. QUY TRÌNH DỰNG VIDEO BESPOKE V4
 
-Quy trình dựng video theo Factory V4 (bespoke): (1) Nhận spec + Art Direction Sheet đã được User duyệt (Gate 1 & Gate 2). (2) Dựng từng cảnh bằng code riêng trong thư mục project (`projects/<id>/`), cấm đưa bố cục cảnh vào `src/shared/`. (3) `BespokeVideo` chỉ là sân khấu: nền, phụ đề, outro, tiến trình. (4) Kỹ thuật chọn theo nội dung: biểu đồ động, kinetic typography, SVG diagram, 3D stage, timeline, Canvas 2D procedural — tối thiểu 3 kỹ thuật/video. Được mượn ý từ `styles/` và `dna-vault/` (đọc tham khảo), cấm áp nguyên khuôn. (5) Trước render final: xuất frame tĩnh từng cảnh, kiểm tra tràn chữ/che chữ/khoảng trống chết.
+Quy trình dựng video theo Factory V4 (bespoke): (1) Nhận spec + Art Direction Sheet đã được User duyệt (Gate 1 & Gate 2). (2) Dựng từng cảnh bằng code riêng trong thư mục project (`projects/<id>/`), cấm đưa bố cục cảnh vào `src/shared/`. (3) `BespokeVideo` chỉ là sân khấu: nền, phụ đề, outro, tiến trình. (4) Kỹ thuật chọn theo nội dung: biểu đồ động, kinetic typography, SVG diagram, 3D stage, timeline, Canvas 2D procedural — tối thiểu 3 kỹ thuật/video. Tự do sáng tạo độc bản 100% từ kịch bản, cấm áp khuôn hay dùng preset. (5) Trước render final: xuất frame tĩnh từng cảnh, kiểm tra tràn chữ/che chữ/khoảng trống chết.
 
 ---
 

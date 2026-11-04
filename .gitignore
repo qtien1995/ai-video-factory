@@ -80,13 +80,9 @@ engines/remotion/public/assets/jobs/
 engines/remotion/public/assets/manulife/family-future.jpg
 
 # ==========================================
-# Factory Renders, Jobs & Outputs
 # ==========================================
 output/
 **/output/
-renders/
-**/renders/
-!renders/.gitkeep
 exports/
 **/exports/
 !exports/.gitkeep
@@ -112,11 +108,9 @@ templates/whiteboard-video/assets/whiteboard/
 !/projects/test-bespoke-01/
 !/projects/test-bespoke-01/**
 /projects/test-bespoke-01/output/
-!/projects/financial-insurance/
-/projects/financial-insurance/*
-!/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/
-!/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/**
-/projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/output/
+!/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/
+!/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/**
+/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/output/
 
 
 # ==========================================

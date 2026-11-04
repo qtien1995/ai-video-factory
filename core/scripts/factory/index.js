@@ -4,7 +4,6 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import minimist from "minimist";
 import { validateSpec } from "../../schemas/zod.js";
-import { routeSpec } from "../router/index.js";
 import { duration } from "./media.js";
 import { ROOT, artifactPath, approveGate, evaluate, invalidateFrom, narrationFromScript,
   projectDir, readState, recordStage, stageInput } from "./state.js";
@@ -20,8 +19,6 @@ function requireSpec(project) {
       if (!fs.existsSync(assetFile) || fs.statSync(assetFile).size === 0) throw new Error(`Missing asset: ${asset.path}`);
     }
   }
-  const routing = routeSpec(spec, "AUTO");
-  if (!routing.success) throw new Error(`No compatible engine: ${routing.reasons.join("; ")}`);
   return spec;
 }
 function requireTechnicalQa(project, kind) {
@@ -172,13 +169,11 @@ export async function main(argv = process.argv.slice(2)) {
     const stage = kind === "preview" ? "PREVIEW" : kind === "final" ? "FINAL_RENDER" : null;
     if (!stage) throw new Error("--kind must be preview or final");
     const spec = requireSpec(project);
-    const requestedEngine = String(args.engine || "AUTO").toUpperCase();
-    const routing = routeSpec(spec, requestedEngine);
-    if (!routing.success) throw new Error(`Engine incompatible: ${routing.reasons.join("; ")}`);
+    const selectedEngine = "REMOTION";
     let current = evaluate(project);
     if (current.stages[stage].status === "complete") {
       const cachedEngine = readState(project).stages[stage]?.metadata?.engine;
-      if (routing.selectedEngine === cachedEngine) {
+      if (cachedEngine === selectedEngine) {
         console.log(JSON.stringify({ render: kind, cache: "HIT" })); return;
       }
       current = invalidateFrom(project, stage);

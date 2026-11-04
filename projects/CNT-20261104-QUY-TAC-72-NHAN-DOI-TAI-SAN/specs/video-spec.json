@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0",
+  "project": {
+    "id": "CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN",
+    "title": "Quy Tắc 72: Bao Lâu Thì Tiền Của Bạn Tự Nhân Đôi?",
+    "version": 1
+  },
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fpsPreference": 30,
+    "targetDurationMs": 53369
+  },
+  "content": {
+    "coreMessage": "Công thức Quy tắc 72 giúp tính nhẩm số năm cần thiết để tài sản tự động nhân đôi dựa trên lãi suất sinh lời.",
+    "audience": "Người đi làm, nhà đầu tư cá nhân, gia đình trẻ muốn tích sản bền vững",
+    "tone": "Ấm áp, đĩnh đạc, khoa học, truyền cảm hứng tích sản dài hạn",
+    "language": "vi-VN"
+  },
+  "composition": "QuyTac72",
+  "engineRouting": {
+    "suggestedEngine": "REMOTION",
+    "reason": "Bespoke Remotion component with living mathematical formula, 3-lane animated race bars, exponential parabola curve and speech-synced subtitles"
+  },
+  "script": {
+    "narration": "Gửi 100 triệu vào tài khoản, bao lâu nữa số tiền này sẽ tự động biến thành 200 triệu mà bạn không cần nạp thêm một đồng nào? Einstein từng gọi lãi kép là kỳ quan thứ 8. Và giới tài chính có một mẹo tính nhẩm cực nhanh: Quy tắc 72. Rất đơn giản: Lấy 72 chia cho tỷ suất sinh lời mỗi năm, bạn sẽ biết chính xác số năm tiền của mình tự nhân đôi! Nếu bạn gửi tiết kiệm 6% một năm: 72 chia 6 bằng 12 năm mới nhân đôi. Nhưng nếu đầu tư danh mục bền vững 12%: 72 chia 12, bạn chỉ mất đúng 6 năm! Còn nếu ôm tiền mặt chịu lạm phát 4%: sau 18 năm, sức mua tài sản của bạn sẽ bị chia đôi. Lãi kép không đòi hỏi bạn phải là thiên tài đoán đỉnh bắt đáy. Vũ khí tối thượng của nó chỉ là: bắt đầu sớm, giữ kỷ luật, và cho hạt mầm tài chính đủ thời gian để lớn. Tiền của bạn đang chạy ở tốc độ bao nhiêu phần trăm một năm? Hãy bình luận danh mục của bạn bên dưới. Tôi là Tiến Dương, đồng hành cùng tài chính thực chiến!",
+    "scenes": [
+      {
+        "id": "scene-01",
+        "durationMs": 7000,
+        "purpose": "Hook - Câu đố nhân đôi tài sản 100M -> 200M",
+        "narration": "Gửi 100 triệu vào tài khoản, bao lâu nữa số tiền này sẽ tự động biến thành 200 triệu mà bạn không cần nạp thêm một đồng nào?",
+        "visualIntent": {
+          "description": "Đồng xu hạt mầm vàng phát quang chạm mặt nước phẳng lặng, phân tách thành 2 đồng xu lớn mạnh.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "scale-in", "subject": "Mitosis Coin" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-02",
+        "durationMs": 13000,
+        "purpose": "Mechanism - Giải mã Quy tắc 72",
+        "narration": "Einstein từng gọi lãi kép là kỳ quan thứ 8. Và giới tài chính có một mẹo tính nhẩm cực nhanh: Quy tắc 72. Rất đơn giản: Lấy 72 chia cho tỷ suất sinh lời mỗi năm, bạn sẽ biết chính xác số năm tiền của mình tự nhân đôi!",
+        "visualIntent": {
+          "description": "Phương trình sống 72 chia r bằng số năm nhân đôi, số 72 phát quang màu vàng hoàng gia.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "scale-in", "subject": "Number 72" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-03",
+        "durationMs": 16000,
+        "purpose": "Living Diagram - Cuộc đua 3 làn: Bank 6% vs Tích sản 12% vs Lạm phát 4%",
+        "narration": "Nếu bạn gửi tiết kiệm 6% một năm: 72 chia 6 bằng 12 năm mới nhân đôi. Nhưng nếu đầu tư danh mục bền vững 12%: 72 chia 12, bạn chỉ mất đúng 6 năm! Còn nếu ôm tiền mặt chịu lạm phát 4%: sau 18 năm, sức mua tài sản của bạn sẽ bị chia đôi.",
+        "visualIntent": {
+          "description": "3 thanh đo thời gian chạy song song, làn 12% bứt phá thần tốc về đích trong 6 năm.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "progress", "subject": "Race Progress" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-04",
+        "durationMs": 10000,
+        "purpose": "Action Insight - Parabol thời gian bùng nổ",
+        "narration": "Lãi kép không đòi hỏi bạn phải là thiên tài đoán đỉnh bắt đáy. Vũ khí tối thượng của nó chỉ là: bắt đầu sớm, giữ kỷ luật, và cho hạt mầm tài chính đủ thời gian để lớn.",
+        "visualIntent": {
+          "description": "Đường cong Parabol hàm mũ vẽ vút lên đỉnh cao, mốc 18 năm bùng nổ tài chính.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "draw-in", "subject": "Parabola Curve" }
+        ],
+        "assets": []
+      },
+      {
+        "id": "scene-05",
+        "durationMs": 7369,
+        "purpose": "Outro - Nhận diện thương hiệu Tiến Dương",
+        "narration": "Tiền của bạn đang chạy ở tốc độ bao nhiêu phần trăm một năm? Hãy bình luận danh mục của bạn bên dưới. Tôi là Tiến Dương, đồng hành cùng tài chính thực chiến!",
+        "visualIntent": {
+          "description": "Thẻ thương hiệu Tiến Dương - Tài Chính Thực Chiến, nút CTA bình luận tương tác.",
+          "layout": "centered"
+        },
+        "motionIntent": [
+          { "type": "fade-in", "subject": "Brand Outro" }
+        ],
+        "assets": []
+      }
+    ]
+  }
+}
+

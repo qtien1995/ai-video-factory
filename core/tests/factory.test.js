@@ -9,7 +9,6 @@ process.env.FACTORY_ROOT = root;
 const state = await import("../scripts/factory/state.js");
 const { main } = await import("../scripts/factory/index.js");
 const { muxAndNormalize } = await import("../scripts/factory/media.js");
-const { routeSpec } = await import("../scripts/router/index.js");
 after(() => fs.rmSync(root, { recursive: true, force: true }));
 
 function put(id, relative, content = "x") {
@@ -94,13 +93,6 @@ test("legacy DONE is never trusted and is backed up on first write", () => {
   state.recordStage(id, "SCRIPT", []);
   assert.ok(fs.existsSync(state.artifactPath(id, "state.v0.1.json")));
   assert.equal(state.evaluate(id).next, "BEATS");
-});
-test("AUTO follows Remotion primary; invalid override fails", () => {
-  const spec = { script: { scenes: [{ id: "s", visualIntent: { layout: "centered" }, motionIntent: [], assets: [] }] },
-    engineRouting: { suggestedEngine: "HYPERFRAMES" } };
-  assert.equal(routeSpec(spec).selectedEngine, "REMOTION");
-  assert.equal(routeSpec(spec, "HYPERFRAMES").selectedEngine, "HYPERFRAMES");
-  assert.equal(routeSpec(spec, "FOO").success, false);
 });
 test("missing render output fails, and final render is blocked before Gate 3", async () => {
   assert.throws(() => muxAndNormalize("missing.mp4", "missing.mp3", "out.mp4", 1), /no MP4/);

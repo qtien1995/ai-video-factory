@@ -1,1 +1,0 @@
-Thư mục này là NGÂN HÀNG NGUYÊN LIỆU THAM KHẢO SÁNG TẠO. Agent được đọc để lấy ý: palette, nhịp, kỹ thuật chuyển động, số liệu. CẤM: import code từ đây vào engine/project; áp nguyên một style/profile vào video; clone bố cục. Mỗi video phải tổng hợp phong cách mới từ kịch bản của nó, và Art Direction Sheet phải ghi đã mượn gì + biến đổi thế nào.

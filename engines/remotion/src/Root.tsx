@@ -6,13 +6,10 @@ import {
   calculateBespokeMetadata,
 } from "./BespokeVideo";
 import { TestBespoke01Video } from "../../../projects/test-bespoke-01/remotion/TestBespoke01Video";
-import { FptCrashVideo } from "../../../projects/financial-insurance/CNT-20261104-FPT-DAU-DAN-GIAM-NHU-RAC/remotion/FptCrashVideo";
+import { QuyTac72Video } from "../../../projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/remotion/QuyTac72Video";
 
 /**
  * AI Video Factory V4 — Remotion Root
- * Master Composition:
- * - `BespokeVideo`: Dynamic empty-stage composition for bespoke video pipeline.
- *   Receives inputProps (scenes, subtitles, brandOutro, audio) per project.
  */
 export const RemotionRoot: React.FC = () => {
   return (
@@ -52,33 +49,15 @@ export const RemotionRoot: React.FC = () => {
               },
             ],
             brandOutroFrames: 90,
-            subtitles: [
-              { word: "Chào", startMs: 300, endMs: 600 },
-              { word: "mừng", startMs: 600, endMs: 900 },
-              { word: "đến", startMs: 900, endMs: 1200 },
-              { word: "với", startMs: 1200, endMs: 1500 },
-              { word: "AI", startMs: 1500, endMs: 1900 },
-              { word: "Video", startMs: 1900, endMs: 2400 },
-              { word: "Factory", startMs: 2400, endMs: 3000 },
-              { word: "V4", startMs: 3000, endMs: 3500 },
-              { word: "Bespoke", startMs: 3500, endMs: 4200 },
-            ],
+            subtitles: [],
           },
         }}
         calculateMetadata={calculateBespokeMetadata}
       />
       <Composition
-        id="FptDauDanGiamNhuRac"
-        component={FptCrashVideo}
-        durationInFrames={1515}
-        fps={30}
-        width={1080}
-        height={1920}
-      />
-      <Composition
-        id="FptCrashCaseStudy"
-        component={FptCrashVideo}
-        durationInFrames={1515}
+        id="QuyTac72"
+        component={QuyTac72Video}
+        durationInFrames={1602}
         fps={30}
         width={1080}
         height={1920}

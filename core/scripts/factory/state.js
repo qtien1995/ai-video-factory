@@ -24,12 +24,14 @@ export const DEFAULT_ARTIFACTS = {
 
 export function projectDir(projectId) {
   if (!/^[a-zA-Z0-9_][a-zA-Z0-9_-]*$/.test(projectId || "")) throw new Error("Invalid project id");
+  const direct = path.join(ROOT, "projects", projectId);
+  if (fs.existsSync(direct)) return direct;
   const categories = ["financial-insurance", "social-shorts", "motion-graphics", "auto-cuts", "explainers"];
   for (const cat of categories) {
     const candidate = path.join(ROOT, "projects", cat, projectId);
     if (fs.existsSync(candidate)) return candidate;
   }
-  return path.join(ROOT, "projects", projectId);
+  return direct;
 }
 export function artifactPath(projectId, relative) {
   if (!relative || path.isAbsolute(relative)) throw new Error("Artifact must be a project-relative path");

@@ -19,6 +19,9 @@ Nhận Story + Creative Direction đã duyệt (Gate 1 & Gate 2) và dựng prev
 
 ## Không được tự ý
 
+- **mở, copy hoặc tham chiếu code/bố cục/visual effect từ bất kỳ dự án cũ nào trong projects/ (Cấm tuyệt đối Recency Bias)**;
+- lạm dụng một hiệu ứng tủ (như canvas matrix neon, scanline) cho các đề tài đời sống, gia đình, trẻ em;
+- sửa cứng hoặc để lại tàn dư import trong engines/remotion/src/Root.tsx;
 - thay core message, Big Idea, fact đã xác minh hoặc brand requirement;
 - cắt Wow Moment đã duyệt;
 - biến visual sequence thành slideshow phẳng hoặc chuỗi thẻ hộp vô hồn;

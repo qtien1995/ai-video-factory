@@ -1,8 +1,8 @@
 # AI VIDEO FACTORY V4 — BESPOKE
 
-> V4: bỏ khuôn thẻ, bỏ template bên thứ ba, styles/DNA chỉ còn là tài liệu tham khảo.
+> V4: Độc bản thuần túy (Pure Bespoke) — xóa bỏ hoàn toàn styles & DNA preset, mỗi video tự do sáng tạo từ kịch bản.
 
-AI Video Factory V4 sản xuất video ngắn mạng xã hội theo triết lý **độc bản (bespoke)**: mỗi video là một tác phẩm may đo riêng cho nội dung, không rập khuôn mẫu. Thư mục `styles/` và `dna-vault/` đóng vai trò ngân hàng nguyên liệu tham khảo sáng tạo (lấy ý tưởng palette, nhịp cắt, kỹ thuật chuyển động; cấm import code và cấm clone bố cục).
+AI Video Factory V4 sản xuất video ngắn mạng xã hội theo triết lý **độc bản (bespoke)**: mỗi video là một tác phẩm may đo riêng cho nội dung, không rập khuôn mẫu. Hệ thống không còn styles/DNA mẫu. Mỗi video xuất phát từ con số 0 (Tabula Rasa), tự do sáng tạo chuyển động và thẩm mỹ phù hợp với nội dung.
 
 ---
 
@@ -39,8 +39,8 @@ npm run studio
 - `npm run services` — Khởi động VieNeu-TTS local (:8001).
 - `npm run studio` — Mở giao diện Remotion Studio.
 - `npm run make -- --project <id>` — Sản xuất video: kiểm tra Gate -> TTS Hải Đăng -> Render -> Hard QC Gate.
+- `npm run clean` — Dọn dẹp tệp rác tạm (.tmp, .raw.mp4, .runtime).
 - `npm run verify -- --project <dir>` — Chạy bộ kiểm thử E2E 4-Tier lên video thành phẩm.
-- `npm run dna -- analyze <video.mp4>` — Bóc tách nhịp cắt & EBU R128 video mẫu vào `dna-vault/` (tham khảo, không sinh style).
 - `node core/scripts/validate/reference.js <video.mp4>` — Đo nhanh thông số video mẫu (in JSON ra stdout).
 - `npm test`, `npm run typecheck`, `npm run lint` — Kiểm tra chất lượng mã nguồn.
 
@@ -54,10 +54,8 @@ ai-video-factory/
 ├── brand/                      # Nhận diện thương hiệu User (Tiến Dương / Manulife)
 ├── config/                     # Cấu hình hệ thống & component-index.json
 ├── core/                       # Bộ máy điều phối: scripts, factory, tts, validate
-├── dna-vault/                  # Ngân hàng tham khảo DNA Profiles (chỉ đọc)
 ├── engines/remotion/           # Engine Remotion, composition BespokeVideo & toolbox shared
-├── projects/                   # Thư mục mã nguồn và tài sản của từng video
+├── projects/                   # Thư mục mã nguồn và tài sản phẳng của từng video (projects/<id>/)
 ├── rules/                      # Quy chuẩn sáng tạo: bespoke-creativity, visual-storytelling
-├── styles/                     # Ngân hàng tham khảo phong cách (chỉ đọc)
 └── tests/                      # Bộ kiểm định E2E (test_final_video.cjs)
 ```

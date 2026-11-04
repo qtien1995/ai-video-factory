@@ -26,11 +26,7 @@
     "creator_profile": "tien-duong"
   },
   "paths": {
-    "schemas": "./schemas",
     "brand": "./brand",
-    "styles": "./styles",
-    "dna_vault": "./dna-vault",
-    "projects": "./projects",
-    "renders": "./renders"
+    "projects": "./projects"
   }
 }

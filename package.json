@@ -1,19 +1,18 @@
 {
   "name": "ai-video-factory",
-  "version": "3.0.0",
-  "description": "AI Video Factory V3 — Streamlined Social Video Production Workspace",
+  "version": "4.0.0",
+  "description": "AI Video Factory V4 — Pure Bespoke Social Video Production Workspace",
   "private": true,
   "type": "module",
   "scripts": {
     "check": "node core/scripts/factory/index.js doctor",
     "start": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
-    "studio": "powershell -ExecutionPolicy Bypass -File .\\scripts\\start-studio.ps1",
+    "studio": "npm --prefix engines/remotion run dev",
     "make": "node core/scripts/factory/make.js",
-    "clean": "node scripts/clean.js",
+    "clean": "node core/scripts/factory/clean.js",
     "doctor": "node core/scripts/factory/index.js doctor",
     "services": "powershell -ExecutionPolicy Bypass -File .\\core\\scripts\\factory\\start-services.ps1",
     "factory": "node core/scripts/factory/index.js",
-    "dna": "node core/scripts/dna/index.js",
     "verify": "node tests/e2e/test_final_video.cjs",
     "test": "npm test --prefix core",
     "lint": "npm run lint --prefix engines/remotion",
@@ -28,6 +27,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@remotion/three": "^4.0.519"
+    "minimist": "^1.2.8",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.519",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7"
   }
 }

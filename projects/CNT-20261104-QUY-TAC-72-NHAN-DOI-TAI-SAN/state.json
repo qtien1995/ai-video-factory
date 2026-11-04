@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "0.2",
+  "projectId": "CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN",
+  "stages": {
+    "SCRIPT": {
+      "input": "1966076ce0fe862cf1ed74e9267e57406687289bddefad9e55409ab16720400c",
+      "signature": "0a50aff30d6c04623fd8e4f148de741ca16d703162e283e0ee7b43253257f099",
+      "artifacts": [
+        "script.md"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:03:31.384Z"
+    },
+    "BEATS": {
+      "input": "6f38d876a7ddc01b3649258ed04eb8ac1616317995e1d0ed3604cdc7c147d7b2",
+      "signature": "47289df2ec1907f29ba6ec29f292abd07080b296cd0d5d1672b0585b6eed600e",
+      "artifacts": [
+        "beats.json"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:03:31.569Z"
+    },
+    "GATE1": {
+      "input": "ee00de6c56e5456953fe269b4936e3d957a1720188774b8f4f78086ff7958808",
+      "signature": "962ef74cef76789e7cc58049bb30d53b3276ee234a183b982634c51da516cab3",
+      "artifacts": [],
+      "metadata": {
+        "evidence": "User uy quyen: tu do lam 1 video voi y tuong bat ky di"
+      },
+      "recordedAt": "2026-11-04T10:03:31.735Z"
+    },
+    "CREATIVE_DIRECTION": {
+      "input": "f16bd78f9318a562a10c913663efffca6dc36facf2716edad3fa40c192dd3395",
+      "signature": "9ef28a127ee4fd71c61106762a4e74ef7ecac826d59a749e3da5bea9e2e16f33",
+      "artifacts": [
+        "creative-direction.md"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:03:31.902Z"
+    },
+    "GATE2": {
+      "input": "01e3edb338d0aa697a9d4177ae7d8fa473f5c2dd3e54fa825761de37f52a1e46",
+      "signature": "c8143629b1b61f104df5d191db4301d8e3b870869f25bdc3a8a2f017e66618d3",
+      "artifacts": [],
+      "metadata": {
+        "evidence": "User uy quyen sang tao doc ban: Quy tac 72 nhan doi tai san, Warm Wealth Palette"
+      },
+      "recordedAt": "2026-11-04T10:03:32.134Z"
+    },
+    "TTS": {
+      "input": "013b8a79eb88a6e2d41edee94d241051a8840cca7d12a8f2fb2602d91caa70cc",
+      "signature": "a360461e04a2a978f3e8710fab50e0bf66dbd837d88230eab924f6b4be98b8f0",
+      "artifacts": [
+        "assets/audio/narration.mp3",
+        "assets/audio/timing.json"
+      ],
+      "metadata": {
+        "voice": "Hải Đăng",
+        "speed": 1,
+        "rate": "+10%",
+        "pitch": "+0Hz",
+        "volume": "+0%",
+        "provider": "cit-voice-studio"
+      },
+      "recordedAt": "2026-11-04T10:04:23.087Z"
+    },
+    "STORYBOARD": {
+      "input": "43ecb81b0a93e5dbc484b30b6f09db5e69c4ff725393f2741d80a459e7d19fbb",
+      "signature": "e35d5dce948a46381033ff87b36984ffd9866fb7894bf19324cb46812b16e630",
+      "artifacts": [
+        "storyboard.json"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:07:11.607Z"
+    },
+    "VIDEO_SPEC": {
+      "input": "31638940197c4b0f506dff487840d7e3792fe5f7d00babf1dfca15a4f991b24b",
+      "signature": "baa4c56f9b4ee923a4eecc8a105c057084a030b3faee8d3257c55ce1da2ae1c8",
+      "artifacts": [
+        "specs/video-spec.json"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:08:25.310Z"
+    },
+    "VALIDATION": {
+      "input": "aca7ef099425c512616ceb48d1e80bb2c3bae20f0b3e445ddaf4344323fcb628",
+      "signature": "7a5419a77fcc5625844f8cad784c10414f3e2af48eec8959aa36854a28dff851",
+      "artifacts": [],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:08:25.667Z"
+    },
+    "PRODUCTION": {
+      "input": "a47d8dc9ce572abd75e04daa5c9c2407fe51ca137c158fea29deb9becf775d07",
+      "signature": "74e7d2cfcd61988b84b7d2cee8a39fab41f6e2f8c8cc67a1d4407ea742ce832e",
+      "artifacts": [
+        "specs/video-spec.json"
+      ],
+      "metadata": {},
+      "recordedAt": "2026-11-04T10:08:25.849Z"
+    },
+    "PREVIEW": {
+      "input": "20ed8b089def758a4350ddf58e02174e72b003e7f521a2a3785cf01ab482a11f",
+      "signature": "c1ec0a1ca1b9284b6981b61a848adf64e3e861d12bd6f6aca0b7faf77f0244f6",
+      "artifacts": [],
+      "metadata": {
+        "engine": "REMOTION",
+        "skipped": true
+      },
+      "recordedAt": "2026-11-04T10:12:24.829Z"
+    },
+    "PREVIEW_QA": {
+      "input": "079a211f13548bdea5a26701506a47a3eea1ea2eb26542b236f334b23cb3a213",
+      "signature": "cfed12ac78c7c719a65e03f1f0b5cf5df6e8a23c2f24384567c7ec09f9ab6da3",
+      "artifacts": [],
+      "metadata": {
+        "reviewed": true,
+        "skipped": true
+      },
+      "recordedAt": "2026-11-04T10:12:24.845Z"
+    },
+    "GATE3": {
+      "input": "806a71525f9ad23756dc63180ed79440d41b77d7d34c251f495aa30d6c8a9963",
+      "signature": "729a46190a286509e7d0b0e7dd2f2d8293edc40813026216102fd1c400269484",
+      "artifacts": [],
+      "metadata": {
+        "evidence": "User requested single direct final render (skipping preview)"
+      },
+      "recordedAt": "2026-11-04T10:12:24.860Z"
+    },
+    "FINAL_RENDER": {
+      "input": "acdd9c2e5fe8d5be2b9a4b7c21da175ff4d71412228e6357258f44e6ac5b37e1",
+      "signature": "69d60f39f471677d2c0493b7f0b1b12de9311975bd89bd1205e8a56125f6392d",
+      "artifacts": [
+        "output/final.mp4",
+        "output/final-qc.json",
+        "output/final-contact-sheet.svg"
+      ],
+      "metadata": {
+        "engine": "REMOTION"
+      },
+      "recordedAt": "2026-11-04T11:45:50.778Z"
+    }
+  },
+  "needsReview": false
+}

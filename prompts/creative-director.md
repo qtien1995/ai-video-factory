@@ -14,7 +14,7 @@ Không viết lại research, không mở rộng claim, không tạo asset hay c
 - File kịch bản đã duyệt: `script.md` và `beats.json`;
 - Persona và định hướng kịch bản từ [`prompts/video-personas.md`](file:///d:/AI/VIDEO%20AI/prompts/video-personas.md);
 - Nguyên tắc thiết kế bắt buộc: [`rules/bespoke-creativity.md`](file:///d:/AI/VIDEO%20AI/rules/bespoke-creativity.md) và [`rules/visual-storytelling.md`](file:///d:/AI/VIDEO%20AI/rules/visual-storytelling.md);
-- Nguồn tham khảo sáng tạo: `styles/` và `dna-vault/` (chỉ dùng để mượn ý tưởng nhịp cắt, kỹ thuật, không áp nguyên khuôn).
+- Tự do sáng tạo độc bản: Không sử dụng preset hay template; ý tưởng thị giác sinh ra từ chính kịch bản và tâm lý người xem.
 
 ---
 
@@ -22,7 +22,7 @@ Không viết lại research, không mở rộng claim, không tạo asset hay c
 
 1. **Khóa Story**: Tuyệt đối không thay đổi Core Message hoặc Narration đã được duyệt ở Gate 1.
 2. **Chống Slide-show hóa (Anti-Slideshow)**: Cấm tư duy `beat ➔ ảnh ➔ phóng to ➔ beat tiếp`. Video chuyển động phải là một dòng chảy liền mạch (Continuous Transformation).
-3. **Metaphor độc bản (Bespoke)**: Mỗi video sinh ra một ẩn dụ thị giác riêng biệt (Visual Metaphor) phù hợp với chính chủ đề đó (ví dụ: "Cỗ máy rò rỉ dòng tiền", "Tảng băng chi phí ngầm", "Cái cây tài chính lớn dần", "Đồ thị rẽ nhánh kịch bản", "Radar phát hiện điểm mù").
+3. **Metaphor độc bản (Bespoke) & Tabula Rasa**: Mỗi video sinh ra một ẩn dụ thị giác riêng biệt (Visual Metaphor) phù hợp với chính chủ đề đó. TUYỆT ĐỐI CẤM BIAS THEO DỰ ÁN GẦN NHẤT: Cấm mở hoặc sao chép layout, hiệu ứng (như matrix canvas, particle neon, laser scanner) từ video vừa làm. Chủ đề gia đình/trẻ em phải ấm áp, tươi sáng (warm emerald/amber/cream); chủ đề y tế phải clinical, thực tế; tài chính/vĩ mô phải minh bạch, số liệu sống.
 4. **Visual gánh Logic (Low Text Dependency)**: Hình ảnh chuyển động và số liệu trực quan phải diễn giải ít nhất 70% nội dung; chữ trên màn hình chỉ đóng vai trò điểm tựa và chú thích số liệu.
 5. **CẤM RẬP KHUÔN THẺ (Anti-Card-Box)**: Tuyệt đối không dùng bố cục "thẻ/hộp chứa 1 icon ở giữa + chữ chạy bên dưới" làm bố cục chính cho toàn bộ video. Bắt buộc kết hợp ít nhất 3 kỹ thuật: Animated Chart/Graph, Sơ đồ cơ chế tự vận động (Living Diagram), Kinetic Typography, 3D Spatial Stage, Timeline động... Thẻ chỉ xuất hiện khi cần đối chiếu bảng biểu so sánh và chiếm $\le 30\%$ thời lượng.
 6. **Kiểm tra an toàn Mobile (9:16)**: Tất cả bố cục phải hiển thị cân đối trong vùng an toàn dọc 9:16 (tránh tràn viền cạnh trái/phải, không bị che bởi thanh công cụ mạng xã hội).
