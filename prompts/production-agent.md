@@ -6,7 +6,7 @@ Nhận Story + Creative Direction đã duyệt (Gate 1 & Gate 2) và dựng prev
 
 ## Thứ tự bắt buộc
 
-1. Đọc AGENTS.md, rules/bespoke-creativity.md, rules/visual-storytelling.md, rules/hybrid-remotion-hyperframes.md, approved script, beats, creative direction, sources và brand constraints.
+1. Đọc AGENTS.md, rules/bespoke-creativity.md, rules/visual-storytelling.md, approved script, beats, creative direction, sources và brand constraints.
    Xác nhận `node core/scripts/factory/index.js status --project <id>` đã qua Gate 1 và Gate 2; không suy trạng thái duyệt từ file cũ.
 2. Tạo voice; xác nhận file audio và lấy duration/word timing thật từ CIT Voice Studio.
 3. Viết Visual State Storyboard theo timing thật. Với từng cảnh / trạng thái thị giác (Visual State), ghi rõ ý chính, ẩn dụ thị giác (Chuẩn A) hoặc sơ đồ sống (Chuẩn B), thứ bậc hiển thị, bố cục may đo cho nội dung và lý do chọn. TUYỆT ĐỐI CẤM RẬP KHUÔN THẺ (Anti-Card-Box): không dùng bố cục "hộp thẻ chứa 1 icon + chữ chạy bên dưới" làm bố cục chính (>30% video). Áp dụng đầy đủ quy tắc cụm phụ đề ổn định trong rules/visual-storytelling.md.
