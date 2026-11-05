@@ -97,6 +97,36 @@
       }
     },
     {
+      "name": "GsapStage",
+      "importPath": "@shared",
+      "sourcePath": "engines/remotion/src/shared/GsapStage.tsx",
+      "category": "kinetic-gsap",
+      "tags": ["gsap", "timeline", "kinetic-typography", "stagger", "svg-draw", "hyperframes-style"],
+      "description": "Remotion-GSAP deterministic bridge bringing HyperFrames-grade motion graphics into Remotion. Syncs GSAP Timeline directly with Remotion's frame clock with zero frame-drift, automatic React 19 scoped cleanup (gsap.context), and support for staggers, SVG path drawing, and timeline choreography.",
+      "props": {
+        "buildTimeline": "({ tl, container, fps, durationInFrames, durationInSeconds }) => void",
+        "children": "React.ReactNode",
+        "useProgress": "boolean (optional, default false)",
+        "style": "React.CSSProperties"
+      }
+    },
+    {
+      "name": "KineticText",
+      "importPath": "@shared",
+      "sourcePath": "engines/remotion/src/shared/GsapStage.tsx",
+      "category": "kinetic-gsap",
+      "tags": ["typography", "split-text", "vietnamese", "gsap", "kinetic"],
+      "description": "Deterministic text splitting component optimized for Vietnamese typography. Emits inline-block tokens (.gsap-word, .gsap-char) ready for GSAP stagger entrances, elastic bounces, and 3D rotations.",
+      "props": {
+        "text": "string",
+        "splitBy": "'words' | 'chars' (default 'words')",
+        "className": "string",
+        "wordClassName": "string (default 'gsap-word')",
+        "charClassName": "string (default 'gsap-char')",
+        "style": "React.CSSProperties"
+      }
+    },
+    {
       "name": "MetricCounter",
       "importPath": "@shared",
       "sourcePath": "engines/remotion/src/shared/primitives.tsx",

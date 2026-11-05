@@ -1,0 +1,5 @@
+{
+  "size": [1080, 1920],
+  "fps": 30,
+  "voice": {"length_scale": 1.15, "lead": 0.35, "gap": 0.42, "sec_gap": 1.0, "tail": 3.6}
+}

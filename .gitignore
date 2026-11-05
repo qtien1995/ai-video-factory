@@ -105,12 +105,6 @@ templates/whiteboard-video/assets/whiteboard/
 /projects/*
 !/projects/.gitkeep
 !/projects/*/.gitkeep
-!/projects/test-bespoke-01/
-!/projects/test-bespoke-01/**
-/projects/test-bespoke-01/output/
-!/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/
-!/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/**
-/projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/output/
 
 
 # ==========================================

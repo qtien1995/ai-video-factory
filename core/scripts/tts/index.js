@@ -3,7 +3,6 @@ import * as path from "path";
 import * as http from "http";
 import { spawnSync } from "child_process";
 import minimist from "minimist";
-import { IsomorphicCommunicate } from "edge-tts-universal";
 
 function checkHttp(url, timeoutMs = 3000) {
   return new Promise((resolve) => {

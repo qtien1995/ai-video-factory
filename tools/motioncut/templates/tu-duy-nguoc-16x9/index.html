@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{--aqua:#22d3ee;--sky:#0ea5e9;--ice:#cffafe;--deep:#020b14;--mute:#8fb3c9;--coral:#fda4af}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--deep)}
+body{font-family:BVP,sans-serif;font-weight:600;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(120% 90% at 50% 40%,#04192a 0%,#020b14 60%,#01060c 100%)}
+.abs{position:absolute}
+.scene{position:absolute;inset:0;opacity:0}
+.cx{position:absolute;left:50%;transform:translateX(-50%)}
+.serif{font-family:PF,serif;font-style:italic;font-weight:700}
+.hl{color:var(--aqua)}
+.grad{color:#8ff0ff}
+/* legibility over the bright ribbons: dark halo on all display text */
+.serif,.grad,.bigq,#fLine,#gQ,#gQ2,#badge .v,#cMungerSub{text-shadow:0 0 3px rgba(1,10,20,.9),0 4px 26px rgba(1,10,20,.95),0 0 60px rgba(1,10,20,.6)}
+
+/* glow ribbons */
+.glow{position:absolute;inset:-200px;mix-blend-mode:screen}
+.rib{position:absolute;border-radius:50%}
+.r1{width:1700px;height:380px;left:300px;top:420px;background:linear-gradient(90deg,transparent 0%,#0369a1 20%,#06b6d4 50%,#67e8f9 62%,transparent 90%);filter:blur(70px);opacity:.8}
+.r2{width:1300px;height:120px;left:520px;top:560px;background:linear-gradient(90deg,transparent,#a5f3fc 45%,#e0fdff 55%,transparent);filter:blur(26px);opacity:.6}
+.r3{width:1100px;height:520px;left:1300px;top:120px;background:radial-gradient(closest-side,#0e7490,transparent);filter:blur(60px);opacity:.7}
+.r4{width:900px;height:420px;left:0;top:900px;background:radial-gradient(closest-side,#075985,transparent);filter:blur(70px);opacity:.6}
+#glowB .r1{background:linear-gradient(90deg,transparent 0%,#1e3a8a 20%,#2563eb 50%,#38bdf8 62%,transparent 90%)}
+#glowB .r2{background:linear-gradient(90deg,transparent,#93c5fd 45%,#dbeafe 55%,transparent)}
+#glowB .r3{background:radial-gradient(closest-side,#1d4ed8,transparent)}
+#glowB .r4{background:radial-gradient(closest-side,#0e7490,transparent)}
+#vign{position:absolute;inset:0;background:radial-gradient(85% 75% at 50% 50%,transparent 55%,rgba(0,4,10,.85) 100%);pointer-events:none}
+#dim{position:absolute;inset:0;background:radial-gradient(ellipse 62% 42% at 50% 45%,rgba(1,6,12,.82),rgba(1,6,12,.35) 70%,transparent);opacity:0}
+
+.logo{filter:drop-shadow(0 0 22px rgba(103,232,249,.85)) drop-shadow(0 0 60px rgba(34,211,238,.5))}
+
+/* glass */
+.glass{background:rgba(3,14,24,.84);border:1.5px solid rgba(125,211,252,.28);border-radius:30px;
+  box-shadow:0 30px 90px rgba(0,0,0,.55),0 0 60px rgba(34,211,238,.16)}
+.pill{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;border-radius:999px;font-size:32px;white-space:nowrap;
+  background:rgba(4,24,40,.6);border:1.5px solid rgba(165,243,252,.6);
+  box-shadow:0 0 26px rgba(34,211,238,.35),inset 0 0 18px rgba(103,232,249,.18);color:#e6fbff}
+.pill.on{background:linear-gradient(135deg,rgba(34,211,238,.55),rgba(14,165,233,.35));border-color:#e0fdff;
+  box-shadow:0 0 40px rgba(103,232,249,.9),0 0 90px rgba(34,211,238,.55),inset 0 0 20px rgba(255,255,255,.25)}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(103,232,249,.18);border:1.5px solid #a5f3fc;font-weight:800;font-size:24px}
+.pill.on .num{background:#fff;color:#075985}
+.caret{display:inline-block;width:4px;height:1em;background:var(--aqua);vertical-align:-.12em;margin-left:4px}
+
+/* prompt box */
+.box{width:1180px;padding:40px 46px 30px}
+.q{font-size:52px;line-height:1.3;white-space:nowrap;height:68px}
+.foot{display:flex;align-items:center;margin-top:44px;color:var(--mute);font-size:26px}
+.foot .sp{flex:1}
+.foot svg{stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
+.wave{display:flex;gap:4px;align-items:center;height:30px;margin:0 22px}
+.wave i{display:block;width:4px;height:10px;background:#a5c8dc;border-radius:2px}
+.send{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#67e8f9,#0284c7);display:grid;place-items:center;box-shadow:0 0 24px rgba(34,211,238,.6)}
+
+/* B */
+#bTitle{top:380px;font-size:170px;white-space:nowrap;text-shadow:0 0 50px rgba(34,211,238,.4)}
+#bTitle .ch{display:inline-block}
+.cmp{position:absolute;top:430px;width:700px;height:330px;padding:40px 46px}
+.cmp h3{font-size:30px;color:var(--mute);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.flow{display:flex;align-items:center;gap:26px;margin-top:46px;font-size:46px;font-weight:800;white-space:nowrap}
+.flow svg{flex:none}
+#cmpR{border-color:rgba(186,245,255,.65);background:linear-gradient(140deg,rgba(14,116,144,.75),rgba(8,47,73,.85));box-shadow:0 0 80px rgba(34,211,238,.35)}
+#cmpR h3{color:#cffafe}
+.stamp{position:absolute;right:34px;bottom:30px;border:4px solid #fff;color:#fff;border-radius:14px;padding:8px 22px;font-size:34px;font-weight:800;transform:rotate(-8deg);opacity:0}
+#badge{top:420px;padding:44px 64px;text-align:center;width:1300px}
+#badge .k{font-size:30px;color:var(--mute);letter-spacing:2px;text-transform:uppercase}
+#badge .v{font-size:76px;font-weight:800;line-height:1.2;margin-top:18px}
+
+/* C */
+.chip{display:inline-flex;align-items:center;gap:22px;padding:14px 36px 14px 14px;border-radius:999px;background:rgba(4,24,40,.7);border:1.5px solid rgba(165,243,252,.5);box-shadow:0 0 30px rgba(34,211,238,.3);white-space:nowrap}
+.av{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:34px;font-weight:800;background:linear-gradient(135deg,#67e8f9,#0369a1);color:#fff}
+.chip b{font-size:34px;font-weight:800;display:block}
+.chip span{font-size:24px;color:var(--mute)}
+.bigq{width:1700px;text-align:center;font-size:110px;line-height:1.2}
+.bigq .w,.wr .w{display:inline-block;opacity:0}
+#cMungerName{top:330px;font-size:150px;white-space:nowrap}
+#cMungerSub{top:560px;font-size:36px;color:#bfe9f5;white-space:nowrap}
+#cQ3{top:330px;font-size:84px}
+
+/* D */
+#dHead{top:150px}
+.why{position:absolute;top:360px;width:540px;height:440px;padding:46px 44px;opacity:0}
+.why .n{font-family:PF,serif;font-style:italic;font-weight:700;font-size:96px;line-height:1}
+.why .t{font-size:46px;font-weight:800;margin-top:34px;line-height:1.2}
+.why .s{font-size:30px;color:#bfe9f5;margin-top:18px;line-height:1.35}
+
+/* E */
+#ePills{top:150px;display:flex;gap:22px}
+#ePanel{top:330px;width:1180px;height:520px;padding:46px 56px}
+.lbl{font-size:30px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase}
+.pv{position:absolute;left:56px;right:56px;top:110px;opacity:0}
+.big{font-size:60px;font-weight:800;margin-top:10px;white-space:nowrap}
+.row{display:flex;align-items:center;gap:26px;margin-top:30px;opacity:0}
+.bar{height:26px;border-radius:13px;background:rgba(148,197,222,.3)}
+.ico{width:58px;height:58px;position:relative;flex:none;transform-style:preserve-3d}
+.ico>div{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;backface-visibility:hidden}
+.ico .x{background:rgba(251,113,133,.16);border:2px solid var(--coral)}
+.ico .v{background:#fff;transform:rotateY(180deg)}
+
+/* F */
+#scene3d{position:absolute;inset:0;perspective:1700px}
+#card{position:absolute;left:470px;top:190px;width:980px;height:640px;transform-style:preserve-3d}
+.face{position:absolute;inset:0;border-radius:36px;padding:44px 56px;backface-visibility:hidden;overflow:hidden;border:1.5px solid rgba(186,245,255,.55)}
+.front{background:linear-gradient(140deg,#0e7490 0%,#0c4a6e 52%,#06263d 100%);box-shadow:0 0 80px rgba(34,211,238,.35)}
+.back{transform:rotateY(180deg);background:linear-gradient(140deg,#38bdf8 0%,#2563eb 50%,#1e3a8a 100%);box-shadow:0 0 90px rgba(59,130,246,.55)}
+.face::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 85% 0%,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+.nav{display:flex;align-items:center;gap:34px;font-size:22px;color:rgba(255,255,255,.85)}
+.nav .dot{width:48px;height:48px;border-radius:50%;background:#031a2b;display:grid;place-items:center;box-shadow:0 0 16px rgba(103,232,249,.6)}
+.ttl{font-weight:800;font-size:70px;line-height:1.12;margin-top:46px}
+.list{margin-top:40px;display:flex;flex-direction:column;gap:20px}
+.it{display:flex;align-items:center;gap:20px;font-size:34px;opacity:0}
+.ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none}
+.front .ic{background:rgba(251,113,133,.18);border:2px solid var(--coral)}
+.back .ic{background:#fff}
+.tag{position:absolute;right:56px;bottom:44px;background:#fff;color:#062a40;border-radius:14px;padding:10px 22px;font-size:24px;font-weight:800}
+#fGoal{top:70px}
+#fLine{top:330px;width:1700px;text-align:center}
+#fLine .l1{font-size:64px;font-weight:800}
+#fLine .l2{font-size:104px;margin-top:20px}
+
+/* G */
+#gQ{top:380px;font-size:130px;font-weight:800;white-space:nowrap;transform-origin:50% 55%}
+#gQ2{top:380px;font-size:130px;font-weight:800;white-space:nowrap}
+#gStrike{position:absolute;left:0;top:54%;height:10px;width:100%;background:var(--coral);border-radius:5px;transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 20px rgba(253,164,175,.7)}
+#gSub{top:600px;font-size:76px;white-space:nowrap}
+#outro{top:300px;text-align:center}
+#brand{font-size:150px;white-space:nowrap;margin-top:24px;text-shadow:0 0 40px rgba(34,211,238,.45)}
+#brand .ch{display:inline-block}
+#sub{font-size:36px;color:#bfe9f5;margin-top:22px}
+
+/* captions */
+#cap{position:absolute;left:50%;top:930px;transform:translateX(-50%);max-width:1700px;padding:14px 34px;border-radius:20px;
+  background:rgba(1,8,15,.62);font-size:40px;line-height:1.35;text-align:center;white-space:nowrap;opacity:0}
+#cap span{color:rgba(255,255,255,.45)}
+#cap span.on{color:#fff}
+#cap span.now{color:var(--aqua)}
+#fade{position:absolute;inset:0;background:#000;opacity:0}
+</style></head>
+<body><div id="stage">
+  <div id="glow" class="glow"><div class="rib r1"></div><div class="rib r2"></div><div class="rib r3"></div><div class="rib r4"></div></div>
+  <div id="glowB" class="glow" style="opacity:0"><div class="rib r1"></div><div class="rib r2"></div><div class="rib r3"></div><div class="rib r4"></div></div>
+  <div id="dim"></div>
+
+  <!-- A: hook -->
+  <div id="A" class="scene">
+    <svg id="logo1" class="logo abs" viewBox="0 0 100 100" style="width:230px;height:230px;left:845px;top:400px"></svg>
+    <div id="aBox" class="glass box abs" style="left:370px;top:360px;opacity:0">
+      <div class="q" id="aQ1"></div><div class="q abs" id="aQ2" style="left:46px;top:40px"></div>
+      <div class="foot">
+        <svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg><div class="sp"></div>
+        <span>Đảo ngược&nbsp;⌄</span>
+        <svg width="30" height="30" viewBox="0 0 24 24" style="margin-left:26px"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="send" id="aSend"><svg width="26" height="26" viewBox="0 0 24 24" style="stroke:#fff;stroke-width:3"><path d="M12 19V5M6 11l6-6 6 6"/></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: definition -->
+  <div id="B" class="scene">
+    <div id="bTitle" class="cx serif"></div>
+    <div id="cmpL" class="glass cmp" style="left:200px;opacity:0">
+      <h3>Tư duy thuận</h3>
+      <div class="flow">Mục tiêu <svg width="70" height="30" viewBox="0 0 70 30"><path d="M2 15h60M50 4l12 11-12 11" fill="none" stroke="#a5f3fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> Cách đạt</div>
+    </div>
+    <div id="cmpR" class="glass cmp" style="left:1020px;opacity:0">
+      <h3>Tư duy ngược</h3>
+      <div class="flow">Thất bại <svg width="70" height="30" viewBox="0 0 70 30"><path d="M2 15h60M50 4l12 11-12 11" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="hl">Né tránh</span></div>
+      <div class="stamp" id="bStamp">TRÁNH XA</div>
+    </div>
+    <div id="badge" class="glass cx" style="opacity:0">
+      <div class="k">Nghe thì ngược đời, nhưng là</div>
+      <div class="v">Một trong những công cụ<br><span class="grad">tư duy mạnh nhất</span></div>
+    </div>
+  </div>
+
+  <!-- C: origins -->
+  <div id="C" class="scene">
+    <div id="cJacobi" class="chip cx" style="top:170px;opacity:0"><div class="av">CJ</div><div><b>Carl Jacobi</b><span>Nhà toán học Đức · 1804–1851</span></div></div>
+    <div id="cQ1" class="bigq serif cx wr" style="top:390px"></div>
+    <div id="cMungerName" class="cx serif grad" style="opacity:0">Charlie Munger</div>
+    <div id="cMungerSub" class="cx" style="opacity:0">Cộng sự lâu năm của Warren Buffett · Berkshire Hathaway</div>
+    <div id="cMChip" class="chip cx" style="top:170px;opacity:0"><div class="av">CM</div><div><b>Charlie Munger</b><span>1924–2023</span></div></div>
+    <div id="cQ3" class="bigq serif cx wr"></div>
+  </div>
+
+  <!-- D: why -->
+  <div id="D" class="scene">
+    <div id="dHead" class="pill cx" style="opacity:0;font-size:40px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.1"/></svg><span id="dHeadT"></span></div>
+    <div class="why glass" style="left:150px"><div class="n grad">01</div><div class="t">Tránh sai lầm</div><div class="s">dễ hơn nhiều so với tìm ra một nước đi thiên tài</div></div>
+    <div class="why glass" style="left:690px"><div class="n grad">02</div><div class="t">Rủi ro</div><div class="s">bộ não nhìn thấy rõ hơn cơ hội</div></div>
+    <div class="why glass" style="left:1230px"><div class="n grad">03</div><div class="t">−1 điều ngu ngốc</div><div class="s">thường đáng giá hơn +1 điều thông minh</div></div>
+  </div>
+
+  <!-- E: three steps -->
+  <div id="E" class="scene">
+    <div id="ePills" class="cx">
+      <div class="pill"><span class="num">1</span>Mục tiêu</div>
+      <div class="pill"><span class="num">2</span>Cách thất bại</div>
+      <div class="pill"><span class="num">3</span>Nguyên tắc</div>
+    </div>
+    <div id="ePanel" class="glass cx" style="opacity:0">
+      <div class="pv" id="eP1" style="top:46px"><div class="lbl">Bước 1 · Mục tiêu của bạn</div><div class="big" id="eGoal"></div></div>
+      <div class="pv" id="eP2" style="top:46px"><div class="lbl" id="eLbl2">Bước 2 · Điều gì chắc chắn khiến mình thất bại?</div>
+        <div class="row"><div class="ico"><div class="x"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div><div class="v"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div></div><div class="bar" style="width:620px"></div></div>
+        <div class="row"><div class="ico"><div class="x"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div><div class="v"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div></div><div class="bar" style="width:480px"></div></div>
+        <div class="row"><div class="ico"><div class="x"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div><div class="v"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div></div><div class="bar" style="width:700px"></div></div>
+      </div>
+    </div>
+    <svg id="cursor" class="abs" viewBox="0 0 24 24" style="width:54px;height:54px;left:0;top:0;opacity:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 3-1.3-2.9-6.5h6z" fill="#fff" stroke="#031a2b" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  </div>
+
+  <!-- F: example -->
+  <div id="F" class="scene">
+    <div id="fGoal" class="pill cx" style="opacity:0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>Mục tiêu: Khoẻ mạnh</div>
+    <div id="scene3d"><div id="card" style="opacity:0">
+      <div class="face front">
+        <div class="nav"><div class="dot"><svg class="mini" width="30" height="30" viewBox="0 0 100 100"></svg></div><span>Mục tiêu</span><span>Đảo ngược</span><span>Hành động</span></div>
+        <div class="ttl">Cách chắc chắn<br>để ốm</div>
+        <div class="list">
+          <div class="it"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div>Thức khuya</div>
+          <div class="it"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div>Ăn vặt</div>
+          <div class="it"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div>Không vận động</div>
+        </div>
+        <div class="tag">Tránh xa</div>
+      </div>
+      <div class="face back">
+        <div class="nav"><div class="dot"><svg class="mini" width="30" height="30" viewBox="0 0 100 100"></svg></div><span>Mục tiêu</span><span>Đảo ngược</span><span>Hành động</span></div>
+        <div class="ttl">Vậy thì<br>làm ngược lại</div>
+        <div class="list">
+          <div class="it"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div>Ngủ trước 23 giờ</div>
+          <div class="it"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div>Ăn đồ thật</div>
+          <div class="it"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg></div>Đi bộ 30 phút mỗi ngày</div>
+        </div>
+        <div class="tag">Làm ngay</div>
+      </div>
+    </div></div>
+    <div id="fLine" class="cx"><div class="l1 wr" id="fL1"></div><div class="l2 serif wr" id="fL2"></div></div>
+  </div>
+
+  <!-- G: close -->
+  <div id="G" class="scene">
+    <div id="gQ" class="cx">Làm sao để thắng?<div id="gStrike"></div></div>
+    <div id="gQ2" class="cx"></div>
+    <div id="gSub" class="cx serif wr"></div>
+    <div id="outro" class="cx" style="opacity:0">
+      <svg id="logo2" class="logo" viewBox="0 0 100 100" style="width:160px;height:160px"></svg>
+      <div id="brand" class="serif"></div>
+      <div id="sub">Nghĩ về thất bại để đi tới thành công</div>
+    </div>
+  </div>
+
+  <div id="vign"></div>
+  <div id="cap"></div>
+  <div id="fade"></div>
+</div>
+<script src="gsap.min.js"></script>
+<script src="timing.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const LOGO = `<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0fdff"/><stop offset=".5" stop-color="#67e8f9"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+<g fill="none" stroke="url(#lg)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M22 46a28 28 0 0 1 50-16"/><path d="M74 16v15H59"/><path d="M78 54a28 28 0 0 1-50 16"/><path d="M26 84V69h15"/></g>
+<circle cx="50" cy="50" r="6" fill="#e0fdff"/>`;
+$$('#logo1,#logo2,.mini').forEach(s => s.innerHTML = LOGO);
+const letters = (el, txt) => el.innerHTML = [...txt].map(c => `<span class="ch">${c === ' ' ? '&nbsp;' : c}</span>`).join('');
+const words = (el, html) => el.innerHTML = html.split(' ').map(w => w === '<br>' ? '<br>' : `<span class="w">${w}</span>`).join(' ');
+letters($('#bTitle'), 'Tư duy ngược'); letters($('#brand'), 'Tư duy ngược.');
+words($('#cQ1'), '“Đảo ngược, <br> <span class=grad>luôn</span> <span class=grad>luôn</span> <span class=grad>đảo</span> <span class=grad>ngược.”</span>'.replace(/<span class=grad>([^<]+)<\/span>/g, '$1'));
+$$('#cQ1 .w').slice(2).forEach(w => w.classList.add('grad'));
+words($('#cQ3'), '“Tôi chỉ muốn biết mình sẽ chết ở đâu, <br> để không bao giờ đến đó.”');
+$$('#cQ3 .w').slice(-5).forEach(w => w.classList.add('grad'));
+words($('#fL1'), 'Không cần động lực phi thường.');
+words($('#fL2'), 'Chỉ cần bớt đi điều kéo bạn xuống.');
+$$('#fL2 .w').forEach(w => w.classList.add('grad'));
+words($('#gSub'), 'rồi đừng làm thế.');
+
+// ---------- timing helpers (voice-driven) ----------
+const SEG = Object.fromEntries(TIMING.segs.map(s => [s.id, s]));
+const st = id => SEG[id].start, en = id => SEG[id].end;
+// estimated time a word starts within a line (proportional to characters)
+function at(id, word, nth = 0) {
+  const s = SEG[id], low = s.text.toLowerCase(); let i = -1;
+  for (let k = 0; k <= nth; k++) i = low.indexOf(word.toLowerCase(), i + 1);
+  if (i < 0) throw new Error('word not found: ' + id + ' ' + word);
+  return s.start + (s.end - s.start) * i / s.text.length;
+}
+const SFX = []; const fx = (t, kind, g = 1) => SFX.push({t: +t.toFixed(3), kind, g});
+const T = TIMING.total, tl = gsap.timeline({paused: true});
+const IN = {opacity: 1, y: 0, scale: 1, filter: 'blur(0px)'};
+function enter(sel, t, from = {}, d = .6) {
+  tl.fromTo(sel, {opacity: 0, y: 60, scale: .94, filter: 'blur(14px)', ...from}, {...IN, duration: d, ease: 'expo.out'}, t);
+}
+function leave(sel, t, to = {}, d = .45) {
+  tl.to(sel, {opacity: 0, scale: 1.12, filter: 'blur(16px)', duration: d, ease: 'power3.in', ...to}, t);
+}
+function scene(sel, a, b) { tl.set(sel, {opacity: 1}, a).set(sel, {opacity: 0}, b); }
+function typer(el, text, hl, t0, d) {
+  const o = {n: 0};
+  tl.fromTo(o, {n: 0}, {n: text.length, duration: d, ease: 'none', onUpdate() {
+    const n = Math.round(o.n); let s = '';
+    for (let i = 0; i < n; i++) s += (hl && i >= hl[0] && i < hl[1]) ? `<span class="hl">${text[i]}</span>` : text[i];
+    el.innerHTML = s + '<span class="caret"></span>';
+  }}, t0);
+  for (let i = 0; i < text.length; i++) if (text[i] !== ' ') fx(t0 + d * i / text.length, 'tick');
+}
+// reveal word spans each at the moment it is spoken
+function speak(sel, id, startWord, endWord) {
+  const ws = $$(sel + ' .w'); const s = SEG[id];
+  const t0 = at(id, startWord), t1 = endWord ? at(id, endWord) : s.end, per = Math.min(.42, (t1 - t0) / ws.length);
+  ws.forEach((w, i) => tl.fromTo(w, {opacity: 0, y: 50, filter: 'blur(12px)'}, {opacity: 1, y: 0, filter: 'blur(0px)', duration: .5, ease: 'expo.out'}, t0 + i * per));
+}
+const NOCAP = new Set(['b1', 'c1', 'c3', 'f4', 'g1', 'g2', 'g3']);
+
+function build() {
+  const pillRects = $$('#ePills .pill').map(p => p.getBoundingClientRect());
+  // ---------- A: hook ----------
+  scene('#A', 0, st('b1') - .2);
+  tl.fromTo('#logo1', {scale: .4, opacity: 0, rotation: -90, filter: 'blur(20px)'}, {scale: 1, opacity: 1, rotation: 0, filter: 'blur(0px)', duration: .9, ease: 'expo.out'}, .1)
+    .to('#logo1', {rotation: 180, duration: .7, ease: 'power3.inOut'}, .8)
+    .to('#logo1', {scale: .2, y: -300, opacity: 0, filter: 'blur(14px)', duration: .4, ease: 'power3.in'}, 1.45);
+  fx(.1, 'whoosh_long'); fx(.3, 'bell_lo'); fx(.8, 'whoosh'); fx(1.4, 'whoosh_fast');
+  enter('#aBox', 1.55, {y: 140});
+  fx(1.55, 'whoosh');
+  typer($('#aQ1'), 'Làm sao để thắng?', null, at('a1', 'làm'), en('a1') - at('a1', 'làm'));
+  tl.to('#aQ1', {rotationX: 180, opacity: 0, y: 10, duration: .5, ease: 'power3.in'}, at('a2', 'hỏi'));
+  fx(at('a2', 'hỏi'), 'whoosh');
+  const q2 = 'Làm sao để thua?';
+  typer($('#aQ2'), q2, [12, 16], at('a2', 'hỏi') + .45, .75);
+  tl.to('#aSend', {scale: .85, duration: .08, yoyo: true, repeat: 1}, en('a2') + .15);
+  fx(en('a2') + .15, 'click');
+  leave('#aBox', st('b1') - .6, {y: -200, scale: .85});
+  fx(st('b1') - .6, 'whoosh_fast');
+
+  // ---------- B: definition ----------
+  scene('#B', st('b1') - .2, en('b4') + .6);
+  tl.fromTo('#bTitle .ch', {opacity: 0, y: 160, x: -60, rotation: -50, filter: 'blur(10px)'}, {opacity: 1, y: 0, x: 0, rotation: 0, filter: 'blur(0px)', duration: .55, stagger: .04, ease: 'back.out(1.6)'}, st('b1') - .1);
+  fx(st('b1') - .1, 'shimmer');
+  tl.to('#bTitle', {y: -230, scale: .5, duration: .7, ease: 'power3.inOut'}, st('b2') - .1);
+  enter('#cmpL', at('b2', 'tìm'), {x: -80});
+  enter('#cmpR', at('b2', 'bạn'), {x: 80});
+  fx(at('b2', 'tìm'), 'pop'); fx(at('b2', 'bạn'), 'pop', 1.2);
+  tl.to('#cmpL', {opacity: .45, scale: .96, duration: .4}, at('b2', 'thất'))
+    .fromTo('#bStamp', {opacity: 0, scale: 2.2}, {opacity: 1, scale: 1, rotation: -8, duration: .35, ease: 'back.out(2.5)'}, st('b3') + .1);
+  fx(st('b3') + .1, 'impact');
+  leave(['#cmpL', '#cmpR', '#bTitle'], st('b4') - .15, {y: -120});
+  fx(st('b4') - .15, 'whoosh');
+  enter('#badge', at('b4', 'nhưng'), {y: 120});
+  fx(at('b4', 'công'), 'shimmer');
+  tl.fromTo('#badge .grad', {opacity: .2}, {opacity: 1, duration: .5}, at('b4', 'công'));
+  leave('#badge', en('b4') + .2);
+  fx(en('b4') + .2, 'whoosh_fast');
+
+  // ---------- C: origins ----------
+  tl.to('#dim', {opacity: 1, duration: .6}, st('c1') - .3).to('#dim', {opacity: 0, duration: .6}, en('c3') + .3);
+  scene('#C', st('c1') - .3, en('c3') + .6);
+  tl.to('#glowB', {opacity: .8, duration: 1.2}, st('c1') - .3);
+  enter('#cJacobi', st('c1'), {y: -40});
+  fx(st('c1'), 'pop');
+  speak('#cQ1', 'c1', 'đảo');
+  fx(at('c1', 'đảo'), 'bell_lo', .8);
+  leave(['#cJacobi', '#cQ1'], st('c2') - .1, {y: -80});
+  fx(st('c2') - .1, 'whoosh');
+  enter('#cMungerName', st('c2') + .05, {y: 80});
+  enter('#cMungerSub', at('c2', 'cộng'), {y: 30});
+  fx(st('c2') + .05, 'shimmer');
+  leave(['#cMungerName', '#cMungerSub'], st('c3') - .15, {y: -100});
+  enter('#cMChip', st('c3') - .1, {y: -40});
+  fx(st('c3') - .1, 'whoosh');
+  speak('#cQ3', 'c3', 'tôi');
+  leave(['#cMChip', '#cQ3'], en('c3') + .2);
+  tl.to('#glowB', {opacity: 0, duration: 1}, en('c3') + .2);
+  fx(en('c3') + .2, 'whoosh_fast');
+
+  // ---------- D: why ----------
+  scene('#D', st('d1') - .3, en('d4') + .6);
+  enter('#dHead', st('d1') - .2, {y: -40});
+  typer($('#dHeadT'), 'Vì sao hiệu quả?', [7, 16], st('d1'), en('d1') - st('d1'));
+  const whys = $$('.why');
+  ['d2', 'd3', 'd4'].forEach((id, i) => {
+    tl.fromTo(whys[i], {opacity: 0, y: 120, rotationX: -25, filter: 'blur(14px)'}, {opacity: 1, y: 0, rotationX: 0, filter: 'blur(0px)', duration: .7, ease: 'expo.out'}, st(id) + .05);
+    fx(st(id) + .05, 'pop', 1.1);
+    tl.to(whys[i], {borderColor: 'rgba(186,245,255,.8)', boxShadow: '0 0 70px rgba(34,211,238,.45)', duration: .3}, st(id) + .3);
+    if (i) tl.to(whys[i - 1], {opacity: .45, scale: .95, borderColor: 'rgba(125,211,252,.28)', boxShadow: '0 0 0 rgba(0,0,0,0)', duration: .4}, st(id));
+  });
+  fx(at('d4', 'thông'), 'ding');
+  leave(['#dHead', '.why'], en('d4') + .2, {stagger: .06});
+  fx(en('d4') + .2, 'whoosh');
+
+  // ---------- E: steps ----------
+  scene('#E', st('e1') - .3, en('e4') + .6);
+  tl.from('#ePills .pill', {x: i => (i - 1) * -120, opacity: 0, scale: .8, filter: 'blur(16px)', duration: .6, stagger: .08, ease: 'expo.out'}, st('e1') - .1);
+  [0, 1, 2].forEach(i => fx(st('e1') - .1 + i * .08, 'pop', .7));
+  enter('#ePanel', en('e1') - .1, {y: 120});
+  const pills = $$('#ePills .pill');
+  const clickAt = [st('e2') + .05, st('e3') + .05, st('e4') + .05];
+  tl.set('#cursor', {x: 1500, y: 900}, 0).to('#cursor', {opacity: 1, duration: .2}, clickAt[0] - .75);
+  pills.forEach((p, i) => {
+    const r = pillRects[i]; // measured before any tween offsets them
+    tl.to('#cursor', {x: r.left + r.width * .6, y: r.top + r.height * .62, duration: .65, ease: 'power3.inOut'}, clickAt[i] - .7)
+      .to('#cursor', {scale: .82, duration: .08, transformOrigin: '10% 10%'}, clickAt[i])
+      .to('#cursor', {scale: 1, duration: .14}, clickAt[i] + .08)
+      .to(p, {scale: 1.08, duration: .12, yoyo: true, repeat: 1}, clickAt[i]);
+    fx(clickAt[i], 'click');
+  });
+  tl.to('#cursor', {opacity: 0, x: '+=200', y: '+=200', duration: .5}, clickAt[2] + .5);
+  // step 1
+  tl.to('#eP1', {opacity: 1, duration: .3}, clickAt[0] + .05);
+  typer($('#eGoal'), 'Một mục tiêu thật rõ ràng', [16, 25], clickAt[0] + .25, 1.1);
+  // step 2
+  tl.to('#eP1', {opacity: 0, y: -30, duration: .3}, clickAt[1]).to('#eP2', {opacity: 1, duration: .3}, clickAt[1] + .1);
+  const rows = $$('#eP2 .row');
+  rows.forEach((r, i) => { const t = at('e3', 'liệt') + i * .35; tl.fromTo(r, {opacity: 0, x: -50}, {opacity: 1, x: 0, duration: .4, ease: 'power3.out'}, t); fx(t, 'pop', .8); });
+  // step 3: each ✕ flips to ✓
+  tl.to('#eLbl2', {opacity: 0, duration: .2}, clickAt[2]).call(() => {}, null, clickAt[2])
+    .set('#eLbl2', {innerHTML: 'Bước 3 · Nguyên tắc của bạn'}, clickAt[2] + .2).to('#eLbl2', {opacity: 1, duration: .25}, clickAt[2] + .2);
+  $$('#eP2 .ico').forEach((ic, i) => {
+    const t = at('e4', 'nguyên') + i * .3;
+    tl.to(ic, {rotationY: 180, duration: .5, ease: 'back.out(1.6)'}, t);
+    tl.to(rows[i].querySelector('.bar'), {backgroundColor: 'rgba(103,232,249,.75)', duration: .4}, t + .1);
+    fx(t + .1, 'ding', .8);
+  });
+  leave(['#ePills', '#ePanel'], en('e4') + .2, {y: -100});
+  fx(en('e4') + .2, 'whoosh');
+
+  // ---------- F: example ----------
+  scene('#F', st('f1') - .3, en('f4') + .6);
+  enter('#fGoal', st('f1') - .1, {y: -40});
+  fx(st('f1') - .1, 'pop');
+  tl.fromTo('#card', {opacity: 0, rotationY: -38, rotationX: 22, z: -500, x: 260}, {opacity: 1, rotationY: 0, rotationX: 0, z: 0, x: 0, duration: .9, ease: 'expo.out'}, at('f1', 'khoẻ') - .1)
+    .fromTo('#scene3d', {filter: 'blur(18px)'}, {filter: 'blur(0px)', duration: .6}, at('f1', 'khoẻ') - .1);
+  fx(at('f1', 'khoẻ') - .1, 'whoosh_long');
+  const fi = $$('.front .it');
+  ['thức', 'ăn', 'không'].forEach((w, i) => { const t = at('f2', w); tl.fromTo(fi[i], {opacity: 0, x: -40}, {opacity: 1, x: 0, duration: .4, ease: 'power3.out'}, t); fx(t, 'pop', .9); });
+  tl.to(fi, {textDecoration: 'line-through', color: 'rgba(255,255,255,.55)', duration: .01, stagger: .1}, en('f2') + .05);
+  fx(en('f2') + .05, 'scratch');
+  tl.to('#card', {rotationY: 180, duration: .85, ease: 'power3.inOut'}, st('f3') - .1)
+    .to('#card', {scale: .9, duration: .42, yoyo: true, repeat: 1, ease: 'sine.inOut'}, st('f3') - .1)
+    .to('#glowB', {opacity: 1, duration: .8}, st('f3'));
+  fx(st('f3') - .1, 'whoosh_long');
+  const bi = $$('.back .it');
+  ['ngủ', 'ăn', 'đi'].forEach((w, i) => { const t = at('f3', w); tl.fromTo(bi[i], {opacity: 0, x: 40}, {opacity: 1, x: 0, duration: .4, ease: 'back.out(2)'}, t); fx(t, 'ding', .9); });
+  tl.to('#card', {z: 600, opacity: 0, duration: .45, ease: 'power3.in'}, st('f4') - .2)
+    .to('#scene3d', {filter: 'blur(20px)', duration: .45}, st('f4') - .2);
+  leave('#fGoal', st('f4') - .2);
+  fx(st('f4') - .2, 'whoosh');
+  tl.to('#dim', {opacity: 1, duration: .5}, st('f4') - .3).to('#dim', {opacity: 0, duration: .6}, en('f4') + .3);
+  speak('#fL1', 'f4', 'không', 'chỉ');
+  speak('#fL2', 'f4', 'chỉ');
+  fx(at('f4', 'chỉ'), 'bell_lo', .7);
+  tl.to('#glowB', {opacity: 0, duration: 1}, en('f4'));
+  leave('#fLine', en('f4') + .25);
+  fx(en('f4') + .25, 'whoosh_fast');
+
+  // ---------- G: close ----------
+  tl.to('#dim', {opacity: .9, duration: .6}, st('g1') - .3);
+  tl.to('#dim', {opacity: 1, duration: .6}, st('b1') - .2).to('#dim', {opacity: 0, duration: .6}, st('b2'));
+  scene('#G', st('g1') - .3, T + 1);
+  enter('#gQ', st('g1') - .1, {y: 80});
+  fx(st('g1') - .1, 'whoosh');
+  tl.to('#gStrike', {scaleX: 1, duration: .45, ease: 'power3.inOut'}, at('g1', 'làm'));
+  fx(at('g1', 'làm'), 'scratch');
+  tl.to('#gQ', {rotationX: 180, opacity: 0, y: 10, duration: .5, ease: 'power3.in'}, st('g2') - .1);
+  fx(st('g2') - .1, 'whoosh');
+  typer($('#gQ2'), 'Làm sao để thua?', [12, 16], at('g2', 'làm'), .7);
+  speak('#gSub', 'g2', 'rồi');
+  tl.to('#gQ2 .caret', {opacity: 0, duration: .1}, en('g2'));
+  leave(['#gQ2', '#gSub'], st('g3') - .35, {y: -120});
+  fx(st('g3') - .35, 'whoosh_fast');
+  tl.to('#glowB', {opacity: 1, duration: 1.2}, st('g3') - .3);
+  tl.set('#outro', {opacity: 1}, st('g3') - .3)
+    .fromTo('#logo2', {opacity: 0, scale: .3, rotation: -180}, {opacity: 1, scale: 1, rotation: 0, duration: .8, ease: 'expo.out'}, st('g3') - .3)
+    .fromTo('#brand .ch', {opacity: 0, y: 160, x: -60, rotation: -50, filter: 'blur(10px)'}, {opacity: 1, y: 0, x: 0, rotation: 0, filter: 'blur(0px)', duration: .55, stagger: .04, ease: 'back.out(1.6)'}, st('g3') - .2)
+    .fromTo('#sub', {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: .5}, en('g3') + .3)
+    .to('#fade', {opacity: 1, duration: .8}, T - .8);
+  fx(st('g3') - .3, 'outro');
+}
+
+// ---------- per-frame driven state ----------
+let capSeg = null;
+function drive(t) {
+  const set = (g, i, f) => $$(g + ' .r' + i).forEach(e => e.style.transform = f);
+  for (const g of ['#glow', '#glowB']) {
+    set(g, 1, `translate(${Math.sin(t * .5) * 120}px,${Math.sin(t * .37) * 60}px) rotate(${-32 + Math.sin(t * .4) * 9}deg)`);
+    set(g, 2, `translate(${Math.sin(t * .6 + 1) * 160}px,${Math.cos(t * .45) * 70}px) rotate(${-30 + Math.sin(t * .5 + .5) * 10}deg)`);
+    set(g, 3, `translate(${Math.cos(t * .3) * 140}px,${Math.sin(t * .35) * 90}px) scale(${1 + Math.sin(t * .7) * .12})`);
+    set(g, 4, `translate(${Math.sin(t * .28) * 160}px,${Math.cos(t * .4) * 70}px)`);
+  }
+  const blink = (Math.floor(t * 2.2) % 2) ? 0 : 1;
+  $$('.caret').forEach(c => c.style.opacity = blink);
+  if (t >= at('a2', 'hỏi')) { const c = $('#aQ1 .caret'); if (c) c.style.opacity = 0; }
+  if (t >= st('b1') - 1) { const c = $('#aQ2 .caret'); if (c) c.style.opacity = 0; }
+  if (t >= en('d1') + .4) { const c = $('#dHeadT .caret'); if (c) c.style.opacity = 0; }
+  if (t >= clickAtGlobal) { const c = $('#eGoal .caret'); if (c) c.style.opacity = 0; }
+  if (t >= en('g2')) { const c = $('#gQ2 .caret'); if (c) c.style.opacity = 0; }
+  const talking = (t > at('a1', 'làm') && t < en('a1')) || (t > at('a2', 'hỏi') + .45 && t < at('a2', 'hỏi') + 1.2);
+  $$('#A .wave i').forEach((b, i) => b.style.height = (talking ? 8 + Math.abs(Math.sin(t * 14 + i * 1.7)) * 22 : 10) + 'px');
+  const ry = gsap.getProperty('#card', 'rotationY') % 360;
+  $('.front').style.visibility = ry < 90 ? 'visible' : 'hidden';
+  $('.back').style.visibility = ry >= 90 ? 'visible' : 'hidden';
+  const pills = $$('#ePills .pill'), ca = [st('e2') + .05, st('e3') + .05, st('e4') + .05];
+  pills.forEach((p, i) => p.classList.toggle('on', t >= ca[i] && (i === 2 || t < ca[i + 1])));
+  // karaoke captions
+  const cap = $('#cap');
+  const s = TIMING.segs.find(s => t >= s.start - .15 && t < s.end + .35);
+  if (!s || NOCAP.has(s.id)) { cap.style.opacity = 0; return; }
+  if (capSeg !== s.id) { cap.innerHTML = s.text.split(' ').map(w => `<span>${w}</span>`).join(' '); capSeg = s.id; }
+  cap.style.opacity = Math.min(1, (t - s.start + .15) / .15, (s.end + .35 - t) / .2);
+  const sp = [...cap.children]; let ci = 0;
+  sp.forEach(w => { const wt = s.start + (s.end - s.start) * ci / s.text.length; ci += w.textContent.length + 1;
+    w.className = t >= wt ? 'on' : ''; });
+  const on = sp.filter(w => w.className === 'on'); if (on.length) on[on.length - 1].className = 'on now';
+}
+let clickAtGlobal = 0;
+window.seek = t => { tl.seek(t, false); drive(t); };
+window.DURATION = T;
+document.fonts.ready.then(() => { clickAtGlobal = st('e3') + .05; build(); seek(0); window.SFX = SFX; window.READY = true; });
+</script></body></html>

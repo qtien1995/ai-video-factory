@@ -1,0 +1,17 @@
+motioncut — third-party notices
+
+Bundled:
+- assets/gsap.min.js: GSAP, GreenSock standard license (https://gsap.com/standard-license). Same file as seecut/assets/gsap.min.js.
+- assets/three.min.js: three.js r149, MIT License (https://github.com/mrdoob/three.js/blob/dev/LICENSE).
+- assets/fonts/*.woff2: Be Vietnam Pro and Playfair Display, SIL Open Font License 1.1 (same files as luancut/assets/fonts).
+- All 3D props in templates/phan-du-chu-y-3d-16x9 (phone, eye, balance, calendar, gem, tunnel...) are built from three.js primitives, original to this repo.
+- All illustrations in templates/*/index.html (school, portraits, bookshelf, globe, phone, icons) are hand-written SVG, original to this repo.
+
+Not distributed here (installed by scripts/setup.py or by you, under their own licenses):
+- Piper TTS (`piper-tts`, MIT) and the Vietnamese voice model `vi_VN-vais1000-medium`
+  (downloaded from https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models). The voice model's licence has NOT been
+  verified for commercial use — check before using audio from it on a monetised channel, or replace the voice.
+- playwright (Apache-2.0) + Chromium, ffmpeg, numpy, Pillow.
+
+Quotations and dates used in the example scripts (Jacobi, Munger, Franklin, Lincoln, Faraday) are public-domain facts / short
+attributed quotes; re-verify any new quotation before publishing.

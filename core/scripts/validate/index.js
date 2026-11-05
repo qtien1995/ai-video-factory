@@ -2,7 +2,14 @@ import * as fs from "fs";
 import * as path from "path";
 import minimist from "minimist";
 import { validateSpec } from "../../schemas/zod.js";
-import { routeSpec } from "../router/index.js";
+
+function routeSpec(spec, userOverride) {
+  return {
+    success: true,
+    selectedEngine: "REMOTION",
+    reasons: ["Pure Bespoke V4 engine: Remotion"]
+  };
+}
 
 async function run() {
   const argv = minimist(process.argv.slice(2));

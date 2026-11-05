@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{--aqua:#22d3ee;--ice:#8ff0ff;--deep:#020b14;--mute:#8fb3c9;--coral:#fda4af;--gold:#ffd166}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--deep)}
+body{font-family:BVP,sans-serif;font-weight:600;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(120% 90% at 50% 40%,#04192a 0%,#020b14 60%,#01060c 100%)}
+.abs{position:absolute}
+.serif{font-family:PF,serif;font-style:italic;font-weight:700}
+.ice{color:var(--ice)}.coral{color:var(--coral)}.gold{color:var(--gold)}.vio{color:#c4b5fd}.grn{color:#6ee7b7}.org{color:#fdba74}.pnk{color:#f9a8d4}
+.sh{text-shadow:0 0 3px rgba(1,10,20,.9),0 4px 26px rgba(1,10,20,.95),0 0 60px rgba(1,10,20,.6)}
+.glow{position:absolute;inset:-200px;mix-blend-mode:screen}
+.rib{position:absolute;border-radius:50%}
+.r1{width:1700px;height:380px;left:300px;top:420px;background:linear-gradient(90deg,transparent 0%,#0369a1 20%,#06b6d4 50%,#67e8f9 62%,transparent 90%);filter:blur(70px);opacity:.8}
+.r2{width:1300px;height:120px;left:520px;top:560px;background:linear-gradient(90deg,transparent,#a5f3fc 45%,#e0fdff 55%,transparent);filter:blur(26px);opacity:.55}
+.r3{width:1100px;height:520px;left:1300px;top:120px;background:radial-gradient(closest-side,#0e7490,transparent);filter:blur(60px);opacity:.7}
+.r4{width:900px;height:420px;left:0;top:900px;background:radial-gradient(closest-side,#075985,transparent);filter:blur(70px);opacity:.6}
+#glowB .r1{background:linear-gradient(90deg,transparent 0%,#1e3a8a 20%,#2563eb 50%,#38bdf8 62%,transparent 90%)}
+#glowB .r2{background:linear-gradient(90deg,transparent,#93c5fd 45%,#dbeafe 55%,transparent)}
+#glowB .r3{background:radial-gradient(closest-side,#1d4ed8,transparent)}
+#glowH .r1{background:linear-gradient(90deg,transparent 0%,#7c2d12 20%,#ea580c 50%,#fdba74 62%,transparent 90%)}
+#glowH .r2{background:linear-gradient(90deg,transparent,#fed7aa 45%,#ffedd5 55%,transparent)}
+#glowH .r3{background:radial-gradient(closest-side,#c2410c,transparent)}
+#glowP .r1{background:linear-gradient(90deg,transparent 0%,#4c1d95 20%,#7c3aed 50%,#c4b5fd 62%,transparent 90%)}
+#glowP .r2{background:linear-gradient(90deg,transparent,#ddd6fe 45%,#f5f3ff 55%,transparent)}
+#glowP .r3{background:radial-gradient(closest-side,#6d28d9,transparent)}
+#glowG .r1{background:linear-gradient(90deg,transparent 0%,#064e3b 20%,#10b981 50%,#6ee7b7 62%,transparent 90%)}
+#glowG .r2{background:linear-gradient(90deg,transparent,#a7f3d0 45%,#ecfdf5 55%,transparent)}
+#glowG .r3{background:radial-gradient(closest-side,#047857,transparent)}
+#vign{position:absolute;inset:0;z-index:6;background:radial-gradient(85% 75% at 50% 50%,transparent 55%,rgba(0,4,10,.85) 100%);pointer-events:none}
+#dim{position:absolute;inset:0;background:radial-gradient(ellipse 62% 46% at 50% 45%,rgba(1,6,12,.82),rgba(1,6,12,.35) 70%,transparent);opacity:0}
+.scene{position:absolute;inset:0;opacity:0;z-index:1}
+#gl{z-index:5}
+.ctr{position:absolute;left:0;width:1920px;text-align:center}
+.glass{background:rgba(3,14,24,.84);border:1.5px solid rgba(125,211,252,.28);border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.55),0 0 60px rgba(34,211,238,.16)}
+.pill{display:inline-flex;align-items:center;gap:14px;padding:16px 32px;border-radius:999px;font-size:36px;white-space:nowrap;background:rgba(4,24,40,.78);border:1.5px solid rgba(165,243,252,.6);box-shadow:0 0 26px rgba(34,211,238,.35),inset 0 0 18px rgba(103,232,249,.18);color:#e6fbff}
+.pill.red{border-color:rgba(253,164,175,.8);box-shadow:0 0 26px rgba(251,113,133,.4);color:#ffe4e6}
+.pill.hot{border-color:#fdba74;box-shadow:0 0 26px rgba(251,146,60,.45);color:#fff7ed}
+.pill.vio{border-color:#c4b5fd;box-shadow:0 0 26px rgba(139,92,246,.45);color:#f5f3ff}
+.pill.grn{border-color:#6ee7b7;box-shadow:0 0 26px rgba(52,211,153,.4);color:#ecfdf5}
+.pill.org{border-color:#fdba74;box-shadow:0 0 26px rgba(251,146,60,.45);color:#fff7ed}
+#lnx{position:absolute;left:34px;top:24px;width:440px;height:34px;overflow:hidden;z-index:7;border-radius:17px;background:rgba(1,8,15,.45);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+#lnxIn{position:absolute;left:0;top:0;height:34px;white-space:nowrap;font-size:19px;line-height:34px;letter-spacing:1.5px;color:#9fd8ea}
+#lnxIn span{display:inline-block;padding-right:56px}
+#lnxIn b{color:#c4b5fd;font-weight:600}
+.pill.strike{text-decoration:line-through;text-decoration-color:#fda4af;text-decoration-thickness:4px}
+.kicker{font-size:30px;color:var(--mute);letter-spacing:4px;text-transform:uppercase}
+.w{display:inline-block;opacity:0}
+#cap2{position:absolute;left:50%;top:1002px;z-index:7;transform:translateX(-50%);width:max-content;max-width:1780px;padding:3px 22px;border-radius:14px;background:rgba(1,8,15,.5);font-size:27px;line-height:1.3;color:#bfe9f5;text-align:center;white-space:nowrap;opacity:0}
+#cap{position:absolute;left:50%;top:916px;z-index:7;transform:translateX(-50%);width:max-content;max-width:1700px;padding:12px 34px;border-radius:20px;background:rgba(1,8,15,.64);font-size:40px;line-height:1.35;text-align:center;white-space:nowrap;opacity:0}
+#cap span{color:rgba(255,255,255,.45)}#cap span.on{color:#fff}#cap span.now{color:var(--aqua)}
+#fade{position:absolute;inset:0;z-index:8;background:#000;opacity:0}
+</style></head>
+<body><div id="stage">
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="aq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0fdff"/><stop offset=".5" stop-color="#67e8f9"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+</defs></svg>
+</div>
+<script src="gsap.min.js"></script>
+<script src="three.min.js"></script>
+<script src="timing.js"></script>
+<script>
+const STAGE = document.getElementById('stage');
+const E = (tag, cls, parent, css, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (css) e.style.cssText = css; if (html != null) e.innerHTML = html; (parent || STAGE).appendChild(e); return e; };
+const CTR = (parent, top, cls, css, html) => E('div', 'ctr ' + (cls || ''), parent, 'top:' + top + 'px;' + (css || ''), html);
+const PILL = (parent, top, html, cls = '', css = '') => CTR(parent, top, '', 'opacity:0;' + css, `<span class="pill ${cls}">${html}</span>`);
+const wordsEl = (el, text, cls = {}) => el.innerHTML = text.split(' ').map((w, i) => { const c = Object.keys(cls).find(k => cls[k].includes(i)); return `<span class="w${c ? ' ' + c : ''}">${w}</span>`; }).join(' ');
+
+// ---------- nền ----------
+for (const [id, op] of [['glow', 1], ['glowB', 0], ['glowH', 0], ['glowP', 0], ['glowG', 0]]) {
+  const g = E('div', 'glow', STAGE); g.id = id; g.style.opacity = op;
+  ['r1', 'r2', 'r3', 'r4'].forEach(c => E('div', 'rib ' + c, g));
+}
+const dim = E('div', null, STAGE); dim.id = 'dim';
+const GB = () => document.getElementById('glowB'), GH = () => document.getElementById('glowH');
+
+// ---------- thời gian theo voice ----------
+const SEG = Object.fromEntries(TIMING.segs.map(s => [s.id, s]));
+const st = id => SEG[id].start, en = id => SEG[id].end;
+function at(id, word, nth = 0) {
+  const w = word.toLowerCase(); let c = -1;
+  for (const x of SEG[id].words) if (x.w.toLowerCase().includes(w)) { c++; if (c === nth) return x.s; }
+  throw new Error('không thấy từ "' + word + '" (' + nth + ') trong ' + id);
+}
+const T = TIMING.total, tl = gsap.timeline({paused: true}); const SFX = [];
+const fx = (t, kind, g = 1) => SFX.push({t: +Math.max(0, t).toFixed(3), kind, g});
+const IN = {opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)'};
+const enter = (el, t, from = {}, d = .6) => tl.fromTo(el, {opacity: 0, y: 60, scale: .94, filter: 'blur(14px)', ...from}, {...IN, duration: d, ease: 'expo.out'}, t);
+const leave = (el, t, to = {}, d = .45) => tl.to(el, {opacity: 0, scale: 1.08, filter: 'blur(14px)', duration: d, ease: 'power3.in', ...to}, t);
+function reveal(el, t0, t1) { const ws = [...el.querySelectorAll('.w')], per = Math.min(.4, Math.max(.1, (t1 - t0) / ws.length));
+  ws.forEach((w, i) => tl.fromTo(w, {opacity: 0, y: 50, filter: 'blur(12px)'}, {opacity: 1, y: 0, filter: 'blur(0px)', duration: .5, ease: 'expo.out'}, t0 + i * per)); }
+function revealAt(el, id, list) {
+  [...el.querySelectorAll('.w')].forEach((w, i) => { const [k, n] = list[Math.min(i, list.length - 1)]; tl.fromTo(w, {opacity: 0, y: 40, filter: 'blur(10px)'}, {opacity: 1, y: 0, filter: 'blur(0px)', duration: .4, ease: 'expo.out'}, at(id, k, n) - .05); });
+}
+const CARETS = [];
+function typer(el, text, hl, t0, d) {
+  const o = {n: 0};
+  tl.fromTo(o, {n: 0}, {n: text.length, duration: d, ease: 'none', onUpdate() {
+    const n = Math.round(o.n); let s = '';
+    for (let i = 0; i < n; i++) s += (hl && i >= hl[0] && i < hl[1]) ? `<span class="ice">${text[i]}</span>` : text[i];
+    el.innerHTML = s + '<span class="caret" style="display:inline-block;width:4px;height:1em;background:#22d3ee;vertical-align:-.12em;margin-left:4px"></span>';
+  }}, t0);
+  for (let i = 0; i < text.length; i += 2) if (text[i] !== ' ') fx(t0 + d * i / text.length, 'tick');
+}
+const show = (el, a, b) => { tl.set(el, {opacity: 1}, a); tl.set(el, {opacity: 0}, b); };
+const sceneEl = id => { const e = E('div', 'scene', STAGE); e.id = id; return e; };
+const NOCAP = new Set();
+
+// ======================= 3D (three.js) =======================
+// 1 đơn vị thế giới = 100 px; (0,0) = tâm khung hình; camera nhìn thẳng ở z=0.
+const R = new THREE.WebGLRenderer({antialias: true, alpha: true, preserveDrawingBuffer: true});
+R.setPixelRatio(1); R.setSize(1920, 1080); R.setClearColor(0x000000, 0); R.outputEncoding = THREE.sRGBEncoding;
+const GL = R.domElement; GL.id = 'gl'; GL.style.cssText = 'position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none';
+STAGE.appendChild(GL);
+const scn = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(30, 16 / 9, 1, 100); cam.position.set(0, 0, 5.4 / Math.tan(15 * Math.PI / 180));
+scn.add(new THREE.AmbientLight(0x9fc4d9, .5));
+const dl = new THREE.DirectionalLight(0xffffff, 1.15); dl.position.set(3, 6, 9); scn.add(dl);
+const pl1 = new THREE.PointLight(0x22d3ee, 1.3, 40); pl1.position.set(-6, 3, 7); scn.add(pl1);
+const pl2 = new THREE.PointLight(0xfdba74, .9, 40); pl2.position.set(7, -3, 6); scn.add(pl2);
+
+const MAT = (c, o = {}) => new THREE.MeshStandardMaterial({color: c, emissive: o.e ?? c, emissiveIntensity: o.ei ?? .35, metalness: o.m ?? .25, roughness: o.r ?? .4, transparent: o.op != null, opacity: o.op ?? 1});
+const CY = MAT(0x1aa6d8, {e: 0x035e8c, ei: .45, m: .1, r: .5}), ICE = MAT(0xcdeff7, {e: 0x4fc3dc, ei: .12, m: .1, r: .5}), GOLD = MAT(0xffc83d, {e: 0xb45309, ei: .7}),
+  RED = MAT(0xfb7185, {e: 0x9f1239, ei: .75}), DARK = MAT(0x0d3047, {e: 0x04202f, ei: .5}), GREY = MAT(0x56778c, {e: 0x1a3a4d, ei: .3}), NAVY = MAT(0x0a4a6e, {e: 0x053553, ei: .6});
+const EDGE = new THREE.LineBasicMaterial({color: 0xe0fdff, transparent: true, opacity: .4});
+const box = (w, h, d, m, edge = true) => { const me = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); if (edge) me.add(new THREE.LineSegments(new THREE.EdgesGeometry(me.geometry), EDGE)); return me; };
+const cyl = (rt, rb, h, m, seg = 32) => new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, seg), m);
+const sph = (r, m) => new THREE.Mesh(new THREE.SphereGeometry(r, 24, 16), m);
+const tor = (r, t, m) => new THREE.Mesh(new THREE.TorusGeometry(r, t, 14, 40), m);
+const grp = (...c) => { const g = new THREE.Group(); c.forEach(x => g.add(x)); return g; };
+const at3 = (o, x, y, z = 0) => { o.position.set(x, y, z); return o; };
+const clamp01 = x => Math.min(1, Math.max(0, x));
+const ease = x => 1 - Math.pow(1 - clamp01(x), 3);
+const eio = x => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = x => { x = clamp01(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const pop = (o, t, t0, d = .4) => { o.visible = t >= t0; o.scale.setScalar(Math.max(.0001, back((t - t0) / d))); };
+function labelPlane(txt, s, col = '#06394f', fs = 150) {
+  const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+  x.fillStyle = col; x.font = '800 ' + fs + 'px BVP, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(txt, 128, 136);
+  const tx = new THREE.CanvasTexture(c); tx.encoding = THREE.sRGBEncoding;
+  return new THREE.Mesh(new THREE.PlaneGeometry(s, s), new THREE.MeshBasicMaterial({map: tx, transparent: true}));
+}
+const PROPS = [];
+function prop(g, t0, t1, upd, base = 1) { scn.add(g); g.visible = false; PROPS.push({g, t0, t1, upd, base}); return g; }
+function draw3d(t) {
+  for (const p of PROPS) {
+    const on = t >= p.t0 && t <= p.t1; p.g.visible = on; if (!on) continue;
+    const k = Math.min(back((t - p.t0) / .6), ease((p.t1 - t) / .35));
+    p.g.scale.setScalar(Math.max(.0001, k * p.base)); if (p.upd) p.upd(t, p.g, k);
+  }
+  cam.position.x = Math.sin(t * .23) * .5; cam.position.y = Math.sin(t * .17) * .25; cam.lookAt(0, 0, 0);
+  R.render(scn, cam);
+}
+const bar3 = (w, m) => { const g = new THREE.BoxGeometry(w, 1, w); g.translate(0, .5, 0); const me = new THREE.Mesh(g, m); me.add(new THREE.LineSegments(new THREE.EdgesGeometry(g), EDGE)); return me; };
+function makeBook(sc = 1) {
+  const g = new THREE.Group(), L = new THREE.Group(), Rr = new THREE.Group();
+  [[L, -1], [Rr, 1]].forEach(([h, s]) => { h.add(at3(box(1.5, .1, 2.1, NAVY), s * .76, 0, 0), at3(box(1.4, .12, 1.95, ICE, false), s * .72, .1, 0)); h.rotation.z = -s * .22; g.add(h); });
+  g.scale.setScalar(sc); g.rotation.x = -.7; return g;
+}
+function makeGear(r, n, hub) {
+  const g = new THREE.Group(), body = cyl(r, r, .5, CY); body.rotation.x = Math.PI / 2; g.add(body);
+  for (let i = 0; i < n; i++) { const a = i * 2 * Math.PI / n, th = box(Math.min(.34, r * .3), .32, .5, CY); th.position.set(Math.cos(a) * (r + .15), Math.sin(a) * (r + .15), 0); th.rotation.z = a - Math.PI / 2; g.add(th); }
+  const h = cyl(r * .35, r * .35, .62, hub); h.rotation.x = Math.PI / 2; g.add(h);
+  const ring = tor(r * .62, .05, ICE); ring.position.z = .27; g.add(ring); return g;
+}
+
+// phụ đề tiếng Anh (nhỏ, dưới phụ đề tiếng Việt)
+const ENG = {
+ "a0": "Just a one-second glance at your phone?",
+ "a1": "You think glancing at your phone a little while studying does no harm.",
+ "a2": "Just one message, one notification, a few seconds, and you're right back.",
+ "a3": "But there's another way of looking at it that you need to know.",
+ "b1": "You can get back to your desk in a few seconds.",
+ "b2": "But your mind doesn't come back that fast.",
+ "c1": "In psychology there's a concept called Attention Residue.",
+ "c2": "When you switch from task A to task B, part of your attention stays stuck on task A.",
+ "c3": "You're still thinking about the message you just read while your eyes are on the book.",
+ "c4": "The result is you do task B with a head that's only partly focused.",
+ "c5": "Research on workplaces also shows that after an interruption, it can take quite a while to fully return to what you were doing.",
+ "d1": "Imagine two friends who both sit down to study for three hours.",
+ "d2": "The first keeps the phone beside their hand and glances at it every ten minutes.",
+ "d3": "The second leaves the phone in another room, studies 50 minutes straight, then rests 10.",
+ "d4": "At the end of the session, who really learned more?",
+ "d5": "You don't need to sit longer, if you can sit more fully.",
+ "e1": "A related concept is Deep Work.",
+ "e2": "It's a state of full focus on one thing that demands thinking, with no distraction, long enough to produce quality results.",
+ "e3": "In an age of constant notifications, this ability is getting rarer, and because it's rare, it's getting more valuable.",
+ "e4": "To get stretches of deep work, schedule them like an appointment.",
+ "e5": "To be pulled away less, turn off notifications and close every unrelated tab.",
+ "e6": "To keep your flow, write down whatever pops into your head on paper and deal with it later.",
+ "f1": "These changes sound very small.",
+ "f2": "But remember, one hour of full focus can be worth more than three hours of patchwork sitting.",
+ "f3": "From today, don't just ask how long you've been sitting.",
+ "f4": "Ask how long you were truly present during that time.",
+ "f5": "Don't split your attention among things that don't deserve it.",
+ "g1": "Follow the channel to discover psychology principles that help you focus deeper."
+};
+
+// ---------- bộ dựng vật 3D dùng chung ----------
+const makeClock = (h, m) => { const g = new THREE.Group(), face = cyl(.95, .95, .1, ICE), body = tor(1.0, .14, NAVY); face.rotation.x = Math.PI / 2; g.add(face, body);
+  for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6, tk = box(.05, i % 3 ? .1 : .2, .04, DARK, false); tk.position.set(Math.sin(a) * .8, Math.cos(a) * .8, .08); tk.rotation.z = -a; g.add(tk); }
+  const hand = (len, w, ang, mt) => { const hm = new THREE.Mesh(new THREE.BoxGeometry(w, len, .05), mt); hm.position.y = len / 2; const p = new THREE.Group(); p.add(hm); p.position.z = .1; p.rotation.z = -ang; g.add(p); };
+  hand(.5, .09, (h % 12 + m / 60) * Math.PI / 6, DARK); hand(.75, .06, m * Math.PI / 30, RED); g.add(at3(sph(.08, DARK), 0, 0, .1)); return g; };
+const makePin = () => { const cone = new THREE.Mesh(new THREE.ConeGeometry(.42, 1.0, 24), RED); cone.rotation.x = Math.PI; return grp(at3(cone, 0, -.2), at3(sph(.5, RED), 0, .45), at3(sph(.2, ICE), 0, .45, .42)); };
+const makeDumbbell = () => { const db = grp(at3(cyl(.07, .07, 1.9, ICE, 12), 0, 0), at3(cyl(.5, .5, .2, GOLD), -.85, 0), at3(cyl(.5, .5, .2, GOLD), .85, 0), at3(cyl(.4, .4, .16, CY), -1.05, 0), at3(cyl(.4, .4, .16, CY), 1.05, 0)); db.children.forEach(c => c.rotation.z = Math.PI / 2); return db; };
+const makeShoe = () => { const up = sph(1, CY); up.scale.set(.85, .5, .38); up.position.set(-.35, -.02, 0); const toe = sph(1, CY); toe.scale.set(.55, .3, .36); toe.position.set(.6, -.16, 0);
+  const g = grp(at3(box(2.1, .22, .8, DARK), 0, -.32), up, toe, at3(box(.35, .5, .6, ICE, false), -1.0, .05)); for (let i = 0; i < 3; i++) g.add(at3(box(.07, .05, .5, ICE, false), -.1 + i * .3, .3 - i * .04)); return g; };
+const makeBrush = () => grp(at3(box(.16, 1.5, .14, ICE), 0, -.2), at3(box(.3, .45, .16, CY), 0, .75), ...Array.from({length: 5}, (_, i) => at3(box(.04, .22, .04, ICE, false), -.1 + i * .05, .98, .1)));
+const makeCup = () => { const g = grp(at3(cyl(.55, .45, .9, ICE), 0, 0), at3(cyl(.5, .5, .03, MAT(0x6b4423, {ei: .15})), 0, .44), at3(tor(.28, .07, ICE), .65, 0)); g.steam = [0, 1, 2].map(i => { const s = sph(.1, MAT(0xffffff, {ei: .4, op: .35})); g.add(s); return s; }); return g; };
+const makePlate = () => grp(at3(cyl(1.15, 1.0, .12, ICE), 0, 0), at3(cyl(.78, .72, .14, CY), 0, .02), at3(box(.08, 1.2, .06, ICE, false), 1.5, 0), at3(box(.08, 1.2, .06, ICE, false), -1.5, 0));
+const makeHeart = () => { const s = new THREE.Shape(); s.moveTo(.25, .25); s.bezierCurveTo(.25, .25, .2, 0, 0, 0); s.bezierCurveTo(-.3, 0, -.3, .35, -.3, .35); s.bezierCurveTo(-.3, .55, -.1, .77, .25, .95); s.bezierCurveTo(.6, .77, .8, .55, .8, .35); s.bezierCurveTo(.8, .35, .8, 0, .5, 0); s.bezierCurveTo(.35, 0, .25, .25, .25, .25);
+  const geo = new THREE.ExtrudeGeometry(s, {depth: .3, bevelEnabled: true, bevelSize: .06, bevelThickness: .06, bevelSegments: 3, curveSegments: 16}); geo.center(); const m = new THREE.Mesh(geo, MAT(0xff5d73, {e: 0xb0122e, ei: .8})); m.scale.setScalar(1.9); return m; };
+const makeCards = () => grp(...[0, 1, 2, 3, 4].map(i => { const c = box(1.3, .85, .04, i % 2 ? ICE : CY); c.position.set((i - 2) * .22, 0, i * .06); c.rotation.z = (2 - i) * .14; return c; }));
+const makeTarget = () => { const g = grp(at3(cyl(1.0, 1.0, .08, ICE), 0, 0), at3(cyl(.78, .78, .1, CY), 0, 0, .0), at3(cyl(.56, .56, .12, ICE), 0, 0), at3(cyl(.34, .34, .14, GOLD), 0, 0)); g.children.forEach(c => c.rotation.x = Math.PI / 2); return g; };
+const makeArrow = () => grp(at3(cyl(.05, .05, 1.7, ICE, 8), 0, -.85), at3(new THREE.Mesh(new THREE.ConeGeometry(.13, .32, 12), GOLD), 0, .1), at3(box(.3, .02, .3, RED, false), 0, -1.6), at3(box(.02, .3, .3, RED, false), 0, -1.6));
+const makeFog = () => { const g = new THREE.Group(); g.blobs = []; for (let i = 0; i < 8; i++) { const b = sph(.55 + (i % 3) * .2, MAT(0x9ec3d6, {e: 0x3d6f8a, ei: .3, op: .3, r: 1, m: 0})); b.position.set(Math.cos(i * 2.4) * 1.0, Math.sin(i * 1.7) * .6, Math.sin(i) * .5); g.add(b); g.blobs.push(b); } return g; };
+const fogUpd = (g, t) => g.blobs.forEach((b, i) => { b.scale.setScalar(1 + Math.sin(t * 1.3 + i * 1.7) * .12); b.position.x += Math.sin(t * .9 + i) * .0015; });
+const tankMat = MAT(0xcffafe, {e: 0x22d3ee, ei: .2, op: .25, r: .1});
+const textLabel = (txt, w, fs = 100, col = '#fff') => labelPlane(txt, w, col, fs);
+
+// ---------- thêm màu: tím, lục, cam, hồng (tông chính vẫn xanh dương) ----------
+const PURPLE = MAT(0x6d3df0, {e: 0x3b1a9a, ei: .35, m: 0, r: .75}), GREEN = MAT(0x10b981, {e: 0x065f46, ei: .35, m: 0, r: .75}), ORANGE = MAT(0xf97316, {e: 0x9a3412, ei: .35, m: 0, r: .75}), PINK = MAT(0xec4899, {e: 0x9d174d, ei: .35, m: 0, r: .75});
+const SNOW = MAT(0xf1fbff, {e: 0x9fd8ea, ei: .25, m: 0, r: .6});
+const PAL = [CY, PURPLE, GREEN, ORANGE, PINK, GOLD];
+
+const makeFlagShape = (m, w = 1.2, h = .8) => { const s = new THREE.Shape(); s.moveTo(0, 0); s.lineTo(w, h / 2); s.lineTo(0, h); s.lineTo(0, 0); const f = new THREE.Mesh(new THREE.ShapeGeometry(s), new THREE.MeshStandardMaterial({color: m.color, emissive: m.emissive, emissiveIntensity: .7, side: THREE.DoubleSide})); return f; };
+const makeFlag = (m, hgt = 2.4) => { const f = makeFlagShape(m); f.position.set(.04, hgt - .85, 0); const g = grp(at3(cyl(.05, .05, hgt, ICE, 8), 0, hgt / 2), f, at3(sph(.09, GOLD), 0, hgt)); g.flag = f; return g; };
+const makeMountain = () => { const g = grp(at3(new THREE.Mesh(new THREE.ConeGeometry(1.7, 3.0, 6), NAVY), 0, 1.5), at3(new THREE.Mesh(new THREE.ConeGeometry(.55, .9, 6), SNOW), 0, 2.55), at3(new THREE.Mesh(new THREE.ConeGeometry(1.0, 1.7, 6), MAT(0x0b5d8a, {e: 0x053553, ei: .5})), 1.2, .85)); const fl = makeFlag(GOLD, 1.1); fl.position.set(0, 3.0, 0); g.add(fl); g.fl = fl; return g; };
+const makeTrophy = (m = GOLD) => grp(at3(cyl(.75, .4, .9, m, 24), 0, .9), at3(cyl(.12, .12, .5, m, 12), 0, .25), at3(cyl(.5, .6, .18, DARK), 0, -.1), at3(tor(.42, .08, m), -.85, .95), at3(tor(.42, .08, m), .85, .95), at3(sph(.16, ICE), 0, 1.6));
+const makePodium = () => grp(at3(box(1.2, 1.4, 1.2, GOLD), 0, .7), at3(box(1.1, .95, 1.1, ICE), -1.25, .48), at3(box(1.1, .7, 1.1, ORANGE), 1.25, .35), at3(textLabel('1', .8, 150, '#3a2200'), 0, .75, .62), at3(textLabel('2', .7, 150, '#0a3a54'), -1.25, .5, .56), at3(textLabel('3', .7, 150, '#fff'), 1.25, .36, .56));
+const makeCompass = () => { const g = new THREE.Group(), face = cyl(1.15, 1.15, .12, ICE), body = tor(1.2, .16, NAVY); face.rotation.x = Math.PI / 2; const n1 = new THREE.Mesh(new THREE.ConeGeometry(.2, .95, 4), RED), n2 = new THREE.Mesh(new THREE.ConeGeometry(.2, .95, 4), ICE); n1.position.y = .48; n2.position.y = -.48; n2.rotation.z = Math.PI; const needle = grp(n1, n2); needle.position.z = .12; g.add(face, body, needle, at3(sph(.12, DARK), 0, 0, .14));
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4, tk = box(.06, i % 2 ? .12 : .24, .04, DARK, false); tk.position.set(Math.sin(a) * .95, Math.cos(a) * .95, .08); tk.rotation.z = -a; g.add(tk); } g.needle = needle; return g; };
+const makeSmiley = () => { const g = grp(sph(1, GOLD)), e1 = sph(.1, DARK), e2 = sph(.1, DARK), mouth = tor(.5, .07, DARK); mouth.geometry = new THREE.TorusGeometry(.5, .07, 8, 24, Math.PI); e1.position.set(-.35, .3, .92); e2.position.set(.35, .3, .92); mouth.position.set(0, -.1, .93); mouth.rotation.z = Math.PI; g.add(e1, e2, mouth); g.mouth = mouth; return g; };
+const makeRunner = () => { const g = new THREE.Group(), limb = (len, m) => { const p = new THREE.Group(); p.add(at3(cyl(.09, .09, len, m, 10), 0, -len / 2)); return p; };
+  const body = at3(cyl(.24, .3, .9, CY), 0, .2), head = at3(sph(.3, ICE), 0, .95), legL = limb(.9, ICE), legR = limb(.9, ICE), armL = limb(.7, CY), armR = limb(.7, CY); legL.position.set(-.12, -.25, 0); legR.position.set(.12, -.25, 0); armL.position.set(-.3, .5, 0); armR.position.set(.3, .5, 0);
+  g.add(body, head, legL, legR, armL, armR); g.limbs = [legL, legR, armL, armR]; return g; };
+const makeHeadphones = () => { const arc = new THREE.Mesh(new THREE.TorusGeometry(.8, .09, 10, 32, Math.PI), PURPLE); return grp(arc, at3(cyl(.3, .3, .3, PINK, 24), -.8, 0), at3(cyl(.3, .3, .3, PINK, 24), .8, 0)); };
+const makePencil = () => { const g = grp(at3(cyl(.12, .12, 1.7, GOLD, 6), 0, .2), at3(new THREE.Mesh(new THREE.ConeGeometry(.12, .32, 6), ICE), 0, -.8), at3(cyl(.12, .12, .22, PINK, 6), 0, 1.15)); g.rotation.z = .6; return g; };
+const makeMetronome = () => { const g = new THREE.Group(), rod = new THREE.Group(); rod.add(at3(cyl(.03, .03, 1.5, ICE, 6), 0, .65), at3(box(.3, .2, .12, GOLD), 0, 1.0)); rod.position.set(0, .1, .3); g.add(at3(cyl(.35, .9, 2.0, PURPLE, 4), 0, 0), rod); g.rod = rod; return g; };
+const makeClipboard = () => { const g = new THREE.Group(); g.add(box(2.2, 3.0, .15, NAVY), at3(box(1.9, 2.6, .05, ICE, false), 0, 0, .1), at3(box(.7, .3, .2, GOLD), 0, 1.5, .12)); g.rows = [0, 1, 2].map(i => { const r = grp(at3(box(1.1, .1, .03, CY, false), .2, 0), at3(box(.3, .12, .03, GREEN, false), -.7, 0)); r.position.set(0, .7 - i * .7, .16); g.add(r); return r; }); return g; };
+const makeCard = (txt, m, col = '#fff', fs = 120) => { const c = box(2.4, 1.6, .2, m); c.add(at3(textLabel(txt, 1.9, fs, col), 0, 0, .11)); return c; };
+const makeChecker = () => { const cv = document.createElement('canvas'); cv.width = cv.height = 128; const x = cv.getContext('2d'); for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { x.fillStyle = (i + j) % 2 ? '#0b2a40' : '#ffffff'; x.fillRect(i * 32, j * 32, 32, 32); } const t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding;
+  const f = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.1, 8, 1), new THREE.MeshBasicMaterial({map: t, side: THREE.DoubleSide})); f.position.set(.84, 2.2, 0); const g = grp(at3(cyl(.06, .06, 3.2, ICE, 8), 0, 1.6), f, at3(sph(.1, GOLD), 0, 3.2)); g.flag = f; return g; };
+
+const makeCurveTube = (pts, m, r = .07) => { const c = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(p[0], p[1], 0)), false, 'centripetal'); const geo = new THREE.TubeGeometry(c, 300, r, 8, false); const me = new THREE.Mesh(geo, m); me.userData.idx = geo.index.count; return me; };
+const drawTube = (me, f) => { me.visible = f > .002; me.geometry.setDrawRange(0, Math.floor(me.userData.idx * clamp01(f) / 3) * 3); };
+const makeAxes = () => grp(at3(box(8.6, .06, .06, ICE, false), 0, -2.6), at3(box(.06, 4.6, .06, ICE, false), -4.3, -.3));
+const makeBell = () => { const cone = new THREE.Mesh(new THREE.ConeGeometry(.7, 1.1, 20, 1, true), new THREE.MeshStandardMaterial({color: 0xffc83d, emissive: 0xb45309, emissiveIntensity: .6, side: THREE.DoubleSide})); return grp(cone, at3(sph(.16, GOLD), 0, -.65), at3(tor(.7, .05, GOLD), 0, -.5)); };
+const makeMoon = () => grp(sph(.9, MAT(0xfff3b0, {e: 0xffd166, ei: .8, m: 0, r: .6})), at3(sph(.78, MAT(0x04223a, {e: 0x04223a, ei: .2, m: 0, r: .9})), .45, .15, .25));
+const makeSun = () => grp(sph(.7, MAT(0xffd166, {e: 0xff9f1c, ei: 1, m: 0})), ...Array.from({length: 8}, (_, i) => { const a = i * Math.PI / 4, r = box(.14, .5, .14, GOLD, false); r.position.set(Math.cos(a) * 1.15, Math.sin(a) * 1.15, 0); r.rotation.z = a - Math.PI / 2; return r; }));
+const fCurve = (u, k, H = 3.6) => -2.4 + H * Math.exp(-k * u);
+const makeCross = () => grp(at3(box(1.6, .2, .1, RED, false), 0, 0), at3(box(.2, 1.6, .1, RED, false), 0, 0));
+const crossIt = c => { c.children[0].rotation.z = Math.PI / 4; c.children[1].rotation.z = Math.PI / 4; return c; };
+// ---------- vật dựng riêng cho video "phần dư chú ý & làm việc sâu" ----------
+const makePhone = () => { const g = grp(box(1.1, 2.0, .16, DARK), at3(box(.94, 1.7, .05, CY, false), 0, .02, .1), at3(box(.3, .05, .03, ICE, false), 0, .93, .12)); g.badge = at3(sph(.2, RED), .5, .95, .2); g.add(g.badge); return g; };
+const makeEye = () => { const sc = sph(1, SNOW); sc.scale.set(1.25, .8, .5); const iris = cyl(.42, .42, .06, CY, 24); iris.rotation.x = Math.PI / 2; const pu = cyl(.2, .2, .08, DARK, 16); pu.rotation.x = Math.PI / 2; const ig = grp(iris, at3(pu, 0, 0, .02)); ig.position.z = .49; const g = grp(sc, ig); g.iris = ig; return g; };
+const makeBell2 = makeBell;
+const makeBalance = () => { const g = new THREE.Group(), beam = grp(box(4.4, .14, .14, GOLD)); const mkPan = () => { const p = grp(at3(cyl(.9, .9, .08, ICE), 0, 0), at3(box(.04, 1.0, .04, ICE, false), 0, .5)); return p; };
+  const pl = mkPan(), pr = mkPan(); g.add(beam, pl, pr, at3(box(.24, 2.4, .24, NAVY), 0, -1.2), at3(box(2.2, .2, .8, NAVY), 0, -2.4), at3(sph(.18, GOLD), 0, 0));
+  g.setA = a => { beam.rotation.z = a; pl.position.set(-2.2 * Math.cos(a), -2.2 * Math.sin(a) - 1.0, 0); pr.position.set(2.2 * Math.cos(a), 2.2 * Math.sin(a) - 1.0, 0); }; g.pl = pl; g.pr = pr; g.setA(0); return g; };
+const makeGem = m => { const me = new THREE.Mesh(new THREE.OctahedronGeometry(1), m); me.scale.y = 1.3; me.add(new THREE.LineSegments(new THREE.EdgesGeometry(me.geometry), EDGE)); return me; };
+const makeCalendar = () => { const g = grp(box(3.6, 2.8, .2, NAVY), at3(box(3.6, .55, .24, RED, false), 0, 1.12, 0), at3(box(3.3, 2.0, .05, ICE, false), 0, -.3, .12)); g.cells = [];
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) { const k = box(.5, .45, .06, [CY, PURPLE, GREEN, ORANGE, PINK][(r + c) % 5], false); k.position.set(-1.28 + c * .64, .4 - r * .62, .17); g.add(k); g.cells.push(k); } return g; };
+const makeNote = () => grp(box(2.2, 2.8, .12, SNOW), at3(box(2.2, .3, .14, ORANGE, false), 0, 1.25, 0));
+const makeTunnel = () => { const g = new THREE.Group(); g.rings = []; for (let i = 0; i < 9; i++) { const r = tor(2.1 * (1 - i * .095), .08, [CY, PURPLE, GREEN, ORANGE, PINK][i % 5]); r.position.z = -i * .5; g.add(r); g.rings.push(r); } g.add(at3(sph(.28, GOLD), 0, 0, -4.2)); return g; };
+const makeTab = (m) => grp(box(1.9, 1.3, .12, ICE), at3(box(1.9, .3, .14, m, false), 0, .5, 0), at3(sph(.07, DARK), -.75, .5, .09));
+const makeFigure = (m = CY) => { const g = makeRunner(); g.children[0].material = m; return g; };
+let tC4 = 0;
+
+function build3d() {
+  const mkProp = (obj, x, y, t0, t1, upd, base = 1) => { const g = grp(obj); at3(g, x, y); prop(g, t0, t1, upd ? t => upd(t, obj, g) : null, base); return g; };
+  const lerp = (a, b, f) => a + (b - a) * f;
+  // ---- A · điện thoại + thông báo; sách; mắt (cách nhìn khác) ----
+  mkProp(makePhone(), 3.4, -1.0, .3, st('a3') - .1, (t, o) => { o.rotation.y = Math.sin(t * 1.5) * .3; o.rotation.z = (t > at('a2', 'tin') - .1 ? 1 : 0) * Math.sin(t * 14) * .06 * Math.max(0, Math.sin(t * 3)); o.badge.scale.setScalar(1 + .25 * Math.sin(t * 6)); }, 1.3);
+  mkProp(makeBook(1.2), -3.4, -1.0, .3, st('a3') - .1, (t, o) => { o.rotation.y = Math.sin(t * .9) * .35; }, 1.0);
+  [['tin', PINK, 1.9, .9], ['thông', ORANGE, 4.9, 1.0], ['giây', PURPLE, 3.4, 1.9]].forEach(([w, m, x, y]) => { const b = grp(box(1.3, .62, .14, m), ...[-.3, 0, .3].map(dx => at3(sph(.07, SNOW), dx, 0, .1))), tw = at('a2', w) - .1;
+    mkProp(b, x, y, tw, st('a3') - .1, (t, o) => { o.position.y = Math.sin(t * 3 + x) * .08; }, 1.0); fx(tw + .1, 'pop', .8); });
+  { const bell = makeBell(); mkProp(bell, 5.6, -1.3, at('a2', 'thông') - .1, st('a3') - .1, (t, o) => { o.rotation.z = Math.sin(t * 16) * .3 * Math.max(0, Math.sin(t * 2.5)); }, 1.0); fx(at('a2', 'thông'), 'bell_lo', .7); }
+  { const ey = makeEye(); mkProp(ey, 0, -1.2, st('a3') - .05, st('b1') + .1, (t, o) => { o.iris.position.x = Math.sin(t * 2.2) * .3; o.rotation.y = Math.sin(t * .8) * .2; }, 1.6); fx(st('a3'), 'whoosh'); }
+  // ---- B · người quay lại bàn học rất nhanh; tâm trí (quả cầu tím) chậm hơn nhiều ----
+  { const t0 = st('b1') - .1, t1 = st('c1') - .1, tq = at('b1', 'quay'), tm = at('b2', 'tâm');
+    mkProp(makePhone(), -4.3, -.9, t0, t1, (t, o) => { o.rotation.y = Math.sin(t * 1.2) * .3; }, 1.0);
+    mkProp(makeBook(1.2), 4.3, -1.2, t0, t1, (t, o) => { o.rotation.y = Math.sin(t) * .3; }, 1.0);
+    const fl = new THREE.Group(); for (let i = 0; i < 11; i++) fl.add(at3(box(.4, .08, .4, i % 2 ? CY : ICE, false), -4.0 + i * .8, -2.4)); prop(fl, t0, t1, null, 1.0);
+    const rn = makeFigure(), gr = grp(rn); rn.scale.setScalar(1.3);
+    prop(gr, t0, t1, t => { const f = eio((t - tq) / 1.3); gr.position.set(lerp(-3.0, 3.0, f), -.7, 0); const sw = (f > 0 && f < 1) ? Math.sin(t * 16) * .8 : 0; rn.limbs[0].rotation.x = sw; rn.limbs[1].rotation.x = -sw; rn.limbs[2].rotation.x = -sw; rn.limbs[3].rotation.x = sw; }, 1.0); fx(tq, 'whoosh');
+    const orb = grp(sph(.5, PURPLE), tor(.75, .05, PINK)), trail = Array.from({length: 6}, (_, i) => { const s = sph(.2 - i * .02, PURPLE); return s; }), go = new THREE.Group(); go.add(orb); trail.forEach(s => go.add(s));
+    const px = t => lerp(-3.0, -3.0 + 2.2, clamp01((t - tm) / (en('b2') - tm)));
+    prop(go, tm - .1, t1, t => { const x = px(t); orb.position.set(x, -.3 + Math.sin(t * 3) * .1, 0); orb.rotation.y = t * 2; trail.forEach((s, i) => { s.position.set(px(t - (i + 1) * .18), -.3, 0); s.visible = t > tm + (i + 1) * .18; }); }, 1.0); fx(tm, 'shimmer'); }
+  // ---- C · Attention Residue: chú ý (hạt vàng) kẹt lại ở A khi chuyển sang B ----
+  { const tC0 = st('c1') - .1, tC1 = st('c4') - .1, N = 24, parts = Array.from({length: N}, (_, i) => sph(.16, GOLD)), g = new THREE.Group();
+    const ped = (x, ch, col) => grp(at3(cyl(1.3, 1.5, .3, NAVY), 0, -2.2), at3(textLabel(ch, 1.5, 170, col), 0, -1.3, .3)); const pA = at3(ped(0, 'A', '#cdeff7'), -3.6, 0), pB = at3(ped(0, 'B', '#fde68a'), 3.6, 0);
+    g.add(pA, pB, ...parts); const tMove = at('c2', 'sang'), tStick = at('c2', 'mắc');
+    prop(g, tC0, tC1, t => { const f = eio((t - tMove) / 1.8); pop(pB, t, tMove - .5, .5);
+      parts.forEach((p, i) => { const a = i * 2.4 + t * (.8 + (i % 3) * .3), r = .7 + (i % 4) * .13, mv = i < 16; const cx = mv ? lerp(-3.6, 3.6, f) : -3.6 + Math.sin(t * 2 + i) * .1 * f, cy = -.3 + (mv ? 1.4 * Math.sin(Math.PI * f) : 0), rr = mv ? r : r * (1 + .3 * f);
+        p.position.set(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr * .7, Math.sin(a * 1.3) * .35); p.material = (!mv && t > tStick) ? RED : GOLD; }); }, 1.0); fx(tMove, 'whoosh_long'); fx(tStick, 'scratch', .7);
+    mkProp(makePhone(), -3.6, 1.65, at('c3', 'tin') - .1, tC1, (t, o) => { o.rotation.y = Math.sin(t * 2) * .3; o.badge.scale.setScalar(1 + .25 * Math.sin(t * 6)); }, .85); fx(at('c3', 'tin'), 'pop');
+    mkProp(makeBook(.95), 3.6, 1.35, at('c3', 'sách') - .3, tC1, (t, o) => { o.rotation.y = Math.sin(t) * .3; }, 1.0);
+    mkProp(makeEye(), 0, .1, at('c3', 'mắt') - .1, tC1, (t, o) => { o.iris.position.x = .3; o.rotation.y = .15 + Math.sin(t) * .1; }, 1.0); }
+  // c4 · đầu chỉ tập trung được một phần: thanh đo + phần chú ý kẹt (đỏ)
+  { const gaugeBg = box(6, .6, .5, GREY), fill = box(1, .5, .52, CY), g = grp(gaugeBg, fill, at3(textLabel('B', 1.2, 150, '#fde68a'), -3.9, 0, .3)), stuck = Array.from({length: 8}, () => sph(.18, RED)); stuck.forEach(s => g.add(s)); at3(g, 0, -1.0); const tf = at('c4', 'chỉ');
+    prop(g, st('c4') - .1, st('c5') - .1, t => { const k = .55 * ease((t - tf) / .9) + .0001; fill.scale.set(5.8 * k, 1, 1); fill.position.set(-2.9 + 5.8 * k / 2, 0, 0); fill.material = k > .5 ? ORANGE : CY; stuck.forEach((s, i) => s.position.set(.6 + i * .35, .7 + Math.sin(t * 3 + i) * .12 + (i % 2) * .22, 0)); }, 1.1); fx(tf, 'impact', .6); }
+  // c5 · gián đoạn: đồ thị tập trung rơi xuống rồi hồi phục rất chậm
+  { const t0 = st('c5') + .2, t1 = en('c5') - .6, ug = clamp01((at('c5', 'gián') - t0) / (t1 - t0)), pts = Array.from({length: 81}, (_, i) => { const u = i / 80; const y = u < ug ? 1.4 : -1.9 + 3.3 * (1 - Math.exp(-2.4 * (u - ug))); return [-4.3 + u * 8.6, y]; }),
+      tube = makeCurveTube(pts, GREEN, .08), ball = sph(.22, GOLD), axes = makeAxes(), bell = makeBell(), g = grp(axes, tube, ball); at3(g, 0, 0); const gb = grp(bell); at3(gb, -4.3 + ug * 8.6, 2.05); g.add(gb); const fl = makeFlag(GOLD, 1.0); fl.position.set(4.3, -2.6, 0); g.add(fl);
+    prop(g, st('c5') - .1, st('d1') - .1, t => { const u = clamp01((t - t0) / (t1 - t0)); drawTube(tube, u); const k = Math.min(80, Math.floor(u * 80)); ball.visible = u > 0; ball.position.set(pts[k][0], pts[k][1], .1); tube.material = u > ug ? ORANGE : GREEN;
+      pop(gb, t, at('c5', 'gián') - .1, .4); bell.rotation.z = t > at('c5', 'gián') ? Math.sin((t - at('c5', 'gián')) * 18) * .35 * Math.exp(-(t - at('c5', 'gián')) * 1.2) : 0; pop(fl, t, at('c5', 'trọn') - .2, .4); fl.flag.rotation.y = Math.sin(t * 3) * .3; }, 1.0); fx(at('c5', 'gián'), 'bell_lo'); fx(at('c5', 'trọn'), 'ding'); }
+  // ---- D · hai bạn học ba tiếng ----
+  { const t0 = st('d1') - .1, t1 = st('d4') - .1, f1 = makeFigure(CY), f2 = makeFigure(GREEN), g1 = grp(f1), g2 = grp(f2); f1.scale.setScalar(1.7); f2.scale.setScalar(1.7); at3(g1, -3.9, -.2); at3(g2, 3.9, -.2);
+    prop(g1, t0, t1, t => { f1.rotation.y = Math.sin(t * .9) * .25; }, 1.0); prop(g2, t0, t1, t => { f2.rotation.y = Math.sin(t * .9 + 1) * .25; }, 1.0);
+    const ck = makeClock(3, 0); mkProp(ck, 0, -.6, t0, st('d2') - .1, (t, o) => { o.rotation.y = Math.sin(t * .8) * .35; }, 1.4); fx(at('d1', 'ba'), 'pop');
+    // trái: điện thoại cạnh tay + chuỗi liếc mỗi 10 phút
+    const ph = makePhone(); mkProp(ph, -2.3, -1.5, at('d2', 'điện') - .1, t1, (t, o) => { o.rotation.y = Math.sin(t * 2) * .3; o.rotation.z = Math.sin(t * 10) * .05 * Math.max(0, Math.sin(t * 3)); o.badge.scale.setScalar(1 + .25 * Math.sin(t * 6)); }, .8);
+    const rowL = new THREE.Group(), tl0 = at('d2', 'liếc'), segL = []; for (let i = 0; i < 17; i++) { const red = i % 2, b = box(red ? .12 : .3, .25, .25, red ? RED : CY, false); b.position.set(-4.7 + i * .22 + (i > 0 ? Math.floor((i + 1) / 2) * .06 : 0), -2.5, 0); rowL.add(b); segL.push(b); }
+    prop(rowL, at('d2', 'mười') - .1, t1, t => segL.forEach((b, i) => pop(b, t, at('d2', 'mười') + i * .1, .25)), 1.0); fx(tl0, 'tick');
+    // phải: điện thoại ở phòng khác (sau tường) + 50' học liền, 10' nghỉ
+    const wall = box(.35, 3.2, 1.6, GREY); mkProp(wall, 1.9, -.8, at('d3', 'phòng') - .2, t1, null, 1.0); mkProp(makePhone(), 0.8, -1.5, at('d3', 'phòng') - .2, t1, (t, o) => { o.rotation.y = Math.sin(t) * .3; }, .75);
+    const rowR = new THREE.Group(), segR = [], tl3 = at('d3', '50'); for (let i = 0; i < 3; i++) { const a = box(.95, .25, .25, GREEN, false), b = box(.3, .25, .25, GOLD, false); a.position.set(.7 + i * 1.5, -2.5, 0); b.position.set(.7 + i * 1.5 + .77, -2.5, 0); rowR.add(a, b); segR.push(a, b); }
+    prop(rowR, tl3 - .1, t1, t => segR.forEach((b, i) => pop(b, t, tl3 + i * .22, .3)), 1.0); fx(tl3, 'pop'); }
+  { const bal = makeBalance(), g = grp(bal); at3(g, 0, -.6); const reds = Array.from({length: 6}, (_, i) => { const c = box(.3, .3, .3, [RED, ORANGE, PINK][i % 3]); c.position.set(-.4 + (i % 3) * .4, .25 + Math.floor(i / 3) * .35, 0); bal.pl.add(c); return c; }), big = box(1.0, 1.0, 1.0, GREEN); big.position.set(0, .55, 0); bal.pr.add(big); const tw = at('d5', 'trọn');
+    prop(g, st('d4') - .1, st('e1') - .1, t => { const a = t < tw ? Math.sin(t * 3) * .08 : -.28 * ease((t - tw) / .8); bal.setA(a); big.rotation.y = t; reds.forEach((c, i) => c.rotation.y = t + i); }, 1.0); fx(tw, 'impact', .7); fx(st('d4'), 'whoosh'); }
+  // ---- E · Deep Work ----
+  { const tn = makeTunnel(); mkProp(tn, 0, -1.0, st('e1') - .1, st('e2') - .1, (t, o) => { o.rings.forEach((r, i) => { r.rotation.z = t * (.3 + i * .05) * (i % 2 ? -1 : 1); r.scale.setScalar(1 + .06 * Math.sin(t * 3 - i * .6)); }); o.rotation.y = Math.sin(t * .6) * .25; o.rotation.x = Math.sin(t * .5) * .1; }, 1.0); fx(at('e1', 'deep'), 'whoosh_long'); }
+  { const tg = grp(makeTarget(), at3(makeArrow(), .15, .25, .1)), shield = new THREE.Mesh(new THREE.SphereGeometry(2.2, 28, 18), MAT(0x22d3ee, {e: 0x22d3ee, ei: .2, op: .16, r: .3})), g = grp(tg, shield), dis = Array.from({length: 6}, (_, i) => box(.42, .42, .42, [RED, ORANGE, PINK][i % 3])); dis.forEach(d => g.add(d)); tg.scale.setScalar(1.3); at3(g, 0, -1.0);
+    const ta = at('e2', 'tập'); prop(g, st('e2') - .1, st('e3') - .1, t => { tg.children[1].position.x = lerp(3, .15, ease((t - ta) / .5)); tg.children[1].position.y = lerp(.8, .25, ease((t - ta) / .5)); dis.forEach((d, i) => { const ph = (t * (.8 + i * .1) + i * 1.05), r = 3.7 - Math.abs(Math.sin(ph * .8)) * 1.4; const a = i * 1.05 + t * .5; d.position.set(Math.cos(a) * Math.max(r, 2.35), Math.sin(a) * Math.max(r, 2.35) * .8, 0); d.rotation.set(t + i, t * 1.3, 0); }); shield.scale.setScalar(1 + .025 * Math.sin(t * 5)); }, 1.0); fx(ta, 'impact', .7); }
+  { const small = Array.from({length: 5}, (_, i) => { const m = makeGem(GREY); m.scale.setScalar(.5); m.scale.y = .65; m.position.set(-2.6 + i * 1.3, -2.1, 0); return m; }), big = makeGem(GOLD), g = new THREE.Group(); g.add(big, ...small); at3(g, 0, -.4); const th = at('e3', 'hiếm', 0), tv = at('e3', 'giá');
+    prop(g, st('e3') - .1, st('e4') - .1, t => { small.forEach((m, i) => { const f = ease((t - th - i * .2) / .5); m.scale.setScalar(Math.max(.0001, .5 * (1 - f))); m.rotation.y = t * 2 + i; }); const k = back((t - tv) / .6); big.visible = t > tv - .1; big.scale.set(1.3 * k, 1.7 * k, 1.3 * k); big.rotation.y = t * 1.2; big.position.y = Math.sin(t * 2) * .1 + .3; }, 1.0); fx(th, 'scratch', .6); fx(tv, 'ding'); }
+  { const cal = makeCalendar(), g = grp(cal); at3(g, -1.4, -.8); const th = at('e4', 'lịch'), tg = at('e4', 'hẹn');
+    prop(g, st('e4') - .1, st('e5') - .1, t => { cal.rotation.y = Math.sin(t * .8) * .25; cal.cells.forEach((c, i) => { pop(c, t, st('e4') + .1 + i * .04, .25); if (i === 7) { const k = ease((t - th) / .5); c.material = t > th ? GOLD : CY; c.scale.multiplyScalar(1 + .6 * k + .2 * Math.sin(t * 6) * k); c.position.z = .17 + .2 * k; } }); }, 1.2);
+    const ck = makeClock(9, 0); mkProp(ck, 4.0, -.8, tg - .1, st('e5') - .1, (t, o) => { o.rotation.y = Math.sin(t) * .3; }, 1.2); fx(th, 'click'); fx(tg, 'ding'); }
+  { const bell = makeBell(), cr = crossIt(makeCross()); const gb = grp(bell, at3(cr, 0, 0, .8)); at3(gb, -3.6, -.8); const tn = at('e5', 'tắt');
+    prop(gb, tn - .2, st('e6') - .1, t => { bell.rotation.z = t < tn + .3 ? Math.sin(t * 18) * .3 : 0; pop(cr, t, tn + .2, .35); }, 1.8); fx(tn, 'bell_lo', .7);
+    const tabs = [CY, PURPLE, ORANGE, GREEN].map((m, i) => makeTab(m)), gt = new THREE.Group(); tabs.forEach((tb, i) => { tb.position.set(i * .85, i * .3, -i * .1); tb.rotation.z = (i - 1.5) * .06; gt.add(tb); }); at3(gt, 2.2, -1.2);
+    const tc = at('e5', 'đóng'); prop(gt, tc - .5, st('e6') - .1, t => tabs.forEach((tb, i) => { pop(tb, t, tc - .5 + i * .1, .3); const f = ease((t - tc - i * .35) / .4); tb.scale.multiplyScalar(Math.max(.0001, 1 - f)); tb.rotation.y = f * 1.5; }), 1.3); fx(tc, 'click'); for (let i = 1; i < 4; i++) fx(tc + i * .35, 'click', .6); }
+  { const nt = makeNote(), pc = makePencil(), g = grp(nt), gp = grp(pc); at3(g, -1.2, -.9); nt.rotation.z = .05; const ls = Array.from({length: 4}, (_, i) => { const l = box(1.6 - (i % 2) * .4, .09, .03, CY, false); l.position.set(0, .7 - i * .5, .1); nt.add(l); return l; }), tg = at('e6', 'ghi'), tc = at('e6', 'chợt');
+    const idea = Array.from({length: 3}, (_, i) => sph(.2, [PURPLE, ORANGE, PINK][i])), gi = new THREE.Group(); idea.forEach(s => gi.add(s));
+    prop(g, tg - .2, st('f1') - .1, t => { ls.forEach((l, i) => { const f = ease((t - tg - .2 - i * .3) / .4); l.scale.x = Math.max(.001, f); }); nt.rotation.y = Math.sin(t * .8) * .2; }, 1.3);
+    prop(gp, tg - .2, st('f1') - .1, t => { const k = (t - tg) * 1.6; gp.position.set(-1.6 + Math.sin(k * 3) * .4, -.5 + Math.cos(k * 2) * .3, .5); }, 1.1);
+    prop(gi, tc - .2, st('f1') - .1, t => idea.forEach((s, i) => { const f = ease((t - tc - i * .5) / .9); s.position.set(lerp(3.8, -1.2, f), lerp(1.8 - i * .3, -.4 + i * .1, f), 0); s.scale.setScalar(Math.max(.0001, 1 - .7 * f)); }), 1.0); fx(tc, 'shimmer'); }
+  // ---- F · 1 giờ trọn vẹn > 3 giờ chắp vá; đồng hồ; hàng khối có mặt; chia nhỏ chú ý ----
+  { const solid = box(1.6, 1, 1.6, GOLD), g1 = grp(solid), g2 = new THREE.Group(); const pieces = [0, 1, 2].map(i => { const c = box(1.2, .9, 1.2, GREY); c.position.set(Math.sin(i * 1.7) * .15, i * 1.2, 0); c.rotation.set(0, i * .3, (i - 1) * .12); g2.add(c); return c; }); at3(g1, -2.8, -2.4); at3(g2, 2.8, -2.4);
+    const tg = at('f2', 'giờ', 0), t3 = at('f2', 'ba'); const tr = makeTrophy(); const gtr = grp(tr); at3(gtr, -2.8, -.3);
+    prop(g1, st('f1') - .1, st('f3') - .1, t => { const s = t < tg ? .45 : .45 + 1.6 * back((t - tg) / .7); solid.scale.set(1, Math.max(.3, s), 1); solid.rotation.y = Math.sin(t * 1.5) * .15; }, 1.0);
+    prop(g2, t3 - .1, st('f3') - .1, t => pieces.forEach((c, i) => pop(c, t, t3 + i * .25, .3)), 1.0);
+    prop(gtr, at('f2', 'trọn') - .1, st('f3') - .1, t => { tr.rotation.y = t * 1.2; gtr.position.y = -.3 + Math.sin(t * 2) * .12 + 1.7 * .0; }, .8); fx(tg, 'pop'); fx(at('f2', 'trọn'), 'ding'); }
+  { const ck = makeClock(10, 10), hand = ck.children[ck.children.length - 3]; mkProp(ck, -3.2, -.8, st('f3') - .1, st('f5') - .1, (t, o) => { o.rotation.y = Math.sin(t * .9) * .3; }, 1.5); fx(st('f3'), 'whoosh');
+    const row = new THREE.Group(), tiles = [], pat = [1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1], tp = at('f4', 'thật'); for (let i = 0; i < 12; i++) { const b = box(.6, pat[i] ? 1.3 : .4, .6, pat[i] ? GREEN : GREY); b.position.set(-.2 + (i % 12) * .78 - 0, pat[i] ? -2.1 + .65 - .4 : -2.1 - .0, 0); b.position.y = -2.4 + (pat[i] ? 1.3 : .4) / 2; row.add(b); tiles.push(b); } row.position.x = -.4 + 0;
+    prop(row, st('f4') - .1, st('f5') - .1, t => tiles.forEach((b, i) => pop(b, t, tp + i * .12, .3)), 1.0); fx(tp, 'pop'); }
+  { const orb = sph(1.0, GOLD), shards = Array.from({length: 10}, (_, i) => sph(.3, [CY, PURPLE, GREEN, ORANGE, PINK][i % 5])), g = grp(orb, ...shards), cr = crossIt(makeCross()); at3(g, 0, -1.2); const tc = at('f5', 'chia'), tz = at('f5', 'xứng');
+    prop(g, st('f5') - .1, st('g1') - .1, t => { const f = ease((t - tc) / 1.0); orb.scale.setScalar(Math.max(.0001, 1 - f)); shards.forEach((s, i) => { const a = i * 0.628 + t * .6, r = f * 3.0; s.visible = f > .02; s.position.set(Math.cos(a) * r, Math.sin(a) * r * .55, Math.sin(a * 2) * .5); s.scale.setScalar(.6 + .3 * Math.sin(t * 4 + i)); }); }, 1.0); fx(tc, 'whoosh'); fx(tz, 'scratch');
+    mkProp(cr, 0, -1.2, tz - .1, st('g1') - .1, null, 1.8); }
+  // ---- G · CTA: đồ vật lớn nằm hai bên + phía trên, không đè chữ ----
+  { const tg = grp(makeTarget(), at3(makeArrow(), .15, .25, .1)); mkProp(tg, 0, 3.55, st('g1') - .2, T + 1, (t, o) => { o.rotation.y = Math.sin(t * .8) * .3; }, .9); }
+  { const gm = makeGem(CY); mkProp(gm, -7.5, -.2, st('g1') - .1, T + 1, (t, o) => { o.rotation.y = t * 1.1; o.position.y = Math.sin(t * 2) * .15; }, 1.5); }
+  { const tr = makeTrophy(); mkProp(tr, 7.5, -1.0, st('g1') - .1, T + 1, (t, o) => { o.rotation.y = t * 1.0; }, 1.3); }
+}
+
+function build() {
+  const A = sceneEl('A'), B = sceneEl('B'), C = sceneEl('C'), D = sceneEl('D'), Ee = sceneEl('E'), F = sceneEl('F'), G = sceneEl('G');
+  const tB = st('b1') - .3, tC = st('c1') - .2, tD = st('d1') - .2, tE = st('e1') - .2, tF = st('f1') - .2, tG = st('g1') - .3;
+
+  show(A, 0, tB + .4); show(B, tB, tC + .4); show(C, tC, tD + .4); show(D, tD, tE + .4); show(Ee, tE, tF + .4); show(F, tF, tG + .4); show(G, tG, T + 1);
+  build3d();
+  const glowTo = (id, op, t0, d = 1) => tl.to(document.getElementById(id), {opacity: op, duration: d}, t0);
+  const chs = (txt, col) => [...txt].map(c => `<span class="ch" style="display:inline-block;opacity:0;${col ? 'color:' + col : ''}">${c === ' ' ? '&nbsp;' : c}</span>`).join('');
+  const at1 = (parent, left, top, html, cls = '', css = '') => E('div', 'pill abs ' + cls, parent, `left:${left}px;top:${top}px;opacity:0;${css}`, html);
+  const row = (parent, top, items) => { const r = CTR(parent, top, '', 'display:flex;justify-content:center;gap:22px'); return items.map(([html, cls, css]) => E('span', 'pill ' + (cls || ''), r, 'opacity:0;' + (css || ''), html)); };
+
+  // ---------- A ----------
+  const aBox = E('div', 'glass abs', A, 'left:310px;top:150px;width:1300px;padding:44px 56px 34px;opacity:0');
+  const aQ = E('div', 'sh', aBox, 'font-size:76px;font-weight:800;line-height:1.3;height:100px;white-space:nowrap');
+  E('div', '', aBox, 'display:flex;align-items:center;margin-top:30px;color:#8fb3c9;font-size:28px',
+    `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg><div style="flex:1"></div><span>Ghi nhớ&nbsp;⌄</span><div id="aSend" style="width:56px;height:56px;border-radius:16px;margin-left:28px;background:linear-gradient(135deg,#67e8f9,#0284c7);display:grid;place-items:center;box-shadow:0 0 24px rgba(34,211,238,.6)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></div>`);
+  enter(aBox, 0, {y: 120}, .7); fx(0, 'whoosh_long');
+  const q0 = 'Liếc điện thoại một giây thôi?'; typer(aQ, q0, [5, 15], .15, en('a0') - .4); CARETS.push([aQ, en('a0') + .1]);
+  tl.to('#aSend', {scale: .85, duration: .08, yoyo: true, repeat: 1}, en('a0') + .1); fx(en('a0') + .1, 'click');
+  leave(aBox, st('a1') - .05, {y: -120, scale: .9});
+  glowTo('glowP', .55, st('a1') - .2, 1.3);
+  const a1p = PILL(A, 140, 'đang học mà <b class="vio">&nbsp;liếc điện thoại</b> một chút — <b class="grn">&nbsp;có sao đâu?</b>', '', 'font-size:44px'); enter(a1p, at('a1', 'đang') - .1, {y: -30}, .5); leave(a1p, st('a2') - .1, {y: -40});
+  const a2r = row(A, 130, [['một tin nhắn', 'vio', 'font-size:36px'], ['một thông báo', 'org', 'font-size:36px'], ['vài giây', 'grn', 'font-size:36px']]);
+  [['tin', 0], ['thông', 0], ['vài', 0]].forEach(([w, n], i) => enter(a2r[i], at('a2', w, n) - .1, {y: -30}, .5)); leave(a2r, st('a3') - .1, {y: -40});
+  tl.to(dim, {opacity: 1, duration: .5}, st('a3') - .2).to(dim, {opacity: 0, duration: .6}, tB + .2);
+  const a3 = CTR(A, 380, 'serif sh', 'font-size:112px;line-height:1.15;left:0;width:1920px'); wordsEl(a3, 'Nhưng có một cách nhìn khác', {ice: [3, 4, 5]}); reveal(a3, st('a3'), en('a3') - .9); fx(st('a3'), 'shimmer'); leave(a3, tB - .1, {y: -100});
+
+  // ---------- B ----------
+  glowTo('glowP', 0, tB, 1); glowTo('glowH', .5, tB, 1.2); glowTo('glowH', 0, st('b2') - .2, 1); glowTo('glowG', .5, st('b2') - .2, 1.2);
+  const b1p = PILL(B, 140, 'quay lại bàn học: <b class="grn">&nbsp;vài giây</b>', '', 'font-size:46px'); enter(b1p, st('b1') + .05, {y: -30}, .5); leave(b1p, st('b2') - .1, {y: -40});
+  const b2p = PILL(B, 130, 'tâm trí thì <b class="vio">&nbsp;không quay lại nhanh vậy</b>', 'vio', 'font-size:44px'); enter(b2p, st('b2') - .05, {y: -30}, .5); leave(b2p, tC - .15, {y: -60});
+
+  // ---------- C ----------
+  glowTo('glowG', 0, tC, 1); glowTo('glowB', .8, tC, 1.2);
+  const cK = CTR(C, 50, 'kicker', 'opacity:0', 'trong tâm lý học'); enter(cK, at('c1', 'tâm') - .1, {y: -30}, .5);
+  const cT = CTR(C, 90, 'sh', 'font-size:110px;font-weight:800;letter-spacing:-2px;white-space:nowrap'); cT.innerHTML = chs('ATTENTION', '#67e8f9') + '&nbsp;' + chs('RESIDUE', '#c4b5fd');
+  tl.fromTo(cT.querySelectorAll('.ch'), {opacity: 0, y: 100, rotation: -25, filter: 'blur(10px)'}, {opacity: 1, y: 0, rotation: 0, filter: 'blur(0px)', duration: .5, stagger: .04, ease: 'back.out(1.6)'}, at('c1', 'attention') - .1);
+  const cS = CTR(C, 230, 'serif sh', 'font-size:64px;opacity:0;color:#ddd6fe', 'Phần dư chú ý'); enter(cS, at('c1', 'phần') - .1, {y: 50}, .6);
+  tl.to([cK, cT, cS], {opacity: 0, y: -60, duration: .5}, st('c2') - .1);
+  const c2a = PILL(C, 120, 'Việc <b class="ice">&nbsp;A</b> &nbsp;→&nbsp; Việc <b class="gold">&nbsp;B</b>', '', 'font-size:48px'); enter(c2a, at('c2', 'chuyển') - .2, {y: -30}, .5);
+  const c2b = PILL(C, 220, 'chú ý vẫn <b class="coral">&nbsp;kẹt ở việc A</b>', 'red', 'font-size:42px'); enter(c2b, at('c2', 'mắc') - .5, {y: -30}, .5); leave([c2a, c2b], st('c3') - .1, {y: -40});
+  const c3a = PILL(C, 120, 'nghĩ về <b class="pnk">&nbsp;tin nhắn</b> &nbsp;trong khi mắt nhìn <b class="ice">&nbsp;sách</b>', '', 'font-size:42px'); enter(c3a, at('c3', 'nghĩ') - .1, {y: -30}, .5); leave(c3a, st('c4') - .1, {y: -40});
+  const c4a = PILL(C, 120, 'làm việc B với <b class="org">&nbsp;cái đầu chỉ còn một phần</b>', 'hot', 'font-size:42px'); enter(c4a, st('c4') + .1, {y: -30}, .5); leave(c4a, st('c5') - .1, {y: -40});
+  const c5a = PILL(C, 120, 'sau một lần <b class="coral">&nbsp;gián đoạn</b>', 'red', 'font-size:44px'); enter(c5a, at('c5', 'sau') - .1, {y: -30}, .5);
+  const c5b = PILL(C, 220, 'mất khá lâu mới <b class="grn">&nbsp;quay lại trọn vẹn</b>', 'grn', 'font-size:40px'); enter(c5b, at('c5', 'mất') - .1, {y: -30}, .5); leave([c5a, c5b], tD - .15, {y: -60});
+
+  // ---------- D ----------
+  glowTo('glowB', 0, tD, 1); glowTo('glowH', .5, tD, 1.2); glowTo('glowH', 0, at('d3', 'thứ') - .3, 1); glowTo('glowG', .55, at('d3', 'thứ') - .3, 1.2); glowTo('glowG', 0, tE, 1);
+  const dT = CTR(D, 110, 'serif sh', 'font-size:84px;white-space:nowrap'); wordsEl(dT, 'Hai bạn · cùng học ba tiếng', {ice: [5, 6]}); reveal(dT, st('d1') + .1, at('d1', 'tiếng')); leave(dT, st('d2') - .1, {y: -60});
+  const dl = E('div', 'glass abs', D, 'left:90px;top:130px;width:780px;padding:26px 44px;opacity:0', '<div class="kicker" style="font-size:26px">bạn thứ nhất</div><div class="serif sh" style="font-size:40px;line-height:1.25;margin-top:8px">điện thoại <span class="coral">cạnh tay</span>,<br>cứ 10 phút liếc một lần</div>');
+  const dr = E('div', 'glass abs', D, 'left:1050px;top:120px;width:780px;padding:26px 44px;opacity:0;border-color:rgba(110,231,183,.6)', '<div class="kicker" style="font-size:26px">bạn thứ hai</div><div class="serif sh" style="font-size:38px;line-height:1.25;margin-top:8px">điện thoại <span class="grn">ở phòng khác</span>,<br>50 phút liền · nghỉ 10 phút</div>');
+  enter(dl, at('d2', 'thứ') - .1, {x: -60, y: 0}, .6); enter(dr, at('d3', 'thứ') - .1, {x: 60, y: 0}, .6); fx(at('d2', 'thứ'), 'whoosh'); fx(at('d3', 'thứ'), 'whoosh'); leave([dl, dr], st('d4') - .1, {y: -40});
+  const d4a = PILL(D, 130, 'cuối buổi, <b class="ice">&nbsp;ai học được nhiều hơn?</b>', '', 'font-size:44px'); enter(d4a, st('d4'), {y: -30}, .5); fx(st('d4'), 'pop'); leave(d4a, st('d5') - .5, {y: -40});
+  const d5a = CTR(D, 120, 'serif sh', 'font-size:80px;white-space:nowrap'); wordsEl(d5a, 'Không cần ngồi lâu hơn', {coral: [2, 3, 4]}); reveal(d5a, st('d5'), at('d5', 'nếu'));
+  const d5b = CTR(D, 250, 'serif sh', 'font-size:62px;white-space:nowrap;color:#bfe9f5'); wordsEl(d5b, 'chỉ cần ngồi trọn vẹn hơn', {grn: [3, 4, 5]}); reveal(d5b, at('d5', 'nếu'), en('d5') - .2); leave([d5a, d5b], tE - .15, {y: -60});
+
+  // ---------- E ----------
+  glowTo('glowP', .55, tE, 1.2); glowTo('glowP', 0, at('e3', 'thông') - .2, 1); glowTo('glowG', .55, at('e3', 'thông') - .2, 1.2); glowTo('glowG', 0, st('e4'), 1);
+  tl.to(dim, {opacity: 1, duration: .5}, tE).to(dim, {opacity: 0, duration: .6}, st('e2') - .2);
+  const eK = CTR(Ee, 60, 'kicker', 'opacity:0', 'một khái niệm liên quan'); enter(eK, st('e1') + .1, {y: -30}, .5);
+  const eT = CTR(Ee, 100, 'sh', 'font-size:130px;font-weight:800;letter-spacing:-2px;white-space:nowrap'); eT.innerHTML = chs('DEEP', '#93c5fd') + '&nbsp;' + chs('WORK', '#c4b5fd');
+  tl.fromTo(eT.querySelectorAll('.ch'), {opacity: 0, y: 110, rotation: -25, filter: 'blur(10px)'}, {opacity: 1, y: 0, rotation: 0, filter: 'blur(0px)', duration: .5, stagger: .04, ease: 'back.out(1.6)'}, at('e1', 'deep') - .1); fx(at('e1', 'deep'), 'shimmer');
+  const eS = CTR(Ee, 260, 'serif sh', 'font-size:68px;opacity:0;color:#bfdbfe', 'Làm việc sâu'); enter(eS, at('e1', 'làm') - .1, {y: 50}, .6); leave([eK, eT, eS], st('e2') - .1, {y: -90});
+  const e2a = PILL(Ee, 120, 'tập trung <b class="ice">&nbsp;hoàn toàn</b> vào một việc cần nghĩ', '', 'font-size:44px'); enter(e2a, at('e2', 'tập') - .1, {y: -30}, .5);
+  const e2b = PILL(Ee, 220, 'không phân tâm · đủ lâu → <b class="grn">&nbsp;kết quả chất lượng</b>', 'grn', 'font-size:38px'); enter(e2b, at('e2', 'phân') - .3, {y: -30}, .5); leave([e2a, e2b], st('e3') - .1, {y: -40});
+  const e3a = PILL(Ee, 120, 'thông báo liên tục → <b class="coral">&nbsp;ngày càng hiếm</b>', 'red', 'font-size:44px'); enter(e3a, at('e3', 'thông') - .1, {y: -30}, .5);
+  const e3b = PILL(Ee, 220, 'vì hiếm nên <b class="gold">&nbsp;càng có giá trị</b>', 'hot', 'font-size:42px'); enter(e3b, at('e3', 'vì') - .1, {y: -30}, .5); leave([e3a, e3b], st('e4') - .1, {y: -40});
+  const e4a = PILL(Ee, 120, 'lên lịch như một <b class="ice">&nbsp;cuộc hẹn</b>', '', 'font-size:48px'); enter(e4a, at('e4', 'lên') - .1, {y: -30}, .5); leave(e4a, st('e5') - .1, {y: -40});
+  const e5a = PILL(Ee, 120, 'tắt <b class="org">&nbsp;thông báo</b> &nbsp;· đóng <b class="vio">&nbsp;tab thừa</b>', 'vio', 'font-size:46px'); enter(e5a, at('e5', 'tắt') - .1, {y: -30}, .5); leave(e5a, st('e6') - .1, {y: -40});
+  const e6a = PILL(Ee, 120, 'ghi ra giấy <b class="grn">&nbsp;những gì chợt nghĩ</b>', 'grn', 'font-size:44px'); enter(e6a, at('e6', 'ghi') - .1, {y: -30}, .5);
+  const e6b = PILL(Ee, 220, 'rồi <b class="vio">&nbsp;xử lý sau</b>', 'vio', 'font-size:42px'); enter(e6b, at('e6', 'xử') - .2, {y: -30}, .5); leave([e6a, e6b], tF - .15, {y: -40});
+
+  // ---------- F ----------
+  glowTo('glowP', .5, tF, 1); glowTo('glowP', 0, st('f3'), 1);
+  const f1t = CTR(F, 300, 'serif sh', 'font-size:110px;line-height:1.15'); wordsEl(f1t, 'Những thay đổi này nghe rất nhỏ', {ice: [5, 6]}); reveal(f1t, st('f1'), en('f1') - .2); leave(f1t, st('f2') - .1, {y: -80});
+  const f2p = PILL(F, 140, '1 giờ <b class="gold">&nbsp;trọn vẹn</b> &nbsp;>&nbsp; 3 giờ <b class="coral">&nbsp;chắp vá</b>', '', 'font-size:54px'); enter(f2p, at('f2', 'giờ') - .1, {y: -30}, .5); fx(at('f2', 'giờ'), 'pop'); leave(f2p, st('f3') - .1, {y: -40});
+  const fq = E('div', 'glass abs', F, 'left:260px;top:110px;width:1400px;height:210px;opacity:0');
+  E('div', 'kicker', fq, 'position:absolute;left:56px;top:22px;font-size:24px', 'câu hỏi của bạn');
+  const fqa = E('div', 'sh', fq, 'position:absolute;left:56px;right:56px;top:84px;font-size:58px;font-weight:800;line-height:1.25;white-space:nowrap');
+  enter(fq, st('f3') - .05, {y: 80}, .6); fx(st('f3'), 'whoosh');
+  typer(fqa, 'Mình đã ngồi bao lâu?', null, st('f3') + .15, 1.3); CARETS.push([fqa, en('f3') + .1]);
+  const strike = E('div', '', fq, 'position:absolute;left:52px;top:119px;width:560px;height:9px;border-radius:5px;background:#fda4af;transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 20px rgba(253,164,175,.7)');
+  tl.to(strike, {scaleX: 1, duration: .45, ease: 'power3.inOut'}, st('f4') - .3); fx(st('f4') - .3, 'scratch');
+  tl.to([fqa, strike], {opacity: 0, rotationX: 70, y: 10, duration: .35, ease: 'power3.in'}, st('f4') + .05);
+  const fqb = E('div', 'serif sh', fq, 'position:absolute;left:56px;right:56px;top:76px;font-size:54px;line-height:1.3;opacity:0');
+  const qb = 'Mình đã thật sự có mặt bao lâu?'; tl.set(fqb, {opacity: 1}, st('f4') + .1); typer(fqb, qb, [qb.indexOf('có mặt'), qb.indexOf('có mặt') + 6], st('f4') + .1, en('f4') - st('f4') - .4);
+  CARETS.push([fqb, en('f4') + .2]); fx(st('f4') + .1, 'whoosh');
+  leave(fq, st('f5') - .1, {y: -80});
+  tl.to(dim, {opacity: 1, duration: .5}, st('f5') - .2).to(dim, {opacity: 0, duration: .6}, tG + .2);
+  const f5a = CTR(F, 140, 'serif sh', 'font-size:96px;white-space:nowrap'); wordsEl(f5a, 'Đừng chia nhỏ', {coral: [1, 2]}); revealAt(f5a, 'f5', [['đừng'], ['chia'], ['nhỏ']]);
+  const f5b = CTR(F, 270, 'serif sh', 'font-size:100px;white-space:nowrap'); wordsEl(f5b, 'sự chú ý của bạn', {ice: [1, 2]}); revealAt(f5b, 'f5', [['sự'], ['chú'], ['ý'], ['của'], ['bạn']]);
+  leave([f5a, f5b], tG - .05, {y: -80});
+
+
+  // ---------- G ----------
+  glowTo('glowB', 1, tG, 1);
+  const gc = E('div', 'glass abs', G, 'left:360px;top:400px;width:1200px;padding:44px 40px;opacity:0;text-align:center');
+  gc.innerHTML = `<div class="serif sh" style="font-size:62px;line-height:1.2">Nguyên lý tâm lý<br><span class="ice">giúp bạn tập trung sâu hơn</span></div>`;
+  const btn = E('div', 'abs', G, 'left:50%;margin-left:-280px;width:560px;top:740px;padding:30px 0;text-align:center;border-radius:999px;font-size:70px;font-weight:800;background:linear-gradient(135deg,#67e8f9,#0284c7);box-shadow:0 0 80px rgba(34,211,238,.8),inset 0 0 30px rgba(255,255,255,.3);opacity:0', '+ Follow');
+  const done = E('div', 'abs', G, 'left:50%;margin-left:-280px;width:560px;top:740px;padding:30px 0;text-align:center;border-radius:999px;font-size:64px;font-weight:800;background:#e0fdff;color:#06394f;opacity:0', '✓ Đang follow');
+  enter(gc, tG + .1, {y: 100}, .8); fx(tG + .1, 'whoosh_long'); enter(btn, at('g1', 'follow') + .1, {y: 60, scale: .8}, .6); fx(at('g1', 'follow') + .1, 'pop');
+  const cur2 = E('div', 'abs', G, 'left:0;top:0;width:60px;height:60px;opacity:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))', '<svg viewBox="0 0 24 24"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 3-1.3-2.9-6.5h6z" fill="#fff" stroke="#031a2b" stroke-width="1.4" stroke-linejoin="round"/></svg>');
+  const tp = at('g1', 'khám') + .3;
+  tl.set(cur2, {x: 1500, y: 1000}, 0).to(cur2, {opacity: 1, duration: .2}, tp - .8).to(cur2, {x: 1020, y: 810, duration: .7, ease: 'power3.inOut'}, tp - .75)
+    .to(cur2, {scale: .82, duration: .08, transformOrigin: '10% 10%'}, tp).to(cur2, {scale: 1, duration: .14}, tp + .08);
+  tl.to(btn, {scale: .94, duration: .08, yoyo: true, repeat: 1}, tp).to(done, {opacity: 1, duration: .2}, tp + .06); tl.to(btn, {opacity: 0, duration: .2}, tp + .06); fx(tp, 'click'); fx(tp + .1, 'ding');
+  tl.to(cur2, {opacity: 0, x: '+=160', y: '+=160', duration: .5}, tp + .8);
+  tl.to('#fade', {opacity: 1, duration: .9}, T - .9);
+  fx(tG + .1, 'outro');
+}
+// ---------- chạy liên tục theo t ----------
+E('div', null, STAGE).id = 'vign';
+const lnx = E('div', null, STAGE); lnx.id = 'lnx'; lnx.innerHTML = '<div id="lnxIn">' + '<span>Nội dung được thiết kế bởi <b>LNX</b></span>'.repeat(4) + '</div>'; const lnxIn = lnx.firstChild; let lnxW = 0;
+const cap = E('div', null, STAGE); cap.id = 'cap'; const cap2 = E('div', null, STAGE); cap2.id = 'cap2'; E('div', null, STAGE).id = 'fade';
+const CHUNKS = {};
+for (const s of TIMING.segs) {
+  const out = []; let cur = [];
+  s.words.forEach((w, i) => { cur.push(i); const left = s.words.length - i - 1;
+    if ((cur.length >= 10 || (cur.length >= 5 && /[,:;.]$/.test(w.w))) && left >= 3) { out.push(cur); cur = []; } });
+  if (cur.length) out.push(cur); CHUNKS[s.id] = out;
+}
+let capKey = null;
+function drive(t) {
+  for (const g of ['glow', 'glowB', 'glowH', 'glowP', 'glowG']) {
+    const set = (i, f) => document.querySelectorAll('#' + g + ' .r' + i).forEach(e => e.style.transform = f);
+    set(1, `translate(${Math.sin(t * .5) * 120}px,${Math.sin(t * .37) * 60}px) rotate(${-32 + Math.sin(t * .4) * 9}deg)`);
+    set(2, `translate(${Math.sin(t * .6 + 1) * 160}px,${Math.cos(t * .45) * 70}px) rotate(${-30 + Math.sin(t * .5 + .5) * 10}deg)`);
+    set(3, `translate(${Math.cos(t * .3) * 140}px,${Math.sin(t * .35) * 90}px) scale(${1 + Math.sin(t * .7) * .12})`);
+    set(4, `translate(${Math.sin(t * .28) * 160}px,${Math.cos(t * .4) * 70}px)`);
+  }
+  const blink = (Math.floor(t * 2.2) % 2) ? 0 : 1;
+  for (const [el, off] of CARETS) { const c = el.querySelector('.caret'); if (c) c.style.opacity = t >= off ? 0 : blink; }
+  if (!lnxW) lnxW = lnxIn.firstChild.offsetWidth || 400;
+  lnxIn.style.transform = `translateX(${-((t * 55) % lnxW)}px)`;
+  draw3d(t);
+  const s = TIMING.segs.find(s => t >= s.start - .15 && t < s.end + .4);
+  if (!s || NOCAP.has(s.id)) { cap.style.opacity = 0; cap2.style.opacity = 0; return; }
+  const chs = CHUNKS[s.id]; let ci = 0;
+  for (let k = 0; k < chs.length; k++) if (t >= s.words[chs[k][0]].s - .05) ci = k;
+  const idx = chs[ci], key = s.id + ':' + ci;
+  if (capKey !== key) { cap.innerHTML = idx.map(i => `<span>${s.words[i].w}</span>`).join(' '); capKey = key; }
+  cap.style.opacity = Math.min(1, (t - s.start + .15) / .15, (s.end + .4 - t) / .25);
+  if (cap2.dataset.id !== s.id) { cap2.textContent = ENG[s.id] || ''; cap2.dataset.id = s.id; }
+  cap2.style.opacity = cap.style.opacity;
+  const sp = [...cap.children]; let last = -1;
+  idx.forEach((wi, j) => { const on = t >= s.words[wi].s; sp[j].className = on ? 'on' : ''; if (on) last = j; });
+  if (last >= 0) sp[last].className = 'on now';
+}
+window.seek = t => { tl.seek(t, false); drive(t); };
+window.DURATION = T;
+document.fonts.ready.then(() => { build(); seek(0); window.SFX = SFX; window.READY = true; });
+</script></body></html>

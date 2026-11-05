@@ -5,8 +5,8 @@ import {
   BespokeVideo,
   calculateBespokeMetadata,
 } from "./BespokeVideo";
-import { TestBespoke01Video } from "../../../projects/test-bespoke-01/remotion/TestBespoke01Video";
-import { QuyTac72Video } from "../../../projects/CNT-20261104-QUY-TAC-72-NHAN-DOI-TAI-SAN/remotion/QuyTac72Video";
+import { KhoangKinChongChimVideo } from "../../../projects/CNT-20261105-KHOANG-KIN-CHONG-CHIM/remotion/KhoangKinChongChimVideo";
+import { RachGamXoaiMutVideo } from "../../../projects/CNT-20261105-RACH-GAM-XOAI-MUT/remotion/RachGamXoaiMutVideo";
 
 /**
  * AI Video Factory V4 — Remotion Root
@@ -15,9 +15,17 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="TestBespoke01"
-        component={TestBespoke01Video}
-        durationInFrames={1711}
+        id="RachGamXoaiMut"
+        component={RachGamXoaiMutVideo}
+        durationInFrames={2367}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="KhoangKinChongChim"
+        component={KhoangKinChongChimVideo}
+        durationInFrames={1620}
         fps={30}
         width={1080}
         height={1920}
@@ -53,14 +61,6 @@ export const RemotionRoot: React.FC = () => {
           },
         }}
         calculateMetadata={calculateBespokeMetadata}
-      />
-      <Composition
-        id="QuyTac72"
-        component={QuyTac72Video}
-        durationInFrames={1602}
-        fps={30}
-        width={1080}
-        height={1920}
       />
     </>
   );

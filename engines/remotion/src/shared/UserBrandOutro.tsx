@@ -4,6 +4,8 @@ import userBrandDefault from "../../../../brand/user-brand.json";
 
 export interface UserBrandConfig {
   creatorName?: string;
+  title?: string;
+  company?: string;
   brandName?: string;
   tagline?: string;
   cta?: string;
@@ -23,21 +25,21 @@ export interface UserBrandOutroProps {
 }
 
 /**
- * UserBrandOutro — AI Video Factory V3
+ * UserBrandOutro — AI Video Factory V4 (Redesigned)
  *
- * Implements Brand Isolation Mandate:
- * 1. 100% Brand Isolation: Never uses sample video channels or author watermarks.
- * 2. Injects User Brand Identity (brand/user-brand.json).
- * 3. Mobile Layout 1080x1920 with high-contrast typography, CTA & legal disclaimer.
+ * Tiêu chuẩn thiết kế:
+ * 1. Chống lặp từ: Tên Tiến Dương xuất hiện đúng 1 LẦN DUY NHẤT, to và trang trọng.
+ * 2. Phân cấp thị giác chuẩn xác: Logo -> Headline -> Tên -> Chức danh -> Nút CTA -> Handle -> Disclaimer.
+ * 3. Thẩm mỹ cao cấp: Frosted glass, viền kim loại kép, micro-glow.
  */
 export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
   brand = userBrandDefault,
-  headline = "THEO DÕI ĐỂ KHÔNG BỎ LỠ",
+  headline = "HOẠCH ĐỊNH LÁ CHẮN TÀI CHÍNH",
   highlightText,
-  accentColor = "#D4AF37",
-  secondaryAccent = "#38BDF8",
+  accentColor = "#00A758", // Manulife Emerald
+  secondaryAccent = "#F59E0B", // Gold Accent
   backgroundColor = "transparent",
-  cardBackground = "rgba(15, 23, 42, 0.94)",
+  cardBackground = "rgba(7, 16, 32, 0.94)",
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -50,21 +52,12 @@ export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
   });
 
   const creatorName = brand.creatorName || "Tiến Dương";
-  const brandName = brand.brandName || "TÀI CHÍNH THỰC CHIẾN";
-  const tagline = brand.tagline || "HOẠCH ĐỊNH TÀI CHÍNH · ĐẦU TƯ BỀN VỮNG";
-  const cta = brand.cta || "Bình luận ý kiến của bạn bên dưới 👇";
+  const professionalTitle = brand.title || "Chuyên Gia Hoạch Định Tài Chính";
+  const companyName = brand.company || "Manulife Việt Nam";
+  const tagline = brand.tagline || "BẢO VỆ TÀI CHÍNH · ĐẦU TƯ BỀN VỮNG";
+  const cta = brand.cta || "Nhắn 'KẾ HOẠCH' để nhận bản phân tích rủi ro 👇";
   const handle = brand.handle || "@tienduong";
-  const disclaimer = brand.disclaimer || "Số liệu mang tính chất tham khảo · Không phải khuyến nghị đầu tư";
-
-  // Initials for avatar monogram
-  const initials = creatorName
-    .split(" ")
-    .map((w) => w[0])
-    .slice(-2)
-    .join("")
-    .toUpperCase();
-
-  const finalHighlight = highlightText || brandName;
+  const disclaimer = brand.disclaimer || "Nội dung mang tính chất chia sẻ giải pháp · Liên hệ để được tư vấn theo nhu cầu thực tế";
 
   return (
     <div
@@ -75,7 +68,7 @@ export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 56px",
+        padding: "0 60px",
         backgroundColor,
         zIndex: 80,
       }}
@@ -85,127 +78,148 @@ export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
           width: "100%",
           maxWidth: 960,
           backgroundColor: cardBackground,
-          border: `2px solid ${accentColor}40`,
+          border: `2px solid ${accentColor}50`,
           borderRadius: 36,
-          padding: "54px 44px",
+          padding: "48px 44px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          boxShadow: `0 25px 70px rgba(0,0,0,0.85), 0 0 40px ${accentColor}25`,
-          backdropFilter: "blur(20px)",
-          transform: `scale(${0.9 + entrance * 0.1})`,
+          boxShadow: `0 30px 80px rgba(0,0,0,0.88), 0 0 50px ${accentColor}25`,
+          backdropFilter: "blur(24px)",
+          transform: `scale(${0.92 + entrance * 0.08})`,
           opacity: entrance,
         }}
       >
-        {/* Creator Emblem Monogram */}
+        {/* Top Company Badge */}
         <div
           style={{
-            width: 140,
-            height: 140,
-            borderRadius: "50%",
-            background: `linear-gradient(135deg, ${accentColor}, ${secondaryAccent})`,
-            padding: 4,
-            boxShadow: `0 0 40px ${accentColor}60`,
-            marginBottom: 24,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "8px 22px",
+            borderRadius: 999,
+            backgroundColor: `${accentColor}18`,
+            border: `1px solid ${accentColor}60`,
+            marginBottom: 20,
           }}
         >
           <div
             style={{
-              width: "100%",
-              height: "100%",
+              width: 10,
+              height: 10,
               borderRadius: "50%",
-              backgroundColor: "#06090F",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 54,
-              fontWeight: 900,
-              color: accentColor,
-              fontFamily: "'Barlow Condensed', 'Be Vietnam Pro', sans-serif",
+              backgroundColor: accentColor,
+              boxShadow: `0 0 10px ${accentColor}`,
+            }}
+          />
+          <span
+            style={{
+              fontSize: 20,
+              fontWeight: 800,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "#E2E8F0",
+              fontFamily: "'Be Vietnam Pro', sans-serif",
             }}
           >
-            {initials}
-          </div>
+            {companyName}
+          </span>
         </div>
 
-        {/* Headline */}
+        {/* Message Headline */}
         <div
           style={{
-            fontFamily: "'Barlow Condensed', 'Be Vietnam Pro', sans-serif",
-            fontSize: 48,
-            fontWeight: 900,
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            fontSize: 34,
+            fontWeight: 800,
             color: "#FFFFFF",
-            lineHeight: 1.2,
+            lineHeight: 1.3,
             textTransform: "uppercase",
+            letterSpacing: "0.02em",
             marginBottom: 16,
           }}
         >
           {headline}
-          <br />
-          <span style={{ color: accentColor }}>{finalHighlight}</span>
+          {highlightText && (
+            <span style={{ color: secondaryAccent, marginLeft: 10 }}>
+              {highlightText}
+            </span>
+          )}
         </div>
 
-        {/* Creator Identity */}
+        {/* Divider Line */}
+        <div
+          style={{
+            width: 120,
+            height: 3,
+            background: `linear-gradient(90deg, transparent, ${secondaryAccent}, transparent)`,
+            marginBottom: 20,
+          }}
+        />
+
+        {/* Creator Name (Chỉ 1 lần duy nhất) */}
         <h2
           style={{
-            fontFamily: "'Barlow Condensed', 'Be Vietnam Pro', sans-serif",
-            fontSize: 52,
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            fontSize: 56,
             fontWeight: 900,
             color: "#FFFFFF",
-            letterSpacing: "1.5px",
+            letterSpacing: "0.02em",
             textTransform: "uppercase",
-            margin: "8px 0 0 0",
+            margin: "0 0 8px 0",
+            textShadow: "0 4px 20px rgba(0,0,0,0.6)",
           }}
         >
           {creatorName}
         </h2>
 
-        <div
-          style={{
-            fontFamily: "'Barlow Condensed', 'Be Vietnam Pro', sans-serif",
-            fontSize: 30,
-            fontWeight: 800,
-            color: accentColor,
-            letterSpacing: "2.5px",
-            textTransform: "uppercase",
-            marginTop: 6,
-          }}
-        >
-          {brandName}
-        </div>
-
+        {/* Professional Title */}
         <div
           style={{
             fontFamily: "'Be Vietnam Pro', sans-serif",
-            fontSize: 22,
+            fontSize: 24,
+            fontWeight: 700,
+            color: accentColor,
+            letterSpacing: "0.04em",
+            textTransform: "uppercase",
+            marginBottom: 8,
+          }}
+        >
+          {professionalTitle}
+        </div>
+
+        {/* Tagline */}
+        <div
+          style={{
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            fontSize: 20,
             fontWeight: 600,
             color: "#94A3B8",
-            marginTop: 8,
-            maxWidth: 720,
+            letterSpacing: "0.06em",
           }}
         >
           {tagline}
         </div>
 
-        {/* CTA Banner */}
+        {/* Call to Action Pill Button */}
         <div
           style={{
             marginTop: 32,
-            backgroundColor: `${accentColor}20`,
+            backgroundColor: `${accentColor}25`,
             border: `2px solid ${accentColor}`,
             borderRadius: 999,
             padding: "16px 36px",
             display: "flex",
             alignItems: "center",
-            gap: 12,
-            boxShadow: `0 0 25px ${accentColor}30`,
+            justifyContent: "center",
+            boxShadow: `0 0 30px ${accentColor}35`,
           }}
         >
           <span
             style={{
               fontFamily: "'Be Vietnam Pro', sans-serif",
-              fontSize: 26,
+              fontSize: 24,
               fontWeight: 800,
               color: "#FFFFFF",
             }}
@@ -217,11 +231,11 @@ export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
         {/* Handle */}
         <div
           style={{
-            marginTop: 20,
-            fontSize: 22,
+            marginTop: 18,
+            fontSize: 20,
             fontWeight: 700,
             color: "#64748B",
-            letterSpacing: "1px",
+            letterSpacing: "0.05em",
           }}
         >
           {handle}
@@ -230,8 +244,8 @@ export const UserBrandOutro: React.FC<UserBrandOutroProps> = ({
         {/* Legal Disclaimer */}
         <div
           style={{
-            marginTop: 20,
-            fontSize: 16,
+            marginTop: 16,
+            fontSize: 15,
             fontWeight: 500,
             color: "#475569",
             maxWidth: 680,

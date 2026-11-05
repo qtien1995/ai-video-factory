@@ -28,9 +28,10 @@
   "license": "ISC",
   "dependencies": {
     "minimist": "^1.2.8",
+    "playwright": "^1.64.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "4.0.519",
+    "remotion": "4.0.541",
     "zod": "^4.4.3"
   },
   "devDependencies": {

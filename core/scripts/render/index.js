@@ -3,11 +3,18 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import minimist from "minimist";
 import { validateSpec } from "../../schemas/zod.js";
-import { routeSpec } from "../router/index.js";
 import { calculateTimelineDuration } from "../../timing/index.js";
 import { artifactPath, projectDir } from "../factory/state.js";
 import { duration, inspectMedia, muxAndNormalize } from "../factory/media.js";
 import * as remotionAdapter from "../../../engines/remotion/adapter/index.js";
+
+function routeSpec(spec, engine) {
+  return {
+    success: true,
+    selectedEngine: "REMOTION",
+    reasons: ["Pure Bespoke V4 engine: Remotion"],
+  };
+}
 
 export async function renderProject({ project, kind = "preview", engine = "AUTO" }) {
   if (!["preview", "final"].includes(kind)) throw new Error("--kind must be preview or final");
